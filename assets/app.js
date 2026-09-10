@@ -29,14 +29,16 @@ function render(){
   const pairs=new Map();events.forEach(event=>{const key=`${event.actor}\u0000${event.counterpart}`;(pairs.get(key)||pairs.set(key,[]).get(key)).push(event)});
   $("#activeDay").textContent=state.day==="2026-09-09"?"9/09 · paso 1/2":state.day==="2026-09-10"?"10/09 · paso 2/2":"Vista acumulada · 9 y 10/09";
   $("#stats").innerHTML=`<span><b>${events.length}</b> eventos</span><span><b>${pairs.size}</b> pares</span><span><b>${connected.size}</b> personas</span>`;
-  const head=`<thead><tr><th>Actor ↓<br>Contraparte →</th>${people.map(name=>`<th title="${esc(name)}"><span>${esc(shortName(name))}</span></th>`).join("")}</tr></thead>`;
+  const head=`<thead><tr><th>Actor ↓<br>Contraparte →</th>${people.map(name=>`<th title="${esc(name)}"><span>${esc(shortName(name))}</span></th>`).join("")}<th class="total-head" title="Total de interacciones salientes"><span>Total →</span></th></tr></thead>`;
   const body=people.map(actor=>`<tr><th title="${esc(actor)}">${esc(shortName(actor))}</th>${people.map(counterpart=>{
     if(actor===counterpart)return "<td class='diagonal'>—</td>";
     const list=pairs.get(`${actor}\u0000${counterpart}`)||[];
     if(!list.length)return "<td class='empty'>—</td>";
     return `<td><button class="hit ${state.playing?"revealing":""}" type="button" data-actor="${esc(actor)}" data-counterpart="${esc(counterpart)}" aria-label="Ver ${list.length} interacciones de ${esc(actor)} hacia ${esc(counterpart)}"><b>${list.length}</b></button></td>`;
-  }).join("")}</tr>`).join("");
-  $("#matrix").innerHTML=head+`<tbody>${body}</tbody>`;
+  }).join("")}<td class="total-cell"><b>${events.filter(event=>event.actor===actor).length}</b></td></tr>`).join("");
+  const columnTotals=people.map(counterpart=>events.filter(event=>event.counterpart===counterpart).length);
+  const foot=`<tfoot><tr><th title="Total de interacciones recibidas">Total ↓</th>${columnTotals.map(total=>`<td class="total-cell"><b>${total}</b></td>`).join("")}<td class="grand-total"><b>${events.length}</b></td></tr></tfoot>`;
+  $("#matrix").innerHTML=head+`<tbody>${body}</tbody>`+foot;
   $("#matrix").querySelectorAll(".hit").forEach(button=>button.addEventListener("click",()=>openDetail(button.dataset.actor,button.dataset.counterpart,pairs.get(`${button.dataset.actor}\u0000${button.dataset.counterpart}`)||[])));
   renderProductivity();
 }

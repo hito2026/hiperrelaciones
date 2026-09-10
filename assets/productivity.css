@@ -15,3 +15,12 @@
 .metric-detail span,.metric-detail small{color:var(--muted);font-size:9px}
 .metric-detail b{margin:4px 0;color:var(--blue)}
 @media(max-width:540px){.metric-detail,.purpose-vars{grid-template-columns:1fr 1fr}.productivity-grid{grid-template-columns:1fr 1fr}.company-trace{align-items:stretch;flex-direction:column}.company-trace>span{width:100%}}
+#matrix thead th:first-child,#matrix tbody th,#matrix tfoot th{width:102px;padding:2px 3px}
+#matrix th,#matrix td{height:22px}
+#matrix thead th{height:70px}
+#matrix thead th span{font-size:6px}
+#matrix tbody th,#matrix tfoot th{font-size:7px}
+#matrix .total-head{width:28px;background:#e8f0fe}
+#matrix .total-cell,#matrix .grand-total{width:28px;background:#f3f7fd;color:#174ea6;font-size:8px}
+#matrix .grand-total{background:#d2e3fc;font-size:10px}
+#matrix tfoot th,#matrix tfoot td{position:sticky;bottom:0;border-top:1px solid #aecbfa}

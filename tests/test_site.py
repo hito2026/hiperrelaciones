@@ -44,6 +44,8 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         self.assertIn("quality_messages", self.app)
         self.assertIn("companyMeasure", self.app)
         self.assertIn("openPurpose", self.app)
+        self.assertIn("columnTotals", self.app)
+        self.assertIn("grand-total", self.app)
 
     def test_company_network_uses_unique_directed_pairs(self):
         pairs = {(event["actor"], event["counterpart"]) for event in self.data["events"]}
