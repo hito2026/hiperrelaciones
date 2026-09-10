@@ -1,6 +1,7 @@
 .productivity-card{width:100%;margin-bottom:8px;padding:10px;background:#fff;border:1px solid var(--line);border-radius:9px;box-shadow:var(--shadow)}
 .productivity-card .matrix-head button{padding:5px 9px;border:1px solid #aecbfa;border-radius:5px;background:var(--blue-soft);color:#174ea6;cursor:pointer}
 .productivity-warning{margin:2px 0 8px;color:#7a4f01;font-size:9px}
+.purpose-link{padding:0;border:0;border-bottom:1px dotted var(--blue);background:transparent;color:var(--blue);font-size:10px;cursor:pointer}.company-trace{margin-bottom:7px;padding:6px;display:flex;align-items:center;gap:5px;border:1px solid var(--line);border-radius:7px;background:var(--bg)}.company-trace>strong{margin-right:auto;font-size:9px}.company-trace>span{min-width:105px;padding:3px 6px;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:5px;border:1px solid var(--line);border-radius:5px;background:#fff}.company-trace>span.active{border-color:var(--blue);background:var(--blue-soft)}.company-trace b{color:var(--blue);font-size:18px}.company-trace small{color:var(--muted);font-size:7px;line-height:1.25}.purpose-vars{display:grid;grid-template-columns:1fr 1fr;gap:6px}.purpose-vars p{margin:0;padding:8px;border:1px solid var(--line);border-radius:7px;background:var(--bg)}
 .productivity-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:4px}
 .person-metric{min-width:0;padding:6px 7px;display:grid;grid-template-columns:1fr auto;gap:1px 6px;text-align:left;border:1px solid var(--line);border-radius:6px;background:var(--bg);cursor:pointer}
 .person-metric:hover,.person-metric:focus-visible{border-color:var(--blue);outline:1px solid var(--blue)}
@@ -13,4 +14,4 @@
 .metric-detail span,.metric-detail b,.metric-detail small{display:block}
 .metric-detail span,.metric-detail small{color:var(--muted);font-size:9px}
 .metric-detail b{margin:4px 0;color:var(--blue)}
-@media(max-width:540px){.metric-detail{grid-template-columns:1fr 1fr}.productivity-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.metric-detail,.purpose-vars{grid-template-columns:1fr 1fr}.productivity-grid{grid-template-columns:1fr 1fr}.company-trace{align-items:stretch;flex-direction:column}.company-trace>span{width:100%}}

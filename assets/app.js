@@ -13,6 +13,7 @@ async function init(){
   $("#reset").addEventListener("click",reset);
   $("#close").addEventListener("click",()=>$("#detail").close());
   $("#formula").addEventListener("click",openFormula);
+  $("#purpose").addEventListener("click",openPurpose);
   $("#detail").addEventListener("click",event=>{if(event.target===$("#detail"))$("#detail").close()});
   render();
 }
@@ -59,8 +60,19 @@ function score(row){
 }
 function renderProductivity(){
   const query=clean(state.person),rows=metricRows().filter(row=>!query||clean(row.person).includes(query)).map(row=>({...row,score:score(row)})).sort((a,b)=>b.score.value-a.score.value||a.person.localeCompare(b.person));
+  renderCompanyTrace();
   $("#productivity").innerHTML=rows.map(row=>`<button class="person-metric" data-person="${esc(row.person)}" type="button"><span class="person-name">${esc(row.person)}</span><strong>${row.score.value}</strong><span class="vector">[${row.I}, ${row.H.toFixed(2)}, ${row.R}, ${row.Q===null?"s/d":Math.round(row.Q*100)}, ${row.E===null?"s/d":row.E}]</span>${row.score.incomplete?'<small>datos incompletos</small>':""}</button>`).join("");
   $("#productivity").querySelectorAll(".person-metric").forEach(button=>button.addEventListener("click",()=>openMetric(rows.find(row=>row.person===button.dataset.person))));
+}
+function companyMeasure(day){
+  const previous=state.day;state.day=day;const rows=metricRows().map(row=>({...row,score:score(row)}));state.day=previous;
+  const values=rows.map(row=>row.score.value).sort((a,b)=>a-b),complete=rows.filter(row=>!row.score.incomplete).length;
+  return {mean:Math.round(values.reduce((sum,value)=>sum+value,0)/values.length),median:values[Math.floor(values.length/2)],complete,total:rows.length};
+}
+function renderCompanyTrace(){
+  const points=["2026-09-09","2026-09-10","all"].map(day=>({day,...companyMeasure(day)}));
+  const label=day=>day==="all"?"Acumulado":day==="2026-09-09"?"9/09":"10/09";
+  $("#companyTrace").innerHTML=`<strong>Traza general de la compañía</strong>${points.map(point=>`<span class="${state.day===point.day?"active":""}"><b>${point.mean}</b><small>${label(point.day)} · mediana ${point.median} · cobertura completa ${point.complete}/${point.total}</small></span>`).join("")}`;
 }
 function openMetric(row){
   const t=state.metrics.methodology.targets;
@@ -73,6 +85,11 @@ function openFormula(){
   const m=state.metrics.methodology;
   $("#detailTitle").textContent=m.name;
   $("#detailBody").innerHTML=`<p class="detail-count"><b>100 × (0,20·Iₙ + 0,20·Hₙ + 0,15·Rₙ + 0,25·Q + 0,20·Eₙ)</b></p><p><strong>I</strong>: interacciones salientes verificadas. <strong>H</strong>: horas laborales positivas. <strong>R</strong>: contrapartes únicas. <strong>Q</strong>: checklist de contexto, acción, referencia, resultado y próximo paso. <strong>E</strong>: creaciones y avances verificables.</p><p>Metas visibles: I=${m.targets.I}, H=${m.targets.H} h, R=${m.targets.R}, E=${m.targets.E}. I, R y E saturan logarítmicamente; H satura en la meta diaria. Si Q no es evaluable se excluye y los pesos restantes se reescalan.</p><p class="productivity-warning">${esc(m.warning)}</p>`;
+  $("#detail").showModal();
+}
+function openPurpose(){
+  $("#detailTitle").textContent="Propósito de Hiperrelaciones";
+  $("#detailBody").innerHTML=`<p>Este espacio representa una <strong>matriz de interacciones verificables entre el personal de la compañía</strong>. Cada tarea, comentario, cambio, parte de horas o acción registrada se analiza, depura e integra para construir un mapa de cómo se conecta el trabajo.</p><p>Las filas muestran quién realizó la interacción y las columnas, la contraparte. Solo se incorporan relaciones con evidencia: menciones directas, respuestas, cambios rastreados de responsables o compromisos explícitos. Compartir un proyecto o estar asignado no alcanza.</p><h3>Vector de contribución verificable</h3><div class="purpose-vars"><p><b>I · Interacciones</b><br>Acciones humanas salientes, verificadas y deduplicadas.</p><p><b>H · Horas</b><br>Horas laborales positivas registradas para la persona, distinguiendo quién cargó el parte.</p><p><b>R · Red</b><br>Cantidad de contrapartes únicas con interacción comprobada.</p><p><b>Q · Calidad documental</b><br>Checklist objetivo: contexto, acción, referencia, resultado y próximo paso.</p><p><b>E · Resultados</b><br>Creaciones y avances verificables hacia validación, resolución o producción.</p></div><p>El <strong>ICV</strong> permite comparar órdenes de magnitud, no personas en términos absolutos. La traza general muestra promedio, mediana y cobertura por día y acumulada para seguir la evolución de la compañía.</p><p class="productivity-warning">No es una evaluación laboral. Solo refleja actividad observable en las fuentes consultadas; una ausencia de registro no significa ausencia de trabajo.</p>`;
   $("#detail").showModal();
 }
 

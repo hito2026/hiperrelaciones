@@ -11,7 +11,7 @@
 <body>
   <header class="topbar">
     <div><span class="mark">HF</span><span><strong>HiperNrelaciones</strong><small>interacciones verificables</small></span></div>
-    <span id="coverage">Cargando cobertura…</span>
+    <span><button id="purpose" class="purpose-link" type="button">¿Qué representa este espacio?</button> · <span id="coverage">Cargando cobertura…</span></span>
   </header>
   <main>
     <section class="intro">
@@ -29,6 +29,7 @@
     <section class="productivity-card" aria-labelledby="productivityTitle">
       <div class="matrix-head"><div><p class="eyebrow">I · H · R · Q · E</p><h2 id="productivityTitle">Contribución verificable por persona</h2></div><button id="formula" type="button">Ver fórmula y criterios</button></div>
       <p class="productivity-warning">Indicador operativo de actividad observable; no es una evaluación laboral. La ausencia de registro no equivale a ausencia de trabajo.</p>
+      <div id="companyTrace" class="company-trace" aria-live="polite"></div>
       <div id="productivity" class="productivity-grid" aria-live="polite"></div>
     </section>
     <section class="matrix-card">
