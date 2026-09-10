@@ -1,0 +1,16 @@
+.productivity-card{width:100%;margin-bottom:8px;padding:10px;background:#fff;border:1px solid var(--line);border-radius:9px;box-shadow:var(--shadow)}
+.productivity-card .matrix-head button{padding:5px 9px;border:1px solid #aecbfa;border-radius:5px;background:var(--blue-soft);color:#174ea6;cursor:pointer}
+.productivity-warning{margin:2px 0 8px;color:#7a4f01;font-size:9px}
+.productivity-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:4px}
+.person-metric{min-width:0;padding:6px 7px;display:grid;grid-template-columns:1fr auto;gap:1px 6px;text-align:left;border:1px solid var(--line);border-radius:6px;background:var(--bg);cursor:pointer}
+.person-metric:hover,.person-metric:focus-visible{border-color:var(--blue);outline:1px solid var(--blue)}
+.person-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px}
+.person-metric>strong{grid-row:1/3;grid-column:2;color:var(--blue);font-size:20px}
+.vector{color:var(--muted);font:8px var(--mono)}
+.person-metric small{grid-column:1/-1;color:#b06000;font-size:7px}
+.metric-detail{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.metric-detail>div{padding:9px;border:1px solid var(--line);border-radius:7px;background:var(--bg)}
+.metric-detail span,.metric-detail b,.metric-detail small{display:block}
+.metric-detail span,.metric-detail small{color:var(--muted);font-size:9px}
+.metric-detail b{margin:4px 0;color:var(--blue)}
+@media(max-width:540px){.metric-detail{grid-template-columns:1fr 1fr}.productivity-grid{grid-template-columns:1fr 1fr}}

@@ -1,0 +1,1435 @@
+{
+  "methodology": {
+    "name": "Índice de Contribución Verificable",
+    "vector": [
+      "I",
+      "H",
+      "R",
+      "Q",
+      "E"
+    ],
+    "weights": {
+      "I": 0.2,
+      "H": 0.2,
+      "R": 0.15,
+      "Q": 0.25,
+      "E": 0.2
+    },
+    "targets": {
+      "I": 8,
+      "H": 8,
+      "R": 5,
+      "E": 5
+    },
+    "warning": "Indicador operativo de actividad observable; no es una evaluación laboral. La ausencia de registro no equivale a ausencia de trabajo."
+  },
+  "days": {
+    "2026-09-09": [
+      {
+        "person": "Alejandro Sartorio",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Andrés Salguero",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Ariadna Estebenet",
+        "I": 1,
+        "H": 8.5,
+        "R": 1,
+        "Q": 0.4,
+        "E": 2,
+        "coverage": {
+          "comments": 1,
+          "quality_messages": 1,
+          "timesheets": 7,
+          "creations": 1,
+          "tracked": 4,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": true
+          }
+        ]
+      },
+      {
+        "person": "Carolina Monserrat",
+        "I": 4,
+        "H": 0,
+        "R": 1,
+        "Q": 0.55,
+        "E": 3,
+        "coverage": {
+          "comments": 4,
+          "quality_messages": 4,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 3,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": true,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": true,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": true,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": true
+          }
+        ]
+      },
+      {
+        "person": "Ezequiel Montes",
+        "I": 0,
+        "H": 5.25,
+        "R": 0,
+        "Q": null,
+        "E": 1,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 6,
+          "creations": 1,
+          "tracked": 6,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Francisco Fiorentino",
+        "I": 1,
+        "H": 0,
+        "R": 1,
+        "Q": 0.2,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 1,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 2,
+          "quality_complete": false,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          }
+        ]
+      },
+      {
+        "person": "Genaro García",
+        "I": 1,
+        "H": 13,
+        "R": 1,
+        "Q": 0.4,
+        "E": 1,
+        "coverage": {
+          "comments": 1,
+          "quality_messages": 1,
+          "timesheets": 1,
+          "creations": 0,
+          "tracked": 1,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": true,
+            "next": false
+          }
+        ]
+      },
+      {
+        "person": "Ignacio Lera",
+        "I": 10,
+        "H": 0.58,
+        "R": 6,
+        "Q": 0.35,
+        "E": 3,
+        "coverage": {
+          "comments": 2,
+          "quality_messages": 8,
+          "timesheets": 2,
+          "creations": 1,
+          "tracked": 25,
+          "quality_complete": false,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": true,
+            "result": false,
+            "next": true
+          }
+        ]
+      },
+      {
+        "person": "Jinzo",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": null,
+        "coverage": {
+          "comments": 1,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 9,
+          "tracked": 132,
+          "quality_complete": false,
+          "outcome_complete": false,
+          "outcome_note": "Cambios concentrados compatibles con lote/automatización; E excluido."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Julian Morabito",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Lanser Jose Ignacio",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 1,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 1,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Liz Centurion",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Lucas Burgos",
+        "I": 11,
+        "H": 0,
+        "R": 2,
+        "Q": 0.4,
+        "E": 1,
+        "coverage": {
+          "comments": 6,
+          "quality_messages": 7,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 4,
+          "quality_complete": false,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": true
+          }
+        ]
+      },
+      {
+        "person": "Lucia Centurion",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Mateo Scozzina",
+        "I": 10,
+        "H": 7.75,
+        "R": 2,
+        "Q": 0.4,
+        "E": 5,
+        "coverage": {
+          "comments": 13,
+          "quality_messages": 10,
+          "timesheets": 5,
+          "creations": 0,
+          "tracked": 12,
+          "quality_complete": false,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": true,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": true,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": true,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          }
+        ]
+      },
+      {
+        "person": "Matias Banega",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Matias Marziali",
+        "I": 1,
+        "H": 8,
+        "R": 1,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 2,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Maximiliano Alarcon",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 2,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": false,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Nahiara Aylen Delgado",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 1,
+        "coverage": {
+          "comments": 2,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 2,
+          "quality_complete": false,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Nelson Tontarelli",
+        "I": 4,
+        "H": 3.33,
+        "R": 3,
+        "Q": 0.8,
+        "E": 5,
+        "coverage": {
+          "comments": 2,
+          "quality_messages": 2,
+          "timesheets": 2,
+          "creations": 0,
+          "tracked": 7,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": false,
+            "reference": true,
+            "result": true,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": true,
+            "result": true,
+            "next": true
+          }
+        ]
+      },
+      {
+        "person": "Pablo Marchionno",
+        "I": 6,
+        "H": 1,
+        "R": 3,
+        "Q": 0.9,
+        "E": 2,
+        "coverage": {
+          "comments": 2,
+          "quality_messages": 2,
+          "timesheets": 1,
+          "creations": 0,
+          "tracked": 2,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": true,
+            "reference": true,
+            "result": false,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": true,
+            "result": true,
+            "next": true
+          }
+        ]
+      },
+      {
+        "person": "Samuel Marcano",
+        "I": 0,
+        "H": 4,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 2,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Valentin Markov",
+        "I": 6,
+        "H": 0,
+        "R": 1,
+        "Q": 0.4,
+        "E": 3,
+        "coverage": {
+          "comments": 7,
+          "quality_messages": 6,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 7,
+          "quality_complete": false,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": true,
+            "result": false,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": false
+          }
+        ]
+      }
+    ],
+    "2026-09-10": [
+      {
+        "person": "Alejandro Sartorio",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Andrés Salguero",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Ariadna Estebenet",
+        "I": 0,
+        "H": 8.25,
+        "R": 0,
+        "Q": null,
+        "E": 2,
+        "coverage": {
+          "comments": 1,
+          "quality_messages": 0,
+          "timesheets": 3,
+          "creations": 1,
+          "tracked": 3,
+          "quality_complete": false,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Carolina Monserrat",
+        "I": 2,
+        "H": 0.25,
+        "R": 1,
+        "Q": 0.6,
+        "E": null,
+        "coverage": {
+          "comments": 2,
+          "quality_messages": 2,
+          "timesheets": 1,
+          "creations": 0,
+          "tracked": 33,
+          "quality_complete": true,
+          "outcome_complete": false,
+          "outcome_note": "Cambios concentrados compatibles con lote/automatización; E excluido."
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": true,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": true,
+            "next": true
+          }
+        ]
+      },
+      {
+        "person": "Ezequiel Montes",
+        "I": 3,
+        "H": 0,
+        "R": 2,
+        "Q": 0.6,
+        "E": 3,
+        "coverage": {
+          "comments": 2,
+          "quality_messages": 2,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 22,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": true,
+            "result": false,
+            "next": false
+          }
+        ]
+      },
+      {
+        "person": "Francisco Fiorentino",
+        "I": 0,
+        "H": 0.25,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 1,
+          "quality_messages": 0,
+          "timesheets": 1,
+          "creations": 0,
+          "tracked": 2,
+          "quality_complete": false,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Genaro García",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Ignacio Lera",
+        "I": 6,
+        "H": 0.42,
+        "R": 2,
+        "Q": 0.3333333333333333,
+        "E": 2,
+        "coverage": {
+          "comments": 3,
+          "quality_messages": 6,
+          "timesheets": 1,
+          "creations": 1,
+          "tracked": 21,
+          "quality_complete": false,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": true
+          }
+        ]
+      },
+      {
+        "person": "Jinzo",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 6,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 6,
+          "tracked": 12,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Julian Morabito",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Lanser Jose Ignacio",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 1,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 1,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Liz Centurion",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Lucas Burgos",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Lucia Centurion",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Mateo Scozzina",
+        "I": 13,
+        "H": 7.75,
+        "R": 4,
+        "Q": 0.45454545454545453,
+        "E": 2,
+        "coverage": {
+          "comments": 12,
+          "quality_messages": 11,
+          "timesheets": 7,
+          "creations": 0,
+          "tracked": 20,
+          "quality_complete": false,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": true,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": true,
+            "result": true,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": true,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": true,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": true,
+            "result": false,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          }
+        ]
+      },
+      {
+        "person": "Matias Banega",
+        "I": 2,
+        "H": 0,
+        "R": 2,
+        "Q": 0.6,
+        "E": 1,
+        "coverage": {
+          "comments": 1,
+          "quality_messages": 1,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 1,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": false,
+            "reference": true,
+            "result": false,
+            "next": true
+          }
+        ]
+      },
+      {
+        "person": "Matias Marziali",
+        "I": 2,
+        "H": 5,
+        "R": 2,
+        "Q": 0.6,
+        "E": 0,
+        "coverage": {
+          "comments": 2,
+          "quality_messages": 2,
+          "timesheets": 2,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": true,
+            "reference": true,
+            "result": false,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": false
+          }
+        ]
+      },
+      {
+        "person": "Maximiliano Alarcon",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 4,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 6,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Nahiara Aylen Delgado",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 1,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 3,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Nelson Tontarelli",
+        "I": 2,
+        "H": 5,
+        "R": 2,
+        "Q": 1,
+        "E": 1,
+        "coverage": {
+          "comments": 1,
+          "quality_messages": 1,
+          "timesheets": 2,
+          "creations": 0,
+          "tracked": 1,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": true,
+            "reference": true,
+            "result": true,
+            "next": true
+          }
+        ]
+      },
+      {
+        "person": "Pablo Marchionno",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Samuel Marcano",
+        "I": 0,
+        "H": 2,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 1,
+          "creations": 0,
+          "tracked": 0,
+          "quality_complete": true,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Valentin Markov",
+        "I": 7,
+        "H": 0,
+        "R": 3,
+        "Q": 0.4666666666666667,
+        "E": 9,
+        "coverage": {
+          "comments": 10,
+          "quality_messages": 6,
+          "timesheets": 0,
+          "creations": 0,
+          "tracked": 19,
+          "quality_complete": false,
+          "outcome_complete": true,
+          "outcome_note": null
+        },
+        "quality_checks": [
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": false,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": false
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": true
+          },
+          {
+            "context": true,
+            "action": true,
+            "reference": false,
+            "result": false,
+            "next": true
+          }
+        ]
+      }
+    ]
+  }
+}

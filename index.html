@@ -6,6 +6,7 @@
   <meta name="description" content="Matriz interactiva de relaciones verificables entre usuarios de HitoFusion">
   <title>HiperNrelaciones · HitoFusion</title>
   <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/productivity.css">
 </head>
 <body>
   <header class="topbar">
@@ -24,6 +25,11 @@
       <button id="reset" type="button">Reiniciar</button>
       <label><span>Velocidad</span><select id="speed"><option value="2400">Lenta</option><option value="1600" selected>Normal</option><option value="900">Rápida</option></select></label>
       <span id="activeDay" class="active-day">Vista acumulada</span>
+    </section>
+    <section class="productivity-card" aria-labelledby="productivityTitle">
+      <div class="matrix-head"><div><p class="eyebrow">I · H · R · Q · E</p><h2 id="productivityTitle">Contribución verificable por persona</h2></div><button id="formula" type="button">Ver fórmula y criterios</button></div>
+      <p class="productivity-warning">Indicador operativo de actividad observable; no es una evaluación laboral. La ausencia de registro no equivale a ausencia de trabajo.</p>
+      <div id="productivity" class="productivity-grid" aria-live="polite"></div>
     </section>
     <section class="matrix-card">
       <div class="matrix-head"><div><p class="eyebrow">23 × 23</p><h2>Interacciones dirigidas</h2></div><span>Seleccioná una celda para ver textos y actividades</span></div>

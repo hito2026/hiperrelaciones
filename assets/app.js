@@ -1,17 +1,18 @@
-const state={data:null,day:"all",person:"",timer:null,playing:false};
+const state={data:null,metrics:null,day:"all",person:"",timer:null,playing:false};
 const $=selector=>document.querySelector(selector);
 const esc=value=>(value??"").toString().replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
 const clean=value=>(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
 const shortName=name=>{const parts=name.split(/\s+/);return parts.length<2?name:`${parts[0]} ${parts.at(-1)[0]}.`};
 
 async function init(){
-  state.data=await fetch("data/hyperrelations.json").then(response=>{if(!response.ok)throw new Error("dataset unavailable");return response.json()});
+  [state.data,state.metrics]=await Promise.all(["data/hyperrelations.json","data/productivity.json"].map(url=>fetch(url).then(response=>{if(!response.ok)throw new Error("dataset unavailable");return response.json()})));
   $("#coverage").textContent=state.data.report.coverage;
   $("#day").addEventListener("change",event=>{stop();state.day=event.target.value;render()});
   $("#person").addEventListener("input",event=>{state.person=event.target.value;render()});
   $("#play").addEventListener("click",()=>state.playing?stop():play());
   $("#reset").addEventListener("click",reset);
   $("#close").addEventListener("click",()=>$("#detail").close());
+  $("#formula").addEventListener("click",openFormula);
   $("#detail").addEventListener("click",event=>{if(event.target===$("#detail"))$("#detail").close()});
   render();
 }
@@ -36,6 +37,43 @@ function render(){
   }).join("")}</tr>`).join("");
   $("#matrix").innerHTML=head+`<tbody>${body}</tbody>`;
   $("#matrix").querySelectorAll(".hit").forEach(button=>button.addEventListener("click",()=>openDetail(button.dataset.actor,button.dataset.counterpart,pairs.get(`${button.dataset.actor}\u0000${button.dataset.counterpart}`)||[])));
+  renderProductivity();
+}
+
+const normalized=(value,target,log=false)=>log?Math.min(1,Math.log1p(value)/Math.log1p(target)):Math.min(1,value/target);
+function metricRows(){
+  const days=state.day==="all"?Object.keys(state.metrics.days):[state.day];
+  return state.data.people.map(person=>{
+    const rows=days.map(day=>state.metrics.days[day].find(row=>row.person===person));
+    const messages=rows.reduce((sum,row)=>sum+row.coverage.quality_messages,0);
+    const qPoints=rows.reduce((sum,row)=>sum+(row.Q??0)*row.coverage.quality_messages,0);
+    const events=state.data.events.filter(event=>days.includes(event.day)&&event.actor===person);
+    return {person,I:events.length,H:rows.reduce((s,r)=>s+r.H,0),R:new Set(events.map(e=>e.counterpart)).size,Q:messages?qPoints/messages:null,E:rows.every(r=>r.E!==null)?rows.reduce((s,r)=>s+r.E,0):null,coverage:{comments:rows.reduce((s,r)=>s+r.coverage.comments,0),quality_messages:messages,timesheets:rows.reduce((s,r)=>s+r.coverage.timesheets,0),quality_complete:rows.every(r=>r.coverage.quality_complete),outcome_complete:rows.every(r=>r.coverage.outcome_complete)}};
+  });
+}
+function score(row){
+  const t=state.metrics.methodology.targets,w=state.metrics.methodology.weights;
+  const values={I:normalized(row.I,t.I,true),H:normalized(row.H,t.H),R:normalized(row.R,t.R,true),Q:row.Q,E:normalized(row.E,t.E,true)};
+  const available=Object.entries(values).filter(([,value])=>value!==null),weight=available.reduce((sum,[key])=>sum+w[key],0);
+  return {value:Math.round(100*available.reduce((sum,[key,value])=>sum+w[key]*value,0)/weight),values,incomplete:row.Q===null||row.E===null||!row.coverage.quality_complete};
+}
+function renderProductivity(){
+  const query=clean(state.person),rows=metricRows().filter(row=>!query||clean(row.person).includes(query)).map(row=>({...row,score:score(row)})).sort((a,b)=>b.score.value-a.score.value||a.person.localeCompare(b.person));
+  $("#productivity").innerHTML=rows.map(row=>`<button class="person-metric" data-person="${esc(row.person)}" type="button"><span class="person-name">${esc(row.person)}</span><strong>${row.score.value}</strong><span class="vector">[${row.I}, ${row.H.toFixed(2)}, ${row.R}, ${row.Q===null?"s/d":Math.round(row.Q*100)}, ${row.E===null?"s/d":row.E}]</span>${row.score.incomplete?'<small>datos incompletos</small>':""}</button>`).join("");
+  $("#productivity").querySelectorAll(".person-metric").forEach(button=>button.addEventListener("click",()=>openMetric(rows.find(row=>row.person===button.dataset.person))));
+}
+function openMetric(row){
+  const t=state.metrics.methodology.targets;
+  $("#detailTitle").textContent=`${row.person} · ICV ${row.score.value}`;
+  const labels={I:"Interacciones",H:"Horas",R:"Contrapartes",Q:"Calidad documental",E:"Resultados"};
+  $("#detailBody").innerHTML=`<p class="detail-count">Vector crudo <b>[${row.I}, ${row.H.toFixed(2)}, ${row.R}, ${row.Q===null?"s/d":Math.round(row.Q*100)}, ${row.E===null?"s/d":row.E}]</b></p><div class="metric-detail">${Object.entries(row.score.values).map(([key,value])=>`<div><span>${labels[key]}</span><b>${key}: ${value===null?"sin datos":key==="Q"?Math.round(value*100)+"/100":row[key]}</b><small>${value===null?"componente excluido":Math.round(value*100)+"% normalizado"}</small></div>`).join("")}</div><p><strong>Cobertura:</strong> ${row.coverage.comments} comentarios; ${row.coverage.quality_messages} evaluables; ${row.coverage.timesheets} partes de horas. ${row.score.incomplete?"El puntaje se recalculó solo con componentes disponibles; lotes y automatizaciones se excluyen.":"Cobertura completa para la rúbrica disponible."}</p><p class="method">Metas: I ${t.I}, H ${t.H} h, R ${t.R}, E ${t.E}. Los conteos usan saturación logarítmica.</p>`;
+  $("#detail").showModal();
+}
+function openFormula(){
+  const m=state.metrics.methodology;
+  $("#detailTitle").textContent=m.name;
+  $("#detailBody").innerHTML=`<p class="detail-count"><b>100 × (0,20·Iₙ + 0,20·Hₙ + 0,15·Rₙ + 0,25·Q + 0,20·Eₙ)</b></p><p><strong>I</strong>: interacciones salientes verificadas. <strong>H</strong>: horas laborales positivas. <strong>R</strong>: contrapartes únicas. <strong>Q</strong>: checklist de contexto, acción, referencia, resultado y próximo paso. <strong>E</strong>: creaciones y avances verificables.</p><p>Metas visibles: I=${m.targets.I}, H=${m.targets.H} h, R=${m.targets.R}, E=${m.targets.E}. I, R y E saturan logarítmicamente; H satura en la meta diaria. Si Q no es evaluable se excluye y los pesos restantes se reescalan.</p><p class="productivity-warning">${esc(m.warning)}</p>`;
+  $("#detail").showModal();
 }
 
 function openDetail(actor,counterpart,events){
