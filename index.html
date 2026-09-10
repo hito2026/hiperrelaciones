@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Matriz interactiva de relaciones verificables entre usuarios de HitoFusion">
+  <title>HiperNrelaciones · HitoFusion</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><span class="mark">HF</span><span><strong>HiperNrelaciones</strong><small>interacciones verificables</small></span></div>
+    <span id="coverage">Cargando cobertura…</span>
+  </header>
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow">actor → contraparte</p><h1>Matriz de relaciones</h1><p>Interacciones humanas comprobadas en Odoo y Daily Meetings.</p></div>
+      <div id="stats" class="stats" aria-live="polite"></div>
+    </section>
+    <section class="controls" aria-label="Filtros y animación">
+      <label><span>Día</span><select id="day"><option value="all">9 y 10/09</option><option value="2026-09-09">9/09 completo</option><option value="2026-09-10">10/09 hasta el corte</option></select></label>
+      <label class="search"><span>Persona</span><input id="person" type="search" placeholder="Actor o contraparte…"></label>
+      <button id="play" type="button" aria-pressed="false">▶ Reproducir evolución</button>
+      <button id="reset" type="button">Reiniciar</button>
+      <label><span>Velocidad</span><select id="speed"><option value="2400">Lenta</option><option value="1600" selected>Normal</option><option value="900">Rápida</option></select></label>
+      <span id="activeDay" class="active-day">Vista acumulada</span>
+    </section>
+    <section class="matrix-card">
+      <div class="matrix-head"><div><p class="eyebrow">23 × 23</p><h2>Interacciones dirigidas</h2></div><span>Seleccioná una celda para ver textos y actividades</span></div>
+      <div class="matrix-wrap"><table id="matrix" aria-label="Matriz dirigida de interacciones"></table></div>
+    </section>
+    <p class="method"><strong>Criterio:</strong> una celda existe solo por mención resoluble, respuesta directa, cambio rastreado de responsable o compromiso individual explícito. Compartir tarea, proyecto, commit o reunión no crea una relación.</p>
+  </main>
+  <dialog id="detail" aria-labelledby="detailTitle">
+    <header><div><p class="eyebrow">evidence / detail</p><h2 id="detailTitle">Detalle de interacciones</h2></div><button id="close" type="button" aria-label="Cerrar">×</button></header>
+    <div id="detailBody" class="detail-body"></div>
+  </dialog>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
