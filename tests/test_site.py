@@ -45,6 +45,13 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         self.assertIn("companyMeasure", self.app)
         self.assertIn("openPurpose", self.app)
 
+    def test_company_network_uses_unique_directed_pairs(self):
+        pairs = {(event["actor"], event["counterpart"]) for event in self.data["events"]}
+        summed_personal_networks = sum(len({event["counterpart"] for event in self.data["events"] if event["actor"] == person}) for person in self.data["people"])
+        self.assertEqual(len(pairs), summed_personal_networks)
+        self.assertIn('new Set(events.map(event=>`${event.actor}\\u0000${event.counterpart}`))', self.app)
+        self.assertIn("weighted/weight", self.app)
+
 
 if __name__ == "__main__":
     unittest.main()

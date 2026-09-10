@@ -66,13 +66,18 @@ function renderProductivity(){
 }
 function companyMeasure(day){
   const previous=state.day;state.day=day;const rows=metricRows().map(row=>({...row,score:score(row)}));state.day=previous;
-  const values=rows.map(row=>row.score.value).sort((a,b)=>a-b),complete=rows.filter(row=>!row.score.incomplete).length;
-  return {mean:Math.round(values.reduce((sum,value)=>sum+value,0)/values.length),median:values[Math.floor(values.length/2)],complete,total:rows.length};
+  const days=day==="all"?Object.keys(state.metrics.days):[day],events=state.data.events.filter(event=>days.includes(event.day));
+  const weights=state.metrics.methodology.weights,coverage=row=>Object.entries(row.score.values).reduce((sum,[key,value])=>sum+(value===null?0:weights[key]),0);
+  const weighted=rows.reduce((sum,row)=>sum+row.score.value*coverage(row),0),weight=rows.reduce((sum,row)=>sum+coverage(row),0);
+  const messages=rows.reduce((sum,row)=>sum+row.coverage.quality_messages,0),qPoints=rows.reduce((sum,row)=>sum+(row.Q??0)*row.coverage.quality_messages,0);
+  const vector={I:events.length,H:rows.reduce((sum,row)=>sum+row.H,0),R:new Set(events.map(event=>`${event.actor}\u0000${event.counterpart}`)).size,Q:messages?qPoints/messages:null,E:rows.reduce((sum,row)=>sum+(row.E??0),0)};
+  const observable=rows.reduce((sum,row)=>sum+Object.values(row.score.values).filter(value=>value!==null).length,0);
+  return {mean:Math.round(weighted/weight),calculable:rows.filter(row=>coverage(row)>0).length,total:rows.length,observable:Math.round(100*observable/(rows.length*5)),vector};
 }
 function renderCompanyTrace(){
   const points=["2026-09-09","2026-09-10","all"].map(day=>({day,...companyMeasure(day)}));
   const label=day=>day==="all"?"Acumulado":day==="2026-09-09"?"9/09":"10/09";
-  $("#companyTrace").innerHTML=`<strong>Traza general de la compañía</strong>${points.map(point=>`<span class="${state.day===point.day?"active":""}"><b>${point.mean}</b><small>${label(point.day)} · mediana ${point.median} · cobertura completa ${point.complete}/${point.total}</small></span>`).join("")}`;
+  $("#companyTrace").innerHTML=`<strong>Pulso general de la compañía</strong>${points.map(point=>`<span class="${state.day===point.day?"active":""}"><b>${point.mean}</b><small>${label(point.day)} · [${point.vector.I}, ${point.vector.H.toFixed(1)}, ${point.vector.R}, ${point.vector.Q===null?"s/d":Math.round(point.vector.Q*100)}, ${point.vector.E}] · cobertura ${point.calculable}/${point.total}, ${point.observable}% componentes</small></span>`).join("")}`;
 }
 function openMetric(row){
   const t=state.metrics.methodology.targets;
@@ -89,7 +94,7 @@ function openFormula(){
 }
 function openPurpose(){
   $("#detailTitle").textContent="Propósito de Hiperrelaciones";
-  $("#detailBody").innerHTML=`<p>Este espacio representa una <strong>matriz de interacciones verificables entre el personal de la compañía</strong>. Cada tarea, comentario, cambio, parte de horas o acción registrada se analiza, depura e integra para construir un mapa de cómo se conecta el trabajo.</p><p>Las filas muestran quién realizó la interacción y las columnas, la contraparte. Solo se incorporan relaciones con evidencia: menciones directas, respuestas, cambios rastreados de responsables o compromisos explícitos. Compartir un proyecto o estar asignado no alcanza.</p><h3>Vector de contribución verificable</h3><div class="purpose-vars"><p><b>I · Interacciones</b><br>Acciones humanas salientes, verificadas y deduplicadas.</p><p><b>H · Horas</b><br>Horas laborales positivas registradas para la persona, distinguiendo quién cargó el parte.</p><p><b>R · Red</b><br>Cantidad de contrapartes únicas con interacción comprobada.</p><p><b>Q · Calidad documental</b><br>Checklist objetivo: contexto, acción, referencia, resultado y próximo paso.</p><p><b>E · Resultados</b><br>Creaciones y avances verificables hacia validación, resolución o producción.</p></div><p>El <strong>ICV</strong> permite comparar órdenes de magnitud, no personas en términos absolutos. La traza general muestra promedio, mediana y cobertura por día y acumulada para seguir la evolución de la compañía.</p><p class="productivity-warning">No es una evaluación laboral. Solo refleja actividad observable en las fuentes consultadas; una ausencia de registro no significa ausencia de trabajo.</p>`;
+  $("#detailBody").innerHTML=`<p>Este espacio representa las <strong>interacciones de trabajo verificables entre las personas de la compañía</strong>. Cada comentario, tarea, cambio rastreado, parte de horas y resultado registrado en las fuentes autorizadas se analiza con criterios explícitos y se integra para construir un mapa de la colaboración y la cohesión operativa.</p><p>Las filas muestran quién realizó la interacción y las columnas, la contraparte. Solo se incorporan relaciones con evidencia: menciones directas, respuestas, cambios rastreados de responsables o compromisos explícitos. Compartir un proyecto o estar asignado no alcanza.</p><h3>Vector de contribución verificable</h3><div class="purpose-vars"><p><b>I · Interacciones</b><br>Acciones humanas sustantivas, verificadas y deduplicadas.</p><p><b>H · Horas</b><br>Horas laborales positivas imputadas, diferenciando quién las cargó.</p><p><b>R · Red</b><br>Contrapartes internas únicas con interacción comprobada.</p><p><b>Q · Calidad documental</b><br>Presencia verificable de contexto, acción, referencia, resultado y próximo paso, sin juzgar estilo personal.</p><p><b>E · Resultados</b><br>Creaciones, avances de estado y entregables vinculados.</p></div><p>El <strong>ICV</strong> ofrece órdenes de magnitud para observar tendencias, no una evaluación absoluta del desempeño. El <strong>Pulso general</strong> es el promedio de los ICV personales ponderado por cobertura. Su vector agregado usa ΣI, ΣH, pares dirigidos únicos R*, Q promedio ponderado por anotaciones y ΣE.</p><p class="productivity-warning">La ausencia de registro o cobertura no equivale a ausencia de trabajo. Automatizaciones, lotes, asignaciones recibidas y write_uid aislado no cuentan como trabajo sustantivo.</p>`;
   $("#detail").showModal();
 }
 
