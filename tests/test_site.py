@@ -29,7 +29,7 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         self.assertEqual(len(keys), len(set(keys)))
 
     def test_page_exposes_filters_animation_and_modal(self):
-        for identifier in ('id="day"', 'id="person"', 'id="play"', 'id="speed"', 'id="detail"', 'id="productivity"', 'id="formula"', 'id="purpose"', 'id="companyTrace"', 'id="records"', 'id="recordGroup"'):
+        for identifier in ('id="day"', 'id="person"', 'id="play"', 'id="speed"', 'id="detail"', 'id="productivity"', 'id="formula"', 'id="purpose"', 'id="companyTrace"', 'id="records"', 'id="recordGroup"', 'id="expandRecords"', 'id="collapseRecords"'):
             self.assertIn(identifier, self.html)
         self.assertIn("showModal()", self.app)
         self.assertIn("prefers-reduced-motion", (ROOT / "assets" / "styles.css").read_text())
@@ -68,6 +68,7 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         self.assertTrue(all(item["entry_class"] in {"own_entry", "third_party_entry", "zero"} for item in timesheets))
         self.assertIn("filteredRecords", self.app)
         self.assertIn("recordGroup", self.app)
+        self.assertIn('index===0)?"open"', self.app)
 
 
 if __name__ == "__main__":

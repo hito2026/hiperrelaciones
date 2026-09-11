@@ -16,6 +16,8 @@ async function init(){
   $("#purpose").addEventListener("click",openPurpose);
   $("#detail").addEventListener("click",event=>{if(event.target===$("#detail"))$("#detail").close()});
   ["recordGroup","recordDay","recordSource","recordKind","recordSearch"].forEach(id=>$("#"+id).addEventListener(id==="recordSearch"?"input":"change",renderRecords));
+  $("#expandRecords").addEventListener("click",()=>$("#records").querySelectorAll("details").forEach(detail=>detail.open=true));
+  $("#collapseRecords").addEventListener("click",()=>$("#records").querySelectorAll("details").forEach(detail=>detail.open=false));
   render();
   renderRecords();
 }
@@ -114,12 +116,14 @@ function filteredRecords(){
   return state.records.records.filter(record=>(day==="all"||record.day===day)&&(source==="all"||recordSource(record)===source)&&(kind==="all"||record.kind===kind)&&(!query||clean(JSON.stringify(record)).includes(query)));
 }
 function renderRecords(){
+  const openGroups=new Set([...$("#records").querySelectorAll("details[open]")].map(detail=>detail.dataset.group));
   const records=filteredRecords(),groupBy=$("#recordGroup").value,keyFor={person:r=>r.person,day:r=>r.day,source:recordSource,kind:r=>kindLabel[r.kind]}[groupBy],groups=new Map();
   records.forEach(record=>{const key=keyFor(record);(groups.get(key)||groups.set(key,[]).get(key)).push(record)});
   const ownHours=records.filter(r=>r.kind==="timesheet"&&r.entry_class==="own_entry").reduce((s,r)=>s+r.hours,0),thirdHours=records.filter(r=>r.kind==="timesheet"&&r.entry_class==="third_party_entry").reduce((s,r)=>s+r.hours,0);
   const comments=records.filter(r=>r.kind==="comment").length,activities=records.filter(r=>r.kind==="activity"),interactions=records.filter(r=>r.kind==="interaction").reduce((s,r)=>s+(r.counterparts?.length||1),0);
   $("#recordTotals").innerHTML=`<span><b>${records.length}</b> registros únicos</span><span><b>${comments}</b> comentarios</span><span><b>${activities.filter(r=>r.activity_types.includes("tracking")).length}</b> cambios</span><span><b>${activities.filter(r=>r.activity_types.includes("creation")).length}</b> creaciones</span><span><b>${ownHours.toFixed(2)}</b> h propias</span><span><b>${thirdHours.toFixed(2)}</b> h por terceros</span><span><b>${interactions}</b> interacciones</span>`;
-  $("#records").innerHTML=[...groups].sort(([a],[b])=>a.localeCompare(b,"es")).map(([group,list])=>`<details><summary><span>${esc(group)}</span><b>${list.length} registros</b></summary><div class="record-list">${list.sort((a,b)=>(a.date_utc||a.day).localeCompare(b.date_utc||b.day)).map(renderRecord).join("")}</div></details>`).join("")||'<p class="record-empty">No hay registros para estos filtros.</p>';
+  const sorted=[...groups].sort(([a],[b])=>a.localeCompare(b,"es"));
+  $("#records").innerHTML=sorted.map(([group,list],index)=>`<details data-group="${esc(group)}" ${openGroups.has(group)||(!openGroups.size&&index===0)?"open":""}><summary><span>${esc(group)}</span><b>${list.length} registros</b></summary><div class="record-list">${list.sort((a,b)=>(a.date_utc||a.day).localeCompare(b.date_utc||b.day)).map(renderRecord).join("")}</div></details>`).join("")||'<p class="record-empty">No hay registros para estos filtros.</p>';
 }
 function renderRecord(record){
   const extra=record.kind==="timesheet"?`<dl><div><dt>Horas</dt><dd>${record.hours}</dd></div><div><dt>Proyecto</dt><dd>${esc(record.project||"Sin proyecto")}</dd></div><div><dt>Carga</dt><dd>${record.entry_class==="own_entry"?"Propia":"Por tercero"} · creó ${esc(record.created_by)} · modificó ${esc(record.modified_by)}</dd></div>${record.modified_after_creation?'<div><dt>Revisión</dt><dd>Candidato a corrección; no confirmada</dd></div>':""}</dl>`:record.kind==="interaction"?`<dl><div><dt>Contrapartes</dt><dd>${record.counterparts.map(esc).join(", ")}</dd></div><div><dt>Tipos</dt><dd>${record.interaction_types.map(esc).join(", ")}</dd></div></dl>`:record.kind==="activity"?`<dl><div><dt>Acciones</dt><dd>${record.activity_types.map(esc).join(", ")}</dd></div></dl>`:"";
