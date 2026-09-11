@@ -51,14 +51,14 @@ function metricRows(){
     const messages=rows.reduce((sum,row)=>sum+row.coverage.quality_messages,0);
     const qPoints=rows.reduce((sum,row)=>sum+(row.Q??0)*row.coverage.quality_messages,0);
     const events=state.data.events.filter(event=>days.includes(event.day)&&event.actor===person);
-    return {person,I:events.length,H:rows.reduce((s,r)=>s+r.H,0),R:new Set(events.map(e=>e.counterpart)).size,Q:messages?qPoints/messages:null,E:rows.every(r=>r.E!==null)?rows.reduce((s,r)=>s+r.E,0):null,coverage:{comments:rows.reduce((s,r)=>s+r.coverage.comments,0),quality_messages:messages,timesheets:rows.reduce((s,r)=>s+r.coverage.timesheets,0),quality_complete:rows.every(r=>r.coverage.quality_complete),outcome_complete:rows.every(r=>r.coverage.outcome_complete)}};
+    return {person,I:events.length,H:rows.reduce((s,r)=>s+r.H,0),R:new Set(events.map(e=>e.counterpart)).size,Q:messages?qPoints/messages:null,E:rows.every(r=>r.E!==null)?rows.reduce((s,r)=>s+r.E,0):null,coverage:{comments:rows.reduce((s,r)=>s+r.coverage.comments,0),quality_messages:messages,timesheets:rows.reduce((s,r)=>s+r.coverage.timesheets,0),quality_complete:rows.every(r=>r.coverage.quality_complete),hours_attribution_complete:rows.every(r=>r.coverage.hours_attribution_complete),outcome_complete:rows.every(r=>r.coverage.outcome_complete),git_complete:rows.every(r=>r.coverage.git_complete)}};
   });
 }
 function score(row){
   const t=state.metrics.methodology.targets,w=state.metrics.methodology.weights;
-  const values={I:normalized(row.I,t.I,true),H:normalized(row.H,t.H),R:normalized(row.R,t.R,true),Q:row.Q,E:normalized(row.E,t.E,true)};
+  const values={I:normalized(row.I,t.I,true),H:row.coverage.hours_attribution_complete?normalized(row.H,t.H):null,R:normalized(row.R,t.R,true),Q:row.coverage.quality_complete?row.Q:null,E:row.coverage.outcome_complete&&row.coverage.git_complete&&row.E!==null?normalized(row.E,t.E,true):null};
   const available=Object.entries(values).filter(([,value])=>value!==null),weight=available.reduce((sum,[key])=>sum+w[key],0);
-  return {value:Math.round(100*available.reduce((sum,[key,value])=>sum+w[key]*value,0)/weight),values,incomplete:row.Q===null||row.E===null||!row.coverage.quality_complete};
+  return {value:Math.round(100*available.reduce((sum,[key,value])=>sum+w[key]*value,0)/weight),values,incomplete:available.length<5};
 }
 function renderProductivity(){
   const query=clean(state.person),rows=metricRows().filter(row=>!query||clean(row.person).includes(query)).map(row=>({...row,score:score(row)})).sort((a,b)=>b.score.value-a.score.value||a.person.localeCompare(b.person));
@@ -78,20 +78,20 @@ function companyMeasure(day){
 }
 function renderCompanyTrace(){
   const points=["2026-09-09","2026-09-10","all"].map(day=>({day,...companyMeasure(day)}));
-  const label=day=>day==="all"?"Acumulado":day==="2026-09-09"?"9/09":"10/09";
+  const label=day=>day==="all"?"Acumulado":day==="2026-09-09"?"9/09 completo":"10/09 parcial";
   $("#companyTrace").innerHTML=`<strong>Pulso general de la compañía</strong>${points.map(point=>`<span class="${state.day===point.day?"active":""}"><b>${point.mean}</b><small>${label(point.day)} · [${point.vector.I}, ${point.vector.H.toFixed(1)}, ${point.vector.R}, ${point.vector.Q===null?"s/d":Math.round(point.vector.Q*100)}, ${point.vector.E}] · cobertura ${point.calculable}/${point.total}, ${point.observable}% componentes</small></span>`).join("")}`;
 }
 function openMetric(row){
   const t=state.metrics.methodology.targets;
   $("#detailTitle").textContent=`${row.person} · ICV ${row.score.value}`;
   const labels={I:"Interacciones",H:"Horas",R:"Contrapartes",Q:"Calidad documental",E:"Resultados"};
-  $("#detailBody").innerHTML=`<p class="detail-count">Vector crudo <b>[${row.I}, ${row.H.toFixed(2)}, ${row.R}, ${row.Q===null?"s/d":Math.round(row.Q*100)}, ${row.E===null?"s/d":row.E}]</b></p><div class="metric-detail">${Object.entries(row.score.values).map(([key,value])=>`<div><span>${labels[key]}</span><b>${key}: ${value===null?"sin datos":key==="Q"?Math.round(value*100)+"/100":row[key]}</b><small>${value===null?"componente excluido":Math.round(value*100)+"% normalizado"}</small></div>`).join("")}</div><p><strong>Cobertura:</strong> ${row.coverage.comments} comentarios; ${row.coverage.quality_messages} evaluables; ${row.coverage.timesheets} partes de horas. ${row.score.incomplete?"El puntaje se recalculó solo con componentes disponibles; lotes y automatizaciones se excluyen.":"Cobertura completa para la rúbrica disponible."}</p><p class="method">Metas: I ${t.I}, H ${t.H} h, R ${t.R}, E ${t.E}. Los conteos usan saturación logarítmica.</p>`;
+  $("#detailBody").innerHTML=`<p class="detail-count">Vector crudo <b>[${row.I}, ${row.H.toFixed(2)}, ${row.R}, ${row.Q===null?"s/d":Math.round(row.Q*100)}, ${row.E===null?"s/d":row.E}]</b></p><div class="metric-detail">${Object.entries(row.score.values).map(([key,value])=>`<div><span>${labels[key]}</span><b>${key}: ${value===null?"sin cobertura completa":key==="Q"?Math.round(value*100)+"/100":row[key]}</b><small>${value===null?"componente excluido del ICV":Math.round(value*100)+"% normalizado"}</small></div>`).join("")}</div><p><strong>Cobertura:</strong> ${row.coverage.comments} comentarios; ${row.coverage.quality_messages} evaluables; ${row.coverage.timesheets} partes de horas. ${row.score.incomplete?"ICV provisional recalculado solo con componentes completos. Q parcial, atribución de H y Git en E se excluyen cuando faltan.":"Cobertura completa para la rúbrica disponible."}</p><p class="method">Metas: I ${t.I}, H ${t.H} h, R ${t.R}, E ${t.E}. I cuenta aristas dirigidas: una nota a dos destinatarios genera dos interacciones. Los conteos usan saturación logarítmica.</p>`;
   $("#detail").showModal();
 }
 function openFormula(){
   const m=state.metrics.methodology;
   $("#detailTitle").textContent=m.name;
-  $("#detailBody").innerHTML=`<p class="detail-count"><b>100 × (0,20·Iₙ + 0,20·Hₙ + 0,15·Rₙ + 0,25·Q + 0,20·Eₙ)</b></p><p><strong>I</strong>: interacciones salientes verificadas. <strong>H</strong>: horas laborales positivas. <strong>R</strong>: contrapartes únicas. <strong>Q</strong>: checklist de contexto, acción, referencia, resultado y próximo paso. <strong>E</strong>: creaciones y avances verificables.</p><p>Metas visibles: I=${m.targets.I}, H=${m.targets.H} h, R=${m.targets.R}, E=${m.targets.E}. I, R y E saturan logarítmicamente; H satura en la meta diaria. Si Q no es evaluable se excluye y los pesos restantes se reescalan.</p><p class="productivity-warning">${esc(m.warning)}</p>`;
+  $("#detailBody").innerHTML=`<p class="detail-count"><b>100 × (0,20·Iₙ + 0,20·Hₙ + 0,15·Rₙ + 0,25·Q + 0,20·Eₙ)</b></p><p><strong>I</strong>: aristas dirigidas salientes verificadas; una nota a dos destinatarios produce dos I. <strong>H</strong>: horas laborales positivas. <strong>R</strong>: contrapartes únicas. <strong>Q</strong>: checklist de contexto, acción, referencia, resultado y próximo paso. <strong>E</strong>: creaciones y avances verificables.</p><p>Metas visibles: I=${m.targets.I}, H=${m.targets.H} h, R=${m.targets.R}, E=${m.targets.E}. I, R y E saturan logarítmicamente; H satura en la meta diaria. Todo componente con cobertura incompleta se excluye y los pesos restantes se reescalan.</p><p><strong>Corte:</strong> 9/09 completo; 10/09 parcial hasta 17:44:18 Argentina. E todavía no incorpora Git; H aún no separa carga propia/terceros; Q solo es completa cuando todos los comentarios humanos están evaluados una vez por message_id.</p><p class="productivity-warning">${esc(m.warning)}</p>`;
   $("#detail").showModal();
 }
 function openPurpose(){

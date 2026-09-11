@@ -23,6 +23,17 @@
     },
     "warning": "Indicador operativo de actividad observable; no es una evaluación laboral. La ausencia de registro no equivale a ausencia de trabajo."
   },
+  "sources": {
+    "odoo": [
+      "METRICAS_BASE_2026_09_09.md",
+      "METRICAS_BASE_2026_09_10.md",
+      "INTERACCIONES_ODOO_2026_09_09_10.json"
+    ],
+    "daily": "DM-2026-09-09.md",
+    "git_in_outcomes": false,
+    "cutoff_local": "2026-09-10 17:44:18 America/Argentina/Cordoba",
+    "day_10_partial": true
+  },
   "days": {
     "2026-09-09": [
       {
@@ -39,8 +50,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -58,8 +72,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -77,8 +94,11 @@
           "creations": 1,
           "tracked": 4,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
@@ -104,8 +124,11 @@
           "creations": 0,
           "tracked": 3,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
@@ -152,8 +175,11 @@
           "creations": 1,
           "tracked": 6,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -171,8 +197,11 @@
           "creations": 0,
           "tracked": 2,
           "quality_complete": false,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
@@ -198,8 +227,11 @@
           "creations": 0,
           "tracked": 1,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
@@ -225,8 +257,11 @@
           "creations": 1,
           "tracked": 25,
           "quality_complete": false,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
@@ -301,7 +336,10 @@
           "creations": 9,
           "tracked": 132,
           "quality_complete": false,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": false,
+          "git_complete": false,
           "outcome_note": "Cambios concentrados compatibles con lote/automatización; E excluido."
         },
         "quality_checks": []
@@ -320,8 +358,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -339,8 +380,11 @@
           "creations": 1,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -358,8 +402,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -377,8 +424,11 @@
           "creations": 0,
           "tracked": 4,
           "quality_complete": false,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
@@ -446,8 +496,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -465,8 +518,11 @@
           "creations": 0,
           "tracked": 12,
           "quality_complete": false,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
@@ -555,8 +611,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -574,8 +633,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -593,8 +655,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": false,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -612,8 +677,11 @@
           "creations": 0,
           "tracked": 2,
           "quality_complete": false,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -631,8 +699,11 @@
           "creations": 0,
           "tracked": 7,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
@@ -665,8 +736,11 @@
           "creations": 0,
           "tracked": 2,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
@@ -699,8 +773,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -718,8 +795,11 @@
           "creations": 0,
           "tracked": 7,
           "quality_complete": false,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
@@ -782,8 +862,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -801,8 +884,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -820,8 +906,11 @@
           "creations": 1,
           "tracked": 3,
           "quality_complete": false,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -839,7 +928,10 @@
           "creations": 0,
           "tracked": 33,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": false,
+          "git_complete": false,
           "outcome_note": "Cambios concentrados compatibles con lote/automatización; E excluido."
         },
         "quality_checks": [
@@ -873,8 +965,11 @@
           "creations": 0,
           "tracked": 22,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
@@ -907,8 +1002,11 @@
           "creations": 0,
           "tracked": 2,
           "quality_complete": false,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -926,8 +1024,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -945,8 +1046,11 @@
           "creations": 1,
           "tracked": 21,
           "quality_complete": false,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
@@ -1007,8 +1111,11 @@
           "creations": 6,
           "tracked": 12,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -1026,8 +1133,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -1045,8 +1155,11 @@
           "creations": 1,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -1064,8 +1177,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -1083,8 +1199,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -1102,8 +1221,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -1121,8 +1243,11 @@
           "creations": 0,
           "tracked": 20,
           "quality_complete": false,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
@@ -1218,8 +1343,11 @@
           "creations": 0,
           "tracked": 1,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
@@ -1245,8 +1373,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
@@ -1279,8 +1410,11 @@
           "creations": 0,
           "tracked": 6,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -1298,8 +1432,11 @@
           "creations": 0,
           "tracked": 3,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -1317,8 +1454,11 @@
           "creations": 0,
           "tracked": 1,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
@@ -1344,8 +1484,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -1363,8 +1506,11 @@
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": []
       },
@@ -1382,8 +1528,11 @@
           "creations": 0,
           "tracked": 19,
           "quality_complete": false,
+          "hours_attribution_complete": false,
+          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
           "outcome_complete": true,
-          "outcome_note": null
+          "git_complete": false,
+          "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
