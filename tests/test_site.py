@@ -15,8 +15,10 @@ class HiperrelacionesSiteTests(unittest.TestCase):
 
     def test_dataset_has_expected_scope(self):
         self.assertEqual(len(self.data["people"]), 23)
-        self.assertEqual(len(self.data["events"]), 92)
-        self.assertEqual({event["day"] for event in self.data["events"]}, {"2026-09-09", "2026-09-10"})
+        self.assertEqual(len(self.data["events"]), 105)
+        self.assertEqual({event["day"] for event in self.data["events"]}, {"2026-09-09", "2026-09-10", "2026-09-11"})
+        self.assertIn("10/09 completo", self.data["report"]["coverage"])
+        self.assertIn("11/09 hasta 10:39:20", self.data["report"]["coverage"])
 
     def test_dataset_edges_are_unique_and_resolved(self):
         roster = set(self.data["people"])
@@ -36,11 +38,12 @@ class HiperrelacionesSiteTests(unittest.TestCase):
 
     def test_productivity_dataset_and_formula(self):
         metrics = json.loads((ROOT / "data" / "productivity.json").read_text())
-        self.assertEqual(set(metrics["days"]), {"2026-09-09", "2026-09-10"})
+        self.assertEqual(set(metrics["days"]), {"2026-09-09", "2026-09-10", "2026-09-11"})
         self.assertTrue(all(len(rows) == 23 for rows in metrics["days"].values()))
         self.assertAlmostEqual(sum(metrics["methodology"]["weights"].values()), 1)
-        self.assertFalse(metrics["sources"]["git_in_outcomes"])
-        self.assertTrue(metrics["sources"]["day_10_partial"])
+        self.assertTrue(metrics["sources"]["git_in_outcomes"])
+        self.assertEqual(metrics["sources"]["complete_days"], ["2026-09-10"])
+        self.assertEqual(metrics["sources"]["partial_days"], ["2026-09-11"])
         self.assertIn("Math.log1p", self.app)
         self.assertIn("weight=available.reduce", self.app)
         self.assertIn("quality_messages", self.app)
@@ -62,9 +65,11 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         records = json.loads((ROOT / "data" / "records.json").read_text())
         comments = [item for item in records["records"] if item["kind"] == "comment"]
         timesheets = [item for item in records["records"] if item["kind"] == "timesheet"]
-        self.assertEqual(len(comments), 78)
-        self.assertEqual(len({item["id"] for item in comments}), 78)
-        self.assertEqual(len(timesheets), 46)
+        commits = [item for item in records["records"] if item["kind"] == "commit"]
+        self.assertEqual(len(comments), 89)
+        self.assertEqual(len({(item["day"], item["id"]) for item in comments}), 89)
+        self.assertEqual(len(timesheets), 52)
+        self.assertEqual(len(commits), 36)
         self.assertTrue(all(item["entry_class"] in {"own_entry", "third_party_entry", "zero"} for item in timesheets))
         self.assertIn("filteredRecords", self.app)
         self.assertIn("recordGroup", self.app)
@@ -76,6 +81,21 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         self.assertIn("data-record-sort", self.app)
         for column in ("Fecha/hora", "Contraparte(s)", "Anterior → nuevo", "Autor / clasificación", "Cobertura"):
             self.assertIn(column, self.app)
+
+    def test_refreshed_records_are_individual_and_unique(self):
+        records = json.loads((ROOT / "data" / "records.json").read_text())["records"]
+        refreshed = [r for r in records if r["day"] in {"2026-09-10", "2026-09-11"}]
+        keys = [(r["kind"], r["id"], r["day"], r["person"], r.get("text")) for r in refreshed]
+        self.assertEqual(len(keys), len(set(keys)))
+        self.assertEqual(len([r for r in refreshed if r["kind"] == "activity" and "tracking" in r["activity_types"]]), 171)
+        self.assertEqual(len([r for r in refreshed if r["kind"] == "activity" and "creation" in r["activity_types"]]), 157)
+
+    def test_mass_creation_batch_does_not_inflate_outcomes(self):
+        metrics = json.loads((ROOT / "data" / "productivity.json").read_text())
+        andres = next(row for row in metrics["days"]["2026-09-11"] if row["person"] == "Andrés Salguero")
+        self.assertEqual(andres["coverage"]["batch_creations"], 147)
+        self.assertEqual(andres["coverage"]["creations"], 0)
+        self.assertEqual(andres["E"], 0)
 
 
 if __name__ == "__main__":

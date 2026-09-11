@@ -1,0 +1,2162 @@
+{
+  "report": {
+    "start_utc_inclusive": "2026-09-10T03:00:00Z",
+    "end_utc_exclusive": "2026-09-11T13:39:20Z",
+    "timezone": "America/Argentina/Cordoba"
+  },
+  "coverage": {
+    "status": "complete",
+    "scope": "Todas las refs origin accesibles de hito2026 y wsf/hito-devman; los seis repos obligatorios fueron accesibles y no tuvieron pushes en la ventana.",
+    "explicit_repositories": [
+      "hito2026/midleware-bridge-kapso-openclaw",
+      "hito2026/bridge-kapso-openclaw",
+      "hito2026/cognee_brain_openclaw",
+      "hito2026/jinzo_architect",
+      "hito2026/api_open_whatsapp_connector",
+      "hito2026/open_whatsapp_connector"
+    ]
+  },
+  "commits": [
+    {
+      "repo": "hito2026/odoo-argentina-ee",
+      "sha": "840ac60efa6e5a6d6a30aebcfbb0eb4b8b7a337f",
+      "date_utc": "2026-09-10 03:32:11",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Matias Banega",
+        "email": "banegamatias@gmail.com"
+      },
+      "committer": {
+        "name": "Matias Banega",
+        "email": "banegamatias@gmail.com"
+      },
+      "subject": "[FIX] l10n_ar_wsmtxca_ws: dependencia saas_client_l10n_ar impide instalar",
+      "body": "saas_client_l10n_ar es un modulo de la infraestructura SaaS de ADHOC y no\nesta disponible en un deploy propio de Odoo.sh, por lo que el modulo queda\ncomo no instalable.\n\nEl unico acoplamiento real con ese modulo es l10n_ar_action_preview_xml\n(models/account_move.py), que ahi tiene su implementacion base. El resto de\nlos super() resuelve contra modulos que si estan disponibles.\n\n- Se saca saas_client_l10n_ar de depends.\n- Se agregan l10n_ar_ux (_get_codes_per_journal_type,\n  _get_l10n_ar_afip_pos_types_selection) y l10n_ar_edi_ux\n  (l10n_ar_check_afip_doc_types, _format_afip_doc_types), cuyos metodos el\n  modulo ya superaba sin declararlos, con lo que el orden de carga y el MRO\n  de los overrides no estaban garantizados.\n\nCo-Authored-By: Claude Opus 5 <noreply@anthropic.com>",
+      "parents": [
+        "c8c98890d9987b5c320086b8f5ef3d39faa1cf10"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/odoo-argentina-ee/commit/840ac60efa6e5a6d6a30aebcfbb0eb4b8b7a337f",
+      "files": [
+        "l10n_ar_wsmtxca_ws/__manifest__.py"
+      ],
+      "person": "Matias Banega",
+      "identity_evidence": "nombre y correo Git coincidentes",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "8ac40511e6ad88f49398e91cfa4a7c648cd4ad4e",
+      "date_utc": "2026-09-10 12:37:59",
+      "day": "2026-09-10",
+      "author": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "committer": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "subject": "[FIX] rd14_flexible_contracts: agrego grupo para funcion materiales por dia",
+      "body": "",
+      "parents": [
+        "c43eede13d49ef833629d1d19d136b9eb2b283a9"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/8ac40511e6ad88f49398e91cfa4a7c648cd4ad4e",
+      "files": [
+        "rd14_flexible_contracts/data/grupo_gestion_cambio.xml",
+        "rd14_flexible_contracts/models/lista_productos_batch.py"
+      ],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "c502a70f14493c9bd92b47ba2fe734764420d47f",
+      "date_utc": "2026-09-10 12:38:57",
+      "day": "2026-09-10",
+      "author": {
+        "name": "marziali",
+        "email": "104801558+marziali@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1254 from wsf/18.0_mati_m",
+      "body": "[FIX] rd14_flexible_contracts: agrego grupo para funcion materiales p…",
+      "parents": [
+        "c43eede13d49ef833629d1d19d136b9eb2b283a9",
+        "8ac40511e6ad88f49398e91cfa4a7c648cd4ad4e"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/c502a70f14493c9bd92b47ba2fe734764420d47f",
+      "files": [],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": false
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "ae4721ba32a05f207c7a0642dc6edc5f3e6a2a5c",
+      "date_utc": "2026-09-10 13:48:21",
+      "day": "2026-09-10",
+      "author": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "committer": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "subject": "[FIX] rd14_flexible_contracts: notificaciones en materiales por dia",
+      "body": "",
+      "parents": [
+        "c502a70f14493c9bd92b47ba2fe734764420d47f"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/ae4721ba32a05f207c7a0642dc6edc5f3e6a2a5c",
+      "files": [
+        "rd14_flexible_contracts/models/lista_productos_batch.py"
+      ],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "50f490e0758258902c60fc2306adb90235c7a902",
+      "date_utc": "2026-09-10 13:49:00",
+      "day": "2026-09-10",
+      "author": {
+        "name": "marziali",
+        "email": "104801558+marziali@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1255 from wsf/18.0_mati_m",
+      "body": "[FIX] rd14_flexible_contracts: notificaciones en materiales por dia",
+      "parents": [
+        "c502a70f14493c9bd92b47ba2fe734764420d47f",
+        "ae4721ba32a05f207c7a0642dc6edc5f3e6a2a5c"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/50f490e0758258902c60fc2306adb90235c7a902",
+      "files": [],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": false
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "f420174dadfc6025b3fe7521fda9dbd9c207c8b2",
+      "date_utc": "2026-09-10 14:36:15",
+      "day": "2026-09-10",
+      "author": {
+        "name": "NelsonTontarelli",
+        "email": "nelartz01@gmail.com"
+      },
+      "committer": {
+        "name": "NelsonTontarelli",
+        "email": "nelartz01@gmail.com"
+      },
+      "subject": "Add sale_usd_report: USD fields in sale.report analysis",
+      "body": "",
+      "parents": [
+        "4469fd65e138f12b1c5fc7d9335225a74b835560"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/f420174dadfc6025b3fe7521fda9dbd9c207c8b2",
+      "files": [
+        "sale_usd_report/__init__.py",
+        "sale_usd_report/__manifest__.py",
+        "sale_usd_report/models/__init__.py",
+        "sale_usd_report/models/sale_report.py",
+        "sale_usd_report/views/sale_report_views.xml"
+      ],
+      "person": "Nelson Tontarelli",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "032411b3e1ab4e7db80e9a37700d9af5ac5f2070",
+      "date_utc": "2026-09-10 14:40:25",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Nelson Tontarelli",
+        "email": "105108482+NelsonTontarelli@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1256 from wsf/19.0_nel",
+      "body": "Add sale_usd_report: USD fields in sale.report analysis",
+      "parents": [
+        "971747634c20dfb91efe1f1715355882897df1c4",
+        "f420174dadfc6025b3fe7521fda9dbd9c207c8b2"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/032411b3e1ab4e7db80e9a37700d9af5ac5f2070",
+      "files": [],
+      "person": "Nelson Tontarelli",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": false
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "64ea85368a611c0fd90681a54954e429d103719e",
+      "date_utc": "2026-09-10 16:23:30",
+      "day": "2026-09-10",
+      "author": {
+        "name": "NelsonTontarelli",
+        "email": "nelartz01@gmail.com"
+      },
+      "committer": {
+        "name": "NelsonTontarelli",
+        "email": "nelartz01@gmail.com"
+      },
+      "subject": "Translate field strings and help text to Spanish, remove unused security CSV",
+      "body": "",
+      "parents": [
+        "f420174dadfc6025b3fe7521fda9dbd9c207c8b2"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/64ea85368a611c0fd90681a54954e429d103719e",
+      "files": [
+        "sale_usd_report/__manifest__.py",
+        "sale_usd_report/models/__init__.py",
+        "sale_usd_report/models/sale_report.py",
+        "sale_usd_report/views/sale_report_views.xml"
+      ],
+      "person": "Nelson Tontarelli",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "6dd135466595c696b74aed72fa58de4def35d2bf",
+      "date_utc": "2026-09-10 16:30:32",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Nelson Tontarelli",
+        "email": "105108482+NelsonTontarelli@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1258 from wsf/19.0_nel",
+      "body": "Translate field strings and help text to Spanish, remove unused secur…",
+      "parents": [
+        "032411b3e1ab4e7db80e9a37700d9af5ac5f2070",
+        "64ea85368a611c0fd90681a54954e429d103719e"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/6dd135466595c696b74aed72fa58de4def35d2bf",
+      "files": [],
+      "person": "Nelson Tontarelli",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": false
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "45733954ed8976944f71964824a18d6bdf37898f",
+      "date_utc": "2026-09-10 16:49:47",
+      "day": "2026-09-10",
+      "author": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "committer": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "subject": "[FIX] mesopotamia_payment_by_lines: cambio de campos en vistas y reportes",
+      "body": "",
+      "parents": [
+        "6dd135466595c696b74aed72fa58de4def35d2bf"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/45733954ed8976944f71964824a18d6bdf37898f",
+      "files": [
+        "mesopotamia_payment_by_lines/models/account_move_line.py",
+        "mesopotamia_payment_by_lines/models/payment_line_link.py",
+        "mesopotamia_payment_by_lines/reports/payment_by_lines_report.xml",
+        "mesopotamia_payment_by_lines/views/account_move_line_views.xml",
+        "mesopotamia_payment_by_lines/views/payment_line_link_views.xml"
+      ],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "8a034e290bc90dca9d73b41226949709b7a259bb",
+      "date_utc": "2026-09-10 16:50:57",
+      "day": "2026-09-10",
+      "author": {
+        "name": "marziali",
+        "email": "104801558+marziali@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1259 from wsf/19.0_mati_m",
+      "body": "[FIX] mesopotamia_payment_by_lines: cambio de campos en vistas y repo…",
+      "parents": [
+        "6dd135466595c696b74aed72fa58de4def35d2bf",
+        "45733954ed8976944f71964824a18d6bdf37898f"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/8a034e290bc90dca9d73b41226949709b7a259bb",
+      "files": [],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": false
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "4c3e0cc299300a6a6bd81f31b5d128f0600d2b36",
+      "date_utc": "2026-09-10 18:01:44",
+      "day": "2026-09-10",
+      "author": {
+        "name": "NelsonTontarelli",
+        "email": "nelartz01@gmail.com"
+      },
+      "committer": {
+        "name": "NelsonTontarelli",
+        "email": "nelartz01@gmail.com"
+      },
+      "subject": "[FIX] sale_usd_report: correccion en la consulta del tipo de cambio USD para compatibilidad con jerarquia de companias",
+      "body": "",
+      "parents": [
+        "64ea85368a611c0fd90681a54954e429d103719e"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/4c3e0cc299300a6a6bd81f31b5d128f0600d2b36",
+      "files": [
+        "sale_usd_report/models/sale_report.py"
+      ],
+      "person": "Nelson Tontarelli",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "dbb69d2c0510a567618e2f96baae0f96586113be",
+      "date_utc": "2026-09-10 18:04:16",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Nelson Tontarelli",
+        "email": "105108482+NelsonTontarelli@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1261 from wsf/19.0_nel",
+      "body": "[FIX] sale_usd_report: correccion en la consulta del tipo de cambio USD para compatibilidad con jerarquia de companias",
+      "parents": [
+        "8a034e290bc90dca9d73b41226949709b7a259bb",
+        "4c3e0cc299300a6a6bd81f31b5d128f0600d2b36"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/dbb69d2c0510a567618e2f96baae0f96586113be",
+      "files": [],
+      "person": "Nelson Tontarelli",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": false
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "25a76b9c4908525f41d1da33fc02a1d945b3fb44",
+      "date_utc": "2026-09-10 18:32:57",
+      "day": "2026-09-10",
+      "author": {
+        "name": "pmarchionno",
+        "email": "pmarchionno@gmail.com"
+      },
+      "committer": {
+        "name": "pmarchionno",
+        "email": "pmarchionno@gmail.com"
+      },
+      "subject": "[FIX] fix_payment_pro_withholding: evita desbalance en pagos con retenciones",
+      "body": "",
+      "parents": [
+        "50f490e0758258902c60fc2306adb90235c7a902"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/25a76b9c4908525f41d1da33fc02a1d945b3fb44",
+      "files": [
+        "fix_payment_pro_withholding/models/account_payment.py"
+      ],
+      "person": "Pablo Marchionno",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "3eb712f7ee96d0e007512710825dbc8d5ff352ce",
+      "date_utc": "2026-09-10 19:51:16",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "fix: release linux flock helpers deterministically",
+      "body": "",
+      "parents": [
+        "0cda0e6b4ef43d42dab9a191a4c4d06b69230580"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/3eb712f7ee96d0e007512710825dbc8d5ff352ce",
+      "files": [
+        "src/lib/__tests__/conexion-locks-interprocess.test.ts",
+        "src/lib/__tests__/wu5b-correction-isolation.test.ts",
+        "src/lib/conexion-locks.ts"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "2357d62a26a7bf73a9827a3a083006ccfe52ae37",
+      "date_utc": "2026-09-10 19:55:27",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "feat: add creator refresh transaction core",
+      "body": "",
+      "parents": [
+        "066637dfd2f4796809b2c7426781a48c08efcf9f"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/2357d62a26a7bf73a9827a3a083006ccfe52ae37",
+      "files": [
+        "gateway/refresh-creador.sh"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "a11cb47b3e76cf11811274f7fa474da9d9c60caf",
+      "date_utc": "2026-09-10 19:55:51",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "build: package safe creator refresh",
+      "body": "",
+      "parents": [
+        "2357d62a26a7bf73a9827a3a083006ccfe52ae37"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/a11cb47b3e76cf11811274f7fa474da9d9c60caf",
+      "files": [
+        ".github/workflows/docker-publish.yml",
+        "gateway/Dockerfile",
+        "gateway/build-seed.sh",
+        "gateway/build.sh",
+        "gateway/entrypoint.sh"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "c55d4b3a1da57a7900e0b908b6cb6f6f2b3c5b92",
+      "date_utc": "2026-09-10 19:56:07",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "test: add adversarial creator refresh harness",
+      "body": "",
+      "parents": [
+        "a11cb47b3e76cf11811274f7fa474da9d9c60caf"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/c55d4b3a1da57a7900e0b908b6cb6f6f2b3c5b92",
+      "files": [
+        "gateway/tests/test_refresh_creador.py"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "066637dfd2f4796809b2c7426781a48c08efcf9f",
+      "date_utc": "2026-09-10 19:56:58",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "fix: isolate creator sessions and resume drafts",
+      "body": "",
+      "parents": [
+        "a1bb5a734ddb4187fa1aa228f4f8ab3305775ea1"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/066637dfd2f4796809b2c7426781a48c08efcf9f",
+      "files": [
+        "src/app/api/creador/entrevista/route.ts",
+        "src/app/creador/ContinueScreen.tsx",
+        "src/app/creador/__tests__/continue-screens.test.tsx",
+        "src/app/creador/__tests__/page-routing.test.tsx",
+        "src/app/creador/page.tsx",
+        "src/lib/__tests__/creador-entrevista-sessionid.test.ts",
+        "src/lib/__tests__/creador-session-transcript.integration.test.ts",
+        "src/lib/creador-sessions.ts"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "0cda0e6b4ef43d42dab9a191a4c4d06b69230580",
+      "date_utc": "2026-09-10 19:57:26",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "fix: serialize connection wire operations safely",
+      "body": "",
+      "parents": [
+        "c55d4b3a1da57a7900e0b908b6cb6f6f2b3c5b92"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/0cda0e6b4ef43d42dab9a191a4c4d06b69230580",
+      "files": [
+        "src/app/api/conexiones/[connectionId]/conectar/route.ts",
+        "src/lib/__tests__/conexion-locks-red.test.ts",
+        "src/lib/__tests__/conexiones-wire.test.ts",
+        "src/lib/conexiones-wire.ts"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "efa4a7be7e4dc566a86be8476041406c4a8bee89",
+      "date_utc": "2026-09-10 19:58:07",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "feat: add connection health and rollback core",
+      "body": "",
+      "parents": [
+        "3eb712f7ee96d0e007512710825dbc8d5ff352ce"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/efa4a7be7e4dc566a86be8476041406c4a8bee89",
+      "files": [
+        "scripts/restore-conexiones-pre-069.ts",
+        "src/lib/conexiones-aviso-pasivo.ts",
+        "src/lib/conexiones-rollback.ts",
+        "src/lib/conexiones-worker.ts",
+        "src/lib/scheduler.ts"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "1839fb9602d49dee586ca9b3af8cda0327436602",
+      "date_utc": "2026-09-10 19:58:20",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "test: prove connection worker and lock behavior",
+      "body": "",
+      "parents": [
+        "efa4a7be7e4dc566a86be8476041406c4a8bee89"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/1839fb9602d49dee586ca9b3af8cda0327436602",
+      "files": [
+        "src/lib/__tests__/conexiones-aviso-pasivo.test.ts",
+        "src/lib/__tests__/conexiones-worker.test.ts",
+        "src/lib/__tests__/scheduler-conexion-health.test.ts"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "6bc7a1a04c8f4d24c982939e54df5c63af6fa6a1",
+      "date_utc": "2026-09-10 19:58:34",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "test: prove migration rollback atomicity",
+      "body": "",
+      "parents": [
+        "1839fb9602d49dee586ca9b3af8cda0327436602"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/6bc7a1a04c8f4d24c982939e54df5c63af6fa6a1",
+      "files": [
+        "src/lib/__tests__/migration-069-rollback.test.ts"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "1a73c6db4e89bdd46e14e14e24616f48957b3e5f",
+      "date_utc": "2026-09-10 20:23:13",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "fix(scheduler): register periodic conexion health",
+      "body": "",
+      "parents": [
+        "6bc7a1a04c8f4d24c982939e54df5c63af6fa6a1"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/1a73c6db4e89bdd46e14e14e24616f48957b3e5f",
+      "files": [
+        "gateway/.dockerignore",
+        "src/lib/__tests__/scheduler-conexion-health.test.ts",
+        "src/lib/scheduler.ts"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "9d9aa8e9df5395744083ba75b9b43c195f240435",
+      "date_utc": "2026-09-10 21:07:21",
+      "day": "2026-09-10",
+      "author": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "committer": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "subject": "[FIX] rd14_flexible_contracts: muestra fecha sal azucar entregada en reportes de remitos oc",
+      "body": "",
+      "parents": [
+        "25a76b9c4908525f41d1da33fc02a1d945b3fb44"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/9d9aa8e9df5395744083ba75b9b43c195f240435",
+      "files": [
+        "rd14_flexible_contracts/report/report_remito_entrega_a4_patologico.xml",
+        "rd14_flexible_contracts/report/report_remito_entrega_oficial.xml",
+        "rd14_flexible_contracts/report/report_remito_entrega_oficial_a5.xml"
+      ],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "bf299764c7602c05bae32bcad15e41cb4c3083ec",
+      "date_utc": "2026-09-10 21:08:16",
+      "day": "2026-09-10",
+      "author": {
+        "name": "marziali",
+        "email": "104801558+marziali@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1262 from wsf/18.0_mati_m",
+      "body": "[FIX] rd14_flexible_contracts: muestra fecha sal azucar entregada en …",
+      "parents": [
+        "25a76b9c4908525f41d1da33fc02a1d945b3fb44",
+        "9d9aa8e9df5395744083ba75b9b43c195f240435"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/bf299764c7602c05bae32bcad15e41cb4c3083ec",
+      "files": [],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": false
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "a5fe3e7fce3e016b4d94441046adcfc0faf15cc6",
+      "date_utc": "2026-09-10 21:43:14",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "fix(conexiones): conexion_health worker follows the conectar contract",
+      "body": "The worker flipped pendiente rows to conectada without taking the writer\nlock, ignoring active_operation_id, without a revision CAS and without\nwiring credentials. It now probes read-only first, claims the row with a\nrevision CAS plus journal entry, wires credentials under agent->writer\nlocks and commits the terminal state with the same CAS; every failure\nreleases the claim and leaves the row pendiente.\n\nCo-Authored-By: Claude Opus 5 <noreply@anthropic.com>",
+      "parents": [
+        "cd9ef09b8bdcab56665f1b2c5fbb2dde7d580c99"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/a5fe3e7fce3e016b4d94441046adcfc0faf15cc6",
+      "files": [
+        "src/lib/__tests__/conexiones-worker.test.ts",
+        "src/lib/conexiones-worker.ts"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "cd9ef09b8bdcab56665f1b2c5fbb2dde7d580c99",
+      "date_utc": "2026-09-10 21:43:14",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "build(gateway): mark refresh-creador.sh executable",
+      "body": "The entrypoint invokes the refresh script directly; a plain checkout failed\nwith \"Permission denied\" (the image was only fine because the Dockerfile\nchmods it).\n\nCo-Authored-By: Claude Opus 5 <noreply@anthropic.com>",
+      "parents": [
+        "1a73c6db4e89bdd46e14e14e24616f48957b3e5f"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/cd9ef09b8bdcab56665f1b2c5fbb2dde7d580c99",
+      "files": [
+        "gateway/refresh-creador.sh"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "873992c5082833c50edcde33461784e98ae19d5d",
+      "date_utc": "2026-09-10 21:43:15",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "fix(lint): escape quotes in the correction banner",
+      "body": "Clears the four react/no-unescaped-entities errors that fail the CI lint\njob; rendering is unchanged.\n\nCo-Authored-By: Claude Opus 5 <noreply@anthropic.com>",
+      "parents": [
+        "08949dd65d9dbdfa0b6210280498d5a4212c4e67"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/873992c5082833c50edcde33461784e98ae19d5d",
+      "files": [
+        "src/app/mis-agentes/[id]/page.tsx"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "08949dd65d9dbdfa0b6210280498d5a4212c4e67",
+      "date_utc": "2026-09-10 21:43:15",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "test(agent-sync): wait for the real writer lock instead of a fixed delay",
+      "body": "On Linux the lock is held by a child flock process; a fixed 20 ms wait\nraced it under load (\"release is not a function\").\n\nCo-Authored-By: Claude Opus 5 <noreply@anthropic.com>",
+      "parents": [
+        "a5fe3e7fce3e016b4d94441046adcfc0faf15cc6"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/08949dd65d9dbdfa0b6210280498d5a4212c4e67",
+      "files": [
+        "src/lib/__tests__/agent-sync.test.ts"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "2f121287bb543a9bdbd2491f0f467c87cbb74f0f",
+      "date_utc": "2026-09-10 21:55:26",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "test(conexiones): worker skips a row claimed between read and agent lock",
+      "body": "Covers the in-lock re-check: without it the worker probed a row that\n/conectar had already claimed (caught by mutation testing).\n\nCo-Authored-By: Claude Opus 5 <noreply@anthropic.com>",
+      "parents": [
+        "873992c5082833c50edcde33461784e98ae19d5d"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/2f121287bb543a9bdbd2491f0f467c87cbb74f0f",
+      "files": [
+        "src/lib/__tests__/conexiones-worker.test.ts"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "8e4f7038b3973e9b76dcc771399ec32d752f3afc",
+      "date_utc": "2026-09-10 23:01:43",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "fix(ready): pairing probe waits for connect.challenge before signing",
+      "body": "The probe sent a device-signed connect with an empty nonce as soon as the\nsocket opened; the OpenClaw gateway rejects it (INVALID_REQUEST at\n/device/nonce) and closes, so /api/ready reported pairing \"broken\" on a\nhealthy pairing. It now signs only with the challenge nonce (device-less\nconnect after a short fallback for gateways without a challenge), treats\nINVALID_REQUEST as \"error\" and logs the rejection.\n\nCo-Authored-By: Claude Opus 5 <noreply@anthropic.com>",
+      "parents": [
+        "2f121287bb543a9bdbd2491f0f467c87cbb74f0f"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/8e4f7038b3973e9b76dcc771399ec32d752f3afc",
+      "files": [
+        "src/lib/__tests__/openclaw-gateway.test.ts",
+        "src/lib/openclaw-gateway.ts"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "76e1b31280d33d89f2d5c7f206878719e88b6231",
+      "date_utc": "2026-09-10 23:02:06",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "style(ready): normalize probe fix to LF line endings",
+      "body": "Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>",
+      "parents": [
+        "8e4f7038b3973e9b76dcc771399ec32d752f3afc"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/76e1b31280d33d89f2d5c7f206878719e88b6231",
+      "files": [
+        "src/lib/openclaw-gateway.ts"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/jinzo-plataforma",
+      "sha": "bab0bf3db40574098a229ce611c6f7da4c8ce10e",
+      "date_utc": "2026-09-10 23:02:55",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "Revert \"style(ready): normalize probe fix to LF line endings\"",
+      "body": "The file is CRLF on the test branch; converting it whole was churn.\nThis reverts commit 76e1b31280d33d89f2d5c7f206878719e88b6231.\n\nCo-Authored-By: Claude Opus 5 <noreply@anthropic.com>",
+      "parents": [
+        "76e1b31280d33d89f2d5c7f206878719e88b6231"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-plataforma/commit/bab0bf3db40574098a229ce611c6f7da4c8ce10e",
+      "files": [
+        "src/lib/openclaw-gateway.ts"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/agentes-creados",
+      "sha": "f63742048057e10fde82303a1afc59d4825c6cc8",
+      "date_utc": "2026-09-11 01:34:50",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "chore: initialize sanitized agent catalog",
+      "body": "",
+      "parents": [],
+      "classification": "change",
+      "url": "https://github.com/hito2026/agentes-creados/commit/f63742048057e10fde82303a1afc59d4825c6cc8",
+      "files": [],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "hito2026/agentes-creados",
+      "sha": "eed485628b4a4bf5ff5ce393d1c8d056c2ee4375",
+      "date_utc": "2026-09-11 01:42:55",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "committer": {
+        "name": "Genaro Garcia",
+        "email": "genagarcia094@gmail.com"
+      },
+      "subject": "feat: import sanitized SmartTrack agent bundles",
+      "body": "",
+      "parents": [
+        "f63742048057e10fde82303a1afc59d4825c6cc8"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/agentes-creados/commit/eed485628b4a4bf5ff5ce393d1c8d056c2ee4375",
+      "files": [
+        "agents/smarttrack/IMPORT_EXCLUSIONS.md",
+        "agents/smarttrack/encontrar-leads/AGENTS.md",
+        "agents/smarttrack/encontrar-leads/AGENT_SPEC.yaml",
+        "agents/smarttrack/encontrar-leads/AUTO_VALIDATION_REPORT.md",
+        "agents/smarttrack/encontrar-leads/BOOTSTRAP.md",
+        "agents/smarttrack/encontrar-leads/CHANGELOG.md",
+        "agents/smarttrack/encontrar-leads/GOLDEN_RULES.md",
+        "agents/smarttrack/encontrar-leads/HEARTBEAT.md",
+        "agents/smarttrack/encontrar-leads/OPERATIONAL_CHECKLIST.md",
+        "agents/smarttrack/encontrar-leads/SOUL.md",
+        "agents/smarttrack/encontrar-leads/TOOLS.md",
+        "agents/smarttrack/encontrar-leads/USER.md",
+        "agents/smarttrack/encontrar-leads/WHY.md",
+        "agents/smarttrack/encontrar-leads/_common/__init__.py",
+        "agents/smarttrack/encontrar-leads/_common/audit_wrapper.py",
+        "agents/smarttrack/encontrar-leads/_common/leads_io.py",
+        "agents/smarttrack/encontrar-leads/agent_spec/blackboard/E1/README.md",
+        "agents/smarttrack/encontrar-leads/agent_spec/blackboard/E2/README.md",
+        "agents/smarttrack/encontrar-leads/agent_spec/blackboard/E3/README.md",
+        "agents/smarttrack/encontrar-leads/agent_spec/blackboard/E4/README.md",
+        "agents/smarttrack/encontrar-leads/agent_spec/blackboard/E5/README.md",
+        "agents/smarttrack/encontrar-leads/agent_spec/control/estrategia_control.md",
+        "agents/smarttrack/encontrar-leads/agent_spec/control/log_ejecucion.md",
+        "agents/smarttrack/encontrar-leads/cli/consultar_leads.py",
+        "agents/smarttrack/encontrar-leads/cli/reportar_leads.py",
+        "agents/smarttrack/encontrar-leads/conf/.env.example",
+        "agents/smarttrack/encontrar-leads/conf/kelo_chat_id.txt.example",
+        "agents/smarttrack/encontrar-leads/conf/leads_dir.txt.example",
+        "agents/smarttrack/encontrar-leads/knowledge/comandos-consulta.md",
+        "agents/smarttrack/encontrar-leads/manifest.md"
+      ],
+      "person": "Genaro García",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    }
+  ],
+  "excluded": [
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "834751dec1225716bb46ee868a89e98d806133dc",
+      "date_utc": "2026-09-10 21:51:09",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Merge branch 'wally_traccar' of https://github.com/wsf/hito-devman into testing_wally_traccar",
+      "body": "",
+      "parents": [
+        "c561fbecbfea9d96f4120d26053f11082c952eff",
+        "22ca5f6e540811667cbefbe95db59e3f530c1ab7"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/834751dec1225716bb46ee868a89e98d806133dc",
+      "files": [],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "c561fbecbfea9d96f4120d26053f11082c952eff",
+      "date_utc": "2026-09-10 21:42:46",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Usar endpoint publico /logo para que los clientes de correo (Outlook/Gmail) carguen el logo sin requerir sesion",
+      "body": "",
+      "parents": [
+        "edb9f66cbc0d7e96807c046e3c599284f69276d8"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/c561fbecbfea9d96f4120d26053f11082c952eff",
+      "files": [
+        "smarttrack_security/data/mail_template_data.xml"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "22ca5f6e540811667cbefbe95db59e3f530c1ab7",
+      "date_utc": "2026-09-10 21:10:44",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Walter Alaniz",
+        "email": "97702141+wallywally26@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1263 from wsf/testing_wally_traccar",
+      "body": "fix: permit email validation from either company.email or company.st_…",
+      "parents": [
+        "fffa72315a8bea183182164508ec61dafc25ad02",
+        "edb9f66cbc0d7e96807c046e3c599284f69276d8"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/22ca5f6e540811667cbefbe95db59e3f530c1ab7",
+      "files": [],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "edb9f66cbc0d7e96807c046e3c599284f69276d8",
+      "date_utc": "2026-09-10 20:47:54",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "fix: permit email validation from either company.email or company.st_email_from",
+      "body": "",
+      "parents": [
+        "f54e677bbf77b6c12e6c4509674d4e41bc0961cb"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/edb9f66cbc0d7e96807c046e3c599284f69276d8",
+      "files": [
+        "smarttrack_security/__init__.py",
+        "smarttrack_security/models/__init__.py",
+        "smarttrack_security/models/res_users.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "fffa72315a8bea183182164508ec61dafc25ad02",
+      "date_utc": "2026-09-10 19:57:05",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Merge branch 'testing_wally_traccar' into wally_traccar",
+      "body": "",
+      "parents": [
+        "1de6a1890475bc6b176e73f5914e9650a1b492fb",
+        "f54e677bbf77b6c12e6c4509674d4e41bc0961cb"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/fffa72315a8bea183182164508ec61dafc25ad02",
+      "files": [],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "f54e677bbf77b6c12e6c4509674d4e41bc0961cb",
+      "date_utc": "2026-09-10 19:56:51",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Corregir sintaxis QWeb para evaluacion de campos de marca en plantilla de correo de recuperacion de contrasena",
+      "body": "",
+      "parents": [
+        "0376afdff34ebe928ea21c49b192aae2ef04f354"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/f54e677bbf77b6c12e6c4509674d4e41bc0961cb",
+      "files": [
+        "smarttrack_security/data/mail_template_data.xml"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "1de6a1890475bc6b176e73f5914e9650a1b492fb",
+      "date_utc": "2026-09-10 19:44:50",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Merge branch 'testing_wally_traccar' into wally_traccar",
+      "body": "",
+      "parents": [
+        "4b38871184248175fee355fc924fe0940f2bb300",
+        "0376afdff34ebe928ea21c49b192aae2ef04f354"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/1de6a1890475bc6b176e73f5914e9650a1b492fb",
+      "files": [],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "0376afdff34ebe928ea21c49b192aae2ef04f354",
+      "date_utc": "2026-09-10 19:44:42",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Corregir modelo de plantilla QWeb ir.ui.view para restablecer contraseña y actualizar modulo en local",
+      "body": "",
+      "parents": [
+        "231249cd4c62fa08b65a19d13d990f6d75509a21"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/0376afdff34ebe928ea21c49b192aae2ef04f354",
+      "files": [
+        "smarttrack_security/data/mail_template_data.xml"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "4b38871184248175fee355fc924fe0940f2bb300",
+      "date_utc": "2026-09-10 18:42:06",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Merge branch 'testing_wally_traccar' into wally_traccar",
+      "body": "",
+      "parents": [
+        "de8082d952271d5df014c283147fdd6cbde021d4",
+        "231249cd4c62fa08b65a19d13d990f6d75509a21"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/4b38871184248175fee355fc924fe0940f2bb300",
+      "files": [],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "231249cd4c62fa08b65a19d13d990f6d75509a21",
+      "date_utc": "2026-09-10 18:42:02",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Adaptar diseño de correo de restablecimiento de contraseña e invitacion al estilo del reporte mensual con colores de marca y URL absoluta de logo",
+      "body": "",
+      "parents": [
+        "ee906bf63512b7c765632a165fffb7ad181433aa"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/231249cd4c62fa08b65a19d13d990f6d75509a21",
+      "files": [
+        "smarttrack_security/data/mail_template_data.xml"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "de8082d952271d5df014c283147fdd6cbde021d4",
+      "date_utc": "2026-09-10 18:20:58",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Merge branch 'testing_wally_traccar' into wally_traccar",
+      "body": "",
+      "parents": [
+        "813736e8875caf926ed4f4f71dccd1048c19853c",
+        "ee906bf63512b7c765632a165fffb7ad181433aa"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/de8082d952271d5df014c283147fdd6cbde021d4",
+      "files": [],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "ee906bf63512b7c765632a165fffb7ad181433aa",
+      "date_utc": "2026-09-10 18:20:54",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Personalizar plantilla de correo electronico para restablecimiento de contraseña e invitacion de usuario con identidad de empresa",
+      "body": "",
+      "parents": [
+        "4b64df7cbd0d1822e830e686247acd6064ca2517"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/ee906bf63512b7c765632a165fffb7ad181433aa",
+      "files": [
+        "smarttrack_security/__manifest__.py",
+        "smarttrack_security/data/mail_template_data.xml"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "813736e8875caf926ed4f4f71dccd1048c19853c",
+      "date_utc": "2026-09-10 17:47:35",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Merge branch 'wally_traccar' of https://github.com/wsf/hito-devman into wally_traccar",
+      "body": "",
+      "parents": [
+        "001863c4412692351445ed8336da285e1ad13535",
+        "2c5f59c762745185983f94692fd19065e9c3aeb1"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/813736e8875caf926ed4f4f71dccd1048c19853c",
+      "files": [],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "001863c4412692351445ed8336da285e1ad13535",
+      "date_utc": "2026-09-10 17:47:08",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Merge branch 'testing_wally_traccar' into wally_traccar",
+      "body": "",
+      "parents": [
+        "8e80cc769289b457741bd1ca370ce971737037de",
+        "4b64df7cbd0d1822e830e686247acd6064ca2517"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/001863c4412692351445ed8336da285e1ad13535",
+      "files": [],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "4b64df7cbd0d1822e830e686247acd6064ca2517",
+      "date_utc": "2026-09-10 17:47:04",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Corregir restriccion unica al buscar modelos de vehiculos y manejar excepciones con savepoint",
+      "body": "",
+      "parents": [
+        "e7ec81100f6029b4a3494924f3f1b0c188d1343c"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/4b64df7cbd0d1822e830e686247acd6064ca2517",
+      "files": [
+        "smarttrack_installation_ocr/models/smarttrack_installation_sheet.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "2c5f59c762745185983f94692fd19065e9c3aeb1",
+      "date_utc": "2026-09-10 16:57:00",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Walter Alaniz",
+        "email": "97702141+wallywally26@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1260 from wsf/testing_wally_traccar",
+      "body": "Fix vehicle error message reporting and plate validation display in i…",
+      "parents": [
+        "91fe9793fa1f942af39acb9b7f7ccac3d29a6ba4",
+        "e7ec81100f6029b4a3494924f3f1b0c188d1343c"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/2c5f59c762745185983f94692fd19065e9c3aeb1",
+      "files": [],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "e7ec81100f6029b4a3494924f3f1b0c188d1343c",
+      "date_utc": "2026-09-10 16:47:46",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Fix vehicle error message reporting and plate validation display in installation sheet processing",
+      "body": "",
+      "parents": [
+        "48bb24f7b295782050a978bf07432736db0919f0"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/e7ec81100f6029b4a3494924f3f1b0c188d1343c",
+      "files": [
+        "smarttrack_installation_ocr/models/smarttrack_installation_sheet.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "91fe9793fa1f942af39acb9b7f7ccac3d29a6ba4",
+      "date_utc": "2026-09-10 16:11:38",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Walter Alaniz",
+        "email": "97702141+wallywally26@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1257 from wsf/testing_wally_traccar",
+      "body": "Testing wally traccar",
+      "parents": [
+        "3a2183010139181504a2390702098e9625bf6df7",
+        "48bb24f7b295782050a978bf07432736db0919f0"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/91fe9793fa1f942af39acb9b7f7ccac3d29a6ba4",
+      "files": [],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "48bb24f7b295782050a978bf07432736db0919f0",
+      "date_utc": "2026-09-10 15:58:18",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "chore: ignore local scratch scripts and deployment reference docs",
+      "body": "",
+      "parents": [
+        "950d043f4e36ca3706c0a73502bb44305a4b2f39"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/48bb24f7b295782050a978bf07432736db0919f0",
+      "files": [
+        ".gitignore"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "950d043f4e36ca3706c0a73502bb44305a4b2f39",
+      "date_utc": "2026-09-10 15:41:42",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "fix(portal): hide redundant action buttons and admin flags in done state, add dark theme processing summary to history modal",
+      "body": "",
+      "parents": [
+        "09deeabe6745da55c87454b44b685188d91dbf4c"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/950d043f4e36ca3706c0a73502bb44305a4b2f39",
+      "files": [
+        "smarttrack_installation_ocr/controllers/main.py",
+        "smarttrack_installation_ocr/models/smarttrack_installation_sheet.py",
+        "smarttrack_installation_ocr/views/portal_templates.xml"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/odoo-argentina-ee",
+      "sha": "e70d60d20613d5e65f83a497ce5d752c07d900d6",
+      "date_utc": "2026-09-10 20:31:50",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Jinzo Implementador",
+        "email": "jinzo@hitofusion.com"
+      },
+      "committer": {
+        "name": "Jinzo Implementador",
+        "email": "jinzo@hitofusion.com"
+      },
+      "subject": "[FIX] l10n_ar_wsmtxca_ws: reemplazar env.registry.in_test_mode() por odoo.tools.config",
+      "body": "En Odoo 19 Registry ya no tiene el metodo in_test_mode(). Se usa\nodoo.tools.config.get('test_enable') para detectar modo test.",
+      "parents": [
+        "a960cad6c452a74ffce1cc63fc266c22f0c0d1a2"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/odoo-argentina-ee/commit/e70d60d20613d5e65f83a497ce5d752c07d900d6",
+      "files": [
+        "l10n_ar_wsmtxca_ws/models/account_journal.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/odoo-argentina-ee",
+      "sha": "a960cad6c452a74ffce1cc63fc266c22f0c0d1a2",
+      "date_utc": "2026-09-10 20:19:58",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Jinzo Implementador",
+        "email": "jinzo@hitofusion.com"
+      },
+      "committer": {
+        "name": "Jinzo Implementador",
+        "email": "jinzo@hitofusion.com"
+      },
+      "subject": "[FIX] l10n_ar_wsmtxca_ws: monkey patch ARTransport.post con huge_tree=True",
+      "body": "Al validar facturas electronicas wsmtxca, AFIP devuelve XML con\nprofundidad mayor a 256 niveles, lo que provoca error de lxml:\n\"Excessive depth in document: 256 use XML_PARSE_HUGE option\".\n\nSe aplica monkey patch sobre ARTransport.post (l10n_ar_edi) para\nparsear la respuesta con etree.XMLParser(huge_tree=True).",
+      "parents": [
+        "840ac60efa6e5a6d6a30aebcfbb0eb4b8b7a337f"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/odoo-argentina-ee/commit/a960cad6c452a74ffce1cc63fc266c22f0c0d1a2",
+      "files": [
+        "l10n_ar_wsmtxca_ws/__init__.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/odoo-argentina-ee",
+      "sha": "0b18ed2e73c072f5405ffa7b6b645debe0c3b21e",
+      "date_utc": "2026-09-10 19:17:54",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Jinzo Implementador",
+        "email": "odoo@hitofusion.com"
+      },
+      "committer": {
+        "name": "Jinzo Implementador",
+        "email": "odoo@hitofusion.com"
+      },
+      "subject": "[FIX] l10n_ar_wsmtxca_ws: reemplaza Registry.in_test_mode() por config['test_enable'] en Odoo 19",
+      "body": "",
+      "parents": [
+        "840ac60efa6e5a6d6a30aebcfbb0eb4b8b7a337f"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/odoo-argentina-ee/commit/0b18ed2e73c072f5405ffa7b6b645debe0c3b21e",
+      "files": [
+        "l10n_ar_wsmtxca_ws/models/account_journal.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "44139d96595cc496142a4df1ca76d04a6dcde168",
+      "date_utc": "2026-09-10 22:03:05",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "committer": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "subject": "Update real activity data 2026-09-10",
+      "body": "Co-authored-by: Cerebro Hito <cerebro@hitofusion.com>\nSigned-off-by: Cerebro Hito <cerebro@hitofusion.com>",
+      "parents": [
+        "da6ac814fd4a856403fb7a719f7c24d3ec72b4d7"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/44139d96595cc496142a4df1ca76d04a6dcde168",
+      "files": [
+        "data/activities.json",
+        "data/recurrences.json"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "da6ac814fd4a856403fb7a719f7c24d3ec72b4d7",
+      "date_utc": "2026-09-10 21:25:31",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Alejandro",
+        "email": "alejandro.sarotorio@gmail.com"
+      },
+      "committer": {
+        "name": "Alejandro",
+        "email": "alejandro.sarotorio@gmail.com"
+      },
+      "subject": "Open interaction details in modal",
+      "body": "",
+      "parents": [
+        "95ce85c9492eb7c38a01a801f7d0ca5f8bb5bc92"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/da6ac814fd4a856403fb7a719f7c24d3ec72b4d7",
+      "files": [
+        "assets/app.js",
+        "assets/styles.css",
+        "index.html",
+        "tests/test_hyperrelations.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "95ce85c9492eb7c38a01a801f7d0ca5f8bb5bc92",
+      "date_utc": "2026-09-10 21:22:05",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Alejandro",
+        "email": "alejandro.sarotorio@gmail.com"
+      },
+      "committer": {
+        "name": "Alejandro",
+        "email": "alejandro.sarotorio@gmail.com"
+      },
+      "subject": "Fit HiperNrelaciones matrix without desktop scrolling",
+      "body": "",
+      "parents": [
+        "d1301a57760d9d4548cc8df985775c0a7eadd1b0"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/95ce85c9492eb7c38a01a801f7d0ca5f8bb5bc92",
+      "files": [
+        "assets/app.js",
+        "assets/styles.css"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "d1301a57760d9d4548cc8df985775c0a7eadd1b0",
+      "date_utc": "2026-09-10 21:21:47",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Alejandro",
+        "email": "alejandro.sarotorio@gmail.com"
+      },
+      "committer": {
+        "name": "Alejandro",
+        "email": "alejandro.sarotorio@gmail.com"
+      },
+      "subject": "Fit HiperNrelaciones matrix without scrolling",
+      "body": "",
+      "parents": [
+        "0cae38a75ed84caa0ba8a0b68d5078e6be0c1705"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/d1301a57760d9d4548cc8df985775c0a7eadd1b0",
+      "files": [
+        "assets/styles.css"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "0cae38a75ed84caa0ba8a0b68d5078e6be0c1705",
+      "date_utc": "2026-09-10 21:02:39",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Alejandro",
+        "email": "alejandro.sarotorio@gmail.com"
+      },
+      "committer": {
+        "name": "Alejandro",
+        "email": "alejandro.sarotorio@gmail.com"
+      },
+      "subject": "Compact and animate HiperNrelaciones",
+      "body": "",
+      "parents": [
+        "ab47a492ec5289de5bcbd846f4a089467e063680"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/0cae38a75ed84caa0ba8a0b68d5078e6be0c1705",
+      "files": [
+        "assets/app.js",
+        "assets/styles.css",
+        "index.html"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "ab47a492ec5289de5bcbd846f4a089467e063680",
+      "date_utc": "2026-09-10 20:52:57",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Alejandro",
+        "email": "alejandro.sarotorio@gmail.com"
+      },
+      "committer": {
+        "name": "Alejandro",
+        "email": "alejandro.sarotorio@gmail.com"
+      },
+      "subject": "Remove duplicate sidebar highlight rule",
+      "body": "",
+      "parents": [
+        "fbfd8d3be6090af4c19bf14acb40d5d1afa2b468"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/ab47a492ec5289de5bcbd846f4a089467e063680",
+      "files": [
+        "assets/styles.css"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "fbfd8d3be6090af4c19bf14acb40d5d1afa2b468",
+      "date_utc": "2026-09-10 20:52:27",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Alejandro",
+        "email": "alejandro.sarotorio@gmail.com"
+      },
+      "committer": {
+        "name": "Alejandro",
+        "email": "alejandro.sarotorio@gmail.com"
+      },
+      "subject": "Surface HiperNrelaciones in sidebar",
+      "body": "",
+      "parents": [
+        "ba659c3200c856aef7b1df7129827a5677384340"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/fbfd8d3be6090af4c19bf14acb40d5d1afa2b468",
+      "files": [
+        "assets/styles.css",
+        "index.html"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "ba659c3200c856aef7b1df7129827a5677384340",
+      "date_utc": "2026-09-10 20:52:06",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Alejandro",
+        "email": "alejandro.sarotorio@gmail.com"
+      },
+      "committer": {
+        "name": "Alejandro",
+        "email": "alejandro.sarotorio@gmail.com"
+      },
+      "subject": "Expose HiperNrelaciones in sidebar navigation",
+      "body": "",
+      "parents": [
+        "5fd50720805d4e4e8722e1a301968acf0f45147e"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/ba659c3200c856aef7b1df7129827a5677384340",
+      "files": [
+        "assets/styles.css",
+        "index.html"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "5fd50720805d4e4e8722e1a301968acf0f45147e",
+      "date_utc": "2026-09-10 20:47:56",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Alejandro",
+        "email": "alejandro.sarotorio@gmail.com"
+      },
+      "committer": {
+        "name": "Alejandro",
+        "email": "alejandro.sarotorio@gmail.com"
+      },
+      "subject": "Add HiperNrelaciones interaction matrix",
+      "body": "",
+      "parents": [
+        "f9e42a71ca060145b2411fef020902aa57f41478"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/5fd50720805d4e4e8722e1a301968acf0f45147e",
+      "files": [
+        "assets/app.js",
+        "assets/styles.css",
+        "data/hyperrelations.json",
+        "index.html",
+        "tests/test_hyperrelations.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "f9e42a71ca060145b2411fef020902aa57f41478",
+      "date_utc": "2026-09-10 16:03:06",
+      "day": "2026-09-10",
+      "author": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "committer": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "subject": "Update real activity data 2026-09-10",
+      "body": "Co-authored-by: Cerebro Hito <cerebro@hitofusion.com>\nSigned-off-by: Cerebro Hito <cerebro@hitofusion.com>",
+      "parents": [
+        "bf44d69f3469f7a360afee554c2480894565b46c"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/f9e42a71ca060145b2411fef020902aa57f41478",
+      "files": [
+        "data/activities.json",
+        "data/recurrences.json"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "783a84525cefabc701d3c9f090fc1f67aa3815c5",
+      "date_utc": "2026-09-11 13:30:36",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05107",
+      "body": "",
+      "parents": [
+        "8600a4f6faa4f3f50a04000303af7828625728a9"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/783a84525cefabc701d3c9f090fc1f67aa3815c5",
+      "files": [
+        "tickets-responded/20260911T133035Z_ticket_2026-05107.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "8600a4f6faa4f3f50a04000303af7828625728a9",
+      "date_utc": "2026-09-10 20:41:19",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05106",
+      "body": "",
+      "parents": [
+        "d5fb5d914928a4bc3bbc89b707371f6611df9b92"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/8600a4f6faa4f3f50a04000303af7828625728a9",
+      "files": [
+        "tickets-responded/20260910T204119Z_ticket_2026-05106.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "d5fb5d914928a4bc3bbc89b707371f6611df9b92",
+      "date_utc": "2026-09-10 20:29:18",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05084",
+      "body": "",
+      "parents": [
+        "cc85c93a77110ff588e5c4fb3ee1b137112e1cfd"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/d5fb5d914928a4bc3bbc89b707371f6611df9b92",
+      "files": [
+        "tickets-responded/20260910T202917Z_ticket_2026-05084.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "cc85c93a77110ff588e5c4fb3ee1b137112e1cfd",
+      "date_utc": "2026-09-10 20:08:37",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05105",
+      "body": "",
+      "parents": [
+        "9cc3ddf1bd05dd46d1277157636268f9845a32f5"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/cc85c93a77110ff588e5c4fb3ee1b137112e1cfd",
+      "files": [
+        "tickets-responded/20260910T200836Z_ticket_2026-05105.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "9cc3ddf1bd05dd46d1277157636268f9845a32f5",
+      "date_utc": "2026-09-10 19:03:19",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05049",
+      "body": "",
+      "parents": [
+        "27305a48ca31a639dde8bca1c76d7564bdbace3a"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/9cc3ddf1bd05dd46d1277157636268f9845a32f5",
+      "files": [
+        "tickets-responded/20260910T190318Z_ticket_2026-05049.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "27305a48ca31a639dde8bca1c76d7564bdbace3a",
+      "date_utc": "2026-09-10 18:45:27",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05101",
+      "body": "",
+      "parents": [
+        "f344aa103006ebff960a9461e5e606da645f59dc"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/27305a48ca31a639dde8bca1c76d7564bdbace3a",
+      "files": [
+        "tickets-responded/20260910T184526Z_ticket_2026-05101.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "f344aa103006ebff960a9461e5e606da645f59dc",
+      "date_utc": "2026-09-10 18:17:12",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05103",
+      "body": "",
+      "parents": [
+        "68c56a495d7685d33434396b6210662bb4df49e7"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/f344aa103006ebff960a9461e5e606da645f59dc",
+      "files": [
+        "tickets-responded/20260910T181711Z_ticket_2026-05103.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "68c56a495d7685d33434396b6210662bb4df49e7",
+      "date_utc": "2026-09-10 18:02:05",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05104",
+      "body": "",
+      "parents": [
+        "2529511cff65e7b1c31f9fc16857f6be552568c5"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/68c56a495d7685d33434396b6210662bb4df49e7",
+      "files": [
+        "tickets-responded/20260910T180204Z_ticket_2026-05104.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "2529511cff65e7b1c31f9fc16857f6be552568c5",
+      "date_utc": "2026-09-10 14:38:18",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05100",
+      "body": "",
+      "parents": [
+        "35e15a7a9f6f7133ae1b129f0a118043da94d7c6"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/2529511cff65e7b1c31f9fc16857f6be552568c5",
+      "files": [
+        "tickets-responded/20260910T143817Z_ticket_2026-05100.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "35e15a7a9f6f7133ae1b129f0a118043da94d7c6",
+      "date_utc": "2026-09-10 13:12:36",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05099",
+      "body": "",
+      "parents": [
+        "66f4d4e902cd708b41f0b093dae6e5a5641cc251"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/35e15a7a9f6f7133ae1b129f0a118043da94d7c6",
+      "files": [
+        "tickets-responded/20260910T131235Z_ticket_2026-05099.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "66f4d4e902cd708b41f0b093dae6e5a5641cc251",
+      "date_utc": "2026-09-10 12:44:05",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05095",
+      "body": "",
+      "parents": [
+        "cc87e07518309b935beb5d5efd6dd807535b4037"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/66f4d4e902cd708b41f0b093dae6e5a5641cc251",
+      "files": [
+        "tickets-responded/20260910T124404Z_ticket_2026-05095.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    }
+  ]
+}

@@ -25,14 +25,29 @@
   },
   "sources": {
     "odoo": [
-      "METRICAS_BASE_2026_09_09.md",
-      "METRICAS_BASE_2026_09_10.md",
-      "INTERACCIONES_ODOO_2026_09_09_10.json"
+      "HIPERRELACIONES_ODOO_2026_09_10_11.json"
     ],
-    "daily": "DM-2026-09-09.md",
-    "git_in_outcomes": false,
-    "cutoff_local": "2026-09-10 17:44:18 America/Argentina/Cordoba",
-    "day_10_partial": true
+    "daily": "jinzo-work-log/dm/dm-desa (10 y 11/09 ausentes)",
+    "git_in_outcomes": true,
+    "git": {
+      "status": "complete",
+      "scope": "Todas las refs origin accesibles de hito2026 y wsf/hito-devman; los seis repos obligatorios fueron accesibles y no tuvieron pushes en la ventana.",
+      "explicit_repositories": [
+        "hito2026/midleware-bridge-kapso-openclaw",
+        "hito2026/bridge-kapso-openclaw",
+        "hito2026/cognee_brain_openclaw",
+        "hito2026/jinzo_architect",
+        "hito2026/api_open_whatsapp_connector",
+        "hito2026/open_whatsapp_connector"
+      ]
+    },
+    "cutoff_local": "2026-09-11 10:39:20 America/Argentina/Cordoba",
+    "complete_days": [
+      "2026-09-10"
+    ],
+    "partial_days": [
+      "2026-09-11"
+    ]
   },
   "days": {
     "2026-09-09": [
@@ -894,12 +909,14 @@
           "own_entry_hours": 0,
           "third_party_entry_hours": 0,
           "creations": 0,
+          "batch_creations": 0,
           "tracked": 0,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": []
       },
@@ -917,12 +934,14 @@
           "own_entry_hours": 0,
           "third_party_entry_hours": 0,
           "creations": 0,
+          "batch_creations": 0,
           "tracked": 0,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": []
       },
@@ -940,12 +959,14 @@
           "own_entry_hours": 8.25,
           "third_party_entry_hours": 0,
           "creations": 1,
+          "batch_creations": 0,
           "tracked": 3,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": [
           {
@@ -963,7 +984,7 @@
         "H": 0.25,
         "R": 1,
         "Q": 0.8,
-        "E": null,
+        "E": 4,
         "coverage": {
           "comments": 2,
           "quality_messages": 2,
@@ -971,12 +992,14 @@
           "own_entry_hours": 0.25,
           "third_party_entry_hours": 0,
           "creations": 0,
+          "batch_creations": 0,
           "tracked": 33,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
-          "outcome_complete": false,
-          "git_complete": false,
-          "outcome_note": "Cambios concentrados compatibles con lote/automatización; E excluido."
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": [
           {
@@ -1000,21 +1023,23 @@
         "I": 3,
         "H": 0,
         "R": 2,
-        "Q": 0.6,
-        "E": 3,
+        "Q": 0.6666666666666666,
+        "E": 6,
         "coverage": {
-          "comments": 2,
-          "quality_messages": 2,
+          "comments": 3,
+          "quality_messages": 3,
           "timesheets": 0,
           "own_entry_hours": 0,
           "third_party_entry_hours": 0,
           "creations": 0,
-          "tracked": 22,
+          "batch_creations": 0,
+          "tracked": 23,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": [
           {
@@ -1030,6 +1055,13 @@
             "reference": 1,
             "result": 0,
             "next_step_or_recipient": 0
+          },
+          {
+            "context": 0,
+            "action": 1,
+            "reference": 1,
+            "result": 1,
+            "next_step_or_recipient": 1
           }
         ]
       },
@@ -1047,12 +1079,14 @@
           "own_entry_hours": 0.25,
           "third_party_entry_hours": 0,
           "creations": 0,
+          "batch_creations": 0,
           "tracked": 2,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": [
           {
@@ -1067,23 +1101,25 @@
       {
         "person": "Genaro García",
         "I": 0,
-        "H": 0,
+        "H": 13,
         "R": 0,
         "Q": null,
-        "E": 0,
+        "E": 20,
         "coverage": {
           "comments": 0,
           "quality_messages": 0,
-          "timesheets": 0,
-          "own_entry_hours": 0,
+          "timesheets": 1,
+          "own_entry_hours": 13,
           "third_party_entry_hours": 0,
           "creations": 0,
+          "batch_creations": 0,
           "tracked": 0,
+          "git_commits": 20,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": []
       },
@@ -1093,7 +1129,7 @@
         "H": 0.4166666666666667,
         "R": 2,
         "Q": 0.26666666666666666,
-        "E": 2,
+        "E": 3,
         "coverage": {
           "comments": 3,
           "quality_messages": 3,
@@ -1101,12 +1137,14 @@
           "own_entry_hours": 0.4166666666666667,
           "third_party_entry_hours": 0,
           "creations": 1,
+          "batch_creations": 0,
           "tracked": 21,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": [
           {
@@ -1138,20 +1176,22 @@
         "H": 0,
         "R": 0,
         "Q": null,
-        "E": 6,
+        "E": 0,
         "coverage": {
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
           "own_entry_hours": 0,
           "third_party_entry_hours": 0,
-          "creations": 6,
+          "creations": 0,
+          "batch_creations": 7,
           "tracked": 12,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": []
       },
@@ -1169,12 +1209,14 @@
           "own_entry_hours": 0,
           "third_party_entry_hours": 0,
           "creations": 0,
+          "batch_creations": 0,
           "tracked": 0,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": []
       },
@@ -1192,12 +1234,14 @@
           "own_entry_hours": 0,
           "third_party_entry_hours": 0,
           "creations": 1,
+          "batch_creations": 0,
           "tracked": 0,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": []
       },
@@ -1215,37 +1259,56 @@
           "own_entry_hours": 0,
           "third_party_entry_hours": 0,
           "creations": 0,
+          "batch_creations": 0,
           "tracked": 0,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": []
       },
       {
         "person": "Lucas Burgos",
-        "I": 0,
+        "I": 4,
         "H": 0,
-        "R": 0,
-        "Q": null,
-        "E": 0,
+        "R": 1,
+        "Q": 0.5,
+        "E": 3,
         "coverage": {
-          "comments": 0,
-          "quality_messages": 0,
+          "comments": 2,
+          "quality_messages": 2,
           "timesheets": 0,
           "own_entry_hours": 0,
           "third_party_entry_hours": 0,
           "creations": 0,
-          "tracked": 0,
+          "batch_creations": 0,
+          "tracked": 5,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
-        "quality_checks": []
+        "quality_checks": [
+          {
+            "context": 0,
+            "action": 1,
+            "reference": 1,
+            "result": 0,
+            "next_step_or_recipient": 1
+          },
+          {
+            "context": 1,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
+          }
+        ]
       },
       {
         "person": "Lucia Centurion",
@@ -1261,12 +1324,14 @@
           "own_entry_hours": 0,
           "third_party_entry_hours": 0,
           "creations": 0,
+          "batch_creations": 0,
           "tracked": 0,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": []
       },
@@ -1275,8 +1340,8 @@
         "I": 13,
         "H": 7.75,
         "R": 4,
-        "Q": 0.5166666666666667,
-        "E": 2,
+        "Q": 0.4833333333333334,
+        "E": 8,
         "coverage": {
           "comments": 12,
           "quality_messages": 12,
@@ -1284,16 +1349,18 @@
           "own_entry_hours": 7.75,
           "third_party_entry_hours": 0,
           "creations": 0,
+          "batch_creations": 0,
           "tracked": 20,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": [
           {
-            "context": 1,
+            "context": 0,
             "action": 1,
             "reference": 0,
             "result": 1,
@@ -1363,7 +1430,7 @@
             "next_step_or_recipient": 1
           },
           {
-            "context": 1,
+            "context": 0,
             "action": 1,
             "reference": 0,
             "result": 1,
@@ -1384,7 +1451,7 @@
         "H": 0,
         "R": 2,
         "Q": 0.4,
-        "E": 1,
+        "E": 2,
         "coverage": {
           "comments": 1,
           "quality_messages": 1,
@@ -1392,12 +1459,14 @@
           "own_entry_hours": 0,
           "third_party_entry_hours": 0,
           "creations": 0,
+          "batch_creations": 0,
           "tracked": 1,
+          "git_commits": 1,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": [
           {
@@ -1411,24 +1480,26 @@
       },
       {
         "person": "Matias Marziali",
-        "I": 2,
-        "H": 5,
+        "I": 3,
+        "H": 11.5,
         "R": 2,
-        "Q": 0.4,
-        "E": 0,
+        "Q": 0.26666666666666666,
+        "E": 4,
         "coverage": {
-          "comments": 2,
-          "quality_messages": 2,
-          "timesheets": 2,
-          "own_entry_hours": 5,
+          "comments": 3,
+          "quality_messages": 3,
+          "timesheets": 3,
+          "own_entry_hours": 11.5,
           "third_party_entry_hours": 0,
           "creations": 0,
+          "batch_creations": 0,
           "tracked": 0,
+          "git_commits": 4,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": [
           {
@@ -1439,9 +1510,16 @@
             "next_step_or_recipient": 0
           },
           {
-            "context": 1,
+            "context": 0,
             "action": 0,
             "reference": 1,
+            "result": 0,
+            "next_step_or_recipient": 1
+          },
+          {
+            "context": 0,
+            "action": 0,
+            "reference": 0,
             "result": 0,
             "next_step_or_recipient": 1
           }
@@ -1452,23 +1530,33 @@
         "I": 0,
         "H": 0,
         "R": 0,
-        "Q": null,
+        "Q": 0,
         "E": 4,
         "coverage": {
-          "comments": 0,
-          "quality_messages": 0,
+          "comments": 1,
+          "quality_messages": 1,
           "timesheets": 0,
           "own_entry_hours": 0,
           "third_party_entry_hours": 0,
           "creations": 0,
+          "batch_creations": 0,
           "tracked": 6,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
-        "quality_checks": []
+        "quality_checks": [
+          {
+            "context": 0,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
+          }
+        ]
       },
       {
         "person": "Nahiara Aylen Delgado",
@@ -1484,12 +1572,14 @@
           "own_entry_hours": 0,
           "third_party_entry_hours": 0,
           "creations": 0,
+          "batch_creations": 0,
           "tracked": 3,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": []
       },
@@ -1499,7 +1589,7 @@
         "H": 5,
         "R": 2,
         "Q": 0.8,
-        "E": 1,
+        "E": 4,
         "coverage": {
           "comments": 1,
           "quality_messages": 1,
@@ -1507,12 +1597,14 @@
           "own_entry_hours": 5,
           "third_party_entry_hours": 0,
           "creations": 0,
+          "batch_creations": 0,
           "tracked": 1,
+          "git_commits": 3,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": [
           {
@@ -1530,7 +1622,7 @@
         "H": 0,
         "R": 0,
         "Q": null,
-        "E": 0,
+        "E": 1,
         "coverage": {
           "comments": 0,
           "quality_messages": 0,
@@ -1538,35 +1630,39 @@
           "own_entry_hours": 0,
           "third_party_entry_hours": 0,
           "creations": 0,
+          "batch_creations": 0,
           "tracked": 0,
+          "git_commits": 1,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": []
       },
       {
         "person": "Samuel Marcano",
         "I": 0,
-        "H": 2,
+        "H": 3.5,
         "R": 0,
         "Q": null,
         "E": 0,
         "coverage": {
           "comments": 0,
           "quality_messages": 0,
-          "timesheets": 1,
-          "own_entry_hours": 0,
+          "timesheets": 2,
+          "own_entry_hours": 1.5,
           "third_party_entry_hours": 2,
           "creations": 0,
+          "batch_creations": 0,
           "tracked": 0,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": []
       },
@@ -1576,7 +1672,7 @@
         "H": 0,
         "R": 3,
         "Q": 0.4,
-        "E": 9,
+        "E": 10,
         "coverage": {
           "comments": 10,
           "quality_messages": 10,
@@ -1584,12 +1680,14 @@
           "own_entry_hours": 0,
           "third_party_entry_hours": 0,
           "creations": 0,
+          "batch_creations": 0,
           "tracked": 19,
+          "git_commits": 0,
           "quality_complete": true,
           "hours_attribution_complete": true,
           "outcome_complete": true,
-          "git_complete": false,
-          "outcome_note": "E no incorpora entregables Git en este corte."
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
         },
         "quality_checks": [
           {
@@ -1663,6 +1761,629 @@
             "next_step_or_recipient": 1
           }
         ]
+      }
+    ],
+    "2026-09-11": [
+      {
+        "person": "Alejandro Sartorio",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 0,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Andrés Salguero",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 147,
+          "tracked": 0,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Ariadna Estebenet",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 0,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Carolina Monserrat",
+        "I": 1,
+        "H": 3,
+        "R": 1,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 1,
+          "own_entry_hours": 3,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 1,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Ezequiel Montes",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 1,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Francisco Fiorentino",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 0,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Genaro García",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 0,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Ignacio Lera",
+        "I": 6,
+        "H": 0,
+        "R": 2,
+        "Q": 0.2,
+        "E": 0,
+        "coverage": {
+          "comments": 1,
+          "quality_messages": 1,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 5,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": [
+          {
+            "context": 0,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
+          }
+        ]
+      },
+      {
+        "person": "Jinzo",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 0,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Julian Morabito",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 0,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Lanser Jose Ignacio",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 0,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Liz Centurion",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 0,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Lucas Burgos",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 0,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Lucia Centurion",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 0,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Mateo Scozzina",
+        "I": 0,
+        "H": 1,
+        "R": 0,
+        "Q": 0.3333333333333333,
+        "E": 1,
+        "coverage": {
+          "comments": 3,
+          "quality_messages": 3,
+          "timesheets": 2,
+          "own_entry_hours": 1,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 1,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": [
+          {
+            "context": 0,
+            "action": 0,
+            "reference": 1,
+            "result": 0,
+            "next_step_or_recipient": 0
+          },
+          {
+            "context": 1,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
+          },
+          {
+            "context": 0,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
+          }
+        ]
+      },
+      {
+        "person": "Matias Banega",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 0,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Matias Marziali",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 0,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Maximiliano Alarcon",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": 0.4,
+        "E": 1,
+        "coverage": {
+          "comments": 1,
+          "quality_messages": 1,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 9,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": [
+          {
+            "context": 0,
+            "action": 0,
+            "reference": 1,
+            "result": 1,
+            "next_step_or_recipient": 0
+          }
+        ]
+      },
+      {
+        "person": "Nahiara Aylen Delgado",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 0,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Nelson Tontarelli",
+        "I": 1,
+        "H": 0,
+        "R": 1,
+        "Q": 0.6,
+        "E": 0,
+        "coverage": {
+          "comments": 1,
+          "quality_messages": 1,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 0,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": [
+          {
+            "context": 1,
+            "action": 1,
+            "reference": 0,
+            "result": 1,
+            "next_step_or_recipient": 0
+          }
+        ]
+      },
+      {
+        "person": "Pablo Marchionno",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 0,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Samuel Marcano",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 5,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 5,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
+      },
+      {
+        "person": "Valentin Markov",
+        "I": 0,
+        "H": 0,
+        "R": 0,
+        "Q": null,
+        "E": 0,
+        "coverage": {
+          "comments": 0,
+          "quality_messages": 0,
+          "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
+          "creations": 0,
+          "batch_creations": 0,
+          "tracked": 0,
+          "git_commits": 0,
+          "quality_complete": true,
+          "hours_attribution_complete": true,
+          "outcome_complete": true,
+          "git_complete": true,
+          "outcome_note": "E integra creaciones no masivas, avances sustantivos y commits Git verificables; merges, lotes y automatizaciones no suman."
+        },
+        "quality_checks": []
       }
     ]
   }

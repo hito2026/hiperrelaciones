@@ -7,6 +7,9 @@ const shortName=name=>{const parts=name.split(/\s+/);return parts.length<2?name:
 async function init(){
   [state.data,state.metrics,state.records]=await Promise.all(["data/hyperrelations.json","data/productivity.json","data/records.json"].map(url=>fetch(url).then(response=>{if(!response.ok)throw new Error("dataset unavailable");return response.json()})));
   $("#coverage").textContent=state.data.report.coverage;
+  const days=Object.keys(state.metrics.days).sort(),options=`<option value="all">Acumulado (${days.map(shortDay).join(", ")})</option>`+days.map(day=>`<option value="${day}">${esc(dayStatus(day))}</option>`).join("");
+  $("#day").innerHTML=options;$("#recordDay").innerHTML=options;
+  $("#recordCoverage").textContent=state.data.report.coverage;
   $("#day").addEventListener("change",event=>{stop();state.day=event.target.value;render()});
   $("#person").addEventListener("input",event=>{state.person=event.target.value;render()});
   $("#play").addEventListener("click",()=>state.playing?stop():play());
@@ -29,12 +32,18 @@ function visibleEvents(){
   const query=clean(state.person);
   return state.data.events.filter(event=>(state.day==="all"||event.day===state.day)&&(!query||clean(`${event.actor} ${event.counterpart}`).includes(query)));
 }
+const shortDay=day=>day.split("-").slice(1).reverse().join("/");
+function dayStatus(day){
+  if(state.metrics.sources.partial_days?.includes(day))return `${shortDay(day)} parcial hasta ${state.metrics.sources.cutoff_local.slice(11,19)}`;
+  return `${shortDay(day)} completo`;
+}
 
 function render(){
   const events=visibleEvents(),connected=new Set(events.flatMap(event=>[event.actor,event.counterpart])),query=clean(state.person);
   const people=state.data.people.filter(name=>!query||clean(name).includes(query)||connected.has(name));
   const pairs=new Map();events.forEach(event=>{const key=`${event.actor}\u0000${event.counterpart}`;(pairs.get(key)||pairs.set(key,[]).get(key)).push(event)});
-  $("#activeDay").textContent=state.day==="2026-09-09"?"9/09 · paso 1/2":state.day==="2026-09-10"?"10/09 · paso 2/2":"Vista acumulada · 9 y 10/09";
+  const days=Object.keys(state.metrics.days).sort(),position=days.indexOf(state.day);
+  $("#activeDay").textContent=state.day==="all"?`Vista acumulada · ${days.map(shortDay).join(" + ")}`:`${dayStatus(state.day)} · paso ${position+1}/${days.length}`;
   $("#stats").innerHTML=`<span><b>${events.length}</b> eventos</span><span><b>${pairs.size}</b> pares</span><span><b>${connected.size}</b> personas</span>`;
   const head=`<thead><tr><th>Actor ↓<br>Contraparte →</th>${people.map(name=>`<th title="${esc(name)}"><span>${esc(shortName(name))}</span></th>`).join("")}<th class="total-head" title="Total de interacciones salientes"><span>Total →</span></th></tr></thead>`;
   const body=people.map(actor=>`<tr><th title="${esc(actor)}">${esc(shortName(actor))}</th>${people.map(counterpart=>{
@@ -84,8 +93,8 @@ function companyMeasure(day){
   return {mean:Math.round(weighted/weight),calculable:rows.filter(row=>coverage(row)>0).length,total:rows.length,observable:Math.round(100*observable/(rows.length*5)),vector};
 }
 function renderCompanyTrace(){
-  const points=["2026-09-09","2026-09-10","all"].map(day=>({day,...companyMeasure(day)}));
-  const label=day=>day==="all"?"Acumulado":day==="2026-09-09"?"9/09 completo":"10/09 parcial";
+  const points=[...Object.keys(state.metrics.days).sort(),"all"].map(day=>({day,...companyMeasure(day)}));
+  const label=day=>day==="all"?"Acumulado":dayStatus(day);
   $("#companyTrace").innerHTML=`<strong>Pulso general de la compañía</strong>${points.map(point=>`<span class="${state.day===point.day?"active":""}"><b>${point.mean}</b><small>${label(point.day)} · [${point.vector.I}, ${point.vector.H.toFixed(1)}, ${point.vector.R}, ${point.vector.Q===null?"s/d":Math.round(point.vector.Q*100)}, ${point.vector.E}] · cobertura ${point.calculable}/${point.total}, ${point.observable}% componentes</small></span>`).join("")}`;
 }
 function openMetric(row){
@@ -98,7 +107,7 @@ function openMetric(row){
 function openFormula(){
   const m=state.metrics.methodology;
   $("#detailTitle").textContent=m.name;
-  $("#detailBody").innerHTML=`<p class="detail-count"><b>100 × (0,20·Iₙ + 0,20·Hₙ + 0,15·Rₙ + 0,25·Q + 0,20·Eₙ)</b></p><p><strong>I</strong>: aristas dirigidas salientes verificadas; una nota a dos destinatarios produce dos I. <strong>H</strong>: horas laborales positivas. <strong>R</strong>: contrapartes únicas. <strong>Q</strong>: checklist de contexto, acción, referencia, resultado y próximo paso. <strong>E</strong>: creaciones y avances verificables.</p><p>Metas visibles: I=${m.targets.I}, H=${m.targets.H} h, R=${m.targets.R}, E=${m.targets.E}. I, R y E saturan logarítmicamente; H satura en la meta diaria. Todo componente con cobertura incompleta se excluye y los pesos restantes se reescalan.</p><p><strong>Corte:</strong> 9/09 completo; 10/09 parcial hasta 17:44:18 Argentina. E todavía no incorpora Git; H aún no separa carga propia/terceros; Q solo es completa cuando todos los comentarios humanos están evaluados una vez por message_id.</p><p class="productivity-warning">${esc(m.warning)}</p>`;
+  $("#detailBody").innerHTML=`<p class="detail-count"><b>100 × (0,20·Iₙ + 0,20·Hₙ + 0,15·Rₙ + 0,25·Q + 0,20·Eₙ)</b></p><p><strong>I</strong>: aristas dirigidas salientes verificadas; una nota a dos destinatarios produce dos I. <strong>H</strong>: horas laborales positivas. <strong>R</strong>: contrapartes únicas. <strong>Q</strong>: checklist de contexto, acción, referencia, resultado y próximo paso. <strong>E</strong>: creaciones, avances verificables y commits Git atribuibles.</p><p>Metas visibles: I=${m.targets.I}, H=${m.targets.H} h, R=${m.targets.R}, E=${m.targets.E}. I, R y E saturan logarítmicamente; H satura en la meta diaria. Todo componente con cobertura incompleta se excluye y los pesos restantes se reescalan.</p><p><strong>Corte:</strong> ${esc(state.data.report.coverage)}. Q usa todos los comentarios humanos una vez por message_id; H distingue carga propia/terceros; E excluye merges, cuentas técnicas e identidades no verificadas.</p><p class="productivity-warning">${esc(m.warning)}</p>`;
   $("#detail").showModal();
 }
 function openPurpose(){
@@ -107,11 +116,11 @@ function openPurpose(){
   $("#detail").showModal();
 }
 
-const kindLabel={comment:"Comentario humano",timesheet:"Parte de horas",activity:"Cambio / creación",interaction:"Interacción analítica"};
-const recordSource=record=>(record.source||"").startsWith("Odoo")?"Odoo":"Daily";
+const kindLabel={comment:"Comentario humano",timesheet:"Parte de horas",activity:"Cambio / creación",interaction:"Interacción analítica",commit:"Commit Git"};
+const recordSource=record=>(record.source||"").startsWith("Odoo")?"Odoo":(record.source||"").startsWith("Git")?"GitHub":"Daily";
 const linkify=value=>esc(value).replace(/https?:\/\/[^\s&lt;]+/g,url=>`<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`);
 function recordLocalDate(record){
-  if(!record.date_utc)return record.day==="2026-09-10"?"10/09 · hora no disponible":"9/09 · hora no disponible";
+  if(!record.date_utc)return `${shortDay(record.day)} · hora no disponible`;
   return new Intl.DateTimeFormat("es-AR",{timeZone:"America/Argentina/Cordoba",day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(new Date(record.date_utc.replace(" ","T")+"Z"));
 }
 function filteredRecords(){
@@ -134,13 +143,13 @@ function renderRecords(){
 function renderRecord(record){
   const counterpart=record.counterparts?.join(", ")||record.counterpart||"—";
   const model=record.model?`${record.model}${record.res_id?` #${record.res_id}`:""}`:record.reference||record.id;
-  const classification=record.kind==="timesheet"?`${record.entry_class==="own_entry"?"Carga propia":`Carga por ${record.created_by}`}${record.modified_after_creation?" · candidato a corrección":""}`:record.kind==="activity"?record.activity_types.join(", "):record.kind==="interaction"?record.interaction_types.join(", "):"—";
-  const coverage=record.kind==="timesheet"?"Autoría cubierta":record.kind==="comment"?"Q cubierta":record.kind==="interaction"?"Arista analítica":"Registro Odoo consolidado";
+  const classification=record.kind==="timesheet"?`${record.entry_class==="own_entry"?"Carga propia":`Carga por ${record.created_by}`}${record.modified_after_creation?" · candidato a corrección":""}`:record.kind==="activity"?record.activity_types.join(", "):record.kind==="interaction"?record.interaction_types.join(", "):record.kind==="commit"?record.commit_class:"—";
+  const coverage=record.kind==="timesheet"?"Autoría cubierta":record.kind==="comment"?"Q cubierta":record.kind==="interaction"?"Arista analítica":record.kind==="commit"?record.coverage:"Registro Odoo individual";
   return `<tr><td>${esc(recordLocalDate(record))}</td><td>${esc(record.person)}</td><td>${esc(counterpart)}</td><td>${esc(recordSource(record))}</td><td>${esc(kindLabel[record.kind])}</td><td>${esc(record.model||"—")}</td><td>${esc(record.id)}</td><td>${esc(record.title||"Sin título")}</td><td>${record.kind==="activity"?esc(record.text||"—"):"—"}</td><td>${record.hours??"—"}</td><td>${esc(record.project||"—")}</td><td>${esc(classification)}</td><td>${record.quality===undefined?"—":Math.round(record.quality*100)+"/100"}</td><td class="evidence-cell"><button type="button" data-record-key="${esc(`${record.kind}|${record.id}`)}" title="${esc(record.text||"")}">${esc(record.text||"Ver detalle")}</button></td><td>${esc(coverage)}</td></tr>`;
 }
 function openRecord(record){
   $("#detailTitle").textContent=`${kindLabel[record.kind]} · ${record.id}`;
-  $("#detailBody").innerHTML=`<p class="detail-count"><b>${esc(record.person)}</b> · ${esc(recordLocalDate(record))}</p><h3>${esc(record.title||"Sin título")}</h3><p>${linkify(record.text||"Sin texto")}</p><p><strong>Fuente:</strong> ${esc(recordSource(record))} · <strong>Modelo:</strong> ${esc(record.model||"—")} ${record.res_id?`#${record.res_id}`:""}</p>${record.kind==="timesheet"?`<p><strong>${record.hours} h</strong> · ${esc(record.project||"Sin proyecto")} · ${esc(record.entry_class==="own_entry"?"carga propia":`carga por ${record.created_by}`)}</p>`:""}${record.kind==="comment"?`<p><strong>Calidad Q:</strong> ${Math.round(record.quality*100)}/100</p>`:""}`;
+  $("#detailBody").innerHTML=`<p class="detail-count"><b>${esc(record.person)}</b> · ${esc(recordLocalDate(record))}</p><h3>${esc(record.title||"Sin título")}</h3><p>${linkify(record.text||"Sin texto")}</p><p><strong>Fuente:</strong> ${esc(recordSource(record))} · <strong>Modelo/repositorio:</strong> ${esc(record.model||"—")} ${record.res_id?`#${record.res_id}`:""}</p>${record.reference?`<p><a href="${esc(record.reference)}" target="_blank" rel="noopener noreferrer">Abrir evidencia</a></p>`:""}${record.kind==="timesheet"?`<p><strong>${record.hours} h</strong> · ${esc(record.project||"Sin proyecto")} · ${esc(record.entry_class==="own_entry"?"carga propia":`carga por ${record.created_by}`)}</p>`:""}${record.kind==="comment"?`<p><strong>Calidad Q:</strong> ${Math.round(record.quality*100)}/100</p>`:""}`;
   $("#detail").showModal();
 }
 

@@ -20,7 +20,7 @@
       <div id="stats" class="stats" aria-live="polite"></div>
     </section>
     <section class="controls" aria-label="Filtros y animación">
-      <label><span>Día</span><select id="day"><option value="all">9 y 10/09</option><option value="2026-09-09">9/09 completo</option><option value="2026-09-10">10/09 hasta el corte</option></select></label>
+      <label><span>Día</span><select id="day"></select></label>
       <label class="search"><span>Persona</span><input id="person" type="search" placeholder="Actor o contraparte…"></label>
       <button id="play" type="button" aria-pressed="false">▶ Reproducir evolución</button>
       <button id="reset" type="button">Reiniciar</button>
@@ -38,12 +38,12 @@
       <div class="matrix-wrap"><table id="matrix" aria-label="Matriz dirigida de interacciones"></table></div>
     </section>
     <section class="records-card" id="registros" aria-labelledby="recordsTitle">
-      <div class="matrix-head"><div><p class="eyebrow">fuentes y evidencias</p><h2 id="recordsTitle">Registros</h2></div><span>10/09 parcial hasta 17:44:18 Argentina</span></div>
+      <div class="matrix-head"><div><p class="eyebrow">fuentes y evidencias</p><h2 id="recordsTitle">Registros</h2></div><span id="recordCoverage">Cargando corte…</span></div>
       <div class="record-controls">
         <label>Agrupar<select id="recordGroup"><option value="person">Personal</option><option value="day">Día</option><option value="source">Fuente</option><option value="kind">Tipo</option></select></label>
-        <label>Día<select id="recordDay"><option value="all">Ambos días</option><option value="2026-09-09">9/09</option><option value="2026-09-10">10/09 parcial</option></select></label>
-        <label>Fuente<select id="recordSource"><option value="all">Todas</option><option value="Odoo">Odoo</option><option value="Daily">Daily</option></select></label>
-        <label>Tipo<select id="recordKind"><option value="all">Todos</option><option value="comment">Comentarios</option><option value="timesheet">Partes de horas</option><option value="activity">Cambios/creaciones</option><option value="interaction">Interacciones</option></select></label>
+        <label>Día<select id="recordDay"></select></label>
+        <label>Fuente<select id="recordSource"><option value="all">Todas</option><option value="Odoo">Odoo</option><option value="GitHub">GitHub</option><option value="Daily">Daily</option></select></label>
+        <label>Tipo<select id="recordKind"><option value="all">Todos</option><option value="comment">Comentarios</option><option value="timesheet">Partes de horas</option><option value="activity">Cambios/creaciones</option><option value="interaction">Interacciones</option><option value="commit">Commits</option></select></label>
         <label class="record-search">Buscar<input id="recordSearch" type="search" placeholder="Persona, texto, tarea o ID…"></label>
       </div>
       <div id="recordTotals" class="record-totals" aria-live="polite"></div>
