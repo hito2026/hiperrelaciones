@@ -1,4 +1,4 @@
-const state={data:null,metrics:null,records:null,day:"all",person:"",timer:null,playing:false};
+const state={data:null,metrics:null,records:null,day:"all",person:"",timer:null,playing:false,recordSort:"date_utc",recordSortDirection:1};
 const $=selector=>document.querySelector(selector);
 const esc=value=>(value??"").toString().replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
 const clean=value=>(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
@@ -14,12 +14,15 @@ async function init(){
   $("#close").addEventListener("click",()=>$("#detail").close());
   $("#formula").addEventListener("click",openFormula);
   $("#purpose").addEventListener("click",openPurpose);
+  $("#methodologyNav").addEventListener("click",openPurpose);
   $("#detail").addEventListener("click",event=>{if(event.target===$("#detail"))$("#detail").close()});
   ["recordGroup","recordDay","recordSource","recordKind","recordSearch"].forEach(id=>$("#"+id).addEventListener(id==="recordSearch"?"input":"change",renderRecords));
   $("#expandRecords").addEventListener("click",()=>$("#records").querySelectorAll("details").forEach(detail=>detail.open=true));
   $("#collapseRecords").addEventListener("click",()=>$("#records").querySelectorAll("details").forEach(detail=>detail.open=false));
   render();
   renderRecords();
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){$(".section-nav").querySelectorAll("a").forEach(link=>link.classList.toggle("active",link.hash===`#${entry.target.id}`))}}),{rootMargin:"-25% 0px -65% 0px"});
+  ["resumen","indicadores","matrizRelaciones","registros"].forEach(id=>observer.observe($("#"+id)));
 }
 
 function visibleEvents(){
@@ -122,12 +125,23 @@ function renderRecords(){
   const ownHours=records.filter(r=>r.kind==="timesheet"&&r.entry_class==="own_entry").reduce((s,r)=>s+r.hours,0),thirdHours=records.filter(r=>r.kind==="timesheet"&&r.entry_class==="third_party_entry").reduce((s,r)=>s+r.hours,0);
   const comments=records.filter(r=>r.kind==="comment").length,activities=records.filter(r=>r.kind==="activity"),interactions=records.filter(r=>r.kind==="interaction").reduce((s,r)=>s+(r.counterparts?.length||1),0);
   $("#recordTotals").innerHTML=`<span><b>${records.length}</b> registros únicos</span><span><b>${comments}</b> comentarios</span><span><b>${activities.filter(r=>r.activity_types.includes("tracking")).length}</b> cambios</span><span><b>${activities.filter(r=>r.activity_types.includes("creation")).length}</b> creaciones</span><span><b>${ownHours.toFixed(2)}</b> h propias</span><span><b>${thirdHours.toFixed(2)}</b> h por terceros</span><span><b>${interactions}</b> interacciones</span>`;
-  const sorted=[...groups].sort(([a],[b])=>a.localeCompare(b,"es"));
-  $("#records").innerHTML=sorted.map(([group,list],index)=>`<details data-group="${esc(group)}" ${openGroups.has(group)||(!openGroups.size&&index===0)?"open":""}><summary><span>${esc(group)}</span><b>${list.length} registros</b></summary><div class="record-list">${list.sort((a,b)=>(a.date_utc||a.day).localeCompare(b.date_utc||b.day)).map(renderRecord).join("")}</div></details>`).join("")||'<p class="record-empty">No hay registros para estos filtros.</p>';
+  const sorted=[...groups].sort(([a],[b])=>a.localeCompare(b,"es")),headers=[["date_utc","Fecha/hora"],["person","Personal"],["counterparts","Contraparte(s)"],["source","Fuente"],["kind","Tipo"],["model","Modelo"],["id","ID/SHA"],["title","Tarea / TK / título"],["change","Anterior → nuevo"],["hours","Horas"],["project","Proyecto"],["created_by","Autor / clasificación"],["quality","Q"],["text","Evidencia / texto"],["coverage","Cobertura"]];
+  const sortValue=(record,key)=>key==="counterparts"?(record.counterparts||[]).join(" "):key==="source"?recordSource(record):key==="change"?(record.kind==="activity"?record.text:""):key==="coverage"?(record.kind==="timesheet"?record.entry_class:record.kind):record[key]??"";
+  $("#records").innerHTML=sorted.map(([group,list],index)=>`<details data-group="${esc(group)}" ${openGroups.has(group)||(!openGroups.size&&index===0)?"open":""}><summary><span>${esc(group)}</span><b>${list.length} registros</b></summary><div class="record-table-wrap"><table class="record-table"><thead><tr>${headers.map(([key,label])=>`<th><button type="button" data-record-sort="${key}">${label}</button></th>`).join("")}</tr></thead><tbody>${list.sort((a,b)=>String(sortValue(a,state.recordSort)).localeCompare(String(sortValue(b,state.recordSort)),"es",{numeric:true})*state.recordSortDirection).map(renderRecord).join("")}</tbody></table></div></details>`).join("")||'<p class="record-empty">No hay registros para estos filtros.</p>';
+  $("#records").querySelectorAll("[data-record-sort]").forEach(button=>button.addEventListener("click",()=>{const key=button.dataset.recordSort;state.recordSortDirection=state.recordSort===key?-state.recordSortDirection:1;state.recordSort=key;renderRecords()}));
+  $("#records").querySelectorAll("[data-record-key]").forEach(button=>button.addEventListener("click",()=>openRecord(records.find(record=>`${record.kind}|${record.id}`===button.dataset.recordKey))));
 }
 function renderRecord(record){
-  const extra=record.kind==="timesheet"?`<dl><div><dt>Horas</dt><dd>${record.hours}</dd></div><div><dt>Proyecto</dt><dd>${esc(record.project||"Sin proyecto")}</dd></div><div><dt>Carga</dt><dd>${record.entry_class==="own_entry"?"Propia":"Por tercero"} · creó ${esc(record.created_by)} · modificó ${esc(record.modified_by)}</dd></div>${record.modified_after_creation?'<div><dt>Revisión</dt><dd>Candidato a corrección; no confirmada</dd></div>':""}</dl>`:record.kind==="interaction"?`<dl><div><dt>Contrapartes</dt><dd>${record.counterparts.map(esc).join(", ")}</dd></div><div><dt>Tipos</dt><dd>${record.interaction_types.map(esc).join(", ")}</dd></div></dl>`:record.kind==="activity"?`<dl><div><dt>Acciones</dt><dd>${record.activity_types.map(esc).join(", ")}</dd></div></dl>`:"";
-  return `<article class="record"><header><span>${esc(recordLocalDate(record))}</span><b>${esc(kindLabel[record.kind])}</b><small>${esc(recordSource(record))} · ${esc(record.id)}</small></header><h3>${esc(record.person)} · ${esc(record.title||record.reference||"Sin título")}</h3>${extra}<p>${linkify(record.text||"")}</p>${record.model?`<footer>${esc(record.model)}${record.res_id?` #${record.res_id}`:""}</footer>`:""}</article>`;
+  const counterpart=record.counterparts?.join(", ")||record.counterpart||"—";
+  const model=record.model?`${record.model}${record.res_id?` #${record.res_id}`:""}`:record.reference||record.id;
+  const classification=record.kind==="timesheet"?`${record.entry_class==="own_entry"?"Carga propia":`Carga por ${record.created_by}`}${record.modified_after_creation?" · candidato a corrección":""}`:record.kind==="activity"?record.activity_types.join(", "):record.kind==="interaction"?record.interaction_types.join(", "):"—";
+  const coverage=record.kind==="timesheet"?"Autoría cubierta":record.kind==="comment"?"Q cubierta":record.kind==="interaction"?"Arista analítica":"Registro Odoo consolidado";
+  return `<tr><td>${esc(recordLocalDate(record))}</td><td>${esc(record.person)}</td><td>${esc(counterpart)}</td><td>${esc(recordSource(record))}</td><td>${esc(kindLabel[record.kind])}</td><td>${esc(record.model||"—")}</td><td>${esc(record.id)}</td><td>${esc(record.title||"Sin título")}</td><td>${record.kind==="activity"?esc(record.text||"—"):"—"}</td><td>${record.hours??"—"}</td><td>${esc(record.project||"—")}</td><td>${esc(classification)}</td><td>${record.quality===undefined?"—":Math.round(record.quality*100)+"/100"}</td><td class="evidence-cell"><button type="button" data-record-key="${esc(`${record.kind}|${record.id}`)}" title="${esc(record.text||"")}">${esc(record.text||"Ver detalle")}</button></td><td>${esc(coverage)}</td></tr>`;
+}
+function openRecord(record){
+  $("#detailTitle").textContent=`${kindLabel[record.kind]} · ${record.id}`;
+  $("#detailBody").innerHTML=`<p class="detail-count"><b>${esc(record.person)}</b> · ${esc(recordLocalDate(record))}</p><h3>${esc(record.title||"Sin título")}</h3><p>${linkify(record.text||"Sin texto")}</p><p><strong>Fuente:</strong> ${esc(recordSource(record))} · <strong>Modelo:</strong> ${esc(record.model||"—")} ${record.res_id?`#${record.res_id}`:""}</p>${record.kind==="timesheet"?`<p><strong>${record.hours} h</strong> · ${esc(record.project||"Sin proyecto")} · ${esc(record.entry_class==="own_entry"?"carga propia":`carga por ${record.created_by}`)}</p>`:""}${record.kind==="comment"?`<p><strong>Calidad Q:</strong> ${Math.round(record.quality*100)}/100</p>`:""}`;
+  $("#detail").showModal();
 }
 
 function openDetail(actor,counterpart,events){

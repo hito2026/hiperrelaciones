@@ -29,7 +29,7 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         self.assertEqual(len(keys), len(set(keys)))
 
     def test_page_exposes_filters_animation_and_modal(self):
-        for identifier in ('id="day"', 'id="person"', 'id="play"', 'id="speed"', 'id="detail"', 'id="productivity"', 'id="formula"', 'id="purpose"', 'id="companyTrace"', 'id="records"', 'id="recordGroup"', 'id="expandRecords"', 'id="collapseRecords"'):
+        for identifier in ('id="day"', 'id="person"', 'id="play"', 'id="speed"', 'id="detail"', 'id="productivity"', 'id="formula"', 'id="purpose"', 'id="companyTrace"', 'id="records"', 'id="recordGroup"', 'id="expandRecords"', 'id="collapseRecords"', 'id="matrizRelaciones"', 'id="registros"'):
             self.assertIn(identifier, self.html)
         self.assertIn("showModal()", self.app)
         self.assertIn("prefers-reduced-motion", (ROOT / "assets" / "styles.css").read_text())
@@ -69,6 +69,13 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         self.assertIn("filteredRecords", self.app)
         self.assertIn("recordGroup", self.app)
         self.assertIn('index===0)?"open"', self.app)
+        self.assertIn('class="record-table"', self.app)
+        self.assertIn('class="section-nav"', self.html)
+        self.assertIn("methodologyNav", self.html)
+        self.assertIn("IntersectionObserver", self.app)
+        self.assertIn("data-record-sort", self.app)
+        for column in ("Fecha/hora", "Contraparte(s)", "Anterior → nuevo", "Autor / clasificación", "Cobertura"):
+            self.assertIn(column, self.app)
 
 
 if __name__ == "__main__":

@@ -13,8 +13,9 @@
     <div><span class="mark">HF</span><span><strong>HiperNrelaciones</strong><small>interacciones verificables</small></span></div>
     <span><button id="purpose" class="purpose-link" type="button">¿Qué muestra este espacio?</button> · <span id="coverage">Cargando cobertura…</span></span>
   </header>
+  <nav class="section-nav" aria-label="Secciones del tablero"><a href="#resumen">Resumen</a><a href="#indicadores">ICV y Pulso</a><a href="#matrizRelaciones">Matriz</a><a href="#registros">Registros</a><button id="methodologyNav" type="button">Metodología</button></nav>
   <main>
-    <section class="intro">
+    <section class="intro" id="resumen">
       <div><p class="eyebrow">actor → contraparte</p><h1>Matriz de relaciones</h1><p>Interacciones humanas comprobadas en Odoo y Daily Meetings.</p></div>
       <div id="stats" class="stats" aria-live="polite"></div>
     </section>
@@ -26,17 +27,17 @@
       <label><span>Velocidad</span><select id="speed"><option value="2400">Lenta</option><option value="1600" selected>Normal</option><option value="900">Rápida</option></select></label>
       <span id="activeDay" class="active-day">Vista acumulada</span>
     </section>
-    <section class="productivity-card" aria-labelledby="productivityTitle">
+    <section class="productivity-card" id="indicadores" aria-labelledby="productivityTitle">
       <div class="matrix-head"><div><p class="eyebrow">I · H · R · Q · E</p><h2 id="productivityTitle">Contribución verificable por persona</h2></div><button id="formula" type="button">Ver fórmula y criterios</button></div>
       <p class="productivity-warning">Indicador operativo de actividad observable; no es una evaluación laboral. La ausencia de registro no equivale a ausencia de trabajo.</p>
       <div id="companyTrace" class="company-trace" aria-live="polite"></div>
       <div id="productivity" class="productivity-grid" aria-live="polite"></div>
     </section>
-    <section class="matrix-card">
+    <section class="matrix-card" id="matrizRelaciones">
       <div class="matrix-head"><div><p class="eyebrow">23 × 23</p><h2>Interacciones dirigidas</h2></div><span>Seleccioná una celda para ver textos y actividades</span></div>
       <div class="matrix-wrap"><table id="matrix" aria-label="Matriz dirigida de interacciones"></table></div>
     </section>
-    <section class="records-card" aria-labelledby="recordsTitle">
+    <section class="records-card" id="registros" aria-labelledby="recordsTitle">
       <div class="matrix-head"><div><p class="eyebrow">fuentes y evidencias</p><h2 id="recordsTitle">Registros</h2></div><span>10/09 parcial hasta 17:44:18 Argentina</span></div>
       <div class="record-controls">
         <label>Agrupar<select id="recordGroup"><option value="person">Personal</option><option value="day">Día</option><option value="source">Fuente</option><option value="kind">Tipo</option></select></label>
