@@ -10,6 +10,7 @@ class HiperrelacionesSiteTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.data = json.loads((ROOT / "data" / "hyperrelations.json").read_text())
+        cls.units = json.loads((ROOT / "data" / "work_units.json").read_text())
         cls.html = (ROOT / "index.html").read_text()
         cls.app = (ROOT / "assets" / "app.js").read_text()
 
@@ -96,6 +97,36 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         self.assertEqual(andres["coverage"]["batch_creations"], 147)
         self.assertEqual(andres["coverage"]["creations"], 0)
         self.assertEqual(andres["E"], 0)
+
+    def test_work_units_unify_sources_without_losing_evidence(self):
+        units = self.units["work_units"]
+        task_35183 = [u for u in units if u["person"] == "Carolina Monserrat" and u.get("res_id") == 35183]
+        task_32097 = [u for u in units if u["person"] == "Carolina Monserrat" and u.get("res_id") == 32097]
+        self.assertEqual(len(task_35183), 1)
+        self.assertEqual(len(task_32097), 1)
+        self.assertGreaterEqual(len(task_35183[0]["subevents"]), 3)
+        self.assertEqual({e["id"] for e in task_32097[0]["subevents"]}, {"T208725", "T208737", "T208738"})
+        self.assertEqual(task_35183[0]["source_event_count"], 3)
+        self.assertEqual(task_35183[0]["derived_event_count"], 2)
+
+    def test_andres_batch_is_one_unit_with_147_source_events(self):
+        batches = [u for u in self.units["work_units"] if u["person"] == "Andrés Salguero" and u.get("batch") and "147 tareas creadas" in u["title"]]
+        self.assertEqual(len(batches), 1)
+        self.assertEqual(batches[0]["source_event_count"], 147)
+        self.assertEqual(len(batches[0]["subevents"]), 147)
+        self.assertEqual(len(set(batches[0]["batch_ids"])), 147)
+
+    def test_distinct_tasks_only_merge_in_proven_batches(self):
+        for unit in self.units["work_units"]:
+            ids = {e.get("work_res_id") or e.get("res_id") for e in unit["subevents"] if (e.get("work_model") or e.get("model")) in {"project.task", "helpdesk.ticket"}}
+            if len(ids) > 1:
+                self.assertTrue(unit.get("batch"), unit["key"])
+
+    def test_odoo_links_are_safe_and_work_units_are_loaded(self):
+        self.assertIn("data/work_units.json", self.app)
+        self.assertIn("https://www.hitofusion.com/web#id=", self.app)
+        self.assertIn('target="_blank" rel="noopener noreferrer"', self.app)
+        self.assertIn("source_event_count", self.app)
 
 
 if __name__ == "__main__":

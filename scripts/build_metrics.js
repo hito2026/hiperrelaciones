@@ -59,14 +59,14 @@ for(const day of refreshedDays){
 }
 
 const oldRecords=previousRecords.records.filter(item=>!refreshedDays.has(item.day));
-const comments=odoo.comments.map(item=>({kind:"comment",day:item.day,person:item.author,id:`M${item.message_id}`,date_utc:item.date_utc,source:"Odoo",model:item.model,res_id:item.res_id,title:item.title,text:item.text_sanitized,quality:item.quality_ratio,quality_flags:item.quality_flags}));
-const timesheets=odoo.timesheets.map(item=>({kind:"timesheet",day:item.day,person:item.employee,id:`H${item.line_id}`,date_utc:item.create_date_utc,work_date:item.day,source:"Odoo",model:"account.analytic.line",res_id:item.line_id,title:item.task||"Sin tarea vinculada",text:item.description_sanitized,hours:item.hours,project:item.project,entry_class:item.classification,created_by:item.create_user,modified_by:item.write_user,modified_after_creation:item.modified_after_creation,correction_status:item.correction_status}));
-const tracking=odoo.tracking.map(item=>({kind:"activity",day:item.day,person:item.actor,id:`T${item.tracking_id}`,date_utc:item.date_utc,source:"Odoo",model:item.model,res_id:item.res_id,title:item.title,text:`${item.field}: ${item.old||"∅"} → ${item.new||"∅"}`,old:item.old,new:item.new,field:item.field,activity_types:["tracking"]}));
+const comments=odoo.comments.map(item=>({kind:"comment",day:item.day,person:item.author,id:`M${item.message_id}`,message_id:item.message_id,date_utc:item.date_utc,source:"Odoo",model:item.model,res_id:item.res_id,title:item.title,text:item.text_sanitized,quality:item.quality_ratio,quality_flags:item.quality_flags,counterparts:[...new Set(newEvents.filter(event=>event.message_id===item.message_id).map(event=>event.counterpart))]}));
+const timesheets=odoo.timesheets.map(item=>({kind:"timesheet",day:item.day,person:item.employee,id:`H${item.line_id}`,date_utc:item.create_date_utc,work_date:item.day,source:"Odoo",model:"account.analytic.line",res_id:item.line_id,work_model:item.task_id?"project.task":null,work_res_id:item.task_id||null,title:item.task||"Sin tarea vinculada",text:item.description_sanitized,hours:item.hours,project:item.project,entry_class:item.classification,created_by:item.create_user,modified_by:item.write_user,modified_after_creation:item.modified_after_creation,correction_status:item.correction_status}));
+const tracking=odoo.tracking.map(item=>({kind:"activity",day:item.day,person:item.actor,id:`T${item.tracking_id}`,tracking_id:item.tracking_id,message_id:item.message_id,date_utc:item.date_utc,source:"Odoo",model:item.model,res_id:item.res_id,title:item.title,text:`${item.field}: ${item.old||"∅"} → ${item.new||"∅"}`,old:item.old,new:item.new,field:item.field,activity_types:["tracking"],counterparts:[...new Set(newEvents.filter(event=>event.tracking_id===item.tracking_id||event.message_id===item.message_id).map(event=>event.counterpart))]}));
 const creations=odoo.creations.map(item=>({kind:"activity",day:item.day,person:item.creator,id:`C${item.model}:${item.res_id}`,date_utc:item.date_utc,source:"Odoo",model:item.model,res_id:item.res_id,title:item.title,text:isBatchCreation(item)?"Creación dentro de un lote masivo; visible como registro, excluida de E":"Creación del registro",activity_types:["creation"],batch:isBatchCreation(item),outcome_eligible:!isBatchCreation(item)}));
 const interactionMap=new Map();
 newEvents.forEach((item,index)=>{
   const key=item.message_id?`M${item.message_id}`:item.tracking_id?`T${item.tracking_id}`:`I${item.day}-${index}`;
-  if(!interactionMap.has(key))interactionMap.set(key,{kind:"interaction",day:item.day,person:item.actor,id:`I${key}`,date_utc:null,source:item.source,title:item.title,text:item.evidence,reference:item.reference,interaction_types:[],counterparts:[]});
+  if(!interactionMap.has(key))interactionMap.set(key,{kind:"interaction",day:item.day,person:item.actor,id:`I${key}`,message_id:item.message_id,tracking_id:item.tracking_id,date_utc:null,source:item.source,model:item.reference.startsWith("TK#")?"helpdesk.ticket":item.reference.startsWith("T#")?"project.task":null,res_id:+item.reference.split("#")[1]||null,title:item.title,text:item.evidence,reference:item.reference,interaction_types:[],counterparts:[],is_derived:true});
   const record=interactionMap.get(key);record.interaction_types.push(item.type);record.counterparts.push(item.counterpart);
 });
 for(const record of interactionMap.values()){record.interaction_types=[...new Set(record.interaction_types)];record.counterparts=[...new Set(record.counterparts)];}
@@ -79,4 +79,46 @@ if(new Set(recordKeys).size!==recordKeys.length){const seen=new Set();throw new 
 fs.writeFileSync(path.join(root,"data/hyperrelations.json"),JSON.stringify(graph,null,2)+"\n");
 fs.writeFileSync(path.join(root,"data/productivity.json"),JSON.stringify(metrics,null,2)+"\n");
 fs.writeFileSync(path.join(root,"data/records.json"),JSON.stringify(records,null,2)+"\n");
-console.log(JSON.stringify({people:people.length,events:events.length,records:records.records.length,days:Object.keys(metrics.days),git_commits:gitRecords.length},null,2));
+
+const trackingBatchKey=new Map();
+const trackingCandidates=records.records.filter(record=>record.kind==="activity"&&record.activity_types?.includes("tracking")&&record.date_utc&&record.field);
+const trackingFamilies=new Map();
+trackingCandidates.forEach(record=>{const key=[record.day,record.person,record.model,record.field,record.old||"",record.new||""].join("|");(trackingFamilies.get(key)||trackingFamilies.set(key,[]).get(key)).push(record)});
+for(const [family,list] of trackingFamilies){
+  const sorted=[...list].sort((a,b)=>a.date_utc.localeCompare(b.date_utc));let cluster=[];
+  const flush=()=>{if(new Set(cluster.map(item=>item.res_id)).size>=3){const key=`tracking-batch|${family}|${cluster[0].date_utc}`;cluster.forEach(item=>trackingBatchKey.set(item.id,key))}cluster=[]};
+  sorted.forEach(record=>{if(cluster.length&&(new Date(record.date_utc.replace(" ","T")+"Z")-new Date(cluster.at(-1).date_utc.replace(" ","T")+"Z"))/1000>90)flush();cluster.push(record)});flush();
+}
+
+function workTarget(record){
+  if(record.batch)return {key:`batch|${record.day}|${record.person}|${record.date_utc}|${record.model}|creation`,model:record.model,res_id:null,batch:true};
+  if(trackingBatchKey.has(record.id))return {key:trackingBatchKey.get(record.id),model:record.model,res_id:null,batch:true,tracking_batch:true};
+  if(record.work_model&&record.work_res_id)return {key:`work|${record.day}|${record.person}|${record.work_model}|${record.work_res_id}`,model:record.work_model,res_id:record.work_res_id};
+  if(record.model&&record.res_id&&["project.task","helpdesk.ticket"].includes(record.model))return {key:`work|${record.day}|${record.person}|${record.model}|${record.res_id}`,model:record.model,res_id:record.res_id};
+  const ref=(record.reference||"").match(/^(TK|T)#(\d+)$/);
+  if(ref)return {key:`work|${record.day}|${record.person}|${ref[1]==="TK"?"helpdesk.ticket":"project.task"}|${ref[2]}`,model:ref[1]==="TK"?"helpdesk.ticket":"project.task",res_id:+ref[2]};
+  return {key:`single|${record.day}|${record.source}|${record.kind}|${record.id}`,model:record.model||null,res_id:record.res_id||null};
+}
+const unitMap=new Map();
+records.records.forEach(record=>{
+  const target=workTarget(record);
+  if(!unitMap.has(target.key))unitMap.set(target.key,{key:target.key,day:record.day,person:record.person,model:target.model,res_id:target.res_id,batch:!!target.batch,tracking_batch:!!target.tracking_batch,title:record.title,sources:[],kinds:[],counterparts:[],subevents:[]});
+  const unit=unitMap.get(target.key),subevent={...record};
+  if(subevent.kind==="interaction"&&!String(subevent.source).startsWith("Daily")){subevent.is_derived=true;if(!String(subevent.id).startsWith("I"))subevent.display_id=`I${subevent.id}`}
+  unit.sources.push(subevent.source);unit.kinds.push(subevent.kind);unit.counterparts.push(...(subevent.counterparts||[]));unit.subevents.push(subevent);
+});
+const workUnits=[...unitMap.values()].map(unit=>{
+  unit.sources=[...new Set(unit.sources.map(source=>source.startsWith("Odoo")?"Odoo":source.startsWith("Git")?"GitHub":"Daily"))];
+  unit.kinds=[...new Set(unit.kinds)];unit.counterparts=[...new Set(unit.counterparts)];
+  unit.subevents.sort((a,b)=>String(a.date_utc||a.day).localeCompare(String(b.date_utc||b.day)));
+  unit.source_event_count=unit.subevents.filter(item=>!item.is_derived).length;
+  unit.derived_event_count=unit.subevents.filter(item=>item.is_derived).length;
+  unit.record_count=unit.subevents.length;
+  unit.date_utc=unit.subevents.find(item=>item.date_utc)?.date_utc||null;
+  unit.hours=unit.subevents.filter(item=>item.kind==="timesheet").reduce((sum,item)=>sum+(item.hours||0),0);
+  if(unit.batch){unit.batch_ids=unit.subevents.map(item=>item.res_id);unit.title=unit.tracking_batch?`Lote de ${new Set(unit.batch_ids).size} tareas con el mismo cambio`:`Lote de ${unit.source_event_count} tareas creadas`}
+  return unit;
+}).sort((a,b)=>`${a.day} ${a.person} ${a.date_utc||""}`.localeCompare(`${b.day} ${b.person} ${b.date_utc||""}`));
+const units={report:{...records.report,source_record_count:records.records.length,work_unit_count:workUnits.length,method:"Vista derivada; conserva cada registro fuente dentro de subevents."},people,work_units:workUnits};
+fs.writeFileSync(path.join(root,"data/work_units.json"),JSON.stringify(units,null,2)+"\n");
+console.log(JSON.stringify({people:people.length,events:events.length,records:records.records.length,work_units:workUnits.length,days:Object.keys(metrics.days),git_commits:gitRecords.length},null,2));

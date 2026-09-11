@@ -3940,6 +3940,7 @@
       "day": "2026-09-10",
       "person": "Francisco Fiorentino",
       "id": "M357501",
+      "message_id": 357501,
       "date_utc": "2026-09-10 10:28:59",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -3953,13 +3954,15 @@
         "reference": 0,
         "result": 1,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "M357526",
+      "message_id": 357526,
       "date_utc": "2026-09-10 12:15:25",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -3973,13 +3976,15 @@
         "reference": 0,
         "result": 1,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "M357539",
+      "message_id": 357539,
       "date_utc": "2026-09-10 12:40:23",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -3993,13 +3998,15 @@
         "reference": 0,
         "result": 1,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "M357544",
+      "message_id": 357544,
       "date_utc": "2026-09-10 12:46:45",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4013,13 +4020,17 @@
         "reference": 0,
         "result": 1,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Jinzo"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "M357552",
+      "message_id": 357552,
       "date_utc": "2026-09-10 12:51:47",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4033,13 +4044,15 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "M357556",
+      "message_id": 357556,
       "date_utc": "2026-09-10 12:55:58",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4053,13 +4066,15 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "M357569",
+      "message_id": 357569,
       "date_utc": "2026-09-10 13:16:28",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4073,13 +4088,18 @@
         "reference": 1,
         "result": 0,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Jinzo",
+        "Pablo Marchionno"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "M357608",
+      "message_id": 357608,
       "date_utc": "2026-09-10 13:25:13",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4093,13 +4113,17 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": [
+        "Jinzo"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "M357647",
+      "message_id": 357647,
       "date_utc": "2026-09-10 13:39:09",
       "source": "Odoo",
       "model": "project.task",
@@ -4113,13 +4137,17 @@
         "reference": 1,
         "result": 1,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Lanser Jose Ignacio"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "M357679",
+      "message_id": 357679,
       "date_utc": "2026-09-10 13:41:44",
       "source": "Odoo",
       "model": "project.task",
@@ -4133,13 +4161,17 @@
         "reference": 1,
         "result": 1,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Lanser Jose Ignacio"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "M357757",
+      "message_id": 357757,
       "date_utc": "2026-09-10 14:14:59",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4153,13 +4185,17 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": [
+        "Jinzo"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Ariadna Estebenet",
       "id": "M357792",
+      "message_id": 357792,
       "date_utc": "2026-09-10 14:39:42",
       "source": "Odoo",
       "model": "project.task",
@@ -4173,13 +4209,15 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "M357948",
+      "message_id": 357948,
       "date_utc": "2026-09-10 14:46:22",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4193,13 +4231,15 @@
         "reference": 0,
         "result": 1,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "M357954",
+      "message_id": 357954,
       "date_utc": "2026-09-10 14:47:28",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4213,13 +4253,15 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "M357956",
+      "message_id": 357956,
       "date_utc": "2026-09-10 14:47:39",
       "source": "Odoo",
       "model": "project.task",
@@ -4233,13 +4275,15 @@
         "reference": 1,
         "result": 1,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Matias Banega",
       "id": "M357992",
+      "message_id": 357992,
       "date_utc": "2026-09-10 14:59:54",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4253,13 +4297,18 @@
         "reference": 1,
         "result": 0,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Jinzo",
+        "Mateo Scozzina"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "M358009",
+      "message_id": 358009,
       "date_utc": "2026-09-10 15:47:58",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4273,13 +4322,17 @@
         "reference": 0,
         "result": 1,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Jinzo"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Matias Marziali",
       "id": "M358014",
+      "message_id": 358014,
       "date_utc": "2026-09-10 16:36:52",
       "source": "Odoo",
       "model": "project.task",
@@ -4293,13 +4346,17 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": [
+        "Lucas Burgos"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "M358025",
+      "message_id": 358025,
       "date_utc": "2026-09-10 16:41:23",
       "source": "Odoo",
       "model": "project.task",
@@ -4313,13 +4370,18 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Jinzo",
+        "Pablo Marchionno"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Matias Marziali",
       "id": "M358030",
+      "message_id": 358030,
       "date_utc": "2026-09-10 16:44:41",
       "source": "Odoo",
       "model": "project.task",
@@ -4333,13 +4395,17 @@
         "reference": 1,
         "result": 0,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Lanser Jose Ignacio"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Nelson Tontarelli",
       "id": "M358037",
+      "message_id": 358037,
       "date_utc": "2026-09-10 16:50:38",
       "source": "Odoo",
       "model": "project.task",
@@ -4353,13 +4419,18 @@
         "reference": 1,
         "result": 1,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Valentin Markov",
+        "Lanser Jose Ignacio"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "M358038",
+      "message_id": 358038,
       "date_utc": "2026-09-10 16:54:02",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4373,13 +4444,15 @@
         "reference": 1,
         "result": 1,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "M358039",
+      "message_id": 358039,
       "date_utc": "2026-09-10 16:54:05",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4393,13 +4466,15 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "M358068",
+      "message_id": 358068,
       "date_utc": "2026-09-10 17:37:48",
       "source": "Odoo",
       "model": "project.task",
@@ -4413,13 +4488,17 @@
         "reference": 1,
         "result": 0,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": [
+        "Jinzo"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "M358100",
+      "message_id": 358100,
       "date_utc": "2026-09-10 18:45:26",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4433,13 +4512,17 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": [
+        "Jinzo"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "M358101",
+      "message_id": 358101,
       "date_utc": "2026-09-10 18:51:01",
       "source": "Odoo",
       "model": "project.task",
@@ -4453,13 +4536,18 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Nelson Tontarelli",
+        "Lanser Jose Ignacio"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "M358110",
+      "message_id": 358110,
       "date_utc": "2026-09-10 19:04:05",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4473,13 +4561,17 @@
         "reference": 1,
         "result": 1,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Jinzo"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "M358112",
+      "message_id": 358112,
       "date_utc": "2026-09-10 19:07:34",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4493,13 +4585,15 @@
         "reference": 1,
         "result": 0,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "M358131",
+      "message_id": 358131,
       "date_utc": "2026-09-10 19:25:36",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4513,13 +4607,17 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Jinzo"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "M358132",
+      "message_id": 358132,
       "date_utc": "2026-09-10 19:26:24",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4533,13 +4631,17 @@
         "reference": 0,
         "result": 1,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Jinzo"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "M358134",
+      "message_id": 358134,
       "date_utc": "2026-09-10 19:33:05",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4553,13 +4655,17 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": [
+        "Jinzo"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "M358136",
+      "message_id": 358136,
       "date_utc": "2026-09-10 19:39:41",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4573,13 +4679,18 @@
         "reference": 1,
         "result": 0,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Jinzo",
+        "Matias Banega"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "M358149",
+      "message_id": 358149,
       "date_utc": "2026-09-10 20:01:15",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4593,13 +4704,15 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "M358175",
+      "message_id": 358175,
       "date_utc": "2026-09-10 20:29:42",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4613,13 +4726,17 @@
         "reference": 0,
         "result": 1,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Jinzo"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "M358187",
+      "message_id": 358187,
       "date_utc": "2026-09-10 20:42:07",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4633,13 +4750,15 @@
         "reference": 1,
         "result": 0,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Lucas Burgos",
       "id": "M358190",
+      "message_id": 358190,
       "date_utc": "2026-09-10 20:44:27",
       "source": "Odoo",
       "model": "project.task",
@@ -4653,13 +4772,17 @@
         "reference": 1,
         "result": 0,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Maximiliano Alarcon"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Lucas Burgos",
       "id": "M358196",
+      "message_id": 358196,
       "date_utc": "2026-09-10 20:46:05",
       "source": "Odoo",
       "model": "project.task",
@@ -4673,13 +4796,17 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Maximiliano Alarcon"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "M358206",
+      "message_id": 358206,
       "date_utc": "2026-09-10 21:37:24",
       "source": "Odoo",
       "model": "project.task",
@@ -4693,13 +4820,15 @@
         "reference": 1,
         "result": 1,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Matias Marziali",
       "id": "M358223",
+      "message_id": 358223,
       "date_utc": "2026-09-11 01:57:39",
       "source": "Odoo",
       "model": "project.task",
@@ -4713,13 +4842,17 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Lanser Jose Ignacio"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-10",
       "person": "Maximiliano Alarcon",
       "id": "M358261",
+      "message_id": 358261,
       "date_utc": "2026-09-11 02:34:37",
       "source": "Odoo",
       "model": "project.task",
@@ -4733,13 +4866,15 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-11",
       "person": "Maximiliano Alarcon",
       "id": "M358267",
+      "message_id": 358267,
       "date_utc": "2026-09-11 03:10:12",
       "source": "Odoo",
       "model": "project.task",
@@ -4753,13 +4888,15 @@
         "reference": 1,
         "result": 1,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-11",
       "person": "Nelson Tontarelli",
       "id": "M358305",
+      "message_id": 358305,
       "date_utc": "2026-09-11 12:33:08",
       "source": "Odoo",
       "model": "project.task",
@@ -4773,13 +4910,17 @@
         "reference": 0,
         "result": 1,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": [
+        "Lanser Jose Ignacio"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-11",
       "person": "Ignacio Lera",
       "id": "M358316",
+      "message_id": 358316,
       "date_utc": "2026-09-11 12:49:34",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4793,13 +4934,17 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": [
+        "Valentin Markov"
+      ]
     },
     {
       "kind": "comment",
       "day": "2026-09-11",
       "person": "Mateo Scozzina",
       "id": "M358323",
+      "message_id": 358323,
       "date_utc": "2026-09-11 12:56:26",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4813,13 +4958,15 @@
         "reference": 1,
         "result": 0,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-11",
       "person": "Mateo Scozzina",
       "id": "M358493",
+      "message_id": 358493,
       "date_utc": "2026-09-11 13:02:44",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4833,13 +4980,15 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 1
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "comment",
       "day": "2026-09-11",
       "person": "Mateo Scozzina",
       "id": "M358518",
+      "message_id": 358518,
       "date_utc": "2026-09-11 13:30:37",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -4853,7 +5002,8 @@
         "reference": 0,
         "result": 0,
         "next_step_or_recipient": 0
-      }
+      },
+      "counterparts": []
     },
     {
       "kind": "timesheet",
@@ -4865,6 +5015,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58856,
+      "work_model": "project.task",
+      "work_res_id": 35825,
       "title": "DESA - CONTACTOS",
       "text": "pruebas en base v19 para configurar mostrador/consumidor final y agregado al documento",
       "hours": 2,
@@ -4885,6 +5037,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58885,
+      "work_model": "project.task",
+      "work_res_id": 37782,
       "title": "DESA - Motor pricing",
       "text": "Analisis y documentacion funcional y tecnica para desa",
       "hours": 5,
@@ -4905,6 +5059,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58887,
+      "work_model": "project.task",
+      "work_res_id": 31078,
       "title": "Meet",
       "text": "meet Juan desa",
       "hours": 1.25,
@@ -4925,6 +5081,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58857,
+      "work_model": "project.task",
+      "work_res_id": 32102,
       "title": "Despliegue de Infraestructura",
       "text": "Verificacion base",
       "hours": 0.25,
@@ -4945,6 +5103,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58708,
+      "work_model": null,
+      "work_res_id": null,
       "title": "Sin tarea vinculada",
       "text": "/",
       "hours": 0.25,
@@ -4965,6 +5125,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58891,
+      "work_model": null,
+      "work_res_id": null,
       "title": "Sin tarea vinculada",
       "text": "/",
       "hours": 13,
@@ -4985,6 +5147,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58710,
+      "work_model": null,
+      "work_res_id": null,
       "title": "Sin tarea vinculada",
       "text": "/",
       "hours": 0.4166666666666667,
@@ -5005,6 +5169,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58711,
+      "work_model": null,
+      "work_res_id": null,
       "title": "Sin tarea vinculada",
       "text": "/",
       "hours": 0.75,
@@ -5025,6 +5191,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58712,
+      "work_model": null,
+      "work_res_id": null,
       "title": "Sin tarea vinculada",
       "text": "/",
       "hours": 2.75,
@@ -5045,6 +5213,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58881,
+      "work_model": null,
+      "work_res_id": null,
       "title": "Sin tarea vinculada",
       "text": "/",
       "hours": 1.75,
@@ -5065,6 +5235,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58883,
+      "work_model": null,
+      "work_res_id": null,
       "title": "Sin tarea vinculada",
       "text": "/",
       "hours": 0.5,
@@ -5085,6 +5257,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58884,
+      "work_model": null,
+      "work_res_id": null,
       "title": "Sin tarea vinculada",
       "text": "/",
       "hours": 1.5,
@@ -5105,6 +5279,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58886,
+      "work_model": null,
+      "work_res_id": null,
       "title": "Sin tarea vinculada",
       "text": "/",
       "hours": 0.25,
@@ -5125,6 +5301,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58888,
+      "work_model": null,
+      "work_res_id": null,
       "title": "Sin tarea vinculada",
       "text": "/",
       "hours": 0.25,
@@ -5145,6 +5323,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58859,
+      "work_model": "project.task",
+      "work_res_id": 20407,
       "title": "* Horas de desarrollo",
       "text": "/",
       "hours": 1,
@@ -5165,6 +5345,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58861,
+      "work_model": "project.task",
+      "work_res_id": 35180,
       "title": "Desarrollo 1 - Pagos por línea de factura",
       "text": "/",
       "hours": 4,
@@ -5185,6 +5367,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58890,
+      "work_model": "project.task",
+      "work_res_id": 35180,
       "title": "Desarrollo 1 - Pagos por línea de factura",
       "text": "/",
       "hours": 6.5,
@@ -5205,6 +5389,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58876,
+      "work_model": "project.task",
+      "work_res_id": 37630,
       "title": "Modificar reporte de análisis de ventas en USD",
       "text": "/",
       "hours": 4.5,
@@ -5225,6 +5411,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58882,
+      "work_model": "project.task",
+      "work_res_id": 37630,
       "title": "Modificar reporte de análisis de ventas en USD",
       "text": "/",
       "hours": 0.5,
@@ -5245,6 +5433,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58889,
+      "work_model": "project.task",
+      "work_res_id": 37785,
       "title": "Fix wsmtxca AFIP - monkey patch huge_tree + ajuste in_test_mode Odoo 19",
       "text": "Fix wsmtxca AFIP - monkey patch huge_tree + ajuste in_test_mode Odoo 19",
       "hours": 2,
@@ -5265,6 +5455,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58893,
+      "work_model": "project.task",
+      "work_res_id": 36776,
       "title": "VALIDACIONES NOMINA",
       "text": "Pruebas modulo nomina",
       "hours": 1.5,
@@ -5285,6 +5477,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58306,
+      "work_model": "project.task",
+      "work_res_id": 36779,
       "title": "Retro",
       "text": "Reunion Hito retrospectiva",
       "hours": 3,
@@ -5305,6 +5499,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 58896,
+      "work_model": null,
+      "work_res_id": null,
       "title": "Sin tarea vinculada",
       "text": "/",
       "hours": 0.5,
@@ -5325,6 +5521,8 @@
       "source": "Odoo",
       "model": "account.analytic.line",
       "res_id": 59039,
+      "work_model": null,
+      "work_res_id": null,
       "title": "Sin tarea vinculada",
       "text": "/",
       "hours": 0.5,
@@ -5340,6 +5538,8 @@
       "day": "2026-09-10",
       "person": "Francisco Fiorentino",
       "id": "T208446",
+      "tracking_id": 208446,
+      "message_id": 357500,
       "date_utc": "2026-09-10 10:24:54",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5351,13 +5551,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Francisco Fiorentino",
       "id": "T208447",
+      "tracking_id": 208447,
+      "message_id": 357502,
       "date_utc": "2026-09-10 10:29:36",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5369,13 +5572,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208449",
+      "tracking_id": 208449,
+      "message_id": 357508,
       "date_utc": "2026-09-10 12:06:12",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5387,13 +5593,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208451",
+      "tracking_id": 208451,
+      "message_id": 357514,
       "date_utc": "2026-09-10 12:08:45",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5405,6 +5614,9 @@
       "field": "Type (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Mateo Scozzina"
       ]
     },
     {
@@ -5412,6 +5624,8 @@
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208450",
+      "tracking_id": 208450,
+      "message_id": 357514,
       "date_utc": "2026-09-10 12:08:45",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5423,6 +5637,9 @@
       "field": "Assigned to (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Mateo Scozzina"
       ]
     },
     {
@@ -5430,6 +5647,8 @@
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208452",
+      "tracking_id": 208452,
+      "message_id": 357515,
       "date_utc": "2026-09-10 12:08:48",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5441,13 +5660,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208459",
+      "tracking_id": 208459,
+      "message_id": 357528,
       "date_utc": "2026-09-10 12:15:44",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5459,6 +5681,9 @@
       "field": "Assigned to (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Pablo Marchionno"
       ]
     },
     {
@@ -5466,6 +5691,8 @@
       "day": "2026-09-10",
       "person": "Maximiliano Alarcon",
       "id": "T208460",
+      "tracking_id": 208460,
+      "message_id": 357530,
       "date_utc": "2026-09-10 12:26:25",
       "source": "Odoo",
       "model": "project.task",
@@ -5477,13 +5704,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Maximiliano Alarcon",
       "id": "T208461",
+      "tracking_id": 208461,
+      "message_id": 357531,
       "date_utc": "2026-09-10 12:26:32",
       "source": "Odoo",
       "model": "project.task",
@@ -5495,13 +5725,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208462",
+      "tracking_id": 208462,
+      "message_id": 357534,
       "date_utc": "2026-09-10 12:32:08",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5513,13 +5746,16 @@
       "field": "Type (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Maximiliano Alarcon",
       "id": "T208463",
+      "tracking_id": 208463,
+      "message_id": 357535,
       "date_utc": "2026-09-10 12:34:30",
       "source": "Odoo",
       "model": "project.task",
@@ -5531,13 +5767,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Maximiliano Alarcon",
       "id": "T208464",
+      "tracking_id": 208464,
+      "message_id": 357536,
       "date_utc": "2026-09-10 12:34:52",
       "source": "Odoo",
       "model": "project.task",
@@ -5549,13 +5788,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Maximiliano Alarcon",
       "id": "T208465",
+      "tracking_id": 208465,
+      "message_id": 357537,
       "date_utc": "2026-09-10 12:36:41",
       "source": "Odoo",
       "model": "project.task",
@@ -5567,13 +5809,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208466",
+      "tracking_id": 208466,
+      "message_id": 357538,
       "date_utc": "2026-09-10 12:39:17",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5585,13 +5830,16 @@
       "field": "Subject (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208467",
+      "tracking_id": 208467,
+      "message_id": 357543,
       "date_utc": "2026-09-10 12:45:37",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5603,13 +5851,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208476",
+      "tracking_id": 208476,
+      "message_id": 357549,
       "date_utc": "2026-09-10 12:50:31",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5621,13 +5872,16 @@
       "field": "Empresa (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208475",
+      "tracking_id": 208475,
+      "message_id": 357549,
       "date_utc": "2026-09-10 12:50:31",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5639,13 +5893,16 @@
       "field": "Customer (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208474",
+      "tracking_id": 208474,
+      "message_id": 357549,
       "date_utc": "2026-09-10 12:50:31",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5657,13 +5914,16 @@
       "field": "Type (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208473",
+      "tracking_id": 208473,
+      "message_id": 357549,
       "date_utc": "2026-09-10 12:50:31",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5675,13 +5935,16 @@
       "field": "Assigned to (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208472",
+      "tracking_id": 208472,
+      "message_id": 357549,
       "date_utc": "2026-09-10 12:50:31",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5693,13 +5956,16 @@
       "field": "Nuevo Campo relacionado (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208471",
+      "tracking_id": 208471,
+      "message_id": 357549,
       "date_utc": "2026-09-10 12:50:31",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5711,13 +5977,16 @@
       "field": "Nuevo Campo relacionado (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208477",
+      "tracking_id": 208477,
+      "message_id": 357550,
       "date_utc": "2026-09-10 12:50:32",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5729,13 +5998,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208478",
+      "tracking_id": 208478,
+      "message_id": 357560,
       "date_utc": "2026-09-10 13:11:12",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5747,13 +6019,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208479",
+      "tracking_id": 208479,
+      "message_id": 357563,
       "date_utc": "2026-09-10 13:13:39",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5765,13 +6040,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208480",
+      "tracking_id": 208480,
+      "message_id": 357565,
       "date_utc": "2026-09-10 13:13:44",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5783,13 +6061,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208481",
+      "tracking_id": 208481,
+      "message_id": 357568,
       "date_utc": "2026-09-10 13:13:45",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5801,6 +6082,9 @@
       "field": "Assigned to (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Pablo Marchionno"
       ]
     },
     {
@@ -5808,6 +6092,8 @@
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208483",
+      "tracking_id": 208483,
+      "message_id": 357577,
       "date_utc": "2026-09-10 13:21:51",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5819,6 +6105,9 @@
       "field": "Type (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Mateo Scozzina"
       ]
     },
     {
@@ -5826,6 +6115,8 @@
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208482",
+      "tracking_id": 208482,
+      "message_id": 357577,
       "date_utc": "2026-09-10 13:21:51",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5837,6 +6128,9 @@
       "field": "Assigned to (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Mateo Scozzina"
       ]
     },
     {
@@ -5844,6 +6138,8 @@
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208484",
+      "tracking_id": 208484,
+      "message_id": 357578,
       "date_utc": "2026-09-10 13:21:53",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5855,13 +6151,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208517",
+      "tracking_id": 208517,
+      "message_id": 357610,
       "date_utc": "2026-09-10 13:26:44",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5873,13 +6172,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208518",
+      "tracking_id": 208518,
+      "message_id": 357612,
       "date_utc": "2026-09-10 13:27:23",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5891,13 +6193,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208677",
+      "tracking_id": 208677,
+      "message_id": 357790,
       "date_utc": "2026-09-10 14:39:07",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -5909,13 +6214,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208679",
+      "tracking_id": 208679,
+      "message_id": 357794,
       "date_utc": "2026-09-10 14:40:38",
       "source": "Odoo",
       "model": "project.task",
@@ -5927,13 +6235,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ariadna Estebenet",
       "id": "T208690",
+      "tracking_id": 208690,
+      "message_id": 357959,
       "date_utc": "2026-09-10 14:54:08",
       "source": "Odoo",
       "model": "project.task",
@@ -5945,13 +6256,16 @@
       "field": "Title (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208691",
+      "tracking_id": 208691,
+      "message_id": 357960,
       "date_utc": "2026-09-10 14:54:54",
       "source": "Odoo",
       "model": "project.task",
@@ -5963,13 +6277,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208692",
+      "tracking_id": 208692,
+      "message_id": 357961,
       "date_utc": "2026-09-10 14:55:08",
       "source": "Odoo",
       "model": "project.task",
@@ -5981,13 +6298,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208693",
+      "tracking_id": 208693,
+      "message_id": 357962,
       "date_utc": "2026-09-10 14:55:10",
       "source": "Odoo",
       "model": "project.task",
@@ -5999,13 +6319,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208694",
+      "tracking_id": 208694,
+      "message_id": 357963,
       "date_utc": "2026-09-10 14:55:12",
       "source": "Odoo",
       "model": "project.task",
@@ -6017,13 +6340,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208695",
+      "tracking_id": 208695,
+      "message_id": 357964,
       "date_utc": "2026-09-10 14:55:14",
       "source": "Odoo",
       "model": "project.task",
@@ -6035,13 +6361,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208696",
+      "tracking_id": 208696,
+      "message_id": 357965,
       "date_utc": "2026-09-10 14:55:15",
       "source": "Odoo",
       "model": "project.task",
@@ -6053,13 +6382,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208697",
+      "tracking_id": 208697,
+      "message_id": 357966,
       "date_utc": "2026-09-10 14:55:17",
       "source": "Odoo",
       "model": "project.task",
@@ -6071,13 +6403,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208698",
+      "tracking_id": 208698,
+      "message_id": 357967,
       "date_utc": "2026-09-10 14:55:18",
       "source": "Odoo",
       "model": "project.task",
@@ -6089,13 +6424,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208699",
+      "tracking_id": 208699,
+      "message_id": 357968,
       "date_utc": "2026-09-10 14:55:19",
       "source": "Odoo",
       "model": "project.task",
@@ -6107,13 +6445,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208700",
+      "tracking_id": 208700,
+      "message_id": 357969,
       "date_utc": "2026-09-10 14:55:20",
       "source": "Odoo",
       "model": "project.task",
@@ -6125,13 +6466,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ariadna Estebenet",
       "id": "T208701",
+      "tracking_id": 208701,
+      "message_id": 357970,
       "date_utc": "2026-09-10 14:55:20",
       "source": "Odoo",
       "model": "project.task",
@@ -6143,13 +6487,16 @@
       "field": "Title (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208702",
+      "tracking_id": 208702,
+      "message_id": 357971,
       "date_utc": "2026-09-10 14:55:25",
       "source": "Odoo",
       "model": "project.task",
@@ -6161,13 +6508,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208703",
+      "tracking_id": 208703,
+      "message_id": 357972,
       "date_utc": "2026-09-10 14:55:27",
       "source": "Odoo",
       "model": "project.task",
@@ -6179,13 +6529,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ariadna Estebenet",
       "id": "T208704",
+      "tracking_id": 208704,
+      "message_id": 357973,
       "date_utc": "2026-09-10 14:55:29",
       "source": "Odoo",
       "model": "project.task",
@@ -6197,13 +6550,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208705",
+      "tracking_id": 208705,
+      "message_id": 357974,
       "date_utc": "2026-09-10 14:55:29",
       "source": "Odoo",
       "model": "project.task",
@@ -6215,13 +6571,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208706",
+      "tracking_id": 208706,
+      "message_id": 357975,
       "date_utc": "2026-09-10 14:55:42",
       "source": "Odoo",
       "model": "project.task",
@@ -6233,13 +6592,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208707",
+      "tracking_id": 208707,
+      "message_id": 357977,
       "date_utc": "2026-09-10 14:55:49",
       "source": "Odoo",
       "model": "project.task",
@@ -6251,13 +6613,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208708",
+      "tracking_id": 208708,
+      "message_id": 357978,
       "date_utc": "2026-09-10 14:55:51",
       "source": "Odoo",
       "model": "project.task",
@@ -6269,13 +6634,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208709",
+      "tracking_id": 208709,
+      "message_id": 357979,
       "date_utc": "2026-09-10 14:55:52",
       "source": "Odoo",
       "model": "project.task",
@@ -6287,13 +6655,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208710",
+      "tracking_id": 208710,
+      "message_id": 357980,
       "date_utc": "2026-09-10 14:55:53",
       "source": "Odoo",
       "model": "project.task",
@@ -6305,13 +6676,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208711",
+      "tracking_id": 208711,
+      "message_id": 357981,
       "date_utc": "2026-09-10 14:55:54",
       "source": "Odoo",
       "model": "project.task",
@@ -6323,13 +6697,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208712",
+      "tracking_id": 208712,
+      "message_id": 357982,
       "date_utc": "2026-09-10 14:55:56",
       "source": "Odoo",
       "model": "project.task",
@@ -6341,13 +6718,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208713",
+      "tracking_id": 208713,
+      "message_id": 357984,
       "date_utc": "2026-09-10 14:55:58",
       "source": "Odoo",
       "model": "project.task",
@@ -6359,13 +6739,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208715",
+      "tracking_id": 208715,
+      "message_id": 357985,
       "date_utc": "2026-09-10 14:55:58",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -6377,6 +6760,9 @@
       "field": "Type (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Mateo Scozzina"
       ]
     },
     {
@@ -6384,6 +6770,8 @@
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208714",
+      "tracking_id": 208714,
+      "message_id": 357985,
       "date_utc": "2026-09-10 14:55:58",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -6395,6 +6783,9 @@
       "field": "Assigned to (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Mateo Scozzina"
       ]
     },
     {
@@ -6402,6 +6793,8 @@
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208716",
+      "tracking_id": 208716,
+      "message_id": 357986,
       "date_utc": "2026-09-10 14:55:59",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -6413,13 +6806,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208717",
+      "tracking_id": 208717,
+      "message_id": 357988,
       "date_utc": "2026-09-10 14:56:00",
       "source": "Odoo",
       "model": "project.task",
@@ -6431,13 +6827,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208718",
+      "tracking_id": 208718,
+      "message_id": 357989,
       "date_utc": "2026-09-10 14:56:26",
       "source": "Odoo",
       "model": "project.task",
@@ -6449,13 +6848,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208719",
+      "tracking_id": 208719,
+      "message_id": 357990,
       "date_utc": "2026-09-10 14:56:43",
       "source": "Odoo",
       "model": "project.task",
@@ -6467,13 +6869,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208720",
+      "tracking_id": 208720,
+      "message_id": 357991,
       "date_utc": "2026-09-10 14:56:44",
       "source": "Odoo",
       "model": "project.task",
@@ -6485,13 +6890,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Matias Banega",
       "id": "T208721",
+      "tracking_id": 208721,
+      "message_id": 357993,
       "date_utc": "2026-09-10 15:03:40",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -6503,13 +6911,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208722",
+      "tracking_id": 208722,
+      "message_id": 357995,
       "date_utc": "2026-09-10 15:05:01",
       "source": "Odoo",
       "model": "project.task",
@@ -6521,13 +6932,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208723",
+      "tracking_id": 208723,
+      "message_id": 357996,
       "date_utc": "2026-09-10 15:05:04",
       "source": "Odoo",
       "model": "project.task",
@@ -6539,13 +6953,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208724",
+      "tracking_id": 208724,
+      "message_id": 357997,
       "date_utc": "2026-09-10 15:05:26",
       "source": "Odoo",
       "model": "project.task",
@@ -6557,13 +6974,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208725",
+      "tracking_id": 208725,
+      "message_id": 357998,
       "date_utc": "2026-09-10 15:05:34",
       "source": "Odoo",
       "model": "project.task",
@@ -6575,13 +6995,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208726",
+      "tracking_id": 208726,
+      "message_id": 358007,
       "date_utc": "2026-09-10 15:45:32",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -6593,13 +7016,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208727",
+      "tracking_id": 208727,
+      "message_id": 358015,
       "date_utc": "2026-09-10 16:38:15",
       "source": "Odoo",
       "model": "project.task",
@@ -6611,13 +7037,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208728",
+      "tracking_id": 208728,
+      "message_id": 358016,
       "date_utc": "2026-09-10 16:38:17",
       "source": "Odoo",
       "model": "project.task",
@@ -6629,13 +7058,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208729",
+      "tracking_id": 208729,
+      "message_id": 358017,
       "date_utc": "2026-09-10 16:38:22",
       "source": "Odoo",
       "model": "project.task",
@@ -6647,13 +7079,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208730",
+      "tracking_id": 208730,
+      "message_id": 358018,
       "date_utc": "2026-09-10 16:38:24",
       "source": "Odoo",
       "model": "project.task",
@@ -6665,13 +7100,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208731",
+      "tracking_id": 208731,
+      "message_id": 358019,
       "date_utc": "2026-09-10 16:38:37",
       "source": "Odoo",
       "model": "project.task",
@@ -6683,13 +7121,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208732",
+      "tracking_id": 208732,
+      "message_id": 358026,
       "date_utc": "2026-09-10 16:41:36",
       "source": "Odoo",
       "model": "project.task",
@@ -6701,13 +7142,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208733",
+      "tracking_id": 208733,
+      "message_id": 358035,
       "date_utc": "2026-09-10 16:49:06",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -6719,13 +7163,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Nelson Tontarelli",
       "id": "T208734",
+      "tracking_id": 208734,
+      "message_id": 358036,
       "date_utc": "2026-09-10 16:49:59",
       "source": "Odoo",
       "model": "project.task",
@@ -6737,13 +7184,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208735",
+      "tracking_id": 208735,
+      "message_id": 358040,
       "date_utc": "2026-09-10 16:55:37",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -6755,13 +7205,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208736",
+      "tracking_id": 208736,
+      "message_id": 358042,
       "date_utc": "2026-09-10 16:55:43",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -6773,13 +7226,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208737",
+      "tracking_id": 208737,
+      "message_id": 358044,
       "date_utc": "2026-09-10 17:04:25",
       "source": "Odoo",
       "model": "project.task",
@@ -6791,13 +7247,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208738",
+      "tracking_id": 208738,
+      "message_id": 358045,
       "date_utc": "2026-09-10 17:04:36",
       "source": "Odoo",
       "model": "project.task",
@@ -6809,13 +7268,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "T208739",
+      "tracking_id": 208739,
+      "message_id": 358046,
       "date_utc": "2026-09-10 17:10:32",
       "source": "Odoo",
       "model": "project.task",
@@ -6827,13 +7289,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208742",
+      "tracking_id": 208742,
+      "message_id": 358063,
       "date_utc": "2026-09-10 17:33:50",
       "source": "Odoo",
       "model": "project.task",
@@ -6845,13 +7310,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208743",
+      "tracking_id": 208743,
+      "message_id": 358064,
       "date_utc": "2026-09-10 17:33:52",
       "source": "Odoo",
       "model": "project.task",
@@ -6863,13 +7331,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208744",
+      "tracking_id": 208744,
+      "message_id": 358066,
       "date_utc": "2026-09-10 17:37:14",
       "source": "Odoo",
       "model": "project.task",
@@ -6881,13 +7352,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208745",
+      "tracking_id": 208745,
+      "message_id": 358067,
       "date_utc": "2026-09-10 17:37:16",
       "source": "Odoo",
       "model": "project.task",
@@ -6899,13 +7373,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208746",
+      "tracking_id": 208746,
+      "message_id": 358069,
       "date_utc": "2026-09-10 17:38:04",
       "source": "Odoo",
       "model": "project.task",
@@ -6917,13 +7394,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208747",
+      "tracking_id": 208747,
+      "message_id": 358070,
       "date_utc": "2026-09-10 17:38:15",
       "source": "Odoo",
       "model": "project.task",
@@ -6935,13 +7415,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208748",
+      "tracking_id": 208748,
+      "message_id": 358071,
       "date_utc": "2026-09-10 17:39:56",
       "source": "Odoo",
       "model": "project.task",
@@ -6953,13 +7436,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208749",
+      "tracking_id": 208749,
+      "message_id": 358072,
       "date_utc": "2026-09-10 17:41:14",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -6971,13 +7457,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208751",
+      "tracking_id": 208751,
+      "message_id": 358075,
       "date_utc": "2026-09-10 17:49:21",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -6989,6 +7478,9 @@
       "field": "Type (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Valentin Markov"
       ]
     },
     {
@@ -6996,6 +7488,8 @@
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208750",
+      "tracking_id": 208750,
+      "message_id": 358075,
       "date_utc": "2026-09-10 17:49:21",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7007,6 +7501,9 @@
       "field": "Assigned to (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Valentin Markov"
       ]
     },
     {
@@ -7014,6 +7511,8 @@
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208754",
+      "tracking_id": 208754,
+      "message_id": 358081,
       "date_utc": "2026-09-10 17:59:27",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7025,6 +7524,9 @@
       "field": "Type (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Valentin Markov"
       ]
     },
     {
@@ -7032,6 +7534,8 @@
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208753",
+      "tracking_id": 208753,
+      "message_id": 358081,
       "date_utc": "2026-09-10 17:59:27",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7043,6 +7547,9 @@
       "field": "Assigned to (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Valentin Markov"
       ]
     },
     {
@@ -7050,6 +7557,8 @@
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208756",
+      "tracking_id": 208756,
+      "message_id": 358083,
       "date_utc": "2026-09-10 17:59:46",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7061,6 +7570,9 @@
       "field": "Type (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Valentin Markov"
       ]
     },
     {
@@ -7068,6 +7580,8 @@
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208755",
+      "tracking_id": 208755,
+      "message_id": 358083,
       "date_utc": "2026-09-10 17:59:46",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7079,6 +7593,9 @@
       "field": "Assigned to (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Valentin Markov"
       ]
     },
     {
@@ -7086,6 +7603,8 @@
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "T208761",
+      "tracking_id": 208761,
+      "message_id": 358085,
       "date_utc": "2026-09-10 18:00:50",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7097,13 +7616,16 @@
       "field": "Empresa (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208762",
+      "tracking_id": 208762,
+      "message_id": 358087,
       "date_utc": "2026-09-10 18:03:11",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7115,13 +7637,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208763",
+      "tracking_id": 208763,
+      "message_id": 358088,
       "date_utc": "2026-09-10 18:03:16",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7133,13 +7658,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208764",
+      "tracking_id": 208764,
+      "message_id": 358090,
       "date_utc": "2026-09-10 18:03:20",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7151,13 +7679,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208765",
+      "tracking_id": 208765,
+      "message_id": 358094,
       "date_utc": "2026-09-10 18:26:01",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7169,13 +7700,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208768",
+      "tracking_id": 208768,
+      "message_id": 358097,
       "date_utc": "2026-09-10 18:40:04",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7187,13 +7721,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208769",
+      "tracking_id": 208769,
+      "message_id": 358098,
       "date_utc": "2026-09-10 18:43:33",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7205,13 +7742,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Nahiara Aylen Delgado",
       "id": "T208770",
+      "tracking_id": 208770,
+      "message_id": 358102,
       "date_utc": "2026-09-10 18:52:03",
       "source": "Odoo",
       "model": "project.task",
@@ -7223,13 +7763,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Nahiara Aylen Delgado",
       "id": "T208771",
+      "tracking_id": 208771,
+      "message_id": 358103,
       "date_utc": "2026-09-10 18:52:07",
       "source": "Odoo",
       "model": "project.task",
@@ -7241,13 +7784,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Nahiara Aylen Delgado",
       "id": "T208772",
+      "tracking_id": 208772,
+      "message_id": 358104,
       "date_utc": "2026-09-10 18:52:12",
       "source": "Odoo",
       "model": "project.task",
@@ -7259,13 +7805,16 @@
       "field": "Assignees (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208773",
+      "tracking_id": 208773,
+      "message_id": 358105,
       "date_utc": "2026-09-10 18:57:30",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7277,6 +7826,9 @@
       "field": "Assigned to (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Pablo Marchionno"
       ]
     },
     {
@@ -7284,6 +7836,8 @@
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208774",
+      "tracking_id": 208774,
+      "message_id": 358106,
       "date_utc": "2026-09-10 19:00:11",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7295,13 +7849,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208776",
+      "tracking_id": 208776,
+      "message_id": 358113,
       "date_utc": "2026-09-10 19:07:55",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7313,13 +7870,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Jinzo",
       "id": "T208777",
+      "tracking_id": 208777,
+      "message_id": 358115,
       "date_utc": "2026-09-10 19:17:00",
       "source": "Odoo",
       "model": "project.task",
@@ -7331,13 +7891,16 @@
       "field": "Parent Task (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Jinzo",
       "id": "T208778",
+      "tracking_id": 208778,
+      "message_id": 358116,
       "date_utc": "2026-09-10 19:17:01",
       "source": "Odoo",
       "model": "project.task",
@@ -7349,13 +7912,16 @@
       "field": "Parent Task (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Jinzo",
       "id": "T208779",
+      "tracking_id": 208779,
+      "message_id": 358117,
       "date_utc": "2026-09-10 19:17:01",
       "source": "Odoo",
       "model": "project.task",
@@ -7367,13 +7933,16 @@
       "field": "Parent Task (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Jinzo",
       "id": "T208780",
+      "tracking_id": 208780,
+      "message_id": 358118,
       "date_utc": "2026-09-10 19:17:02",
       "source": "Odoo",
       "model": "project.task",
@@ -7385,13 +7954,16 @@
       "field": "Parent Task (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Jinzo",
       "id": "T208781",
+      "tracking_id": 208781,
+      "message_id": 358119,
       "date_utc": "2026-09-10 19:17:02",
       "source": "Odoo",
       "model": "project.task",
@@ -7403,13 +7975,16 @@
       "field": "Parent Task (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Jinzo",
       "id": "T208782",
+      "tracking_id": 208782,
+      "message_id": 358120,
       "date_utc": "2026-09-10 19:17:02",
       "source": "Odoo",
       "model": "project.task",
@@ -7421,13 +7996,16 @@
       "field": "Parent Task (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Jinzo",
       "id": "T208783",
+      "tracking_id": 208783,
+      "message_id": 358121,
       "date_utc": "2026-09-10 19:17:03",
       "source": "Odoo",
       "model": "project.task",
@@ -7439,13 +8017,16 @@
       "field": "Parent Task (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Jinzo",
       "id": "T208784",
+      "tracking_id": 208784,
+      "message_id": 358122,
       "date_utc": "2026-09-10 19:17:03",
       "source": "Odoo",
       "model": "project.task",
@@ -7457,13 +8038,16 @@
       "field": "Parent Task (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Jinzo",
       "id": "T208785",
+      "tracking_id": 208785,
+      "message_id": 358123,
       "date_utc": "2026-09-10 19:17:04",
       "source": "Odoo",
       "model": "project.task",
@@ -7475,13 +8059,16 @@
       "field": "Parent Task (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Jinzo",
       "id": "T208786",
+      "tracking_id": 208786,
+      "message_id": 358124,
       "date_utc": "2026-09-10 19:17:04",
       "source": "Odoo",
       "model": "project.task",
@@ -7493,13 +8080,16 @@
       "field": "Parent Task (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Jinzo",
       "id": "T208787",
+      "tracking_id": 208787,
+      "message_id": 358125,
       "date_utc": "2026-09-10 19:17:05",
       "source": "Odoo",
       "model": "project.task",
@@ -7511,13 +8101,16 @@
       "field": "Parent Task (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Jinzo",
       "id": "T208788",
+      "tracking_id": 208788,
+      "message_id": 358126,
       "date_utc": "2026-09-10 19:17:05",
       "source": "Odoo",
       "model": "project.task",
@@ -7529,13 +8122,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Maximiliano Alarcon",
       "id": "T208794",
+      "tracking_id": 208794,
+      "message_id": 358143,
       "date_utc": "2026-09-10 19:50:27",
       "source": "Odoo",
       "model": "project.task",
@@ -7547,13 +8143,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208796",
+      "tracking_id": 208796,
+      "message_id": 358146,
       "date_utc": "2026-09-10 20:00:28",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7565,13 +8164,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208797",
+      "tracking_id": 208797,
+      "message_id": 358148,
       "date_utc": "2026-09-10 20:00:33",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7583,13 +8185,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208798",
+      "tracking_id": 208798,
+      "message_id": 358150,
       "date_utc": "2026-09-10 20:01:24",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7601,13 +8206,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208799",
+      "tracking_id": 208799,
+      "message_id": 358152,
       "date_utc": "2026-09-10 20:05:10",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7619,13 +8227,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208800",
+      "tracking_id": 208800,
+      "message_id": 358157,
       "date_utc": "2026-09-10 20:09:05",
       "source": "Odoo",
       "model": "project.task",
@@ -7637,13 +8248,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "T208801",
+      "tracking_id": 208801,
+      "message_id": 358158,
       "date_utc": "2026-09-10 20:09:11",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7655,13 +8269,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208802",
+      "tracking_id": 208802,
+      "message_id": 358160,
       "date_utc": "2026-09-10 20:09:21",
       "source": "Odoo",
       "model": "project.task",
@@ -7673,13 +8290,16 @@
       "field": "Milestone (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208803",
+      "tracking_id": 208803,
+      "message_id": 358162,
       "date_utc": "2026-09-10 20:10:06",
       "source": "Odoo",
       "model": "project.task",
@@ -7691,13 +8311,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208804",
+      "tracking_id": 208804,
+      "message_id": 358163,
       "date_utc": "2026-09-10 20:11:01",
       "source": "Odoo",
       "model": "project.task",
@@ -7709,13 +8332,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208805",
+      "tracking_id": 208805,
+      "message_id": 358164,
       "date_utc": "2026-09-10 20:11:04",
       "source": "Odoo",
       "model": "project.task",
@@ -7727,13 +8353,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208806",
+      "tracking_id": 208806,
+      "message_id": 358165,
       "date_utc": "2026-09-10 20:12:09",
       "source": "Odoo",
       "model": "project.task",
@@ -7745,13 +8374,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208807",
+      "tracking_id": 208807,
+      "message_id": 358166,
       "date_utc": "2026-09-10 20:12:13",
       "source": "Odoo",
       "model": "project.task",
@@ -7763,13 +8395,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208808",
+      "tracking_id": 208808,
+      "message_id": 358167,
       "date_utc": "2026-09-10 20:12:16",
       "source": "Odoo",
       "model": "project.task",
@@ -7781,13 +8416,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208809",
+      "tracking_id": 208809,
+      "message_id": 358168,
       "date_utc": "2026-09-10 20:12:18",
       "source": "Odoo",
       "model": "project.task",
@@ -7799,13 +8437,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208810",
+      "tracking_id": 208810,
+      "message_id": 358172,
       "date_utc": "2026-09-10 20:27:07",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7817,13 +8458,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208813",
+      "tracking_id": 208813,
+      "message_id": 358179,
       "date_utc": "2026-09-10 20:35:42",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7835,6 +8479,9 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Ignacio Lera"
       ]
     },
     {
@@ -7842,6 +8489,8 @@
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208812",
+      "tracking_id": 208812,
+      "message_id": 358179,
       "date_utc": "2026-09-10 20:35:42",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7853,6 +8502,9 @@
       "field": "Type (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Ignacio Lera"
       ]
     },
     {
@@ -7860,6 +8512,8 @@
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208811",
+      "tracking_id": 208811,
+      "message_id": 358179,
       "date_utc": "2026-09-10 20:35:42",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7871,6 +8525,9 @@
       "field": "Assigned to (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Ignacio Lera"
       ]
     },
     {
@@ -7878,6 +8535,8 @@
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208814",
+      "tracking_id": 208814,
+      "message_id": 358181,
       "date_utc": "2026-09-10 20:35:58",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7889,13 +8548,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "T208818",
+      "tracking_id": 208818,
+      "message_id": 358188,
       "date_utc": "2026-09-10 20:42:19",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -7907,13 +8569,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Lucas Burgos",
       "id": "T208819",
+      "tracking_id": 208819,
+      "message_id": 358191,
       "date_utc": "2026-09-10 20:44:43",
       "source": "Odoo",
       "model": "project.task",
@@ -7925,13 +8590,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Lucas Burgos",
       "id": "T208820",
+      "tracking_id": 208820,
+      "message_id": 358192,
       "date_utc": "2026-09-10 20:45:19",
       "source": "Odoo",
       "model": "project.task",
@@ -7943,13 +8611,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Lucas Burgos",
       "id": "T208821",
+      "tracking_id": 208821,
+      "message_id": 358193,
       "date_utc": "2026-09-10 20:45:19",
       "source": "Odoo",
       "model": "project.task",
@@ -7961,13 +8632,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Lucas Burgos",
       "id": "T208822",
+      "tracking_id": 208822,
+      "message_id": 358194,
       "date_utc": "2026-09-10 20:45:23",
       "source": "Odoo",
       "model": "project.task",
@@ -7979,13 +8653,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Lucas Burgos",
       "id": "T208823",
+      "tracking_id": 208823,
+      "message_id": 358195,
       "date_utc": "2026-09-10 20:45:40",
       "source": "Odoo",
       "model": "project.task",
@@ -7997,13 +8674,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "T208826",
+      "tracking_id": 208826,
+      "message_id": 358208,
       "date_utc": "2026-09-10 21:38:15",
       "source": "Odoo",
       "model": "project.task",
@@ -8015,13 +8695,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-11",
       "person": "Maximiliano Alarcon",
       "id": "T208829",
+      "tracking_id": 208829,
+      "message_id": 358268,
       "date_utc": "2026-09-11 03:16:19",
       "source": "Odoo",
       "model": "project.task",
@@ -8033,13 +8716,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-11",
       "person": "Maximiliano Alarcon",
       "id": "T208830",
+      "tracking_id": 208830,
+      "message_id": 358269,
       "date_utc": "2026-09-11 03:17:36",
       "source": "Odoo",
       "model": "project.task",
@@ -8051,13 +8737,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-11",
       "person": "Maximiliano Alarcon",
       "id": "T208831",
+      "tracking_id": 208831,
+      "message_id": 358270,
       "date_utc": "2026-09-11 03:20:12",
       "source": "Odoo",
       "model": "project.task",
@@ -8069,13 +8758,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-11",
       "person": "Maximiliano Alarcon",
       "id": "T208832",
+      "tracking_id": 208832,
+      "message_id": 358271,
       "date_utc": "2026-09-11 03:21:43",
       "source": "Odoo",
       "model": "project.task",
@@ -8087,13 +8779,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-11",
       "person": "Maximiliano Alarcon",
       "id": "T208834",
+      "tracking_id": 208834,
+      "message_id": 358272,
       "date_utc": "2026-09-11 03:22:28",
       "source": "Odoo",
       "model": "project.task",
@@ -8105,13 +8800,16 @@
       "field": "Deadline (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-11",
       "person": "Maximiliano Alarcon",
       "id": "T208833",
+      "tracking_id": 208833,
+      "message_id": 358272,
       "date_utc": "2026-09-11 03:22:28",
       "source": "Odoo",
       "model": "project.task",
@@ -8123,13 +8821,16 @@
       "field": "Start date (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-11",
       "person": "Maximiliano Alarcon",
       "id": "T208837",
+      "tracking_id": 208837,
+      "message_id": 358273,
       "date_utc": "2026-09-11 03:23:05",
       "source": "Odoo",
       "model": "project.task",
@@ -8141,13 +8842,16 @@
       "field": "Deadline (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-11",
       "person": "Maximiliano Alarcon",
       "id": "T208836",
+      "tracking_id": 208836,
+      "message_id": 358273,
       "date_utc": "2026-09-11 03:23:05",
       "source": "Odoo",
       "model": "project.task",
@@ -8159,13 +8863,16 @@
       "field": "Start date (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-11",
       "person": "Maximiliano Alarcon",
       "id": "T208835",
+      "tracking_id": 208835,
+      "message_id": 358273,
       "date_utc": "2026-09-11 03:23:05",
       "source": "Odoo",
       "model": "project.task",
@@ -8177,13 +8884,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-11",
       "person": "Ignacio Lera",
       "id": "T208838",
+      "tracking_id": 208838,
+      "message_id": 358279,
       "date_utc": "2026-09-11 11:59:52",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -8195,6 +8905,10 @@
       "field": "Assigned to (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Valentin Markov",
+        "Mateo Scozzina"
       ]
     },
     {
@@ -8202,6 +8916,8 @@
       "day": "2026-09-11",
       "person": "Samuel Marcano",
       "id": "T208841",
+      "tracking_id": 208841,
+      "message_id": 358289,
       "date_utc": "2026-09-11 12:09:44",
       "source": "Odoo",
       "model": "project.task",
@@ -8213,13 +8929,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-11",
       "person": "Samuel Marcano",
       "id": "T208842",
+      "tracking_id": 208842,
+      "message_id": 358290,
       "date_utc": "2026-09-11 12:09:45",
       "source": "Odoo",
       "model": "project.task",
@@ -8231,13 +8950,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-11",
       "person": "Samuel Marcano",
       "id": "T208843",
+      "tracking_id": 208843,
+      "message_id": 358291,
       "date_utc": "2026-09-11 12:10:03",
       "source": "Odoo",
       "model": "project.task",
@@ -8249,13 +8971,16 @@
       "field": "State (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-11",
       "person": "Samuel Marcano",
       "id": "T208844",
+      "tracking_id": 208844,
+      "message_id": 358292,
       "date_utc": "2026-09-11 12:10:11",
       "source": "Odoo",
       "model": "project.task",
@@ -8267,13 +8992,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-11",
       "person": "Samuel Marcano",
       "id": "T208845",
+      "tracking_id": 208845,
+      "message_id": 358293,
       "date_utc": "2026-09-11 12:10:35",
       "source": "Odoo",
       "model": "project.task",
@@ -8285,13 +9013,16 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-11",
       "person": "Carolina Monserrat",
       "id": "T208846",
+      "tracking_id": 208846,
+      "message_id": 358295,
       "date_utc": "2026-09-11 12:18:17",
       "source": "Odoo",
       "model": "project.task",
@@ -8303,6 +9034,9 @@
       "field": "Assignees (Task)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Nahiara Aylen Delgado"
       ]
     },
     {
@@ -8310,6 +9044,8 @@
       "day": "2026-09-11",
       "person": "Ignacio Lera",
       "id": "T208851",
+      "tracking_id": 208851,
+      "message_id": 358318,
       "date_utc": "2026-09-11 12:49:36",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -8321,6 +9057,9 @@
       "field": "Type (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Valentin Markov"
       ]
     },
     {
@@ -8328,6 +9067,8 @@
       "day": "2026-09-11",
       "person": "Ignacio Lera",
       "id": "T208850",
+      "tracking_id": 208850,
+      "message_id": 358318,
       "date_utc": "2026-09-11 12:49:36",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -8339,6 +9080,9 @@
       "field": "Assigned to (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Valentin Markov"
       ]
     },
     {
@@ -8346,6 +9090,8 @@
       "day": "2026-09-11",
       "person": "Ignacio Lera",
       "id": "T208852",
+      "tracking_id": 208852,
+      "message_id": 358320,
       "date_utc": "2026-09-11 12:55:08",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -8357,6 +9103,10 @@
       "field": "Assigned to (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
+      ],
+      "counterparts": [
+        "Valentin Markov",
+        "Mateo Scozzina"
       ]
     },
     {
@@ -8364,6 +9114,8 @@
       "day": "2026-09-11",
       "person": "Ignacio Lera",
       "id": "T208853",
+      "tracking_id": 208853,
+      "message_id": 358321,
       "date_utc": "2026-09-11 12:55:09",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -8375,13 +9127,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-11",
       "person": "Mateo Scozzina",
       "id": "T208857",
+      "tracking_id": 208857,
+      "message_id": 358497,
       "date_utc": "2026-09-11 13:28:41",
       "source": "Odoo",
       "model": "helpdesk.ticket",
@@ -8393,13 +9148,16 @@
       "field": "Stage (Helpdesk Ticket)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
       "day": "2026-09-11",
       "person": "Ezequiel Montes",
       "id": "T208858",
+      "tracking_id": 208858,
+      "message_id": 358505,
       "date_utc": "2026-09-11 13:30:22",
       "source": "Odoo",
       "model": "project.task",
@@ -8411,7 +9169,8 @@
       "field": "Stage (Task)",
       "activity_types": [
         "tracking"
-      ]
+      ],
+      "counterparts": []
     },
     {
       "kind": "activity",
@@ -11087,8 +11846,12 @@
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "IM357514",
+      "message_id": 357514,
+      "tracking_id": 208450,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5025,
       "title": "Consulta reporte",
       "text": "Assigned to (Helpdesk Ticket): Ignacio Lera → Mateo Scozzina",
       "reference": "TK#5025",
@@ -11097,15 +11860,20 @@
       ],
       "counterparts": [
         "Mateo Scozzina"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "IM357528",
+      "message_id": 357528,
+      "tracking_id": 208459,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 4976,
       "title": "[General] OP con retenciones genera línea Balance automático al restablecer a borrador",
       "text": "Assigned to (Helpdesk Ticket): Pablo Marchionno → Mateo Scozzina",
       "reference": "TK#4976",
@@ -11114,15 +11882,20 @@
       ],
       "counterparts": [
         "Pablo Marchionno"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "IM357544",
+      "message_id": 357544,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 4985,
       "title": "[CRM] Solicitud de reunión - Configuración de leads desde página web",
       "text": "Natalia buenos dias, Quería consultar si con el mensaje anterior y la documentación oficial adjunta pudieron resolver el inconveniente con el su proveedor. Quedo atento, Saludos!",
       "reference": "TK#4985",
@@ -11131,15 +11904,20 @@
       ],
       "counterparts": [
         "Jinzo"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "IM357568",
+      "message_id": 357568,
+      "tracking_id": 208481,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 4976,
       "title": "[General] OP con retenciones genera línea Balance automático al restablecer a borrador",
       "text": "Assigned to (Helpdesk Ticket): Mateo Scozzina → Pablo Marchionno",
       "reference": "TK#4976",
@@ -11148,15 +11926,20 @@
       ],
       "counterparts": [
         "Pablo Marchionno"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "IM357569",
+      "message_id": 357569,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 4976,
       "title": "[General] OP con retenciones genera línea Balance automático al restablecer a borrador",
       "text": "@Pablo Marchionno te paso la devolución de la prueba en STG, cualquier cosa lo revisamos juntos: • https://kommodo.ai/recordings/mhAqhJ7JJKHjGF1X2wzw?onlyRecording=1 Detecté 2 temas: 1. Cambió el comportamiento del campo \"Rate\" al eliminar comprobantes para que los valores se reinicien correctamente. 2. Arroja un error al confirmar el pago (adjunto).",
       "reference": "TK#4976",
@@ -11167,15 +11950,20 @@
       "counterparts": [
         "Jinzo",
         "Pablo Marchionno"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "IM357577",
+      "message_id": 357577,
+      "tracking_id": 208482,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5028,
       "title": "[General] El botón Crear factura no aparece en ninguna orden de venta",
       "text": "Assigned to (Helpdesk Ticket): Ignacio Lera → Mateo Scozzina",
       "reference": "TK#5028",
@@ -11184,15 +11972,20 @@
       ],
       "counterparts": [
         "Mateo Scozzina"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "IM357608",
+      "message_id": 357608,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5021,
       "title": "[General] No encuentra diario Recibos de Cliente para desglose de recibos",
       "text": "Me escribio por whatsapp y lo cerramos, le sigo haciendo recordar que los temas se traten mediante el propio ticket",
       "reference": "TK#5021",
@@ -11201,15 +11994,20 @@
       ],
       "counterparts": [
         "Jinzo"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "IM357647",
+      "message_id": 357647,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tareas",
+      "model": "project.task",
+      "res_id": 35182,
       "title": "Desarrollo 3 - Campo que vincule tareas y contabilidad (Orden de Pago)",
       "text": "Hola Mili @Milagros de la Fuente Se encuentra en produccion el siguiente desarrollo: Desarrollo 3 - Campo que vincule tareas y contabilidad (Orden de Pago) Adjunto documento con video",
       "reference": "T#35182",
@@ -11218,15 +12016,20 @@
       ],
       "counterparts": [
         "Lanser Jose Ignacio"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Carolina Monserrat",
       "id": "IM357679",
+      "message_id": 357679,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tareas",
+      "model": "project.task",
+      "res_id": 35180,
       "title": "Desarrollo 1 - Pagos por línea de factura",
       "text": "Hola Mili @Milagros de la Fuente Se encuentra en produccion el siguiente desarrollo: Desarrollo 1 - Pagos por línea de factura Adjunto documento con video",
       "reference": "T#35180",
@@ -11235,15 +12038,20 @@
       ],
       "counterparts": [
         "Lanser Jose Ignacio"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "IM357757",
+      "message_id": 357757,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5027,
       "title": "Cambiar variante por defecto en catálogo eCommerce - Chapa UPVC Duratej",
       "text": "Es el funcionamiento esperado, en todos los productos sucede igual. Se muestra el producto principal, que en algunos casos es de menor medida y por lo tanto un valor inferior a su variante",
       "reference": "TK#5027",
@@ -11252,15 +12060,20 @@
       ],
       "counterparts": [
         "Jinzo"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "IM357985",
+      "message_id": 357985,
+      "tracking_id": 208714,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5029,
       "title": "VENTA ELIMINADA",
       "text": "Assigned to (Helpdesk Ticket): Ignacio Lera → Mateo Scozzina",
       "reference": "TK#5029",
@@ -11269,15 +12082,20 @@
       ],
       "counterparts": [
         "Mateo Scozzina"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Matias Banega",
       "id": "IM357992",
+      "message_id": 357992,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5011,
       "title": "[Inventario] Alertas masivas de bajo stock persisten tras modificar min/max en Reabastecimiento",
       "text": "@Mateo Scozzina https://kommodo.ai/recordings/NfBn98NU4iAhRQsZHKer?uploadId=c0P3uzvXjBfzbpmmNJe6&totalChunks=7",
       "reference": "TK#5011",
@@ -11288,15 +12106,20 @@
       "counterparts": [
         "Jinzo",
         "Mateo Scozzina"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "IM358009",
+      "message_id": 358009,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 4976,
       "title": "[General] OP con retenciones genera línea Balance automático al restablecer a borrador",
       "text": "Carlos buenas tardes. ¿Podemos hacer rebuild de la base de STG? Estos días se estuvo trabajando con este tema y ahora el área técnica me solicita hacer un rebuild, por eso les pido autorización. Quedo atento, saludos.",
       "reference": "TK#4976",
@@ -11305,15 +12128,20 @@
       ],
       "counterparts": [
         "Jinzo"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Matias Marziali",
       "id": "IM358014",
+      "message_id": 358014,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tareas",
+      "model": "project.task",
+      "res_id": 20407,
       "title": "* Horas de desarrollo",
       "text": "- fix en funcion de materiales por dia. agrego notificacion de ldm faltante en producto con el campo req_ldm",
       "reference": "T#20407",
@@ -11322,15 +12150,20 @@
       ],
       "counterparts": [
         "Lucas Burgos"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "IM358025",
+      "message_id": 358025,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tareas",
+      "model": "project.task",
+      "res_id": 35208,
       "title": "Agregar link directo a operación de MercadoLibre",
       "text": "@Pablo Marchionno no se está cargando el link en los pedidos Se habia cargado el dia 8/9 pero ahora no, podrias revisarlo? ejemplo: pedido ML 2000018387533640 el ultimo pedido en el que se cargó el link fue ML 2000018368746340 que tuvo una cancelacion, te lo tiro como guia para revisar. Después de este pedido, todos vienen sin el link",
       "reference": "T#35208",
@@ -11341,15 +12174,20 @@
       "counterparts": [
         "Jinzo",
         "Pablo Marchionno"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Matias Marziali",
       "id": "IM358030",
+      "message_id": 358030,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tareas",
+      "model": "project.task",
+      "res_id": 35180,
       "title": "Desarrollo 1 - Pagos por línea de factura",
       "text": "modulo: mesopotamia_payment_by_lines repo: https://github.com/wsf/hito-devman rama: 19.0 Tareas: - fix en campo move_line_id muestre solo el nombre del asiento contable. - fix cambio de campo balance por price_total en la vista lineas pendientes de proveedores. - fix en reporte de lineas pendientes de proveedores cambio de campo balance por price_total. - fix en funcion computada _compute_payment_info para que muestre tambien el nombre de los pagos en estado 'en_proceso'.",
       "reference": "T#35180",
@@ -11358,15 +12196,20 @@
       ],
       "counterparts": [
         "Lanser Jose Ignacio"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Nelson Tontarelli",
       "id": "IM358037",
+      "message_id": 358037,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tareas",
+      "model": "project.task",
+      "res_id": 37630,
       "title": "Modificar reporte de análisis de ventas en USD",
       "text": "@Valentin Markov Modulo implementado en STG Modulo: sale_usd_report Repo: hito-devman Rama: 19.0",
       "reference": "T#37630",
@@ -11377,15 +12220,20 @@
       "counterparts": [
         "Valentin Markov",
         "Lanser Jose Ignacio"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Ezequiel Montes",
       "id": "IM358068",
+      "message_id": 358068,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tareas",
+      "model": "project.task",
+      "res_id": 35211,
       "title": "Cambiar método de costeo a promedio y configurar servicios de costo en destino",
       "text": "Esta tarea queda sujeta a este desarrollo: https://www.hitofusion.com/web#id=36631&cids=10&menu_id=112&action=198&active_id=301&model=project.task&view_type=form",
       "reference": "T#35211",
@@ -11394,15 +12242,20 @@
       ],
       "counterparts": [
         "Jinzo"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "IM358075",
+      "message_id": 358075,
+      "tracking_id": 208750,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5031,
       "title": "[General] Solicitud de reunión para revisar reportes en celular y problema en Libro Mayor",
       "text": "Assigned to (Helpdesk Ticket): Ignacio Lera → Valentin Markov",
       "reference": "TK#5031",
@@ -11411,15 +12264,20 @@
       ],
       "counterparts": [
         "Valentin Markov"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "IM358081",
+      "message_id": 358081,
+      "tracking_id": 208753,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5030,
       "title": "Importación extracto (OCA)",
       "text": "Assigned to (Helpdesk Ticket): Ignacio Lera → Valentin Markov",
       "reference": "TK#5030",
@@ -11428,15 +12286,20 @@
       ],
       "counterparts": [
         "Valentin Markov"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Ignacio Lera",
       "id": "IM358083",
+      "message_id": 358083,
+      "tracking_id": 208755,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5032,
       "title": "[Facturación electrónica] Error 10037 AFIP - Campo MonId obligatorio al validar factura",
       "text": "Assigned to (Helpdesk Ticket): Ignacio Lera → Valentin Markov",
       "reference": "TK#5032",
@@ -11445,15 +12308,20 @@
       ],
       "counterparts": [
         "Valentin Markov"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "IM358100",
+      "message_id": 358100,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5028,
       "title": "[General] El botón Crear factura no aparece en ninguna orden de venta",
       "text": "Le expliqué el contexto y los ajustes correctivos realizados con Studio.",
       "reference": "TK#5028",
@@ -11462,15 +12330,20 @@
       ],
       "counterparts": [
         "Jinzo"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "IM358101",
+      "message_id": 358101,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tareas",
+      "model": "project.task",
+      "res_id": 37630,
       "title": "Modificar reporte de análisis de ventas en USD",
       "text": "@Nelson Tontarelli como vimos recien en el meet, los campos se calculan bien y traen bien la información para la empresa de chile. No esta haciendo la conversión para las ventas de Argentina",
       "reference": "T#37630",
@@ -11481,15 +12354,20 @@
       "counterparts": [
         "Nelson Tontarelli",
         "Lanser Jose Ignacio"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "IM358105",
+      "message_id": 358105,
+      "tracking_id": 208773,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 4976,
       "title": "[General] OP con retenciones genera línea Balance automático al restablecer a borrador",
       "text": "Assigned to (Helpdesk Ticket): Pablo Marchionno → Mateo Scozzina",
       "reference": "TK#4976",
@@ -11498,15 +12376,20 @@
       ],
       "counterparts": [
         "Pablo Marchionno"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "IM358110",
+      "message_id": 358110,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 4976,
       "title": "[General] OP con retenciones genera línea Balance automático al restablecer a borrador",
       "text": "Cuando de el ok, subir el fix a Producción (lo validará Carlos).",
       "reference": "TK#4976",
@@ -11515,15 +12398,20 @@
       ],
       "counterparts": [
         "Jinzo"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "IM358131",
+      "message_id": 358131,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5031,
       "title": "[General] Solicitud de reunión para revisar reportes en celular y problema en Libro Mayor",
       "text": "Cargaron las conversaciones y esta detallado el problema, revise el libro mayor y veo correctamente el reporte sin demoras. Coordinar una reunion para que me muestren a detalle lo que pasa",
       "reference": "TK#5031",
@@ -11532,15 +12420,20 @@
       ],
       "counterparts": [
         "Jinzo"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Valentin Markov",
       "id": "IM358132",
+      "message_id": 358132,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5031,
       "title": "[General] Solicitud de reunión para revisar reportes en celular y problema en Libro Mayor",
       "text": "Mario buenas tardes, Me podrás comentar que dia y horario tenes disponibilidad para coordinar la reunión?. Quedo a la espera para agendarla, Saludos!",
       "reference": "TK#5031",
@@ -11549,15 +12442,20 @@
       ],
       "counterparts": [
         "Jinzo"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "IM358134",
+      "message_id": 358134,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5011,
       "title": "[Inventario] Alertas masivas de bajo stock persisten tras modificar min/max en Reabastecimiento",
       "text": "Sofía buenas tardes, lo reviso. Veo que también tienen creado el campo personalizado \"Notificar de stock bajo\" en la ficha del producto. Te consulto por las dudas, ¿le estaban dando utilidad a ese campo?",
       "reference": "TK#5011",
@@ -11566,15 +12464,20 @@
       ],
       "counterparts": [
         "Jinzo"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "IM358136",
+      "message_id": 358136,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5011,
       "title": "[Inventario] Alertas masivas de bajo stock persisten tras modificar min/max en Reabastecimiento",
       "text": "@Matias Banega te devuelvo: • https://kommodo.ai/recordings/VDIGl63cHUn7e38F5f0g?onlyRecording=1",
       "reference": "TK#5011",
@@ -11585,15 +12488,20 @@
       "counterparts": [
         "Jinzo",
         "Matias Banega"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "IM358175",
+      "message_id": 358175,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5011,
       "title": "[Inventario] Alertas masivas de bajo stock persisten tras modificar min/max en Reabastecimiento",
       "text": "1. Creé un filtro compartido en Reportes > Stock para que puedan validar los productos que tangan Stock disponible <= 3 (para que comparen vs la cantidad de actividades y confirmar que la acción esté andando ok). 2. En esa compartativa le confirmé que la acción estaba andando ok. 3. También hice de nuevo los flujos en STG mostrando que veo bien los resultados de la acción con los cambios de ayer.",
       "reference": "TK#5011",
@@ -11602,15 +12510,20 @@
       ],
       "counterparts": [
         "Jinzo"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Mateo Scozzina",
       "id": "IM358179",
+      "message_id": 358179,
+      "tracking_id": 208811,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5033,
       "title": "Link de staging NUEVO",
       "text": "Assigned to (Helpdesk Ticket): Ignacio Lera → Mateo Scozzina",
       "reference": "TK#5033",
@@ -11619,15 +12532,20 @@
       ],
       "counterparts": [
         "Ignacio Lera"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Lucas Burgos",
       "id": "IM358190",
+      "message_id": 358190,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tareas",
+      "model": "project.task",
+      "res_id": 35224,
       "title": "Hacer Web España www.hitofusion.es",
       "text": "@Maximiliano Alarcon ya esta lista la web. Revisala por cualquier cosa que veas. https://www.hitofusion.es",
       "reference": "T#35224",
@@ -11637,15 +12555,20 @@
       ],
       "counterparts": [
         "Maximiliano Alarcon"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Lucas Burgos",
       "id": "IM358196",
+      "message_id": 358196,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tareas",
+      "model": "project.task",
+      "res_id": 37175,
       "title": "Modificar ubicación de redes y web",
       "text": "@Maximiliano Alarcon que seria esta tarea?",
       "reference": "T#37175",
@@ -11655,15 +12578,20 @@
       ],
       "counterparts": [
         "Maximiliano Alarcon"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-10",
       "person": "Matias Marziali",
       "id": "IM358223",
+      "message_id": 358223,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tareas",
+      "model": "project.task",
+      "res_id": 35180,
       "title": "Desarrollo 1 - Pagos por línea de factura",
       "text": "- funcionalidad de pago por linea en multiple factura (pendiente)",
       "reference": "T#35180",
@@ -11672,15 +12600,20 @@
       ],
       "counterparts": [
         "Lanser Jose Ignacio"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-11",
       "person": "Ignacio Lera",
       "id": "IM358279",
+      "message_id": 358279,
+      "tracking_id": 208838,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5029,
       "title": "VENTA ELIMINADA",
       "text": "Assigned to (Helpdesk Ticket): Mateo Scozzina → Valentin Markov",
       "reference": "TK#5029",
@@ -11691,15 +12624,20 @@
       "counterparts": [
         "Valentin Markov",
         "Mateo Scozzina"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-11",
       "person": "Carolina Monserrat",
       "id": "IM358295",
+      "message_id": 358295,
+      "tracking_id": 208846,
       "date_utc": null,
       "source": "Odoo · Tareas",
+      "model": "project.task",
+      "res_id": 36623,
       "title": "Modificar Configuración de Productos - Stock por lote",
       "text": "Assignees (Task): Carolina Monserrat → Carolina Monserrat, Nahiara Aylen Delgado",
       "reference": "T#36623",
@@ -11708,15 +12646,20 @@
       ],
       "counterparts": [
         "Nahiara Aylen Delgado"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-11",
       "person": "Nelson Tontarelli",
       "id": "IM358305",
+      "message_id": 358305,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tareas",
+      "model": "project.task",
+      "res_id": 37630,
       "title": "Modificar reporte de análisis de ventas en USD",
       "text": "El problema: Los reportes de ventas de ABEI Argentina salen en dólares con valores en cero (o mal calculados). La compañía factura en pesos argentinos, y el reporte convierte todo a USD para poder comparar con el resto del grupo. Ese paso de conversión es el que está fallando para Argentina. La causa: Hay una tasa de cambio (los \"pesos por dólar\") registrada solo para la compañía de Argentina que en la base de datos quedó con un número absurdo, prácticamente cero, en lugar de la tasa real (hoy ~1535 pesos por dólar). El reporte agarra ese número y lo usa para convertir: como multiplica por casi-cero, el resultado da cero. Por qué se ve bien en la pantalla: Cuando mirás una venta o la configuración de monedas dentro de Odoo, Odoo usa su propio cálculo de conversión, que lee la tasa del lado correcto (usa el valor que corresponde, 1535). En cambio el reporte tiene un cálculo hecho a mano que lee directo el dato crudo mal guardado, sin esa corrección. O sea: son dos caminos distintos para leer la misma tasa — la interfaz usa el bueno, el reporte usa el malo.",
       "reference": "T#37630",
@@ -11725,15 +12668,20 @@
       ],
       "counterparts": [
         "Lanser Jose Ignacio"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-11",
       "person": "Ignacio Lera",
       "id": "IM358316",
+      "message_id": 358316,
+      "tracking_id": null,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5034,
       "title": "plan de cuentas",
       "text": "@Valentin Markov la cuenta se esta usando en un impuesto, por eso no te deja ponerla como obsoleta.",
       "reference": "TK#5034",
@@ -11742,15 +12690,20 @@
       ],
       "counterparts": [
         "Valentin Markov"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-11",
       "person": "Ignacio Lera",
       "id": "IM358318",
+      "message_id": 358318,
+      "tracking_id": 208850,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5034,
       "title": "plan de cuentas",
       "text": "Assigned to (Helpdesk Ticket): Ignacio Lera → Valentin Markov",
       "reference": "TK#5034",
@@ -11759,15 +12712,20 @@
       ],
       "counterparts": [
         "Valentin Markov"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "interaction",
       "day": "2026-09-11",
       "person": "Ignacio Lera",
       "id": "IM358320",
+      "message_id": 358320,
+      "tracking_id": 208852,
       "date_utc": null,
       "source": "Odoo · Tickets",
+      "model": "helpdesk.ticket",
+      "res_id": 5034,
       "title": "plan de cuentas",
       "text": "Assigned to (Helpdesk Ticket): Valentin Markov → Mateo Scozzina",
       "reference": "TK#5034",
@@ -11778,7 +12736,8 @@
       "counterparts": [
         "Valentin Markov",
         "Mateo Scozzina"
-      ]
+      ],
+      "is_derived": true
     },
     {
       "kind": "commit",

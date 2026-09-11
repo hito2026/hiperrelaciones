@@ -12,7 +12,7 @@ Abrir `http://localhost:8080`.
 
 ## Datos
 
-`data/hyperrelations.json` contiene las aristas dirigidas publicadas; `data/records.json`, la evidencia individual; `data/productivity.json`, el vector e ICV; y `data/git_activity.json`, la auditoría Git del último corte. La matriz diferencia actor y contraparte y no infiere relaciones por mera co-presencia.
+`data/hyperrelations.json` contiene las aristas dirigidas publicadas; `data/records.json`, la evidencia individual sin eliminar; `data/work_units.json`, la vista derivada que agrupa esa evidencia por unidad de trabajo y lote comprobado; `data/productivity.json`, el vector e ICV; y `data/git_activity.json`, la auditoría Git del último corte. La matriz diferencia actor y contraparte y no infiere relaciones por mera co-presencia.
 
 El corte vigente incorpora el 10/09/2026 completo y el 11/09/2026 hasta las 10:39:20 de Argentina, conservando el histórico del 9/09. No existen minutas daily del 10 ni del 11/09 en `jinzo-work-log/dm/dm-desa` al corte.
 
