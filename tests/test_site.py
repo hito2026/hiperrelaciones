@@ -80,8 +80,11 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         self.assertIn("methodologyNav", self.html)
         self.assertIn("IntersectionObserver", self.app)
         self.assertIn("data-record-sort", self.app)
-        for column in ("Fecha/hora", "Contraparte(s)", "Anterior → nuevo", "Autor / clasificación", "Cobertura"):
+        for column in ("Fecha/hora", "Contraparte(s)", "Descripción literal"):
             self.assertIn(column, self.app)
+        for removed in ('["change","Anterior → nuevo"]', '["hours","Horas"]', '["created_by","Autor / clasificación"]', '["quality","Q"]', '["coverage","Cobertura"]'):
+            self.assertNotIn(removed, self.app)
+        self.assertIn("literalTexts", self.app)
 
     def test_refreshed_records_are_individual_and_unique(self):
         records = json.loads((ROOT / "data" / "records.json").read_text())["records"]
