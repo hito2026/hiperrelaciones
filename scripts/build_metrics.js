@@ -8,6 +8,7 @@ const sources={
   "2026-09-10":path.resolve(root,"../../.scratch/METRICAS_BASE_2026_09_10.md"),
 };
 const graph=JSON.parse(fs.readFileSync(path.join(root,"data/hyperrelations.json"),"utf8"));
+const coverage=JSON.parse(fs.readFileSync(path.resolve(root,"../../.scratch/INDICATOR_COVERAGE_2026_09_09_10.json"),"utf8"));
 const people=graph.people;
 
 function sections(markdown){
@@ -41,14 +42,38 @@ for(const [day,file] of Object.entries(sources)){
   output.days[day]=people.map(person=>{
     const section=byPerson.get(person)||"",base=summary(section);
     const outgoing=graph.events.filter(event=>event.day===day&&event.actor===person);
-    const uniqueMessages=[...new Map(outgoing.filter(event=>event.message_id).map(event=>[event.message_id,event])).values()];
-    const checks=uniqueMessages.map(checklist);
-    const quality=checks.length?checks.reduce((sum,item)=>sum+Object.values(item).filter(Boolean).length,0)/(checks.length*5):null;
+    const verified=coverage.metrics_by_person_day.find(row=>row.day===day&&row.person===person);
+    const comments=coverage.comments.filter(item=>item.day===day&&item.author===person);
+    const checks=comments.map(item=>item.quality_flags);
+    const quality=verified.quality_average;
     const outcomes=new Set();
     if(base.creations) [...section.matchAll(/`(?:project\.task|helpdesk\.ticket)` #(\d+).*?creaci[oó]n/gi)].forEach(match=>outcomes.add(`create:${match[1]}`));
     [...section.matchAll(/`(?:project\.task|helpdesk\.ticket)` #(\d+)[^\n]*/g)].forEach(match=>{if(goal.test(match[0]))outcomes.add(`state:${match[1]}`);goal.lastIndex=0});
     const outcomeComplete=base.tracked<=30;
-    return {person,I:outgoing.length,H:base.hours,R:new Set(outgoing.map(event=>event.counterpart)).size,Q:quality,E:outcomeComplete?outcomes.size:null,coverage:{comments:base.comments,quality_messages:checks.length,timesheets:base.timesheets,creations:base.creations,tracked:base.tracked,quality_complete:base.comments===checks.length,hours_attribution_complete:false,hours_note:"El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",outcome_complete:outcomeComplete,git_complete:false,outcome_note:outcomeComplete?"E no incorpora entregables Git en este corte.":"Cambios concentrados compatibles con lote/automatización; E excluido."},quality_checks:checks};
+    return {person,I:outgoing.length,H:verified.positive_hours,R:new Set(outgoing.map(event=>event.counterpart)).size,Q:quality,E:outcomeComplete?outcomes.size:null,coverage:{comments:verified.unique_human_comments,quality_messages:verified.quality_messages,timesheets:verified.timesheet_line_ids.length,own_entry_hours:verified.own_entry_hours,third_party_entry_hours:verified.third_party_entry_hours,creations:base.creations,tracked:base.tracked,quality_complete:verified.unique_human_comments===verified.quality_messages,hours_attribution_complete:true,outcome_complete:outcomeComplete,git_complete:false,outcome_note:outcomeComplete?"E no incorpora entregables Git en este corte.":"Cambios concentrados compatibles con lote/automatización; E excluido."},quality_checks:checks};
   });
 }
 fs.writeFileSync(path.join(root,"data/productivity.json"),JSON.stringify(output,null,2)+"\n");
+const activity=[];
+for(const [day,file] of Object.entries(sources)){
+  for(const [person,section] of sections(fs.readFileSync(file,"utf8"))){
+    if(!people.includes(person))continue;
+    for(const match of section.matchAll(/^- `(project\.task|helpdesk\.ticket)` #(\d+) — ([^\n]+)$/gm)){
+      const line=match[3];if(!/cambio de campo|creaci[oó]n/i.test(line))continue;
+      const split=line.split(" — ");activity.push({kind:"activity",day,person,id:`A${day}-${match[1]}-${match[2]}`,date_utc:null,model:match[1],res_id:+match[2],title:split[0],text:split.slice(1).join(" — "),activity_types:[/creaci[oó]n/i.test(line)?"creation":null,/cambio de campo/i.test(line)?"tracking":null].filter(Boolean)});
+    }
+  }
+}
+const interactionMap=new Map();
+graph.events.forEach((item,index)=>{
+  const key=item.message_id?`M${item.message_id}`:`I${index+1}`;
+  if(!interactionMap.has(key))interactionMap.set(key,{kind:"interaction",day:item.day,person:item.actor,id:key,date_utc:null,source:item.source,title:item.title,text:item.evidence,reference:item.reference,interaction_types:[],counterparts:[]});
+  const record=interactionMap.get(key);record.interaction_types.push(item.type);record.counterparts.push(item.counterpart);
+});
+for(const record of interactionMap.values()){record.interaction_types=[...new Set(record.interaction_types)];record.counterparts=[...new Set(record.counterparts)];}
+const records={report:{...coverage.report,roster_scope:coverage.roster_scope,git_covered:false,day_10_partial:true},people,records:[
+  ...coverage.comments.map(item=>({kind:"comment",day:item.day,person:item.author,id:`M${item.message_id}`,date_utc:item.date_utc,source:"Odoo",model:item.model,res_id:item.res_id,title:item.title,text:item.text_sanitized,quality:item.quality_ratio})),
+  ...coverage.timesheets.map(item=>({kind:"timesheet",day:item.day,person:item.employee,id:`H${item.line_id}`,date_utc:item.create_date_utc,source:"Odoo",model:"account.analytic.line",res_id:item.line_id,title:item.task||"Sin tarea vinculada",text:item.description_sanitized,hours:item.hours,project:item.project,entry_class:item.classification,created_by:item.create_user,modified_by:item.write_user,modified_after_creation:item.modified_after_creation,correction_status:item.correction_status})),
+  ...activity.map(item=>({...item,source:"Odoo"})),...interactionMap.values()
+]};
+fs.writeFileSync(path.join(root,"data/records.json"),JSON.stringify(records,null,2)+"\n");

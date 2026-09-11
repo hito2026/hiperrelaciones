@@ -1,11 +1,11 @@
-const state={data:null,metrics:null,day:"all",person:"",timer:null,playing:false};
+const state={data:null,metrics:null,records:null,day:"all",person:"",timer:null,playing:false};
 const $=selector=>document.querySelector(selector);
 const esc=value=>(value??"").toString().replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
 const clean=value=>(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
 const shortName=name=>{const parts=name.split(/\s+/);return parts.length<2?name:`${parts[0]} ${parts.at(-1)[0]}.`};
 
 async function init(){
-  [state.data,state.metrics]=await Promise.all(["data/hyperrelations.json","data/productivity.json"].map(url=>fetch(url).then(response=>{if(!response.ok)throw new Error("dataset unavailable");return response.json()})));
+  [state.data,state.metrics,state.records]=await Promise.all(["data/hyperrelations.json","data/productivity.json","data/records.json"].map(url=>fetch(url).then(response=>{if(!response.ok)throw new Error("dataset unavailable");return response.json()})));
   $("#coverage").textContent=state.data.report.coverage;
   $("#day").addEventListener("change",event=>{stop();state.day=event.target.value;render()});
   $("#person").addEventListener("input",event=>{state.person=event.target.value;render()});
@@ -15,7 +15,9 @@ async function init(){
   $("#formula").addEventListener("click",openFormula);
   $("#purpose").addEventListener("click",openPurpose);
   $("#detail").addEventListener("click",event=>{if(event.target===$("#detail"))$("#detail").close()});
+  ["recordGroup","recordDay","recordSource","recordKind","recordSearch"].forEach(id=>$("#"+id).addEventListener(id==="recordSearch"?"input":"change",renderRecords));
   render();
+  renderRecords();
 }
 
 function visibleEvents(){
@@ -98,6 +100,30 @@ function openPurpose(){
   $("#detailTitle").textContent="Propósito de Hiperrelaciones";
   $("#detailBody").innerHTML=`<p>Este espacio representa las <strong>interacciones de trabajo verificables entre las personas de la compañía</strong>. Cada comentario, tarea, cambio rastreado, parte de horas y resultado registrado en las fuentes autorizadas se analiza con criterios explícitos y se integra para construir un mapa de la colaboración y la cohesión operativa.</p><p>Las filas muestran quién realizó la interacción y las columnas, la contraparte. Solo se incorporan relaciones con evidencia: menciones directas, respuestas, cambios rastreados de responsables o compromisos explícitos. Compartir un proyecto o estar asignado no alcanza.</p><h3>Vector de contribución verificable</h3><div class="purpose-vars"><p><b>I · Interacciones</b><br>Acciones humanas sustantivas, verificadas y deduplicadas.</p><p><b>H · Horas</b><br>Horas laborales positivas imputadas, diferenciando quién las cargó.</p><p><b>R · Red</b><br>Contrapartes internas únicas con interacción comprobada.</p><p><b>Q · Calidad documental</b><br>Presencia verificable de contexto, acción, referencia, resultado y próximo paso, sin juzgar estilo personal.</p><p><b>E · Resultados</b><br>Creaciones, avances de estado y entregables vinculados.</p></div><p>El <strong>ICV</strong> ofrece órdenes de magnitud para observar tendencias, no una evaluación absoluta del desempeño. El <strong>Pulso general</strong> es el promedio de los ICV personales ponderado por cobertura. Su vector agregado usa ΣI, ΣH, pares dirigidos únicos R*, Q promedio ponderado por anotaciones y ΣE.</p><p class="productivity-warning">La ausencia de registro o cobertura no equivale a ausencia de trabajo. Automatizaciones, lotes, asignaciones recibidas y write_uid aislado no cuentan como trabajo sustantivo.</p>`;
   $("#detail").showModal();
+}
+
+const kindLabel={comment:"Comentario humano",timesheet:"Parte de horas",activity:"Cambio / creación",interaction:"Interacción analítica"};
+const recordSource=record=>(record.source||"").startsWith("Odoo")?"Odoo":"Daily";
+const linkify=value=>esc(value).replace(/https?:\/\/[^\s&lt;]+/g,url=>`<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`);
+function recordLocalDate(record){
+  if(!record.date_utc)return record.day==="2026-09-10"?"10/09 · hora no disponible":"9/09 · hora no disponible";
+  return new Intl.DateTimeFormat("es-AR",{timeZone:"America/Argentina/Cordoba",day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(new Date(record.date_utc.replace(" ","T")+"Z"));
+}
+function filteredRecords(){
+  const day=$("#recordDay").value,source=$("#recordSource").value,kind=$("#recordKind").value,query=clean($("#recordSearch").value);
+  return state.records.records.filter(record=>(day==="all"||record.day===day)&&(source==="all"||recordSource(record)===source)&&(kind==="all"||record.kind===kind)&&(!query||clean(JSON.stringify(record)).includes(query)));
+}
+function renderRecords(){
+  const records=filteredRecords(),groupBy=$("#recordGroup").value,keyFor={person:r=>r.person,day:r=>r.day,source:recordSource,kind:r=>kindLabel[r.kind]}[groupBy],groups=new Map();
+  records.forEach(record=>{const key=keyFor(record);(groups.get(key)||groups.set(key,[]).get(key)).push(record)});
+  const ownHours=records.filter(r=>r.kind==="timesheet"&&r.entry_class==="own_entry").reduce((s,r)=>s+r.hours,0),thirdHours=records.filter(r=>r.kind==="timesheet"&&r.entry_class==="third_party_entry").reduce((s,r)=>s+r.hours,0);
+  const comments=records.filter(r=>r.kind==="comment").length,activities=records.filter(r=>r.kind==="activity"),interactions=records.filter(r=>r.kind==="interaction").reduce((s,r)=>s+(r.counterparts?.length||1),0);
+  $("#recordTotals").innerHTML=`<span><b>${records.length}</b> registros únicos</span><span><b>${comments}</b> comentarios</span><span><b>${activities.filter(r=>r.activity_types.includes("tracking")).length}</b> cambios</span><span><b>${activities.filter(r=>r.activity_types.includes("creation")).length}</b> creaciones</span><span><b>${ownHours.toFixed(2)}</b> h propias</span><span><b>${thirdHours.toFixed(2)}</b> h por terceros</span><span><b>${interactions}</b> interacciones</span>`;
+  $("#records").innerHTML=[...groups].sort(([a],[b])=>a.localeCompare(b,"es")).map(([group,list])=>`<details><summary><span>${esc(group)}</span><b>${list.length} registros</b></summary><div class="record-list">${list.sort((a,b)=>(a.date_utc||a.day).localeCompare(b.date_utc||b.day)).map(renderRecord).join("")}</div></details>`).join("")||'<p class="record-empty">No hay registros para estos filtros.</p>';
+}
+function renderRecord(record){
+  const extra=record.kind==="timesheet"?`<dl><div><dt>Horas</dt><dd>${record.hours}</dd></div><div><dt>Proyecto</dt><dd>${esc(record.project||"Sin proyecto")}</dd></div><div><dt>Carga</dt><dd>${record.entry_class==="own_entry"?"Propia":"Por tercero"} · creó ${esc(record.created_by)} · modificó ${esc(record.modified_by)}</dd></div>${record.modified_after_creation?'<div><dt>Revisión</dt><dd>Candidato a corrección; no confirmada</dd></div>':""}</dl>`:record.kind==="interaction"?`<dl><div><dt>Contrapartes</dt><dd>${record.counterparts.map(esc).join(", ")}</dd></div><div><dt>Tipos</dt><dd>${record.interaction_types.map(esc).join(", ")}</dd></div></dl>`:record.kind==="activity"?`<dl><div><dt>Acciones</dt><dd>${record.activity_types.map(esc).join(", ")}</dd></div></dl>`:"";
+  return `<article class="record"><header><span>${esc(recordLocalDate(record))}</span><b>${esc(kindLabel[record.kind])}</b><small>${esc(recordSource(record))} · ${esc(record.id)}</small></header><h3>${esc(record.person)} · ${esc(record.title||record.reference||"Sin título")}</h3>${extra}<p>${linkify(record.text||"")}</p>${record.model?`<footer>${esc(record.model)}${record.res_id?` #${record.res_id}`:""}</footer>`:""}</article>`;
 }
 
 function openDetail(actor,counterpart,events){

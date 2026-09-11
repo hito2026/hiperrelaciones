@@ -36,6 +36,18 @@
       <div class="matrix-head"><div><p class="eyebrow">23 × 23</p><h2>Interacciones dirigidas</h2></div><span>Seleccioná una celda para ver textos y actividades</span></div>
       <div class="matrix-wrap"><table id="matrix" aria-label="Matriz dirigida de interacciones"></table></div>
     </section>
+    <section class="records-card" aria-labelledby="recordsTitle">
+      <div class="matrix-head"><div><p class="eyebrow">fuentes y evidencias</p><h2 id="recordsTitle">Registros</h2></div><span>10/09 parcial hasta 17:44:18 Argentina</span></div>
+      <div class="record-controls">
+        <label>Agrupar<select id="recordGroup"><option value="person">Personal</option><option value="day">Día</option><option value="source">Fuente</option><option value="kind">Tipo</option></select></label>
+        <label>Día<select id="recordDay"><option value="all">Ambos días</option><option value="2026-09-09">9/09</option><option value="2026-09-10">10/09 parcial</option></select></label>
+        <label>Fuente<select id="recordSource"><option value="all">Todas</option><option value="Odoo">Odoo</option><option value="Daily">Daily</option></select></label>
+        <label>Tipo<select id="recordKind"><option value="all">Todos</option><option value="comment">Comentarios</option><option value="timesheet">Partes de horas</option><option value="activity">Cambios/creaciones</option><option value="interaction">Interacciones</option></select></label>
+        <label class="record-search">Buscar<input id="recordSearch" type="search" placeholder="Persona, texto, tarea o ID…"></label>
+      </div>
+      <div id="recordTotals" class="record-totals" aria-live="polite"></div>
+      <div id="records" class="record-groups"></div>
+    </section>
     <p class="method"><strong>Criterio:</strong> una celda existe solo por mención resoluble, respuesta directa, cambio rastreado de responsable o compromiso individual explícito. Compartir tarea, proyecto, commit o reunión no crea una relación.</p>
   </main>
   <dialog id="detail" aria-labelledby="detailTitle">

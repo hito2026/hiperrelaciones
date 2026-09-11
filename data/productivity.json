@@ -47,11 +47,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -69,11 +70,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -91,22 +93,23 @@
           "comments": 1,
           "quality_messages": 1,
           "timesheets": 7,
+          "own_entry_hours": 8.5,
+          "third_party_entry_hours": 0,
           "creations": 1,
           "tracked": 4,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": true
+            "context": 0,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
           }
         ]
       },
@@ -115,49 +118,50 @@
         "I": 4,
         "H": 0,
         "R": 1,
-        "Q": 0.55,
+        "Q": 0.7000000000000001,
         "E": 3,
         "coverage": {
           "comments": 4,
           "quality_messages": 4,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 3,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": true,
-            "next": true
+            "context": 0,
+            "action": 1,
+            "reference": 1,
+            "result": 1,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": true,
-            "next": true
+            "context": 0,
+            "action": 1,
+            "reference": 1,
+            "result": 1,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": true,
-            "next": true
+            "context": 1,
+            "action": 1,
+            "reference": 1,
+            "result": 1,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": true
+            "context": 0,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
           }
         ]
       },
@@ -172,11 +176,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 6,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 5.25,
           "creations": 1,
           "tracked": 6,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -188,137 +193,90 @@
         "I": 1,
         "H": 0,
         "R": 1,
-        "Q": 0.2,
+        "Q": null,
         "E": 0,
         "coverage": {
           "comments": 0,
-          "quality_messages": 1,
+          "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 2,
-          "quality_complete": false,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "quality_complete": true,
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
-        "quality_checks": [
-          {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
-          }
-        ]
+        "quality_checks": []
       },
       {
         "person": "Genaro García",
         "I": 1,
         "H": 13,
         "R": 1,
-        "Q": 0.4,
+        "Q": 0.2,
         "E": 1,
         "coverage": {
           "comments": 1,
           "quality_messages": 1,
           "timesheets": 1,
+          "own_entry_hours": 13,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 1,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": true,
-            "next": false
+            "context": 0,
+            "action": 0,
+            "reference": 0,
+            "result": 1,
+            "next_step_or_recipient": 0
           }
         ]
       },
       {
         "person": "Ignacio Lera",
         "I": 10,
-        "H": 0.58,
+        "H": 0.5833333333333333,
         "R": 6,
-        "Q": 0.35,
+        "Q": 0.5,
         "E": 3,
         "coverage": {
           "comments": 2,
-          "quality_messages": 8,
+          "quality_messages": 2,
           "timesheets": 2,
+          "own_entry_hours": 0.5833333333333333,
+          "third_party_entry_hours": 0,
           "creations": 1,
           "tracked": 25,
-          "quality_complete": false,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "quality_complete": true,
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 0,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": true
-          },
-          {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": false
-          },
-          {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
-          },
-          {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
-          },
-          {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
-          },
-          {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
-          },
-          {
-            "context": true,
-            "action": true,
-            "reference": true,
-            "result": false,
-            "next": true
+            "context": 0,
+            "action": 1,
+            "reference": 1,
+            "result": 0,
+            "next_step_or_recipient": 1
           }
         ]
       },
@@ -327,22 +285,31 @@
         "I": 0,
         "H": 0,
         "R": 0,
-        "Q": null,
+        "Q": 0.8,
         "E": null,
         "coverage": {
           "comments": 1,
-          "quality_messages": 0,
+          "quality_messages": 1,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 9,
           "tracked": 132,
-          "quality_complete": false,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "quality_complete": true,
+          "hours_attribution_complete": true,
           "outcome_complete": false,
           "git_complete": false,
           "outcome_note": "Cambios concentrados compatibles con lote/automatización; E excluido."
         },
-        "quality_checks": []
+        "quality_checks": [
+          {
+            "context": 1,
+            "action": 1,
+            "reference": 0,
+            "result": 1,
+            "next_step_or_recipient": 1
+          }
+        ]
       },
       {
         "person": "Julian Morabito",
@@ -355,11 +322,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -377,11 +345,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 1,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -399,11 +368,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -415,70 +385,64 @@
         "I": 11,
         "H": 0,
         "R": 2,
-        "Q": 0.4,
+        "Q": 0.36666666666666664,
         "E": 1,
         "coverage": {
           "comments": 6,
-          "quality_messages": 7,
+          "quality_messages": 6,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 4,
-          "quality_complete": false,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "quality_complete": true,
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 1,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": true
+            "context": 1,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": true
+            "context": 0,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": true
+            "context": 0,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 0,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": true
-          },
-          {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": true
+            "context": 0,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
           }
         ]
       },
@@ -493,11 +457,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -509,91 +474,113 @@
         "I": 10,
         "H": 7.75,
         "R": 2,
-        "Q": 0.4,
+        "Q": 0.43076923076923074,
         "E": 5,
         "coverage": {
           "comments": 13,
-          "quality_messages": 10,
+          "quality_messages": 13,
           "timesheets": 5,
+          "own_entry_hours": 7.75,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 12,
-          "quality_complete": false,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "quality_complete": true,
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 0,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": true
+            "context": 1,
+            "action": 1,
+            "reference": 0,
+            "result": 1,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 0,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": true,
-            "next": true
+            "context": 1,
+            "action": 1,
+            "reference": 1,
+            "result": 1,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 1,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": true
+            "context": 1,
+            "action": 1,
+            "reference": 1,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 1,
+            "action": 1,
+            "reference": 1,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": true,
-            "next": false
+            "context": 1,
+            "action": 0,
+            "reference": 0,
+            "result": 1,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": true,
-            "next": false
+            "context": 0,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 1,
+            "action": 0,
+            "reference": 0,
+            "result": 1,
+            "next_step_or_recipient": 1
+          },
+          {
+            "context": 1,
+            "action": 0,
+            "reference": 0,
+            "result": 1,
+            "next_step_or_recipient": 1
+          },
+          {
+            "context": 1,
+            "action": 0,
+            "reference": 0,
+            "result": 1,
+            "next_step_or_recipient": 1
+          },
+          {
+            "context": 0,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
           }
         ]
       },
@@ -608,11 +595,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -630,11 +618,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 2,
+          "own_entry_hours": 8,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -646,49 +635,81 @@
         "I": 0,
         "H": 0,
         "R": 0,
-        "Q": null,
+        "Q": 0.1,
         "E": 0,
         "coverage": {
           "comments": 2,
-          "quality_messages": 0,
+          "quality_messages": 2,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 0,
-          "quality_complete": false,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "quality_complete": true,
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
-        "quality_checks": []
+        "quality_checks": [
+          {
+            "context": 0,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
+          },
+          {
+            "context": 0,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
+          }
+        ]
       },
       {
         "person": "Nahiara Aylen Delgado",
         "I": 0,
         "H": 0,
         "R": 0,
-        "Q": null,
+        "Q": 0.30000000000000004,
         "E": 1,
         "coverage": {
           "comments": 2,
-          "quality_messages": 0,
+          "quality_messages": 2,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 2,
-          "quality_complete": false,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "quality_complete": true,
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
-        "quality_checks": []
+        "quality_checks": [
+          {
+            "context": 0,
+            "action": 0,
+            "reference": 1,
+            "result": 0,
+            "next_step_or_recipient": 0
+          },
+          {
+            "context": 0,
+            "action": 0,
+            "reference": 1,
+            "result": 0,
+            "next_step_or_recipient": 1
+          }
+        ]
       },
       {
         "person": "Nelson Tontarelli",
         "I": 4,
-        "H": 3.33,
+        "H": 3.3333333333333335,
         "R": 3,
         "Q": 0.8,
         "E": 5,
@@ -696,29 +717,30 @@
           "comments": 2,
           "quality_messages": 2,
           "timesheets": 2,
+          "own_entry_hours": 3.3333333333333335,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 7,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
-            "context": true,
-            "action": false,
-            "reference": true,
-            "result": true,
-            "next": true
+            "context": 0,
+            "action": 1,
+            "reference": 1,
+            "result": 1,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": false,
-            "reference": true,
-            "result": true,
-            "next": true
+            "context": 0,
+            "action": 1,
+            "reference": 1,
+            "result": 1,
+            "next_step_or_recipient": 1
           }
         ]
       },
@@ -733,29 +755,30 @@
           "comments": 2,
           "quality_messages": 2,
           "timesheets": 1,
+          "own_entry_hours": 1,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 2,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
-            "context": true,
-            "action": true,
-            "reference": true,
-            "result": false,
-            "next": true
+            "context": 1,
+            "action": 1,
+            "reference": 1,
+            "result": 1,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": true,
-            "reference": true,
-            "result": true,
-            "next": true
+            "context": 0,
+            "action": 1,
+            "reference": 1,
+            "result": 1,
+            "next_step_or_recipient": 1
           }
         ]
       },
@@ -770,11 +793,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 2,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 4,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -786,63 +810,71 @@
         "I": 6,
         "H": 0,
         "R": 1,
-        "Q": 0.4,
+        "Q": 0.37142857142857144,
         "E": 3,
         "coverage": {
           "comments": 7,
-          "quality_messages": 6,
+          "quality_messages": 7,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 7,
-          "quality_complete": false,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "quality_complete": true,
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 0,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 1,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 1,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 0,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": true,
-            "reference": true,
-            "result": false,
-            "next": true
+            "context": 0,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 0,
+            "action": 1,
+            "reference": 1,
+            "result": 1,
+            "next_step_or_recipient": 1
+          },
+          {
+            "context": 1,
+            "action": 1,
+            "reference": 0,
+            "result": 1,
+            "next_step_or_recipient": 1
           }
         ]
       }
@@ -859,11 +891,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -881,11 +914,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -897,57 +931,67 @@
         "I": 0,
         "H": 8.25,
         "R": 0,
-        "Q": null,
+        "Q": 0.2,
         "E": 2,
         "coverage": {
           "comments": 1,
-          "quality_messages": 0,
+          "quality_messages": 1,
           "timesheets": 3,
+          "own_entry_hours": 8.25,
+          "third_party_entry_hours": 0,
           "creations": 1,
           "tracked": 3,
-          "quality_complete": false,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "quality_complete": true,
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
-        "quality_checks": []
+        "quality_checks": [
+          {
+            "context": 0,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
+          }
+        ]
       },
       {
         "person": "Carolina Monserrat",
         "I": 2,
         "H": 0.25,
         "R": 1,
-        "Q": 0.6,
+        "Q": 0.8,
         "E": null,
         "coverage": {
           "comments": 2,
           "quality_messages": 2,
           "timesheets": 1,
+          "own_entry_hours": 0.25,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 33,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": false,
           "git_complete": false,
           "outcome_note": "Cambios concentrados compatibles con lote/automatización; E excluido."
         },
         "quality_checks": [
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": true,
-            "next": true
+            "context": 0,
+            "action": 1,
+            "reference": 1,
+            "result": 1,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": true,
-            "next": true
+            "context": 0,
+            "action": 1,
+            "reference": 1,
+            "result": 1,
+            "next_step_or_recipient": 1
           }
         ]
       },
@@ -962,29 +1006,30 @@
           "comments": 2,
           "quality_messages": 2,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 22,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": true
+            "context": 1,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": true,
-            "reference": true,
-            "result": false,
-            "next": false
+            "context": 1,
+            "action": 1,
+            "reference": 1,
+            "result": 0,
+            "next_step_or_recipient": 0
           }
         ]
       },
@@ -993,22 +1038,31 @@
         "I": 0,
         "H": 0.25,
         "R": 0,
-        "Q": null,
+        "Q": 0.8,
         "E": 0,
         "coverage": {
           "comments": 1,
-          "quality_messages": 0,
+          "quality_messages": 1,
           "timesheets": 1,
+          "own_entry_hours": 0.25,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 2,
-          "quality_complete": false,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "quality_complete": true,
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
-        "quality_checks": []
+        "quality_checks": [
+          {
+            "context": 1,
+            "action": 1,
+            "reference": 0,
+            "result": 1,
+            "next_step_or_recipient": 1
+          }
+        ]
       },
       {
         "person": "Genaro García",
@@ -1021,11 +1075,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -1035,65 +1090,45 @@
       {
         "person": "Ignacio Lera",
         "I": 6,
-        "H": 0.42,
+        "H": 0.4166666666666667,
         "R": 2,
-        "Q": 0.3333333333333333,
+        "Q": 0.26666666666666666,
         "E": 2,
         "coverage": {
           "comments": 3,
-          "quality_messages": 6,
+          "quality_messages": 3,
           "timesheets": 1,
+          "own_entry_hours": 0.4166666666666667,
+          "third_party_entry_hours": 0,
           "creations": 1,
           "tracked": 21,
-          "quality_complete": false,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "quality_complete": true,
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 1,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 0,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
-          },
-          {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": true
-          },
-          {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
-          },
-          {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": true
+            "context": 0,
+            "action": 1,
+            "reference": 1,
+            "result": 1,
+            "next_step_or_recipient": 0
           }
         ]
       },
@@ -1108,11 +1143,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 6,
           "tracked": 12,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -1130,11 +1166,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -1152,11 +1189,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 1,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -1174,11 +1212,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -1196,11 +1235,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -1218,11 +1258,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -1234,98 +1275,106 @@
         "I": 13,
         "H": 7.75,
         "R": 4,
-        "Q": 0.45454545454545453,
+        "Q": 0.5166666666666667,
         "E": 2,
         "coverage": {
           "comments": 12,
-          "quality_messages": 11,
+          "quality_messages": 12,
           "timesheets": 7,
+          "own_entry_hours": 7.75,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 20,
-          "quality_complete": false,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "quality_complete": true,
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": true,
-            "next": false
+            "context": 1,
+            "action": 1,
+            "reference": 0,
+            "result": 1,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": true,
-            "reference": true,
-            "result": true,
-            "next": true
+            "context": 1,
+            "action": 1,
+            "reference": 1,
+            "result": 0,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": true,
-            "next": false
+            "context": 0,
+            "action": 0,
+            "reference": 0,
+            "result": 1,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 1,
+            "action": 0,
+            "reference": 1,
+            "result": 1,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": true,
-            "next": true
+            "context": 1,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 0,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": false,
-            "reference": true,
-            "result": false,
-            "next": true
+            "context": 1,
+            "action": 1,
+            "reference": 1,
+            "result": 1,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": true
+            "context": 0,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 0,
+            "action": 0,
+            "reference": 1,
+            "result": 0,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 1,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 1,
+            "action": 1,
+            "reference": 0,
+            "result": 1,
+            "next_step_or_recipient": 1
+          },
+          {
+            "context": 0,
+            "action": 0,
+            "reference": 1,
+            "result": 0,
+            "next_step_or_recipient": 0
           }
         ]
       },
@@ -1334,28 +1383,29 @@
         "I": 2,
         "H": 0,
         "R": 2,
-        "Q": 0.6,
+        "Q": 0.4,
         "E": 1,
         "coverage": {
           "comments": 1,
           "quality_messages": 1,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 1,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
-            "context": true,
-            "action": false,
-            "reference": true,
-            "result": false,
-            "next": true
+            "context": 0,
+            "action": 0,
+            "reference": 1,
+            "result": 0,
+            "next_step_or_recipient": 1
           }
         ]
       },
@@ -1364,35 +1414,36 @@
         "I": 2,
         "H": 5,
         "R": 2,
-        "Q": 0.6,
+        "Q": 0.4,
         "E": 0,
         "coverage": {
           "comments": 2,
           "quality_messages": 2,
           "timesheets": 2,
+          "own_entry_hours": 5,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
-            "context": true,
-            "action": true,
-            "reference": true,
-            "result": false,
-            "next": true
+            "context": 0,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 1,
+            "action": 0,
+            "reference": 1,
+            "result": 0,
+            "next_step_or_recipient": 1
           }
         ]
       },
@@ -1407,11 +1458,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 6,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -1429,11 +1481,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 3,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -1445,28 +1498,29 @@
         "I": 2,
         "H": 5,
         "R": 2,
-        "Q": 1,
+        "Q": 0.8,
         "E": 1,
         "coverage": {
           "comments": 1,
           "quality_messages": 1,
           "timesheets": 2,
+          "own_entry_hours": 5,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 1,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
-            "context": true,
-            "action": true,
-            "reference": true,
-            "result": true,
-            "next": true
+            "context": 0,
+            "action": 1,
+            "reference": 1,
+            "result": 1,
+            "next_step_or_recipient": 1
           }
         ]
       },
@@ -1481,11 +1535,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -1503,11 +1558,12 @@
           "comments": 0,
           "quality_messages": 0,
           "timesheets": 1,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 2,
           "creations": 0,
           "tracked": 0,
           "quality_complete": true,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
@@ -1519,63 +1575,92 @@
         "I": 7,
         "H": 0,
         "R": 3,
-        "Q": 0.4666666666666667,
+        "Q": 0.4,
         "E": 9,
         "coverage": {
           "comments": 10,
-          "quality_messages": 6,
+          "quality_messages": 10,
           "timesheets": 0,
+          "own_entry_hours": 0,
+          "third_party_entry_hours": 0,
           "creations": 0,
           "tracked": 19,
-          "quality_complete": false,
-          "hours_attribution_complete": false,
-          "hours_note": "El total usa fecha laboral, pero este corte no expone separación carga propia/terceros.",
+          "quality_complete": true,
+          "hours_attribution_complete": true,
           "outcome_complete": true,
           "git_complete": false,
           "outcome_note": "E no incorpora entregables Git en este corte."
         },
         "quality_checks": [
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 1,
+            "action": 1,
+            "reference": 0,
+            "result": 1,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": false,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 0,
+            "action": 1,
+            "reference": 0,
+            "result": 1,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": false
+            "context": 1,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": true
+            "context": 0,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 0
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": true
+            "context": 0,
+            "action": 1,
+            "reference": 0,
+            "result": 1,
+            "next_step_or_recipient": 1
           },
           {
-            "context": true,
-            "action": true,
-            "reference": false,
-            "result": false,
-            "next": true
+            "context": 1,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
+          },
+          {
+            "context": 0,
+            "action": 0,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
+          },
+          {
+            "context": 0,
+            "action": 0,
+            "reference": 1,
+            "result": 0,
+            "next_step_or_recipient": 0
+          },
+          {
+            "context": 1,
+            "action": 1,
+            "reference": 0,
+            "result": 0,
+            "next_step_or_recipient": 1
+          },
+          {
+            "context": 0,
+            "action": 0,
+            "reference": 0,
+            "result": 1,
+            "next_step_or_recipient": 1
           }
         ]
       }

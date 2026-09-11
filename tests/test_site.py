@@ -29,7 +29,7 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         self.assertEqual(len(keys), len(set(keys)))
 
     def test_page_exposes_filters_animation_and_modal(self):
-        for identifier in ('id="day"', 'id="person"', 'id="play"', 'id="speed"', 'id="detail"', 'id="productivity"', 'id="formula"', 'id="purpose"', 'id="companyTrace"'):
+        for identifier in ('id="day"', 'id="person"', 'id="play"', 'id="speed"', 'id="detail"', 'id="productivity"', 'id="formula"', 'id="purpose"', 'id="companyTrace"', 'id="records"', 'id="recordGroup"'):
             self.assertIn(identifier, self.html)
         self.assertIn("showModal()", self.app)
         self.assertIn("prefers-reduced-motion", (ROOT / "assets" / "styles.css").read_text())
@@ -57,6 +57,17 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         self.assertEqual(len(pairs), summed_personal_networks)
         self.assertIn('new Set(events.map(event=>`${event.actor}\\u0000${event.counterpart}`))', self.app)
         self.assertIn("weighted/weight", self.app)
+
+    def test_records_are_unique_and_timesheets_classified(self):
+        records = json.loads((ROOT / "data" / "records.json").read_text())
+        comments = [item for item in records["records"] if item["kind"] == "comment"]
+        timesheets = [item for item in records["records"] if item["kind"] == "timesheet"]
+        self.assertEqual(len(comments), 78)
+        self.assertEqual(len({item["id"] for item in comments}), 78)
+        self.assertEqual(len(timesheets), 46)
+        self.assertTrue(all(item["entry_class"] in {"own_entry", "third_party_entry", "zero"} for item in timesheets))
+        self.assertIn("filteredRecords", self.app)
+        self.assertIn("recordGroup", self.app)
 
 
 if __name__ == "__main__":
