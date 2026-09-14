@@ -18,19 +18,6 @@ const dailyActivityAverage=(person,day)=>{
   const days=selectedDays(day),units=state.records.work_units.filter(unit=>canonicalPerson(unit.person)===canonicalPerson(person)&&days.includes(unit.day));
   return units.length/days.length;
 };
-const isWeekday=day=>{const weekday=new Date(`${day}T12:00:00Z`).getUTCDay();return weekday>=1&&weekday<=5};
-const recentBusinessDays=()=>Object.keys(state.metrics.days).filter(isWeekday).sort().slice(-4);
-const hoursFor=(person,day)=>state.records.work_units
-  .filter(unit=>unit.day===day&&canonicalPerson(unit.person)===canonicalPerson(person))
-  .flatMap(unit=>unit.subevents)
-  .filter(event=>event.kind==="timesheet")
-  .reduce((sum,event)=>sum+(event.hours||0),0);
-function renderHoursTable(){
-  const days=recentBusinessDays(),partial=new Set(state.metrics.sources.partial_days||[]);
-  const head=`<thead><tr><th>Personal</th>${days.map(day=>`<th>${shortDay(day)}${partial.has(day)?"<small>parcial</small>":""}</th>`).join("")}<th>Promedio</th></tr></thead>`;
-  const body=state.data.people.map(person=>{const values=days.map(day=>hoursFor(person,day)),average=values.reduce((sum,value)=>sum+value,0)/days.length;return `<tr class="${groupClass(person)}"><th>${esc(person)}</th>${values.map(value=>`<td>${value.toFixed(2)}</td>`).join("")}<td><b>${average.toFixed(2)}</b></td></tr>`}).join("");
-  $("#hoursTable").innerHTML=head+`<tbody>${body}</tbody>`;
-}
 
 async function init(){
   [state.data,state.metrics,state.records]=await Promise.all(["data/hyperrelations.json","data/productivity.json","data/work_units.json"].map(url=>fetch(url).then(response=>{if(!response.ok)throw new Error("dataset unavailable");return response.json()})));
@@ -51,10 +38,9 @@ async function init(){
   $("#expandRecords").addEventListener("click",()=>$("#records").querySelectorAll("details").forEach(detail=>detail.open=true));
   $("#collapseRecords").addEventListener("click",()=>$("#records").querySelectorAll("details").forEach(detail=>detail.open=false));
   render();
-  renderHoursTable();
   renderRecords();
   const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){$(".section-nav").querySelectorAll("a").forEach(link=>link.classList.toggle("active",link.hash===`#${entry.target.id}`))}}),{rootMargin:"-25% 0px -65% 0px"});
-  ["resumen","indicadores","horas","matrizRelaciones","registros"].forEach(id=>observer.observe($("#"+id)));
+  ["resumen","indicadores","matrizRelaciones","registros"].forEach(id=>observer.observe($("#"+id)));
 }
 
 function visibleEvents(){
