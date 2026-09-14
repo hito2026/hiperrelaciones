@@ -88,10 +88,16 @@ function score(row){
   const available=Object.entries(values).filter(([,value])=>value!==null),weight=available.reduce((sum,[key])=>sum+w[key],0);
   return {value:Math.round(100*available.reduce((sum,[key,value])=>sum+w[key]*value,0)/weight),values,incomplete:available.length<5};
 }
+const qualityLabel=value=>value===null?"s/d":value<.5?"Malo":value<.8?"Regular":"Bueno";
+const lastCompleteDay=()=>state.metrics.sources.complete_days.at(-1);
+const missingHours=person=>{
+  const day=lastCompleteDay(),row=state.metrics.days[day]?.find(item=>item.person===person);
+  return !row||row.H<8;
+};
 function renderProductivity(){
   const query=clean(state.person),rows=metricRows().filter(row=>!query||clean(row.person).includes(query)).map(row=>({...row,score:score(row)})).sort((a,b)=>b.score.value-a.score.value||a.person.localeCompare(b.person));
   renderCompanyTrace();
-  $("#productivity").innerHTML=rows.map(row=>`<button class="person-metric ${groupClass(row.person)}" data-person="${esc(row.person)}" type="button"><span class="person-name">${esc(row.person)}</span><strong>${row.score.value}</strong><span class="vector">[${row.I}, ${row.H.toFixed(2)}, ${row.R}, ${row.Q===null?"s/d":Math.round(row.Q*100)}, ${row.E===null?"s/d":row.E}]</span><small class="daily-average">Prom. diario ${dailyActivityAverage(row.person,state.day).toFixed(1)} actividades</small>${row.score.incomplete?'<small>datos incompletos</small>':""}</button>`).join("");
+  $("#productivity").innerHTML=rows.map(row=>`<button class="person-metric ${groupClass(row.person)}" data-person="${esc(row.person)}" type="button"><span class="person-name">${esc(row.person)}</span><span class="vector"><b>I</b> ${row.I} · <b>H</b> ${row.H.toFixed(2)} · <b>R</b> ${row.R} · <b>Q</b> ${qualityLabel(row.Q)} · <b>E</b> ${row.E===null?"s/d":row.E}</span><small class="daily-average">Prom. diario ${dailyActivityAverage(row.person,state.day).toFixed(1)} actividades</small>${missingHours(row.person)?`<small class="hours-warning">Falta registro de horas · ${shortDay(lastCompleteDay())}: menos de 8 h</small>`:""}${row.score.incomplete?'<small>datos incompletos</small>':""}</button>`).join("");
   $("#productivity").querySelectorAll(".person-metric").forEach(button=>button.addEventListener("click",()=>openMetric(rows.find(row=>row.person===button.dataset.person))));
 }
 function companyMeasure(day){
@@ -111,9 +117,9 @@ function renderCompanyTrace(){
 }
 function openMetric(row){
   const t=state.metrics.methodology.targets;
-  $("#detailTitle").textContent=`${row.person} · ICV ${row.score.value}`;
+  $("#detailTitle").textContent=`${row.person} · vector verificable`;
   const labels={I:"Interacciones",H:"Horas",R:"Contrapartes",Q:"Calidad documental",E:"Resultados"};
-  $("#detailBody").innerHTML=`<p class="detail-count">Vector crudo <b>[${row.I}, ${row.H.toFixed(2)}, ${row.R}, ${row.Q===null?"s/d":Math.round(row.Q*100)}, ${row.E===null?"s/d":row.E}]</b></p><div class="metric-detail">${Object.entries(row.score.values).map(([key,value])=>`<div><span>${labels[key]}</span><b>${key}: ${value===null?"sin cobertura completa":key==="Q"?Math.round(value*100)+"/100":row[key]}</b><small>${value===null?"componente excluido del ICV":Math.round(value*100)+"% normalizado"}</small></div>`).join("")}</div><p><strong>Cobertura:</strong> ${row.coverage.comments} comentarios; ${row.coverage.quality_messages} evaluables; ${row.coverage.timesheets} partes de horas. ${row.score.incomplete?"ICV provisional recalculado solo con componentes completos. Q parcial, atribución de H y Git en E se excluyen cuando faltan.":"Cobertura completa para la rúbrica disponible."}</p><p class="method">Metas: I ${t.I}, H ${t.H} h, R ${t.R}, E ${t.E}. I cuenta aristas dirigidas: una nota a dos destinatarios genera dos interacciones. Los conteos usan saturación logarítmica.</p>`;
+  $("#detailBody").innerHTML=`<p class="detail-count">Vector <b>[${row.I}, ${row.H.toFixed(2)}, ${row.R}, ${qualityLabel(row.Q)}, ${row.E===null?"s/d":row.E}]</b></p><div class="metric-detail">${Object.entries(row.score.values).map(([key,value])=>`<div><span>${labels[key]}</span><b>${key}: ${value===null?"sin cobertura completa":key==="Q"?qualityLabel(value):row[key]}</b><small>${value===null?"componente sin cobertura":key==="Q"?`${Math.round(value*100)}% · ${qualityLabel(value)}`:`${Math.round(value*100)}% normalizado`}</small></div>`).join("")}</div>${missingHours(row.person)?`<p class="hours-warning">Falta registro de horas: ${shortDay(lastCompleteDay())} registra menos de 8 h.</p>`:""}<p><strong>Cobertura:</strong> ${row.coverage.comments} comentarios; ${row.coverage.quality_messages} evaluables; ${row.coverage.timesheets} partes de horas.</p><p class="method">Metas de referencia: I ${t.I}, H ${t.H} h, R ${t.R}, E ${t.E}. I cuenta aristas dirigidas: una nota a dos destinatarios genera dos interacciones.</p>`;
   $("#detail").showModal();
 }
 function openFormula(){

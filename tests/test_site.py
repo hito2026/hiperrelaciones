@@ -42,6 +42,10 @@ class HiperrelacionesSiteTests(unittest.TestCase):
             self.assertIn(f"group-{group}", styles)
         self.assertIn("dailyActivityAverage", self.app)
         self.assertIn("actividades/día", self.app)
+        self.assertIn("qualityLabel", self.app)
+        self.assertIn('value<.5?"Malo":value<.8?"Regular":"Bueno"', self.app)
+        self.assertIn("Falta registro de horas", self.app)
+        self.assertIn("row.H<8", self.app)
 
     def test_productivity_dataset_and_formula(self):
         metrics = json.loads((ROOT / "data" / "productivity.json").read_text())
