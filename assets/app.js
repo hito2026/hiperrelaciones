@@ -3,6 +3,18 @@ const $=selector=>document.querySelector(selector);
 const esc=value=>(value??"").toString().replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
 const clean=value=>(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
 const shortName=name=>{const parts=name.split(/\s+/);return parts.length<2?name:`${parts[0]} ${parts.at(-1)[0]}.`};
+const personGroups={
+  "Alejandro Sartorio":"development","Nelson Tontarelli":"development","Pablo Marchionno":"development","Matias Marziali":"development",
+  "Mateo Scozzina":"support","Valentin Markov":"support","Ignacio Lera":"support","Matias Banega":"support",
+  "Ezequiel Montes":"projects","Samuel Marcano":"projects","Carolina Monserrat":"projects","Nahiara Aylen Delgado":"projects","Ariadna Estebenet":"projects","Julian Morabito":"projects",
+  "Maximiliano Alarcon":"sales","Andrés Salguero":"sales","Lanser Jose Ignacio":"sales",
+};
+const groupClass=person=>`group-${personGroups[person]||"unassigned"}`;
+const selectedDays=day=>day==="all"?Object.keys(state.metrics.days):[day];
+const dailyActivityAverage=(person,day)=>{
+  const days=selectedDays(day),total=state.records.work_units.filter(unit=>unit.person===person&&days.includes(unit.day)).reduce((sum,unit)=>sum+unit.source_event_count,0);
+  return total/days.length;
+};
 
 async function init(){
   [state.data,state.metrics,state.records]=await Promise.all(["data/hyperrelations.json","data/productivity.json","data/work_units.json"].map(url=>fetch(url).then(response=>{if(!response.ok)throw new Error("dataset unavailable");return response.json()})));
@@ -45,8 +57,8 @@ function render(){
   const days=Object.keys(state.metrics.days).sort(),position=days.indexOf(state.day);
   $("#activeDay").textContent=state.day==="all"?`Vista acumulada · ${days.map(shortDay).join(" + ")}`:`${dayStatus(state.day)} · paso ${position+1}/${days.length}`;
   $("#stats").innerHTML=`<span><b>${events.length}</b> eventos</span><span><b>${pairs.size}</b> pares</span><span><b>${connected.size}</b> personas</span>`;
-  const head=`<thead><tr><th>Actor ↓<br>Contraparte →</th>${people.map(name=>`<th title="${esc(name)}"><span>${esc(shortName(name))}</span></th>`).join("")}<th class="total-head" title="Total de interacciones salientes"><span>Total →</span></th></tr></thead>`;
-  const body=people.map(actor=>`<tr><th title="${esc(actor)}">${esc(shortName(actor))}</th>${people.map(counterpart=>{
+  const head=`<thead><tr><th>Actor ↓<br>Contraparte →</th>${people.map(name=>`<th class="${groupClass(name)}" title="${esc(name)}"><span>${esc(shortName(name))}</span></th>`).join("")}<th class="total-head" title="Total de interacciones salientes"><span>Total →</span></th></tr></thead>`;
+  const body=people.map(actor=>`<tr><th class="${groupClass(actor)}" title="${esc(actor)}">${esc(shortName(actor))}</th>${people.map(counterpart=>{
     if(actor===counterpart)return "<td class='diagonal'>—</td>";
     const list=pairs.get(`${actor}\u0000${counterpart}`)||[];
     if(!list.length)return "<td class='empty'>—</td>";
@@ -79,7 +91,7 @@ function score(row){
 function renderProductivity(){
   const query=clean(state.person),rows=metricRows().filter(row=>!query||clean(row.person).includes(query)).map(row=>({...row,score:score(row)})).sort((a,b)=>b.score.value-a.score.value||a.person.localeCompare(b.person));
   renderCompanyTrace();
-  $("#productivity").innerHTML=rows.map(row=>`<button class="person-metric" data-person="${esc(row.person)}" type="button"><span class="person-name">${esc(row.person)}</span><strong>${row.score.value}</strong><span class="vector">[${row.I}, ${row.H.toFixed(2)}, ${row.R}, ${row.Q===null?"s/d":Math.round(row.Q*100)}, ${row.E===null?"s/d":row.E}]</span>${row.score.incomplete?'<small>datos incompletos</small>':""}</button>`).join("");
+  $("#productivity").innerHTML=rows.map(row=>`<button class="person-metric ${groupClass(row.person)}" data-person="${esc(row.person)}" type="button"><span class="person-name">${esc(row.person)}</span><strong>${row.score.value}</strong><span class="vector">[${row.I}, ${row.H.toFixed(2)}, ${row.R}, ${row.Q===null?"s/d":Math.round(row.Q*100)}, ${row.E===null?"s/d":row.E}]</span><small class="daily-average">Prom. diario ${dailyActivityAverage(row.person,state.day).toFixed(1)} actividades</small>${row.score.incomplete?'<small>datos incompletos</small>':""}</button>`).join("");
   $("#productivity").querySelectorAll(".person-metric").forEach(button=>button.addEventListener("click",()=>openMetric(rows.find(row=>row.person===button.dataset.person))));
 }
 function companyMeasure(day){
@@ -137,7 +149,8 @@ function renderRecords(){
   $("#recordTotals").innerHTML=`<span><b>${records.length}</b> unidades de trabajo</span><span><b>${sourceEvents}</b> eventos fuente</span><span><b>${derived}</b> relaciones derivadas</span><span><b>${comments}</b> comentarios</span><span><b>${activities.filter(r=>r.activity_types?.includes("tracking")).length}</b> cambios</span><span><b>${activities.filter(r=>r.activity_types?.includes("creation")).length}</b> creaciones</span><span><b>${ownHours.toFixed(2)}</b> h propias</span><span><b>${thirdHours.toFixed(2)}</b> h por terceros</span>`;
   const sorted=[...groups].sort(([a],[b])=>a.localeCompare(b,"es")),headers=[["date_utc","Fecha/hora"],["person","Personal"],["counterparts","Contraparte(s)"],["source","Fuente"],["kind","Tipo"],["model","Modelo"],["res_id","ID/SHA"],["title","Tarea / TK / título"],["project","Proyecto"],["text","Descripción literal"]];
   const sortValue=(record,key)=>key==="counterparts"?record.counterparts.join(" "):key==="source"?recordSource(record):key==="kind"?record.kinds.join(" "):key==="coverage"?record.source_event_count:record[key]??"";
-  $("#records").innerHTML=sorted.map(([group,list],index)=>`<details data-group="${esc(group)}" ${openGroups.has(group)||(!openGroups.size&&index===0)?"open":""}><summary><span>${esc(group)}</span><b>${list.length} registros</b></summary><div class="record-table-wrap"><table class="record-table"><thead><tr>${headers.map(([key,label])=>`<th><button type="button" data-record-sort="${key}">${label}</button></th>`).join("")}</tr></thead><tbody>${list.sort((a,b)=>String(sortValue(a,state.recordSort)).localeCompare(String(sortValue(b,state.recordSort)),"es",{numeric:true})*state.recordSortDirection).map(renderRecord).join("")}</tbody></table></div></details>`).join("")||'<p class="record-empty">No hay registros para estos filtros.</p>';
+  const dayFilter=$("#recordDay").value,dayCount=selectedDays(dayFilter).length;
+  $("#records").innerHTML=sorted.map(([group,list],index)=>{const total=list.reduce((sum,item)=>sum+item.source_event_count,0),summary=groupBy==="person"?`${(total/dayCount).toFixed(1)} actividades/día`:`${list.length} registros`;return `<details class="${groupBy==="person"?groupClass(group):""}" data-group="${esc(group)}" ${openGroups.has(group)||(!openGroups.size&&index===0)?"open":""}><summary><span>${esc(group)}</span><b>${summary}</b></summary><div class="record-table-wrap"><table class="record-table"><thead><tr>${headers.map(([key,label])=>`<th><button type="button" data-record-sort="${key}">${label}</button></th>`).join("")}</tr></thead><tbody>${list.sort((a,b)=>String(sortValue(a,state.recordSort)).localeCompare(String(sortValue(b,state.recordSort)),"es",{numeric:true})*state.recordSortDirection).map(renderRecord).join("")}</tbody></table></div></details>`}).join("")||'<p class="record-empty">No hay registros para estos filtros.</p>';
   $("#records").querySelectorAll("[data-record-sort]").forEach(button=>button.addEventListener("click",()=>{const key=button.dataset.recordSort;state.recordSortDirection=state.recordSort===key?-state.recordSortDirection:1;state.recordSort=key;renderRecords()}));
   $("#records").querySelectorAll("[data-record-key]").forEach(button=>button.addEventListener("click",()=>openRecord(records.find(record=>record.key===button.dataset.recordKey))));
 }

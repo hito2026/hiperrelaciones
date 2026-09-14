@@ -36,6 +36,12 @@ class HiperrelacionesSiteTests(unittest.TestCase):
             self.assertIn(identifier, self.html)
         self.assertIn("showModal()", self.app)
         self.assertIn("prefers-reduced-motion", (ROOT / "assets" / "styles.css").read_text())
+        self.assertIn("group-legend", self.html)
+        styles = (ROOT / "assets" / "productivity.css").read_text()
+        for group in ("development", "support", "projects", "sales", "unassigned"):
+            self.assertIn(f"group-{group}", styles)
+        self.assertIn("dailyActivityAverage", self.app)
+        self.assertIn("actividades/día", self.app)
 
     def test_productivity_dataset_and_formula(self):
         metrics = json.loads((ROOT / "data" / "productivity.json").read_text())
