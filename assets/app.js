@@ -27,8 +27,9 @@ const hoursFor=(person,day)=>state.records.work_units
   .reduce((sum,event)=>sum+(event.hours||0),0);
 function renderHoursTable(){
   const days=recentBusinessDays(),partial=new Set(state.metrics.sources.partial_days||[]);
+  const excluded=new Set(["Lucas Burgos","Alejandro Sartorio","Matias Banega","Lucia Centurion","Jinzo"]);
   const head=`<thead><tr><th>Personal</th>${days.map(day=>`<th>${shortDay(day)}${partial.has(day)?"<small>parcial</small>":""}</th>`).join("")}<th>Promedio</th></tr></thead>`;
-  const body=state.data.people.map(person=>{const values=days.map(day=>hoursFor(person,day)),average=values.reduce((sum,value)=>sum+value,0)/days.length;return `<tr class="${groupClass(person)}"><th>${esc(person)}</th>${values.map(value=>`<td>${value.toFixed(2)}</td>`).join("")}<td><b>${average.toFixed(2)}</b></td></tr>`}).join("");
+  const body=state.data.people.filter(person=>!excluded.has(person)).map(person=>{const values=days.map(day=>hoursFor(person,day)),average=values.reduce((sum,value)=>sum+value,0)/days.length;return `<tr class="${groupClass(person)}"><th>${esc(person)}</th>${values.map(value=>`<td>${value.toFixed(2)}</td>`).join("")}<td><b>${average.toFixed(2)}</b></td></tr>`}).join("");
   $("#hoursTable").innerHTML=head+`<tbody>${body}</tbody>`;
 }
 
