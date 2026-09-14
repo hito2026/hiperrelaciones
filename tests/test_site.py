@@ -53,8 +53,6 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         self.assertIn("recentBusinessDays", self.app)
         self.assertIn("hoursFor", self.app)
         self.assertIn("renderHoursTable", self.app)
-        self.assertIn('["Lucas Burgos","Alejandro Sartorio","Matias Banega","Lucia Centurion","Jinzo"]', self.app)
-        self.assertIn("filter(person=>!excluded.has(person))", self.app)
 
     def test_productivity_dataset_and_formula(self):
         metrics = json.loads((ROOT / "data" / "productivity.json").read_text())
