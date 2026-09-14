@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const fs=require("node:fs"),cp=require("node:child_process"),path=require("node:path");
 const root=path.resolve(__dirname,"..");
-const start="2026-09-10T03:00:00Z",end="2026-09-11T13:39:20Z";
+const start="2026-09-10T03:00:00Z",end="2026-09-14T16:55:00Z";
 const repos=[
   ["wsf/hito-devman","/Users/asartorio/.buzz/REPOS/hito-devman-ico-19"],
   ["hito2026/agentes-creados","/Users/asartorio/.buzz/.scratch/git-audit-20260911/agentes-creados"],
@@ -15,6 +15,14 @@ const repos=[
   ["hito2026/documentation","/Users/asartorio/.buzz/REPOS/documentation"],
   ["hito2026/hito-gemelos-ia","/Users/asartorio/.buzz/REPOS/hito-gemelos-ia"],
   ["hito2026/milemor23","/Users/asartorio/.buzz/REPOS/milemor23-stg270726"],
+  ["hito2026/odoo_tienda_nube","/Users/asartorio/.buzz/REPOS/jdm2/hito2026/odoo_tienda_nube"],
+  ["hito2026/hiperrelaciones","/Users/asartorio/.buzz/REPOS/hiperrelaciones"],
+  ["hito2026/midleware-bridge-kapso-openclaw","/Users/asartorio/.buzz/REPOS/midleware-bridge-kapso-openclaw"],
+  ["hito2026/bridge-kapso-openclaw","/Users/asartorio/.buzz/REPOS/bridge-kapso-openclaw"],
+  ["hito2026/cognee_brain_openclaw","/Users/asartorio/.buzz/REPOS/cognee_brain_openclaw"],
+  ["hito2026/jinzo_architect","/Users/asartorio/.buzz/REPOS/jinzo_architect"],
+  ["hito2026/api_open_whatsapp_connector","/Users/asartorio/.buzz/REPOS/api_open_whatsapp_connector"],
+  ["hito2026/open_whatsapp_connector","/Users/asartorio/.buzz/REPOS/open_whatsapp_connector"],
 ];
 const identities=[
   [/^genagarcia094@gmail\.com$/i,"Genaro García","correo Git histórico verificado"],
@@ -39,6 +47,6 @@ for(const [repo,cwd] of repos){
     else excluded.push({...entry,reason:/^(jinzo|cerebro|wsf)$/i.test(authorName)?"cuenta técnica o gateway sin atribución humana":"identidad no mapeada a la nómina"});
   }
 }
-const output={report:{start_utc_inclusive:start,end_utc_exclusive:end,timezone:"America/Argentina/Cordoba"},coverage:{status:"complete",scope:"Todas las refs origin accesibles de hito2026 y wsf/hito-devman; los seis repos obligatorios fueron accesibles y no tuvieron pushes en la ventana.",explicit_repositories:["hito2026/midleware-bridge-kapso-openclaw","hito2026/bridge-kapso-openclaw","hito2026/cognee_brain_openclaw","hito2026/jinzo_architect","hito2026/api_open_whatsapp_connector","hito2026/open_whatsapp_connector"]},commits:commits.sort((a,b)=>a.date_utc.localeCompare(b.date_utc)),excluded};
+const output={report:{start_utc_inclusive:start,end_utc_exclusive:end,timezone:"America/Argentina/Cordoba"},coverage:{status:"complete",scope:"Todas las refs origin accesibles de los clones HitoFusion/WSF configurados. La API publica de hito2026 se enumero al corte; penclaw_hito_agent_template_v2, onlyoffice_odoo, hito-gemelos-ia, account-financial-tools y documentation no tuvieron pushes dentro de la ventana.",explicit_repositories:repos.map(([repo])=>repo)},commits:commits.sort((a,b)=>a.date_utc.localeCompare(b.date_utc)),excluded};
 fs.writeFileSync(path.join(root,"data/git_activity.json"),JSON.stringify(output,null,2)+"\n");
 console.log(JSON.stringify({verified:commits.length,outcome_eligible:commits.filter(item=>item.outcome_eligible).length,excluded:excluded.length},null,2));

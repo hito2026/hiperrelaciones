@@ -5,8 +5,10 @@ const path=require("node:path");
 const root=path.resolve(__dirname,"..");
 const source=process.env.HIPER_ODOO_SOURCE||path.resolve(root,"../HIPERRELACIONES_ODOO_2026_09_10_11.json");
 const gitSource=path.join(root,"data/git_activity.json");
+const dailySource=path.join(root,"data/daily_activity.json");
 const odoo=JSON.parse(fs.readFileSync(source,"utf8"));
 const git=fs.existsSync(gitSource)?JSON.parse(fs.readFileSync(gitSource,"utf8")):{commits:[],coverage:{status:"incomplete"}};
+const daily=fs.existsSync(dailySource)?JSON.parse(fs.readFileSync(dailySource,"utf8")):{interactions:[],report:{files:{}}};
 const previousGraph=JSON.parse(fs.readFileSync(path.join(root,"data/hyperrelations.json"),"utf8"));
 const previousMetrics=JSON.parse(fs.readFileSync(path.join(root,"data/productivity.json"),"utf8"));
 const previousRecords=JSON.parse(fs.readFileSync(path.join(root,"data/records.json"),"utf8"));
@@ -21,7 +23,9 @@ const newEvents=odoo.interactions.map(item=>({
   reference:`${item.model==="project.task"?"T":"TK"}#${item.res_id}`,
   title:item.title,evidence:item.evidence,message_id:item.message_id??null,tracking_id:item.tracking_id??null,
 }));
-const events=[...oldEvents,...newEvents].sort((a,b)=>`${a.day} ${a.time} ${a.actor}`.localeCompare(`${b.day} ${b.time} ${b.actor}`));
+const dailyEvents=daily.interactions.filter(item=>refreshedDays.has(item.day)).map(item=>({day:item.day,time:item.time,actor:item.actor,counterpart:item.counterpart,type:item.type,source:"Daily · jinzo-work-log",reference:item.source_file,title:item.title,evidence:item.evidence,message_id:null,tracking_id:null,daily_key:item.key}));
+const periodEvents=[...newEvents,...dailyEvents];
+const events=[...oldEvents,...periodEvents].sort((a,b)=>`${a.day} ${a.time} ${a.actor}`.localeCompare(`${b.day} ${b.time} ${b.actor}`));
 const eventKeys=events.map(item=>[item.day,item.time,item.actor,item.counterpart,item.type,item.reference,item.message_id,item.tracking_id].join("|"));
 if(new Set(eventKeys).size!==eventKeys.length)throw new Error("duplicate directed interactions");
 
@@ -38,12 +42,12 @@ odoo.creations.forEach(item=>{const key=`${item.day}|${item.time}|${item.creator
 const isBatchCreation=item=>(creationBatchCounts.get(`${item.day}|${item.time}|${item.creator}`)||0)>=10;
 const metrics={
   methodology:previousMetrics.methodology,
-  sources:{odoo:[path.basename(source)],daily:"jinzo-work-log/dm/dm-desa (10 y 11/09 ausentes)",git_in_outcomes:git.coverage?.status==="complete",git:git.coverage,cutoff_local:`${odoo.report.end_local_exclusive} America/Argentina/Cordoba`,complete_days:odoo.report.complete_days,partial_days:odoo.report.partial_days},
+  sources:{odoo:[path.basename(source)],daily:{repository:"jinzo-work-log/dm/dm-desa",files:daily.report.files},git_in_outcomes:git.coverage?.status==="complete",git:git.coverage,cutoff_local:`${odoo.report.end_local_exclusive} America/Argentina/Cordoba`,complete_days:odoo.report.complete_days,partial_days:odoo.report.partial_days},
   days:Object.fromEntries(Object.entries(previousMetrics.days).filter(([day])=>!refreshedDays.has(day))),
 };
 for(const day of refreshedDays){
   metrics.days[day]=people.map(person=>{
-    const outgoing=newEvents.filter(item=>item.day===day&&item.actor===person);
+    const outgoing=periodEvents.filter(item=>item.day===day&&item.actor===person);
     const comments=odoo.comments.filter(item=>item.day===day&&item.author===person);
     const sheets=odoo.timesheets.filter(item=>item.day===day&&item.employee===person&&item.hours>0);
     const allCreations=odoo.creations.filter(item=>item.day===day&&item.creator===person);
@@ -64,14 +68,14 @@ const timesheets=odoo.timesheets.map(item=>({kind:"timesheet",day:item.day,perso
 const tracking=odoo.tracking.map(item=>({kind:"activity",day:item.day,person:item.actor,id:`T${item.tracking_id}`,tracking_id:item.tracking_id,message_id:item.message_id,date_utc:item.date_utc,source:"Odoo",model:item.model,res_id:item.res_id,title:item.title,text:`${item.field}: ${item.old||"∅"} → ${item.new||"∅"}`,old:item.old,new:item.new,field:item.field,activity_types:["tracking"],counterparts:[...new Set(newEvents.filter(event=>event.tracking_id===item.tracking_id||event.message_id===item.message_id).map(event=>event.counterpart))]}));
 const creations=odoo.creations.map(item=>({kind:"activity",day:item.day,person:item.creator,id:`C${item.model}:${item.res_id}`,date_utc:item.date_utc,source:"Odoo",model:item.model,res_id:item.res_id,title:item.title,text:isBatchCreation(item)?"Creación dentro de un lote masivo; visible como registro, excluida de E":"Creación del registro",activity_types:["creation"],batch:isBatchCreation(item),outcome_eligible:!isBatchCreation(item)}));
 const interactionMap=new Map();
-newEvents.forEach((item,index)=>{
+periodEvents.forEach((item,index)=>{
   const key=item.message_id?`M${item.message_id}`:item.tracking_id?`T${item.tracking_id}`:`I${item.day}-${index}`;
   if(!interactionMap.has(key))interactionMap.set(key,{kind:"interaction",day:item.day,person:item.actor,id:`I${key}`,message_id:item.message_id,tracking_id:item.tracking_id,date_utc:null,source:item.source,model:item.reference.startsWith("TK#")?"helpdesk.ticket":item.reference.startsWith("T#")?"project.task":null,res_id:+item.reference.split("#")[1]||null,title:item.title,text:item.evidence,reference:item.reference,interaction_types:[],counterparts:[],is_derived:true});
   const record=interactionMap.get(key);record.interaction_types.push(item.type);record.counterparts.push(item.counterpart);
 });
 for(const record of interactionMap.values()){record.interaction_types=[...new Set(record.interaction_types)];record.counterparts=[...new Set(record.counterparts)];}
 const gitRecords=git.commits.filter(item=>item.person).map(item=>({kind:"commit",day:item.day,person:item.person,id:item.sha.slice(0,12),sha:item.sha,date_utc:item.date_utc,source:"GitHub",model:item.repo,res_id:null,title:item.subject,text:item.body||item.subject,reference:item.url,files:item.files,commit_class:item.classification,coverage:item.identity_evidence}));
-const records={report:{...odoo.report,roster_scope:"Todos los res.users activos, share=false",git_coverage:git.coverage,daily_coverage:{"2026-09-10":"archivo ausente","2026-09-11":"archivo ausente"}},people,records:[...oldRecords,...comments,...timesheets,...tracking,...creations,...interactionMap.values(),...gitRecords]};
+const records={report:{...odoo.report,roster_scope:"Todos los res.users activos, share=false",git_coverage:git.coverage,daily_coverage:daily.report.files},people,records:[...oldRecords,...comments,...timesheets,...tracking,...creations,...interactionMap.values(),...gitRecords]};
 const stable=record=>`${record.kind}|${record.id}|${record.day}|${record.person}|${record.text||""}`;
 const recordKeys=records.records.map(stable);
 if(new Set(recordKeys).size!==recordKeys.length){const seen=new Set();throw new Error(`duplicate records: ${recordKeys.filter(key=>seen.has(key)||!seen.add(key)).join(", ")}`)}

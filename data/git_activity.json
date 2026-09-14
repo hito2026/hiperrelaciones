@@ -1,13 +1,27 @@
 {
   "report": {
     "start_utc_inclusive": "2026-09-10T03:00:00Z",
-    "end_utc_exclusive": "2026-09-11T13:39:20Z",
+    "end_utc_exclusive": "2026-09-14T16:55:00Z",
     "timezone": "America/Argentina/Cordoba"
   },
   "coverage": {
     "status": "complete",
-    "scope": "Todas las refs origin accesibles de hito2026 y wsf/hito-devman; los seis repos obligatorios fueron accesibles y no tuvieron pushes en la ventana.",
+    "scope": "Todas las refs origin accesibles de los clones HitoFusion/WSF configurados. La API publica de hito2026 se enumero al corte; penclaw_hito_agent_template_v2, onlyoffice_odoo, hito-gemelos-ia, account-financial-tools y documentation no tuvieron pushes dentro de la ventana.",
     "explicit_repositories": [
+      "wsf/hito-devman",
+      "hito2026/agentes-creados",
+      "hito2026/jinzo-plataforma",
+      "hito2026/odoo-argentina-ee",
+      "hito2026/cerebro-hito",
+      "hito2026/jinzo-work-log",
+      "hito2026/cl-cadenasmetalplas19",
+      "hito2026/cl-equipa19",
+      "hito2026/cl-equipavic",
+      "hito2026/documentation",
+      "hito2026/hito-gemelos-ia",
+      "hito2026/milemor23",
+      "hito2026/odoo_tienda_nube",
+      "hito2026/hiperrelaciones",
       "hito2026/midleware-bridge-kapso-openclaw",
       "hito2026/bridge-kapso-openclaw",
       "hito2026/cognee_brain_openclaw",
@@ -1046,9 +1060,1010 @@
       "person": "Genaro García",
       "identity_evidence": "correo Git histórico verificado",
       "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "69ec0fccf553bf9d72ecbab9bde956328c0bea91",
+      "date_utc": "2026-09-11 14:43:58",
+      "day": "2026-09-11",
+      "author": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "committer": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "subject": "[FIX] mesopotamia_payment_by_lines: funcionalidad de pago por linea en multiple factura",
+      "body": "",
+      "parents": [
+        "dbb69d2c0510a567618e2f96baae0f96586113be"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/69ec0fccf553bf9d72ecbab9bde956328c0bea91",
+      "files": [
+        "mesopotamia_payment_by_lines/models/account_payment.py"
+      ],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "9fb4e7f5c5f57bde08acbcb7c67e1eaa7c5c5cc0",
+      "date_utc": "2026-09-11 14:45:27",
+      "day": "2026-09-11",
+      "author": {
+        "name": "marziali",
+        "email": "104801558+marziali@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1264 from wsf/19.0_mati_m",
+      "body": "[FIX] mesopotamia_payment_by_lines: funcionalidad de pago por linea e…",
+      "parents": [
+        "dbb69d2c0510a567618e2f96baae0f96586113be",
+        "69ec0fccf553bf9d72ecbab9bde956328c0bea91"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/9fb4e7f5c5f57bde08acbcb7c67e1eaa7c5c5cc0",
+      "files": [],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": false
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "1bb0a7d81bd13fcc34f0c5f4beb05177bc1b989e",
+      "date_utc": "2026-09-11 15:50:03",
+      "day": "2026-09-11",
+      "author": {
+        "name": "pmarchionno",
+        "email": "pmarchionno@gmail.com"
+      },
+      "committer": {
+        "name": "pmarchionno",
+        "email": "pmarchionno@gmail.com"
+      },
+      "subject": "Adapta el reporte de ventas y los totales de Ventas y Compras",
+      "body": "Separa nombre del producto y descripcion detallada, oculta el precio unitario y ajusta las secciones del reporte. Corrige el pie de pagina, la numeracion y los saltos de pagina del bloque de totales.\n\nAgrega el monto facturado con IVA al formulario y al reporte. Calcula el pendiente por pagar en Ventas como total cliente menos facturado.\n\nIncorpora columnas de montos facturados, no facturados, pagados y no pagados en Compras. Contempla notas de credito y distribuye proporcionalmente los pagos de facturas compartidas. Incluye pruebas de los calculos.",
+      "parents": [
+        "9fb4e7f5c5f57bde08acbcb7c67e1eaa7c5c5cc0"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/1bb0a7d81bd13fcc34f0c5f4beb05177bc1b989e",
+      "files": [
+        "dimario_custom_reports/__manifest__.py",
+        "dimario_custom_reports/views/report_custom_footer.xml",
+        "dimario_custom_reports/views/report_sale_order_columns.xml",
+        "dimario_customizations/__manifest__.py",
+        "dimario_customizations/models/sale_order.py",
+        "dimario_customizations/views/sale_order_views.xml",
+        "dimario_sale_commercial_totals/__manifest__.py",
+        "dimario_sale_commercial_totals/models/sale_order.py",
+        "dimario_sale_commercial_totals/report/report_sale_order_totals.xml",
+        "dimario_sale_commercial_totals/tests/__init__.py",
+        "dimario_sale_commercial_totals/tests/test_commercial_totals.py",
+        "dimario_sale_commercial_totals/views/sale_order_views.xml",
+        "dimario_sale_purchase_payment_status/__init__.py",
+        "dimario_sale_purchase_payment_status/__manifest__.py",
+        "dimario_sale_purchase_payment_status/models/purchase_order.py",
+        "dimario_sale_purchase_payment_status/models/sale_order.py",
+        "dimario_sale_purchase_payment_status/tests/__init__.py",
+        "dimario_sale_purchase_payment_status/tests/test_purchase_totals.py",
+        "dimario_sale_purchase_payment_status/views/order_views.xml"
+      ],
+      "person": "Pablo Marchionno",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "bfab7d21a02aac77feed37efa45612fe37405964",
+      "date_utc": "2026-09-11 16:51:58",
+      "day": "2026-09-11",
+      "author": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "committer": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "subject": "[FIX] rd14_flexible_contracts: requisicion de compras producto con req_ldm sin ldm interna",
+      "body": "",
+      "parents": [
+        "bf299764c7602c05bae32bcad15e41cb4c3083ec"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/bfab7d21a02aac77feed37efa45612fe37405964",
+      "files": [
+        "rd14_flexible_contracts/models/requisicion_compra.py"
+      ],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "ddccb79d40bcfe293535cc9b3f4556ee0c22fb3c",
+      "date_utc": "2026-09-11 16:52:45",
+      "day": "2026-09-11",
+      "author": {
+        "name": "marziali",
+        "email": "104801558+marziali@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1265 from wsf/18.0_mati_m",
+      "body": "[FIX] rd14_flexible_contracts: requisicion de compras producto con re…",
+      "parents": [
+        "bf299764c7602c05bae32bcad15e41cb4c3083ec",
+        "bfab7d21a02aac77feed37efa45612fe37405964"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/ddccb79d40bcfe293535cc9b3f4556ee0c22fb3c",
+      "files": [],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": false
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "60b6f5c603023a09500d93f00501aab981fb23fd",
+      "date_utc": "2026-09-11 17:58:03",
+      "day": "2026-09-11",
+      "author": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "committer": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "subject": "[FIX] rd14_flexible_contracts: optimizacion de funcion generar_requisiciones_compra",
+      "body": "",
+      "parents": [
+        "ddccb79d40bcfe293535cc9b3f4556ee0c22fb3c"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/60b6f5c603023a09500d93f00501aab981fb23fd",
+      "files": [
+        "rd14_flexible_contracts/models/requisicion_compra.py"
+      ],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "94027c2e98b0230c644359474e6d81cdef14593f",
+      "date_utc": "2026-09-11 17:58:40",
+      "day": "2026-09-11",
+      "author": {
+        "name": "marziali",
+        "email": "104801558+marziali@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1266 from wsf/18.0_mati_m",
+      "body": "[FIX] rd14_flexible_contracts: optimizacion de funcion generar_requis…",
+      "parents": [
+        "ddccb79d40bcfe293535cc9b3f4556ee0c22fb3c",
+        "60b6f5c603023a09500d93f00501aab981fb23fd"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/94027c2e98b0230c644359474e6d81cdef14593f",
+      "files": [],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": false
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "c83dea07b69dcef3d809b21c4c5fb212de4d3702",
+      "date_utc": "2026-09-11 19:07:01",
+      "day": "2026-09-11",
+      "author": {
+        "name": "NelsonTontarelli",
+        "email": "nelartz01@gmail.com"
+      },
+      "committer": {
+        "name": "NelsonTontarelli",
+        "email": "nelartz01@gmail.com"
+      },
+      "subject": "[FIX]sale_usd_report: Correccion en OdV en USD",
+      "body": "",
+      "parents": [
+        "4c3e0cc299300a6a6bd81f31b5d128f0600d2b36"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/c83dea07b69dcef3d809b21c4c5fb212de4d3702",
+      "files": [
+        "sale_usd_report/models/sale_report.py"
+      ],
+      "person": "Nelson Tontarelli",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "41ec13a4ded87368bb0180c21678c5e98c10a8c5",
+      "date_utc": "2026-09-11 19:08:40",
+      "day": "2026-09-11",
+      "author": {
+        "name": "Nelson Tontarelli",
+        "email": "105108482+NelsonTontarelli@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1267 from wsf/19.0_nel",
+      "body": "[FIX]sale_usd_report: Correccion en OdV en USD",
+      "parents": [
+        "1bb0a7d81bd13fcc34f0c5f4beb05177bc1b989e",
+        "c83dea07b69dcef3d809b21c4c5fb212de4d3702"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/41ec13a4ded87368bb0180c21678c5e98c10a8c5",
+      "files": [],
+      "person": "Nelson Tontarelli",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": false
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "b085c3e9271fb64c78691e5234db1cbb5721f494",
+      "date_utc": "2026-09-11 20:53:37",
+      "day": "2026-09-11",
+      "author": {
+        "name": "NelsonTontarelli",
+        "email": "nelartz01@gmail.com"
+      },
+      "committer": {
+        "name": "NelsonTontarelli",
+        "email": "nelartz01@gmail.com"
+      },
+      "subject": "Fix: Ensure counterpart_exchange_rate for payment_total, recalc residual USD in _reconcile_after_post",
+      "body": "",
+      "parents": [
+        "ca5f73653bb625132d5f54eeb9ebcbd1bc4587b0"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/b085c3e9271fb64c78691e5234db1cbb5721f494",
+      "files": [
+        "onecloud_nd_nc_custom/models/account_payment.py"
+      ],
+      "person": "Nelson Tontarelli",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "3a8d6594dfb3e2453f3e082aa19c21d651ef7135",
+      "date_utc": "2026-09-11 22:02:17",
+      "day": "2026-09-11",
+      "author": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "committer": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "subject": "[FIX] mesopotamia_payment_by_lines: campos monto original y monto con iva se cargaban mal en pagos usd",
+      "body": "",
+      "parents": [
+        "41ec13a4ded87368bb0180c21678c5e98c10a8c5"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/3a8d6594dfb3e2453f3e082aa19c21d651ef7135",
+      "files": [
+        "mesopotamia_payment_by_lines/models/payment_line_link.py"
+      ],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "3af1bda1e839f27312dc3f37525f6df82d767595",
+      "date_utc": "2026-09-11 22:03:02",
+      "day": "2026-09-11",
+      "author": {
+        "name": "marziali",
+        "email": "104801558+marziali@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1269 from wsf/19.0_mati_m",
+      "body": "[FIX] mesopotamia_payment_by_lines: campos monto original y monto con…",
+      "parents": [
+        "41ec13a4ded87368bb0180c21678c5e98c10a8c5",
+        "3a8d6594dfb3e2453f3e082aa19c21d651ef7135"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/3af1bda1e839f27312dc3f37525f6df82d767595",
+      "files": [],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": false
+    },
+    {
+      "repo": "hito2026/milemor23",
+      "sha": "71128ac7a95872aebed5ae1bee867ef4a2b03b61",
+      "date_utc": "2026-09-14 14:09:47",
+      "day": "2026-09-14",
+      "author": {
+        "name": "NelsonTontarelli",
+        "email": "nelartz01@gmail.com"
+      },
+      "committer": {
+        "name": "NelsonTontarelli",
+        "email": "nelartz01@gmail.com"
+      },
+      "subject": "[UPD]Update hito_meli submodule",
+      "body": "",
+      "parents": [
+        "adcf27d56b10bfe58a198808b1945503cff3b2fc"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/milemor23/commit/71128ac7a95872aebed5ae1bee867ef4a2b03b61",
+      "files": [
+        "hito_meli"
+      ],
+      "person": "Nelson Tontarelli",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "6af4fb118d3e825bd70f908245e9e6b314d81efd",
+      "date_utc": "2026-09-14 15:04:55",
+      "day": "2026-09-14",
+      "author": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "committer": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "subject": "[FIX] mesopotamia_payment_by_lines:fix campo amount (account.payment) muestra mal el valor al crear un pago en USD",
+      "body": "",
+      "parents": [
+        "3af1bda1e839f27312dc3f37525f6df82d767595"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/6af4fb118d3e825bd70f908245e9e6b314d81efd",
+      "files": [
+        "mesopotamia_payment_by_lines/models/account_payment.py"
+      ],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "acc0bfe3ae19fdf786edd4039aa5efde35dfb43b",
+      "date_utc": "2026-09-14 15:15:56",
+      "day": "2026-09-14",
+      "author": {
+        "name": "marziali",
+        "email": "104801558+marziali@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1270 from wsf/19.0_mati_m",
+      "body": "[FIX] mesopotamia_payment_by_lines:fix campo amount (account.payment)…",
+      "parents": [
+        "3af1bda1e839f27312dc3f37525f6df82d767595",
+        "6af4fb118d3e825bd70f908245e9e6b314d81efd"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/acc0bfe3ae19fdf786edd4039aa5efde35dfb43b",
+      "files": [],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": false
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "63ecbbaa01e2fae563299f137b9f3b4866aa1b60",
+      "date_utc": "2026-09-14 15:29:11",
+      "day": "2026-09-14",
+      "author": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "committer": {
+        "name": "mmarziali",
+        "email": "matiasmarziali96@gmail.com"
+      },
+      "subject": "[FIX] rd14_flexible_contracts: Ajuste en materiales por dia",
+      "body": "",
+      "parents": [
+        "94027c2e98b0230c644359474e6d81cdef14593f"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/63ecbbaa01e2fae563299f137b9f3b4866aa1b60",
+      "files": [
+        "rd14_flexible_contracts/wizard/wizard_lista_productos_dia_detalle.py"
+      ],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": true
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "1b7c079d6dd90b6173dce06145a09b0f7a103238",
+      "date_utc": "2026-09-14 15:29:59",
+      "day": "2026-09-14",
+      "author": {
+        "name": "marziali",
+        "email": "104801558+marziali@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1271 from wsf/18.0_mati_m",
+      "body": "[FIX] rd14_flexible_contracts: Ajuste en materiales por dia",
+      "parents": [
+        "94027c2e98b0230c644359474e6d81cdef14593f",
+        "63ecbbaa01e2fae563299f137b9f3b4866aa1b60"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/1b7c079d6dd90b6173dce06145a09b0f7a103238",
+      "files": [],
+      "person": "Matias Marziali",
+      "identity_evidence": "correo Git histórico verificado",
+      "outcome_eligible": false
     }
   ],
   "excluded": [
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "b90b5c6db70a6a144267736d80ca53e8c375319d",
+      "date_utc": "2026-09-11 19:35:12",
+      "day": "2026-09-11",
+      "author": {
+        "name": "Walter Alaniz",
+        "email": "97702141+wallywally26@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com"
+      },
+      "subject": "Merge pull request #1268 from wsf/testing_wally_traccar",
+      "body": "Testing wally traccar",
+      "parents": [
+        "66300bf98444dbe33380ae432a1cfeed331d723b",
+        "a09cc9edeb091a3a53ad0b7f3b2c7668635916e1"
+      ],
+      "classification": "merge",
+      "url": "https://github.com/wsf/hito-devman/commit/b90b5c6db70a6a144267736d80ca53e8c375319d",
+      "files": [],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "a09cc9edeb091a3a53ad0b7f3b2c7668635916e1",
+      "date_utc": "2026-09-11 19:21:02",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "style(smarttrack_security): match reset password button text color and border with company badge text_color",
+      "body": "",
+      "parents": [
+        "0e341ae99801ca361025c0280a77f58572ad252c"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/a09cc9edeb091a3a53ad0b7f3b2c7668635916e1",
+      "files": [
+        "smarttrack_security/data/mail_template_data.xml"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "0e341ae99801ca361025c0280a77f58572ad252c",
+      "date_utc": "2026-09-11 18:58:13",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "fix(smarttrack_security): improve Hotmail/Outlook solid background-color support and company color fallback",
+      "body": "",
+      "parents": [
+        "535aae6b4a372c57a0ebf73e06f5f0945f895ce1"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/0e341ae99801ca361025c0280a77f58572ad252c",
+      "files": [
+        "smarttrack_security/data/mail_template_data.xml"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "535aae6b4a372c57a0ebf73e06f5f0945f895ce1",
+      "date_utc": "2026-09-11 18:37:16",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "style(smarttrack_security): enhance reset password button to pill shape matching company badge with vibrant gradient fallback",
+      "body": "",
+      "parents": [
+        "6b4f49323be68bae1a34be6321d4bd1cef26cb8d"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/535aae6b4a372c57a0ebf73e06f5f0945f895ce1",
+      "files": [
+        "smarttrack_security/data/mail_template_data.xml"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "6b4f49323be68bae1a34be6321d4bd1cef26cb8d",
+      "date_utc": "2026-09-11 18:08:04",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "feat(smarttrack_security): create dedicated smarttrack_reset_password_template for password reset emails",
+      "body": "",
+      "parents": [
+        "422904ae7e37687211b04e2adf1871d5d109fbce"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/6b4f49323be68bae1a34be6321d4bd1cef26cb8d",
+      "files": [
+        "smarttrack_security/data/mail_template_data.xml",
+        "smarttrack_security/models/res_users.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "422904ae7e37687211b04e2adf1871d5d109fbce",
+      "date_utc": "2026-09-11 18:01:08",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "fix(smarttrack_security): update target mail.template to auth_signup.set_password_email and add safe type check",
+      "body": "",
+      "parents": [
+        "590405a7a95efd6c980aca41c16474e3dbeab6f7"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/422904ae7e37687211b04e2adf1871d5d109fbce",
+      "files": [
+        "smarttrack_security/data/mail_template_data.xml",
+        "smarttrack_security/models/res_users.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "590405a7a95efd6c980aca41c16474e3dbeab6f7",
+      "date_utc": "2026-09-11 17:53:33",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "fix(smarttrack_security): call signup_prepare on user.partner_id instead of user",
+      "body": "",
+      "parents": [
+        "bb32e7c2f5d593f769156f095bbc30fcfac746ca"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/590405a7a95efd6c980aca41c16474e3dbeab6f7",
+      "files": [
+        "smarttrack_security/models/res_users.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "bb32e7c2f5d593f769156f095bbc30fcfac746ca",
+      "date_utc": "2026-09-11 17:50:37",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "fix(smarttrack_security): pass company logo attachment directly into email_values to fix inline CID logo rendering in Outlook",
+      "body": "",
+      "parents": [
+        "9769c4190ae4fa9bee4add53cd387f5ab9a9a7cb"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/bb32e7c2f5d593f769156f095bbc30fcfac746ca",
+      "files": [
+        "smarttrack_security/models/res_users.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "9769c4190ae4fa9bee4add53cd387f5ab9a9a7cb",
+      "date_utc": "2026-09-11 17:36:47",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "fix(smarttrack_installation_ocr): sanitize spaces from scanned and extracted IMEI strings to allow full 15-digit resolution",
+      "body": "",
+      "parents": [
+        "66300bf98444dbe33380ae432a1cfeed331d723b"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/9769c4190ae4fa9bee4add53cd387f5ab9a9a7cb",
+      "files": [
+        "smarttrack_installation_ocr/models/smarttrack_installation_sheet.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "66300bf98444dbe33380ae432a1cfeed331d723b",
+      "date_utc": "2026-09-11 17:27:44",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Corregir AttributeError signup_prepare delegando al super() nativo de Odoo 18 tras preparar adjunto ir.attachment",
+      "body": "",
+      "parents": [
+        "1afcafa8be1b95c0c2ee8038eb7fecbaf9167537"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/66300bf98444dbe33380ae432a1cfeed331d723b",
+      "files": [
+        "smarttrack_security/models/res_users.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "1afcafa8be1b95c0c2ee8038eb7fecbaf9167537",
+      "date_utc": "2026-09-11 17:12:29",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Corregir action_reset_password en Odoo 18 para adjuntar directamente el logo en send_mail",
+      "body": "",
+      "parents": [
+        "4f3ec138c2e6b3cd6696e0a04fc13084cbfe5157"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/1afcafa8be1b95c0c2ee8038eb7fecbaf9167537",
+      "files": [
+        "smarttrack_security/models/res_users.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "4f3ec138c2e6b3cd6696e0a04fc13084cbfe5157",
+      "date_utc": "2026-09-11 17:08:11",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Implementar envio de logo como adjunto inline CID (cid:st_company_logo.png) para embeber imagen dentro del mensaje sin depender de URLs externas",
+      "body": "",
+      "parents": [
+        "e83aa8576526246778a6e314ff77562055053dc7"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/4f3ec138c2e6b3cd6696e0a04fc13084cbfe5157",
+      "files": [
+        "smarttrack_security/data/mail_template_data.xml",
+        "smarttrack_security/models/res_users.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "e83aa8576526246778a6e314ff77562055053dc7",
+      "date_utc": "2026-09-11 16:59:08",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Usar endpoint nativo /logo de libre acceso publico para entrega garantizada de imagen de empresa en Outlook",
+      "body": "",
+      "parents": [
+        "af020bc831de95b9e53c115ca0ba723bb6fefc01"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/e83aa8576526246778a6e314ff77562055053dc7",
+      "files": [
+        "smarttrack_security/data/mail_template_data.xml"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "af020bc831de95b9e53c115ca0ba723bb6fefc01",
+      "date_utc": "2026-09-11 16:51:52",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Forzar protocolo HTTPS y dominio publico valido en base_url para garantizar carga de logo sin bloqueo HTTP en Outlook/Hotmail",
+      "body": "",
+      "parents": [
+        "231a48ce2418a4efbde25243e0b09dde044a43a7"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/af020bc831de95b9e53c115ca0ba723bb6fefc01",
+      "files": [
+        "smarttrack_security/data/mail_template_data.xml",
+        "smarttrack_security/models/res_users.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "231a48ce2418a4efbde25243e0b09dde044a43a7",
+      "date_utc": "2026-09-11 16:35:25",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Usar la misma formula exacta de plantilla de reporte mensual para renderizar logo de empresa con rstrip de base_url",
+      "body": "",
+      "parents": [
+        "6929eb1fc0d35774aeab001ec9faf37bbfa2b2df"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/231a48ce2418a4efbde25243e0b09dde044a43a7",
+      "files": [
+        "smarttrack_security/data/mail_template_data.xml"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "6929eb1fc0d35774aeab001ec9faf37bbfa2b2df",
+      "date_utc": "2026-09-11 16:32:08",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Eliminar etiqueta img de logo y usar tipografia corporativa elegante con gama de colores de marca para garantizar 100% entrega sin camarita",
+      "body": "",
+      "parents": [
+        "931d25c53ece77278896e71670fb599cbed9bdc3"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/6929eb1fc0d35774aeab001ec9faf37bbfa2b2df",
+      "files": [
+        "smarttrack_security/data/mail_template_data.xml"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "931d25c53ece77278896e71670fb599cbed9bdc3",
+      "date_utc": "2026-09-11 16:24:10",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Usar ir.attachment raw bytes para entrega 100% confiable del logo publico sin error de decodificacion base64",
+      "body": "",
+      "parents": [
+        "a6c5da7856192a2d7f8431e16f2c30aedac79d3e"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/931d25c53ece77278896e71670fb599cbed9bdc3",
+      "files": [
+        "smarttrack_security/controllers/main.py"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "a6c5da7856192a2d7f8431e16f2c30aedac79d3e",
+      "date_utc": "2026-09-11 16:10:35",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Agregar controlador publico /smarttrack/logo/<id> y conectar colores corporativos e imagen de empresa en correo de clave",
+      "body": "",
+      "parents": [
+        "ed33e4d3cdedf78f3ba8515008dfa814d25be39b"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/a6c5da7856192a2d7f8431e16f2c30aedac79d3e",
+      "files": [
+        "smarttrack_security/__init__.py",
+        "smarttrack_security/controllers/__init__.py",
+        "smarttrack_security/controllers/main.py",
+        "smarttrack_security/data/mail_template_data.xml"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "ed33e4d3cdedf78f3ba8515008dfa814d25be39b",
+      "date_utc": "2026-09-11 16:01:17",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Agregar fallback a logo principal de compania si st_email_logo o logo existen",
+      "body": "",
+      "parents": [
+        "bffd521138676c97ba189cd0ad003ddf7dd9f71c"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/ed33e4d3cdedf78f3ba8515008dfa814d25be39b",
+      "files": [
+        "smarttrack_security/data/mail_template_data.xml"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "bffd521138676c97ba189cd0ad003ddf7dd9f71c",
+      "date_utc": "2026-09-11 15:57:49",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Usar st_email_logo o texto de nombre de empresa para evitar camarita por defecto en empresas sin logo",
+      "body": "",
+      "parents": [
+        "158dacf17eed3ac6e2527af484de08a93b9caad8"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/bffd521138676c97ba189cd0ad003ddf7dd9f71c",
+      "files": [
+        "smarttrack_security/data/mail_template_data.xml"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "wsf/hito-devman",
+      "sha": "158dacf17eed3ac6e2527af484de08a93b9caad8",
+      "date_utc": "2026-09-11 15:42:01",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "committer": {
+        "name": "wally",
+        "email": "wallywally26@hotmail.es"
+      },
+      "subject": "Corregir definicion de plantilla de correo restablecer contrasena de template a record mail.template",
+      "body": "",
+      "parents": [
+        "834751dec1225716bb46ee868a89e98d806133dc"
+      ],
+      "classification": "change",
+      "url": "https://github.com/wsf/hito-devman/commit/158dacf17eed3ac6e2527af484de08a93b9caad8",
+      "files": [
+        "smarttrack_security/data/mail_template_data.xml"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
     {
       "repo": "wsf/hito-devman",
       "sha": "834751dec1225716bb46ee868a89e98d806133dc",
@@ -1621,6 +2636,188 @@
     },
     {
       "repo": "hito2026/cerebro-hito",
+      "sha": "e0e9b80911d65d97317d47c9fb20d509c11002b6",
+      "date_utc": "2026-09-14 16:03:08",
+      "day": "2026-09-14",
+      "author": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "committer": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "subject": "Update real activity data 2026-09-14",
+      "body": "Co-authored-by: Cerebro Hito <cerebro@hitofusion.com>\nSigned-off-by: Cerebro Hito <cerebro@hitofusion.com>",
+      "parents": [
+        "5ec5cbbc170853a7ba4e1d48789a285e1a20bb30"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/e0e9b80911d65d97317d47c9fb20d509c11002b6",
+      "files": [
+        "data/activities.json",
+        "data/recurrences.json"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "5ec5cbbc170853a7ba4e1d48789a285e1a20bb30",
+      "date_utc": "2026-09-13 22:02:38",
+      "day": "2026-09-13",
+      "author": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "committer": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "subject": "Update real activity data 2026-09-13",
+      "body": "Co-authored-by: Cerebro Hito <cerebro@hitofusion.com>\nSigned-off-by: Cerebro Hito <cerebro@hitofusion.com>",
+      "parents": [
+        "8a7b8f2a8168249149d354dbf34c7671fef0c569"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/5ec5cbbc170853a7ba4e1d48789a285e1a20bb30",
+      "files": [
+        "data/activities.json",
+        "data/recurrences.json"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "8a7b8f2a8168249149d354dbf34c7671fef0c569",
+      "date_utc": "2026-09-13 16:02:33",
+      "day": "2026-09-13",
+      "author": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "committer": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "subject": "Update real activity data 2026-09-13",
+      "body": "Co-authored-by: Cerebro Hito <cerebro@hitofusion.com>\nSigned-off-by: Cerebro Hito <cerebro@hitofusion.com>",
+      "parents": [
+        "be5e39873b2c14365ad355d1f0d52141eabfeac0"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/8a7b8f2a8168249149d354dbf34c7671fef0c569",
+      "files": [
+        "data/activities.json",
+        "data/recurrences.json"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "be5e39873b2c14365ad355d1f0d52141eabfeac0",
+      "date_utc": "2026-09-12 22:03:03",
+      "day": "2026-09-12",
+      "author": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "committer": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "subject": "Update real activity data 2026-09-12",
+      "body": "Co-authored-by: Cerebro Hito <cerebro@hitofusion.com>\nSigned-off-by: Cerebro Hito <cerebro@hitofusion.com>",
+      "parents": [
+        "c9a7776a5f0f8f8de21303c9ab1afb72168880c4"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/be5e39873b2c14365ad355d1f0d52141eabfeac0",
+      "files": [
+        "data/activities.json",
+        "data/recurrences.json"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "c9a7776a5f0f8f8de21303c9ab1afb72168880c4",
+      "date_utc": "2026-09-12 16:03:11",
+      "day": "2026-09-12",
+      "author": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "committer": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "subject": "Update real activity data 2026-09-12",
+      "body": "Co-authored-by: Cerebro Hito <cerebro@hitofusion.com>\nSigned-off-by: Cerebro Hito <cerebro@hitofusion.com>",
+      "parents": [
+        "d15dbb88f42309e5d64f1c88de0fece43cdb9322"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/c9a7776a5f0f8f8de21303c9ab1afb72168880c4",
+      "files": [
+        "data/activities.json",
+        "data/recurrences.json"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "d15dbb88f42309e5d64f1c88de0fece43cdb9322",
+      "date_utc": "2026-09-11 22:02:40",
+      "day": "2026-09-11",
+      "author": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "committer": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "subject": "Update real activity data 2026-09-11",
+      "body": "Co-authored-by: Cerebro Hito <cerebro@hitofusion.com>\nSigned-off-by: Cerebro Hito <cerebro@hitofusion.com>",
+      "parents": [
+        "7fe448bcbaa0412ab0b850673c59fabe9f8a67b0"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/d15dbb88f42309e5d64f1c88de0fece43cdb9322",
+      "files": [
+        "data/activities.json",
+        "data/recurrences.json"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "7fe448bcbaa0412ab0b850673c59fabe9f8a67b0",
+      "date_utc": "2026-09-11 16:02:34",
+      "day": "2026-09-11",
+      "author": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "committer": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "subject": "Update real activity data 2026-09-11",
+      "body": "Co-authored-by: Cerebro Hito <cerebro@hitofusion.com>\nSigned-off-by: Cerebro Hito <cerebro@hitofusion.com>",
+      "parents": [
+        "44139d96595cc496142a4df1ca76d04a6dcde168"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/7fe448bcbaa0412ab0b850673c59fabe9f8a67b0",
+      "files": [
+        "data/activities.json",
+        "data/recurrences.json"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
       "sha": "44139d96595cc496142a4df1ca76d04a6dcde168",
       "date_utc": "2026-09-10 22:03:05",
       "day": "2026-09-10",
@@ -1882,6 +3079,331 @@
         "data/recurrences.json"
       ],
       "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "594b03cee9a5e414d98467b908d1eb1138813e78",
+      "date_utc": "2026-09-14 16:28:27",
+      "day": "2026-09-14",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "DM 2026-09-14 — minuta daily meeting equipo desarrollo",
+      "body": "",
+      "parents": [
+        "8a7a8e6db942c8b4f29b4f913bf5570989cdd38e"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/594b03cee9a5e414d98467b908d1eb1138813e78",
+      "files": [
+        "dm/dm-desa/DM-2026-09-14.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "8a7a8e6db942c8b4f29b4f913bf5570989cdd38e",
+      "date_utc": "2026-09-14 15:11:06",
+      "day": "2026-09-14",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05072",
+      "body": "",
+      "parents": [
+        "88aa4f9c62e0fec1940ae93f46fd5ad237de695d"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/8a7a8e6db942c8b4f29b4f913bf5570989cdd38e",
+      "files": [
+        "tickets-responded/20260914T151105Z_ticket_2026-05072.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "88aa4f9c62e0fec1940ae93f46fd5ad237de695d",
+      "date_utc": "2026-09-14 15:04:22",
+      "day": "2026-09-14",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05109",
+      "body": "",
+      "parents": [
+        "fd3467ca45bb870284c3d5ee6a9333efd4a5c574"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/88aa4f9c62e0fec1940ae93f46fd5ad237de695d",
+      "files": [
+        "tickets-responded/20260914T150421Z_ticket_2026-05109.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "fd3467ca45bb870284c3d5ee6a9333efd4a5c574",
+      "date_utc": "2026-09-14 14:10:55",
+      "day": "2026-09-14",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05075",
+      "body": "",
+      "parents": [
+        "7bb080d0ed8f000765f3ff3827c71c4c26d53ab8"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/fd3467ca45bb870284c3d5ee6a9333efd4a5c574",
+      "files": [
+        "tickets-responded/20260914T141054Z_ticket_2026-05075.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "7bb080d0ed8f000765f3ff3827c71c4c26d53ab8",
+      "date_utc": "2026-09-14 13:28:56",
+      "day": "2026-09-14",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05113",
+      "body": "",
+      "parents": [
+        "feff53087e431a56cb055186ee050e0924e11d77"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/7bb080d0ed8f000765f3ff3827c71c4c26d53ab8",
+      "files": [
+        "tickets-responded/20260914T132855Z_ticket_2026-05113.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "feff53087e431a56cb055186ee050e0924e11d77",
+      "date_utc": "2026-09-14 13:23:08",
+      "day": "2026-09-14",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05109",
+      "body": "",
+      "parents": [
+        "553526fc3e78ad29c8a5c81b580633fc2357e411"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/feff53087e431a56cb055186ee050e0924e11d77",
+      "files": [
+        "tickets-responded/20260914T132307Z_ticket_2026-05109.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "553526fc3e78ad29c8a5c81b580633fc2357e411",
+      "date_utc": "2026-09-11 20:00:08",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05112",
+      "body": "",
+      "parents": [
+        "2ae9f3a047e134cf55e831c1717c706e1ace2de5"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/553526fc3e78ad29c8a5c81b580633fc2357e411",
+      "files": [
+        "tickets-responded/20260911T200007Z_ticket_2026-05112.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "2ae9f3a047e134cf55e831c1717c706e1ace2de5",
+      "date_utc": "2026-09-11 19:24:23",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05108",
+      "body": "",
+      "parents": [
+        "4ccea5d1ce0912de38f89c73e35c817410b26841"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/2ae9f3a047e134cf55e831c1717c706e1ace2de5",
+      "files": [
+        "tickets-responded/20260911T192421Z_ticket_2026-05108.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "4ccea5d1ce0912de38f89c73e35c817410b26841",
+      "date_utc": "2026-09-11 18:14:10",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05101",
+      "body": "",
+      "parents": [
+        "3641973ba723e9d4b0892027639daa9d11a04a1f"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/4ccea5d1ce0912de38f89c73e35c817410b26841",
+      "files": [
+        "tickets-responded/20260911T181410Z_ticket_2026-05101.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "3641973ba723e9d4b0892027639daa9d11a04a1f",
+      "date_utc": "2026-09-11 17:59:53",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05108",
+      "body": "",
+      "parents": [
+        "dc124dad2393b4b33bf7defa4ae809ecfe3bd174"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/3641973ba723e9d4b0892027639daa9d11a04a1f",
+      "files": [
+        "tickets-responded/20260911T175952Z_ticket_2026-05108.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "dc124dad2393b4b33bf7defa4ae809ecfe3bd174",
+      "date_utc": "2026-09-11 17:10:45",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05108",
+      "body": "",
+      "parents": [
+        "f77255e2c15ba60272328d94bf725521ca8ec5fa"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/dc124dad2393b4b33bf7defa4ae809ecfe3bd174",
+      "files": [
+        "tickets-responded/20260911T171044Z_ticket_2026-05108.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "f77255e2c15ba60272328d94bf725521ca8ec5fa",
+      "date_utc": "2026-09-11 15:58:44",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "DM 2026-09-11 — minuta daily meeting equipo desarrollo",
+      "body": "",
+      "parents": [
+        "709b8687487e77811fb2bfac8c157b05dcfd78bf"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/f77255e2c15ba60272328d94bf725521ca8ec5fa",
+      "files": [
+        "dm/dm-desa/DM-2026-09-11.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "709b8687487e77811fb2bfac8c157b05dcfd78bf",
+      "date_utc": "2026-09-11 14:06:00",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05102",
+      "body": "",
+      "parents": [
+        "783a84525cefabc701d3c9f090fc1f67aa3815c5"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/709b8687487e77811fb2bfac8c157b05dcfd78bf",
+      "files": [
+        "tickets-responded/20260911T140559Z_ticket_2026-05102.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
     },
     {
       "repo": "hito2026/jinzo-work-log",
@@ -2156,6 +3678,345 @@
       "files": [
         "tickets-responded/20260910T124404Z_ticket_2026-05095.md"
       ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/hiperrelaciones",
+      "sha": "8ba2597c2ff03a1f188c5fa78c2b49b63a24e91e",
+      "date_utc": "2026-09-11 14:49:35",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "subject": "Simplify records table and surface literal descriptions",
+      "body": "",
+      "parents": [
+        "ef4d0a844f605b3479642b2903ec5681c901e8e6"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/hiperrelaciones/commit/8ba2597c2ff03a1f188c5fa78c2b49b63a24e91e",
+      "files": [
+        "assets/app.js",
+        "tests/test_site.py"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/hiperrelaciones",
+      "sha": "ef4d0a844f605b3479642b2903ec5681c901e8e6",
+      "date_utc": "2026-09-11 14:07:59",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "subject": "Unify activity records into auditable work units",
+      "body": "",
+      "parents": [
+        "f6dea93bb13f6e510351e15657a6e6531204cf0c"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/hiperrelaciones/commit/ef4d0a844f605b3479642b2903ec5681c901e8e6",
+      "files": [
+        "README.md",
+        "assets/app.js",
+        "data/records.json",
+        "data/work_units.json",
+        "scripts/build_metrics.js",
+        "tests/test_site.py"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/hiperrelaciones",
+      "sha": "f6dea93bb13f6e510351e15657a6e6531204cf0c",
+      "date_utc": "2026-09-11 13:48:26",
+      "day": "2026-09-11",
+      "author": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "subject": "Update Hiperrelaciones through September 11",
+      "body": "",
+      "parents": [
+        "23c275ae571f2a17d909f97af1cba63701ca7a1a"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/hiperrelaciones/commit/f6dea93bb13f6e510351e15657a6e6531204cf0c",
+      "files": [
+        "README.md",
+        "assets/app.js",
+        "data/git_activity.json",
+        "data/hyperrelations.json",
+        "data/productivity.json",
+        "data/records.json",
+        "index.html",
+        "scripts/build_metrics.js",
+        "scripts/extract_git.js",
+        "tests/test_site.py"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/hiperrelaciones",
+      "sha": "23c275ae571f2a17d909f97af1cba63701ca7a1a",
+      "date_utc": "2026-09-11 00:21:10",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "subject": "Present records as sortable table",
+      "body": "",
+      "parents": [
+        "a74f92e47b987d359964a55da60d5a9b29b19075"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/hiperrelaciones/commit/23c275ae571f2a17d909f97af1cba63701ca7a1a",
+      "files": [
+        "assets/app.js",
+        "assets/productivity.css",
+        "index.html",
+        "tests/test_site.py"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/hiperrelaciones",
+      "sha": "a74f92e47b987d359964a55da60d5a9b29b19075",
+      "date_utc": "2026-09-11 00:11:29",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "subject": "Make record details visible by default",
+      "body": "",
+      "parents": [
+        "245d76cce205a1912c55b14386f3cc0adc4cdea0"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/hiperrelaciones/commit/a74f92e47b987d359964a55da60d5a9b29b19075",
+      "files": [
+        "assets/app.js",
+        "assets/productivity.css",
+        "index.html",
+        "tests/test_site.py"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/hiperrelaciones",
+      "sha": "245d76cce205a1912c55b14386f3cc0adc4cdea0",
+      "date_utc": "2026-09-11 00:07:08",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "subject": "Add grouped source records explorer",
+      "body": "",
+      "parents": [
+        "14ffe92995170b7d86721c58de6acc90535be657"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/hiperrelaciones/commit/245d76cce205a1912c55b14386f3cc0adc4cdea0",
+      "files": [
+        "assets/app.js",
+        "assets/productivity.css",
+        "data/productivity.json",
+        "data/records.json",
+        "index.html",
+        "scripts/build_metrics.js",
+        "tests/test_site.py"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/hiperrelaciones",
+      "sha": "14ffe92995170b7d86721c58de6acc90535be657",
+      "date_utc": "2026-09-11 00:00:27",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "subject": "Expose metric coverage gaps",
+      "body": "",
+      "parents": [
+        "ad4552080654f1af9baad793cb193033b250d586"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/hiperrelaciones/commit/14ffe92995170b7d86721c58de6acc90535be657",
+      "files": [
+        "assets/app.js",
+        "data/productivity.json",
+        "scripts/build_metrics.js",
+        "tests/test_site.py"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/hiperrelaciones",
+      "sha": "ad4552080654f1af9baad793cb193033b250d586",
+      "date_utc": "2026-09-10 23:59:02",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "subject": "Compact matrix and add interaction totals",
+      "body": "",
+      "parents": [
+        "f0abc3138bade593d6c5e310ba90f14625c8b1dd"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/hiperrelaciones/commit/ad4552080654f1af9baad793cb193033b250d586",
+      "files": [
+        "assets/app.js",
+        "assets/productivity.css",
+        "tests/test_site.py"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/hiperrelaciones",
+      "sha": "f0abc3138bade593d6c5e310ba90f14625c8b1dd",
+      "date_utc": "2026-09-10 23:58:07",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "subject": "Refine company pulse and purpose guidance",
+      "body": "",
+      "parents": [
+        "b8509c61fcd48c4577413775332d0f6bfa7f4b71"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/hiperrelaciones/commit/f0abc3138bade593d6c5e310ba90f14625c8b1dd",
+      "files": [
+        "assets/app.js",
+        "index.html",
+        "tests/test_site.py"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/hiperrelaciones",
+      "sha": "b8509c61fcd48c4577413775332d0f6bfa7f4b71",
+      "date_utc": "2026-09-10 23:56:57",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "subject": "Explain matrix purpose and add company trace",
+      "body": "",
+      "parents": [
+        "548e55b164dcc6804b497039055adbf21751a5d5"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/hiperrelaciones/commit/b8509c61fcd48c4577413775332d0f6bfa7f4b71",
+      "files": [
+        "assets/app.js",
+        "assets/productivity.css",
+        "index.html",
+        "tests/test_site.py"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/hiperrelaciones",
+      "sha": "548e55b164dcc6804b497039055adbf21751a5d5",
+      "date_utc": "2026-09-10 23:44:55",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "subject": "Add verifiable contribution indicators",
+      "body": "",
+      "parents": [
+        "70d014b04caf6a6dc52484a94ef92f2b32de13c7"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/hiperrelaciones/commit/548e55b164dcc6804b497039055adbf21751a5d5",
+      "files": [
+        "README.md",
+        "assets/app.js",
+        "assets/productivity.css",
+        "data/productivity.json",
+        "index.html",
+        "scripts/build_metrics.js",
+        "tests/test_site.py"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/hiperrelaciones",
+      "sha": "70d014b04caf6a6dc52484a94ef92f2b32de13c7",
+      "date_utc": "2026-09-10 23:07:32",
+      "day": "2026-09-10",
+      "author": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "subject": "Create standalone Hiperrelaciones site",
+      "body": "",
+      "parents": [],
+      "classification": "change",
+      "url": "https://github.com/hito2026/hiperrelaciones/commit/70d014b04caf6a6dc52484a94ef92f2b32de13c7",
+      "files": [],
       "reason": "cuenta técnica o gateway sin atribución humana"
     }
   ]
