@@ -10,10 +10,12 @@ const personGroups={
   "Maximiliano Alarcon":"sales","Andrés Salguero":"sales","Lanser Jose Ignacio":"sales",
   "Francisco Fiorentino":"ai","Genaro García":"ai",
 };
-const groupClass=person=>`group-${personGroups[person]||"unassigned"}`;
+const personAliases={"Julián José Morabito":"Julian Morabito","Julian José Morabito":"Julian Morabito"};
+const canonicalPerson=person=>personAliases[person]||person;
+const groupClass=person=>`group-${personGroups[canonicalPerson(person)]||"unassigned"}`;
 const selectedDays=day=>day==="all"?Object.keys(state.metrics.days):[day];
 const dailyActivityAverage=(person,day)=>{
-  const days=selectedDays(day),units=state.records.work_units.filter(unit=>unit.person===person&&days.includes(unit.day));
+  const days=selectedDays(day),units=state.records.work_units.filter(unit=>canonicalPerson(unit.person)===canonicalPerson(person)&&days.includes(unit.day));
   return units.length/days.length;
 };
 

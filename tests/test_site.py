@@ -48,6 +48,8 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         self.assertIn("row.H<8", self.app)
         self.assertIn('"Francisco Fiorentino":"ai","Genaro García":"ai"', self.app)
         self.assertIn("return units.length/days.length", self.app)
+        self.assertIn('"Julián José Morabito":"Julian Morabito"', self.app)
+        self.assertIn("canonicalPerson(unit.person)===canonicalPerson(person)", self.app)
 
     def test_productivity_dataset_and_formula(self):
         metrics = json.loads((ROOT / "data" / "productivity.json").read_text())
