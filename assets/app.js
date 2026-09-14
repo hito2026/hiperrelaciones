@@ -8,12 +8,13 @@ const personGroups={
   "Mateo Scozzina":"support","Valentin Markov":"support","Ignacio Lera":"support","Matias Banega":"support",
   "Ezequiel Montes":"projects","Samuel Marcano":"projects","Carolina Monserrat":"projects","Nahiara Aylen Delgado":"projects","Ariadna Estebenet":"projects","Julian Morabito":"projects",
   "Maximiliano Alarcon":"sales","Andrés Salguero":"sales","Lanser Jose Ignacio":"sales",
+  "Francisco Fiorentino":"ai","Genaro García":"ai",
 };
 const groupClass=person=>`group-${personGroups[person]||"unassigned"}`;
 const selectedDays=day=>day==="all"?Object.keys(state.metrics.days):[day];
 const dailyActivityAverage=(person,day)=>{
-  const days=selectedDays(day),total=state.records.work_units.filter(unit=>unit.person===person&&days.includes(unit.day)).reduce((sum,unit)=>sum+unit.source_event_count,0);
-  return total/days.length;
+  const days=selectedDays(day),units=state.records.work_units.filter(unit=>unit.person===person&&days.includes(unit.day));
+  return units.length/days.length;
 };
 
 async function init(){
@@ -156,7 +157,7 @@ function renderRecords(){
   const sorted=[...groups].sort(([a],[b])=>a.localeCompare(b,"es")),headers=[["date_utc","Fecha/hora"],["person","Personal"],["counterparts","Contraparte(s)"],["source","Fuente"],["kind","Tipo"],["model","Modelo"],["res_id","ID/SHA"],["title","Tarea / TK / título"],["project","Proyecto"],["text","Descripción literal"]];
   const sortValue=(record,key)=>key==="counterparts"?record.counterparts.join(" "):key==="source"?recordSource(record):key==="kind"?record.kinds.join(" "):key==="coverage"?record.source_event_count:record[key]??"";
   const dayFilter=$("#recordDay").value,dayCount=selectedDays(dayFilter).length;
-  $("#records").innerHTML=sorted.map(([group,list],index)=>{const total=list.reduce((sum,item)=>sum+item.source_event_count,0),summary=groupBy==="person"?`${(total/dayCount).toFixed(1)} actividades/día`:`${list.length} registros`;return `<details class="${groupBy==="person"?groupClass(group):""}" data-group="${esc(group)}" ${openGroups.has(group)||(!openGroups.size&&index===0)?"open":""}><summary><span>${esc(group)}</span><b>${summary}</b></summary><div class="record-table-wrap"><table class="record-table"><thead><tr>${headers.map(([key,label])=>`<th><button type="button" data-record-sort="${key}">${label}</button></th>`).join("")}</tr></thead><tbody>${list.sort((a,b)=>String(sortValue(a,state.recordSort)).localeCompare(String(sortValue(b,state.recordSort)),"es",{numeric:true})*state.recordSortDirection).map(renderRecord).join("")}</tbody></table></div></details>`}).join("")||'<p class="record-empty">No hay registros para estos filtros.</p>';
+  $("#records").innerHTML=sorted.map(([group,list],index)=>{const summary=groupBy==="person"?`${(list.length/dayCount).toFixed(1)} actividades/día`:`${list.length} registros`;return `<details class="${groupBy==="person"?groupClass(group):""}" data-group="${esc(group)}" ${openGroups.has(group)||(!openGroups.size&&index===0)?"open":""}><summary><span>${esc(group)}</span><b>${summary}</b></summary><div class="record-table-wrap"><table class="record-table"><thead><tr>${headers.map(([key,label])=>`<th><button type="button" data-record-sort="${key}">${label}</button></th>`).join("")}</tr></thead><tbody>${list.sort((a,b)=>String(sortValue(a,state.recordSort)).localeCompare(String(sortValue(b,state.recordSort)),"es",{numeric:true})*state.recordSortDirection).map(renderRecord).join("")}</tbody></table></div></details>`}).join("")||'<p class="record-empty">No hay registros para estos filtros.</p>';
   $("#records").querySelectorAll("[data-record-sort]").forEach(button=>button.addEventListener("click",()=>{const key=button.dataset.recordSort;state.recordSortDirection=state.recordSort===key?-state.recordSortDirection:1;state.recordSort=key;renderRecords()}));
   $("#records").querySelectorAll("[data-record-key]").forEach(button=>button.addEventListener("click",()=>openRecord(records.find(record=>record.key===button.dataset.recordKey))));
 }
