@@ -14,6 +14,8 @@ const previousMetrics=JSON.parse(fs.readFileSync(path.join(root,"data/productivi
 const previousRecords=JSON.parse(fs.readFileSync(path.join(root,"data/records.json"),"utf8"));
 const people=odoo.roster.map(item=>item.name);
 const refreshedDays=new Set(odoo.report.complete_days.concat(odoo.report.partial_days));
+const completeDays=[...new Set([...(previousMetrics.sources.complete_days||[]).filter(day=>!refreshedDays.has(day)),...odoo.report.complete_days])].sort();
+const partialDays=[...new Set([...(previousMetrics.sources.partial_days||[]).filter(day=>!refreshedDays.has(day)),...odoo.report.partial_days])].sort();
 const dayLabel=day=>day.split("-").slice(1).reverse().join("/");
 
 const oldEvents=previousGraph.events.filter(item=>!refreshedDays.has(item.day));
@@ -32,7 +34,7 @@ if(new Set(eventKeys).size!==eventKeys.length)throw new Error("duplicate directe
 const complete=odoo.report.complete_days.map(day=>`${dayLabel(day)} completo`);
 const partial=odoo.report.partial_days.map(day=>`${dayLabel(day)} hasta ${odoo.report.end_local_exclusive.slice(11)} Argentina`);
 const graph={
-  report:{title:"HiperNrelaciones",period_start:`${events[0]?.day||odoo.report.start_local.slice(0,10)} 00:00:00 America/Argentina/Cordoba`,period_end:`${odoo.report.end_local_exclusive} America/Argentina/Cordoba`,query_end_utc:odoo.report.end_utc_exclusive,coverage:[oldEvents.length?`${dayLabel(oldEvents[0].day)} histórico conservado`:null,...complete,...partial,"Odoo + Git + Daily Meetings"].filter(Boolean).join(" · "),method:"Solo menciones resolubles, respuestas directas, cambios rastreados de responsables y compromisos individuales explícitos."},
+  report:{title:"HiperNrelaciones",period_start:`${events[0]?.day||odoo.report.start_local.slice(0,10)} 00:00:00 America/Argentina/Cordoba`,period_end:`${odoo.report.end_local_exclusive} America/Argentina/Cordoba`,query_end_utc:odoo.report.end_utc_exclusive,coverage:[oldEvents.length?`${dayLabel(oldEvents[0].day)}–${dayLabel(oldEvents.at(-1).day)} histórico conservado`:null,...complete,...partial,"Odoo + Git + Daily Meetings"].filter(Boolean).join(" · "),method:"Solo menciones resolubles, respuestas directas, cambios rastreados de responsables y compromisos individuales explícitos."},
   people,events,
 };
 
@@ -42,7 +44,7 @@ odoo.creations.forEach(item=>{const key=`${item.day}|${item.time}|${item.creator
 const isBatchCreation=item=>(creationBatchCounts.get(`${item.day}|${item.time}|${item.creator}`)||0)>=10;
 const metrics={
   methodology:previousMetrics.methodology,
-  sources:{odoo:[path.basename(source)],daily:{repository:"jinzo-work-log/dm/dm-desa",files:daily.report.files},git_in_outcomes:git.coverage?.status==="complete",git:git.coverage,cutoff_local:`${odoo.report.end_local_exclusive} America/Argentina/Cordoba`,complete_days:odoo.report.complete_days,partial_days:odoo.report.partial_days},
+  sources:{odoo:[path.basename(source)],daily:{repository:"jinzo-work-log/dm/dm-desa",files:daily.report.files},git_in_outcomes:git.coverage?.status==="complete",git:git.coverage,cutoff_local:`${odoo.report.end_local_exclusive} America/Argentina/Cordoba`,complete_days:completeDays,partial_days:partialDays},
   days:Object.fromEntries(Object.entries(previousMetrics.days).filter(([day])=>!refreshedDays.has(day))),
 };
 for(const day of refreshedDays){

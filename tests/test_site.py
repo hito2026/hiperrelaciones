@@ -16,10 +16,10 @@ class HiperrelacionesSiteTests(unittest.TestCase):
 
     def test_dataset_has_expected_scope(self):
         self.assertEqual(len(self.data["people"]), 23)
-        self.assertEqual(len(self.data["events"]), 118)
-        self.assertEqual({event["day"] for event in self.data["events"]}, {"2026-09-09", "2026-09-10", "2026-09-11", "2026-09-14"})
-        self.assertIn("10/09 completo", self.data["report"]["coverage"])
-        self.assertIn("14/09 hasta 13:55:00", self.data["report"]["coverage"])
+        self.assertEqual(len(self.data["events"]), 289)
+        self.assertEqual({event["day"] for event in self.data["events"]}, {"2026-09-09", "2026-09-10", "2026-09-11", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18"})
+        self.assertIn("09/09–14/09 histórico conservado", self.data["report"]["coverage"])
+        self.assertIn("18/09 hasta 12:58:47", self.data["report"]["coverage"])
 
     def test_dataset_edges_are_unique_and_resolved(self):
         roster = set(self.data["people"])
@@ -53,12 +53,12 @@ class HiperrelacionesSiteTests(unittest.TestCase):
 
     def test_productivity_dataset_and_formula(self):
         metrics = json.loads((ROOT / "data" / "productivity.json").read_text())
-        self.assertEqual(set(metrics["days"]), {"2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14"})
+        self.assertEqual(set(metrics["days"]), {"2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18"})
         self.assertTrue(all(len(rows) == 23 for rows in metrics["days"].values()))
         self.assertAlmostEqual(sum(metrics["methodology"]["weights"].values()), 1)
         self.assertTrue(metrics["sources"]["git_in_outcomes"])
-        self.assertEqual(metrics["sources"]["complete_days"], ["2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13"])
-        self.assertEqual(metrics["sources"]["partial_days"], ["2026-09-14"])
+        self.assertEqual(metrics["sources"]["complete_days"], ["2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-15", "2026-09-16", "2026-09-17"])
+        self.assertEqual(metrics["sources"]["partial_days"], ["2026-09-14", "2026-09-18"])
         self.assertIn("Math.log1p", self.app)
         self.assertIn("weight=available.reduce", self.app)
         self.assertIn("quality_messages", self.app)
@@ -81,10 +81,10 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         comments = [item for item in records["records"] if item["kind"] == "comment"]
         timesheets = [item for item in records["records"] if item["kind"] == "timesheet"]
         commits = [item for item in records["records"] if item["kind"] == "commit"]
-        self.assertEqual(len(comments), 97)
-        self.assertEqual(len({(item["day"], item["id"]) for item in comments}), 97)
-        self.assertEqual(len(timesheets), 101)
-        self.assertEqual(len(commits), 53)
+        self.assertEqual(len(comments), 308)
+        self.assertEqual(len({(item["day"], item["id"]) for item in comments}), 308)
+        self.assertEqual(len(timesheets), 225)
+        self.assertEqual(len(commits), 77)
         self.assertTrue(all(item["entry_class"] in {"own_entry", "third_party_entry", "zero"} for item in timesheets))
         self.assertIn("filteredRecords", self.app)
         self.assertIn("recordGroup", self.app)
@@ -102,11 +102,11 @@ class HiperrelacionesSiteTests(unittest.TestCase):
 
     def test_refreshed_records_are_individual_and_unique(self):
         records = json.loads((ROOT / "data" / "records.json").read_text())["records"]
-        refreshed = [r for r in records if r["day"] in {"2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14"}]
+        refreshed = [r for r in records if r["day"] in {"2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18"}]
         keys = [(r["kind"], r["id"], r["day"], r["person"], r.get("text")) for r in refreshed]
         self.assertEqual(len(keys), len(set(keys)))
-        self.assertEqual(len([r for r in refreshed if r["kind"] == "activity" and "tracking" in r["activity_types"]]), 221)
-        self.assertEqual(len([r for r in refreshed if r["kind"] == "activity" and "creation" in r["activity_types"]]), 191)
+        self.assertEqual(len([r for r in refreshed if r["kind"] == "activity" and "tracking" in r["activity_types"]]), 470)
+        self.assertEqual(len([r for r in refreshed if r["kind"] == "activity" and "creation" in r["activity_types"]]), 359)
 
     def test_mass_creation_batch_does_not_inflate_outcomes(self):
         metrics = json.loads((ROOT / "data" / "productivity.json").read_text())
@@ -118,7 +118,7 @@ class HiperrelacionesSiteTests(unittest.TestCase):
     def test_work_units_unify_sources_without_losing_evidence(self):
         units = self.units["work_units"]
         task_35183 = [u for u in units if u["person"] == "Carolina Monserrat" and u.get("res_id") == 35183]
-        task_32097 = [u for u in units if u["person"] == "Carolina Monserrat" and u.get("res_id") == 32097]
+        task_32097 = [u for u in units if u["day"] == "2026-09-10" and u["person"] == "Carolina Monserrat" and u.get("res_id") == 32097]
         self.assertEqual(len(task_35183), 1)
         self.assertEqual(len(task_32097), 1)
         self.assertGreaterEqual(len(task_35183[0]["subevents"]), 3)

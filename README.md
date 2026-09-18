@@ -14,7 +14,7 @@ Abrir `http://localhost:8080`.
 
 `data/hyperrelations.json` contiene las aristas dirigidas publicadas; `data/records.json`, la evidencia individual sin eliminar; `data/work_units.json`, la vista derivada que agrupa esa evidencia por unidad de trabajo y lote comprobado; `data/productivity.json`, el vector e ICV; y `data/git_activity.json`, la auditoría Git del último corte. La matriz diferencia actor y contraparte y no infiere relaciones por mera co-presencia.
 
-El corte vigente incorpora el 10/09/2026 completo y el 11/09/2026 hasta las 10:39:20 de Argentina, conservando el histórico del 9/09. No existen minutas daily del 10 ni del 11/09 en `jinzo-work-log/dm/dm-desa` al corte.
+El corte vigente conserva el histórico desde el 9/09/2026 e incorpora el 15, 16 y 17/09 completos y el 18/09 hasta las 12:58:47 de Argentina. Las minutas de `jinzo-work-log/dm/dm-desa` cubren los días laborables 15–18; el 18 es parcial al corte.
 
 ## Índice de Contribución Verificable
 

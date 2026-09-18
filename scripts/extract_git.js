@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const fs=require("node:fs"),cp=require("node:child_process"),path=require("node:path");
 const root=path.resolve(__dirname,"..");
-const start="2026-09-10T03:00:00Z",end="2026-09-14T16:55:00Z";
+const start="2026-09-15T03:00:00Z",end="2026-09-18T15:58:47Z";
 const repos=[
   ["wsf/hito-devman","/Users/asartorio/.buzz/REPOS/hito-devman-ico-19"],
   ["hito2026/agentes-creados","/Users/asartorio/.buzz/.scratch/git-audit-20260911/agentes-creados"],
@@ -16,7 +16,7 @@ const repos=[
   ["hito2026/hito-gemelos-ia","/Users/asartorio/.buzz/REPOS/hito-gemelos-ia"],
   ["hito2026/milemor23","/Users/asartorio/.buzz/REPOS/milemor23-stg270726"],
   ["hito2026/odoo_tienda_nube","/Users/asartorio/.buzz/REPOS/jdm2/hito2026/odoo_tienda_nube"],
-  ["hito2026/hiperrelaciones","/Users/asartorio/.buzz/REPOS/hiperrelaciones"],
+  ["hito2026/hiperrelaciones",root],
   ["hito2026/midleware-bridge-kapso-openclaw","/Users/asartorio/.buzz/REPOS/midleware-bridge-kapso-openclaw"],
   ["hito2026/bridge-kapso-openclaw","/Users/asartorio/.buzz/REPOS/bridge-kapso-openclaw"],
   ["hito2026/cognee_brain_openclaw","/Users/asartorio/.buzz/REPOS/cognee_brain_openclaw"],

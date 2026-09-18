@@ -2,62 +2,133 @@
   "report": {
     "timezone": "America/Argentina/Cordoba",
     "files": {
-      "2026-09-10": "ausente",
-      "2026-09-11": "dm/dm-desa/DM-2026-09-11.md",
-      "2026-09-12": "ausente",
-      "2026-09-13": "ausente",
-      "2026-09-14": "dm/dm-desa/DM-2026-09-14.md"
+      "2026-09-15": "dm/dm-desa/DM-2026-09-15.md",
+      "2026-09-16": "dm/dm-desa/DM-2026-09-16.md",
+      "2026-09-17": "dm/dm-desa/DM-2026-09-17.md",
+      "2026-09-18": "dm/dm-desa/DM-2026-09-18.md"
     },
     "rule": "Una declaracion o mencion no prueba ejecucion; solo se registran compromisos individuales dirigidos y resolubles."
   },
   "interactions": [
     {
-      "key": "daily:2026-09-11:nelson:ale:upselling",
-      "day": "2026-09-11",
+      "key": "daily:2026-09-15:nelson:ale:checkpoint",
+      "day": "2026-09-15",
       "time": null,
       "date_utc": null,
       "actor": "Nelson Tontarelli",
       "counterpart": "Alejandro Sartorio",
       "type": "compromiso_dirigido",
-      "title": "Upselling — mejora en flujo de datos",
-      "evidence": "Nelson debe enviar a Alejandro el detalle tecnico faltante para su reenvio a Luca.",
-      "source_file": "dm/dm-desa/DM-2026-09-11.md"
+      "title": "Checkpoint de gestion",
+      "evidence": "Nelson se comprometio al checkpoint de gestion con Alejandro a las 15:00.",
+      "source_file": "dm/dm-desa/DM-2026-09-15.md"
     },
     {
-      "key": "daily:2026-09-14:nelson:valentin:onecloud",
-      "day": "2026-09-14",
-      "time": null,
-      "date_utc": null,
-      "actor": "Nelson Tontarelli",
-      "counterpart": "Valentin Markov",
-      "type": "compromiso_dirigido",
-      "title": "OneCloud — pagos residuales y tipos de cambio",
-      "evidence": "Nelson debe consultar con Valentin la logica de ajuste de la tasa de cotizacion.",
-      "source_file": "dm/dm-desa/DM-2026-09-14.md"
-    },
-    {
-      "key": "daily:2026-09-14:pablo:nahiara:dimario",
-      "day": "2026-09-14",
-      "time": null,
-      "date_utc": null,
-      "actor": "Pablo Marchionno",
-      "counterpart": "Nahiara Aylen Delgado",
-      "type": "compromiso_dirigido",
-      "title": "Di Mario — enlaces de operaciones ML/MP",
-      "evidence": "Pablo debe contactar a Nahiara para definir los requisitos pendientes.",
-      "source_file": "dm/dm-desa/DM-2026-09-14.md"
-    },
-    {
-      "key": "daily:2026-09-14:ale:nelson:migracion",
-      "day": "2026-09-14",
+      "key": "daily:2026-09-15:ale:nelson:checkpoint",
+      "day": "2026-09-15",
       "time": null,
       "date_utc": null,
       "actor": "Alejandro Sartorio",
       "counterpart": "Nelson Tontarelli",
       "type": "compromiso_dirigido",
-      "title": "Migracion del sistema",
-      "evidence": "Alejandro debe convocar a Nelson para coordinar las tareas de migracion.",
-      "source_file": "dm/dm-desa/DM-2026-09-14.md"
+      "title": "Checkpoint de gestion",
+      "evidence": "Alejandro se comprometio a realizar un checkpoint de gestion con Nelson a las 15:00.",
+      "source_file": "dm/dm-desa/DM-2026-09-15.md"
+    },
+    {
+      "key": "daily:2026-09-15:ale:matias:migracion",
+      "day": "2026-09-15",
+      "time": null,
+      "date_utc": null,
+      "actor": "Alejandro Sartorio",
+      "counterpart": "Matias Marziali",
+      "type": "compromiso_dirigido",
+      "title": "Coordinacion de migracion",
+      "evidence": "Alejandro se comprometio a mantener informado a Matias por mensaje directo sobre los avances de la migracion.",
+      "source_file": "dm/dm-desa/DM-2026-09-15.md"
+    },
+    {
+      "key": "daily:2026-09-16:matias:samuel:contrato",
+      "day": "2026-09-16",
+      "time": null,
+      "date_utc": null,
+      "actor": "Matias Marziali",
+      "counterpart": "Samuel Marcano",
+      "type": "compromiso_dirigido",
+      "title": "Nuevo contrato — calculo",
+      "evidence": "Matias debe coordinar con Samuel el calculo de un nuevo contrato con logica diferente.",
+      "source_file": "dm/dm-desa/DM-2026-09-16.md"
+    },
+    {
+      "key": "daily:2026-09-17:matias:samuel:revision-tareas",
+      "day": "2026-09-17",
+      "time": null,
+      "date_utc": null,
+      "actor": "Matias Marziali",
+      "counterpart": "Samuel Marcano",
+      "type": "compromiso_dirigido",
+      "title": "Revision de estado de tareas",
+      "evidence": "Matias debe coordinar con Samuel la reunion pendiente para revisar el estado de las tareas.",
+      "source_file": "dm/dm-desa/DM-2026-09-17.md"
+    },
+    {
+      "key": "daily:2026-09-18:nelson:pablo:mercado-libre",
+      "day": "2026-09-18",
+      "time": null,
+      "date_utc": null,
+      "actor": "Nelson Tontarelli",
+      "counterpart": "Pablo Marchionno",
+      "type": "compromiso_dirigido",
+      "title": "Mercado Libre — seguimiento",
+      "evidence": "Nelson debe monitorear que Pablo notifique el diagnostico final de Mercado Libre.",
+      "source_file": "dm/dm-desa/DM-2026-09-18.md"
+    },
+    {
+      "key": "daily:2026-09-18:pablo:nelson:mercado-pago",
+      "day": "2026-09-18",
+      "time": null,
+      "date_utc": null,
+      "actor": "Pablo Marchionno",
+      "counterpart": "Nelson Tontarelli",
+      "type": "compromiso_dirigido",
+      "title": "Mercado Pago — sincronizacion",
+      "evidence": "Pablo debe probar la sincronizacion con Mercado Pago y notificar a Nelson si el proceso falla.",
+      "source_file": "dm/dm-desa/DM-2026-09-18.md"
+    },
+    {
+      "key": "daily:2026-09-18:ale:pablo:mercado-libre",
+      "day": "2026-09-18",
+      "time": null,
+      "date_utc": null,
+      "actor": "Alejandro Sartorio",
+      "counterpart": "Pablo Marchionno",
+      "type": "compromiso_dirigido",
+      "title": "Mercado Libre — comparacion de entornos",
+      "evidence": "Alejandro debe actualizar Mercado Libre en staging y notificar a Pablo para que compare con su analisis en produccion.",
+      "source_file": "dm/dm-desa/DM-2026-09-18.md"
+    },
+    {
+      "key": "daily:2026-09-18:ale:samuel:intech-toys",
+      "day": "2026-09-18",
+      "time": null,
+      "date_utc": null,
+      "actor": "Alejandro Sartorio",
+      "counterpart": "Samuel Marcano",
+      "type": "compromiso_dirigido",
+      "title": "Intech Toys — despliegue coordinado",
+      "evidence": "Alejandro debe notificar a Samuel despues de verificar la rama para que el socio mexicano ejecute el pase.",
+      "source_file": "dm/dm-desa/DM-2026-09-18.md"
+    },
+    {
+      "key": "daily:2026-09-18:pablo:samuel:intech-toys",
+      "day": "2026-09-18",
+      "time": null,
+      "date_utc": null,
+      "actor": "Pablo Marchionno",
+      "counterpart": "Samuel Marcano",
+      "type": "compromiso_dirigido",
+      "title": "Intech Toys — preparacion de rama",
+      "evidence": "Pablo debe preparar y verificar la rama de Intech Toys y notificar a Samuel para coordinar el pase.",
+      "source_file": "dm/dm-desa/DM-2026-09-18.md"
     }
   ]
 }
