@@ -1,4 +1,4 @@
-const state={data:null,metrics:null,records:null,day:"all",person:"",timer:null,playing:false,recordSort:"date_utc",recordSortDirection:1};
+const state={data:null,metrics:null,records:null,acceptance:null,day:"all",person:"",timer:null,playing:false,recordSort:"date_utc",recordSortDirection:1};
 const $=selector=>document.querySelector(selector);
 const esc=value=>(value??"").toString().replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
 const clean=value=>(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
@@ -20,7 +20,7 @@ const dailyActivityAverage=(person,day)=>{
 };
 
 async function init(){
-  [state.data,state.metrics,state.records]=await Promise.all(["data/hyperrelations.json","data/productivity.json","data/work_units.json"].map(url=>fetch(url).then(response=>{if(!response.ok)throw new Error("dataset unavailable");return response.json()})));
+  [state.data,state.metrics,state.records,state.acceptance]=await Promise.all(["data/hyperrelations.json","data/productivity.json","data/work_units.json","data/acceptance_cases.json"].map(url=>fetch(url).then(response=>{if(!response.ok)throw new Error("dataset unavailable");return response.json()})));
   $("#coverage").textContent=state.data.report.coverage;
   const days=Object.keys(state.metrics.days).sort(),options=`<option value="all">Acumulado (${days.map(shortDay).join(", ")})</option>`+days.map(day=>`<option value="${day}">${esc(dayStatus(day))}</option>`).join("");
   $("#day").innerHTML=options;$("#recordDay").innerHTML=options;
@@ -35,12 +35,48 @@ async function init(){
   $("#methodologyNav").addEventListener("click",openPurpose);
   $("#detail").addEventListener("click",event=>{if(event.target===$("#detail"))$("#detail").close()});
   ["recordGroup","recordDay","recordSource","recordKind","recordSearch"].forEach(id=>$("#"+id).addEventListener(id==="recordSearch"?"input":"change",renderRecords));
+  ["acceptanceCoverage","acceptanceLevel","acceptanceResult","acceptanceOrigin","acceptanceType","acceptanceSearch"].forEach(id=>$("#"+id).addEventListener(id==="acceptanceSearch"?"input":"change",renderAcceptance));
+  $("#acceptanceReset").addEventListener("click",resetAcceptanceFilters);
   $("#expandRecords").addEventListener("click",()=>$("#records").querySelectorAll("details").forEach(detail=>detail.open=true));
   $("#collapseRecords").addEventListener("click",()=>$("#records").querySelectorAll("details").forEach(detail=>detail.open=false));
   render();
   renderRecords();
+  setupAcceptanceFilters();renderAcceptance();
   const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){$(".section-nav").querySelectorAll("a").forEach(link=>link.classList.toggle("active",link.hash===`#${entry.target.id}`))}}),{rootMargin:"-25% 0px -65% 0px"});
-  ["resumen","indicadores","matrizRelaciones","registros"].forEach(id=>observer.observe($("#"+id)));
+  ["resumen","indicadores","matrizRelaciones","registros","casosAceptacion"].forEach(id=>observer.observe($("#"+id)));
+}
+
+const acceptanceLabels={
+  coverage:{completo:"Completo",parcial:"Parcial",ausente:"Ausente",bloqueado_por_informacion:"Bloqueado por información",no_aplicable:"No aplicable"},
+  level:{reproducible_ejecutada:"Reproducible ejecutada",reproducible_no_ejecutada:"Reproducible no ejecutada",informal_ejecutada:"Informal ejecutada",informal:"Informal",mencion_insuficiente:"Mención insuficiente",sin_prueba:"Sin prueba",no_aplicable:"No aplicable"},
+  origin:{humana:"Documentación humana",automatica:"Documentación automática",mixta:"Documentación mixta",sin_documentacion:"Sin documentación"},
+  result:{fallida:"Fallida",bloqueada:"Bloqueada",no_ejecutada:"No ejecutada"}
+};
+function setupAcceptanceFilters(){
+  const options=(values,labels={})=>[...new Set(values)].sort((a,b)=>(labels[a]||a).localeCompare(labels[b]||b,"es")).map(value=>`<option value="${esc(value)}">${esc(labels[value]||value)}</option>`).join("");
+  $("#acceptanceCoverage").insertAdjacentHTML("beforeend",options(state.acceptance.cases.map(item=>item.coverage),acceptanceLabels.coverage));
+  $("#acceptanceLevel").insertAdjacentHTML("beforeend",options(state.acceptance.cases.map(item=>item.test_level),acceptanceLabels.level));
+  $("#acceptanceResult").insertAdjacentHTML("beforeend",options(state.acceptance.cases.map(item=>item.execution_result),acceptanceLabels.result));
+  $("#acceptanceOrigin").insertAdjacentHTML("beforeend",options(state.acceptance.cases.map(item=>item.documented_origin),acceptanceLabels.origin));
+  $("#acceptanceType").insertAdjacentHTML("beforeend",options(state.acceptance.cases.flatMap(item=>item.problem_types)));
+  $("#acceptanceCutoff").textContent=`Corte ${state.acceptance.cutoff_local.replace(" America/Argentina/Cordoba"," ART")}`;
+  const params=new URLSearchParams(location.search);["Coverage","Level","Result","Origin","Type"].forEach(name=>{const control=$("#acceptance"+name),value=params.get("acceptance"+name.toLowerCase());if(value&&[...control.options].some(option=>option.value===value))control.value=value});
+  $("#acceptanceSearch").value=params.get("acceptanceSearch")||"";
+}
+function filteredAcceptance(){
+  const coverage=$("#acceptanceCoverage").value,level=$("#acceptanceLevel").value,result=$("#acceptanceResult").value,origin=$("#acceptanceOrigin").value,type=$("#acceptanceType").value,query=clean($("#acceptanceSearch").value);
+  return state.acceptance.cases.filter(item=>(coverage==="all"||item.coverage===coverage)&&(level==="all"||item.test_level===level)&&(result==="all"||item.execution_result===result)&&(origin==="all"||item.documented_origin===origin)&&(type==="all"||item.problem_types.includes(type))&&(!query||clean(JSON.stringify(item)).includes(query)));
+}
+function syncAcceptanceUrl(){const params=new URLSearchParams(location.search);[["acceptanceCoverage","acceptancecoverage"],["acceptanceLevel","acceptancelevel"],["acceptanceResult","acceptanceresult"],["acceptanceOrigin","acceptanceorigin"],["acceptanceType","acceptancetype"],["acceptanceSearch","acceptanceSearch"]].forEach(([id,key])=>{const value=$("#"+id).value;if(value&&value!=="all")params.set(key,value);else params.delete(key)});history.replaceState(null,"",`${location.pathname}${params.size?`?${params}`:""}${location.hash}`)}
+function resetAcceptanceFilters(){["acceptanceCoverage","acceptanceLevel","acceptanceResult","acceptanceOrigin","acceptanceType"].forEach(id=>$("#"+id).value="all");$("#acceptanceSearch").value="";renderAcceptance()}
+function renderAcceptance(){
+  syncAcceptanceUrl();
+  const cases=filteredAcceptance(),withHuman=cases.filter(item=>["humana","mixta"].includes(item.documented_origin)).length,withAutomatic=cases.filter(item=>["automatica","mixta"].includes(item.documented_origin)||item.proposal_origin==="generada_automaticamente").length,withoutTest=cases.filter(item=>item.test_level==="sin_prueba").length;
+  $("#acceptanceStats").innerHTML=`<span><b>${cases.length}</b> TK visibles</span><span><b>${withHuman}</b> con evidencia humana</span><span><b>${withAutomatic}</b> con aporte automático</span><span><b>${withoutTest}</b> sin prueba</span>`;
+  const typeCounts=new Map();cases.flatMap(item=>item.problem_types).forEach(type=>typeCounts.set(type,(typeCounts.get(type)||0)+1));
+  $("#acceptanceTypes").innerHTML=[...typeCounts].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],"es")).map(([type,count])=>`<button type="button" data-acceptance-type="${esc(type)}"><b>${count}</b><span>${esc(type)}</span></button>`).join("");
+  $("#acceptanceTypes").querySelectorAll("button").forEach(button=>button.addEventListener("click",()=>{$("#acceptanceType").value=button.dataset.acceptanceType;renderAcceptance()}));
+  $("#acceptanceCases").innerHTML=cases.sort((a,b)=>a.id-b.id).map(item=>`<article class="acceptance-case coverage-${esc(item.coverage)}"><header><div><a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">TK ${item.id}</a><h3>${esc(item.title)}</h3></div><span class="coverage-badge">${esc(acceptanceLabels.coverage[item.coverage]||item.coverage)}</span></header><div class="case-meta"><span>${esc(item.stage)}</span>${item.customer?`<span>${esc(item.customer)}</span>`:""}${item.team?`<span>${esc(item.team)}</span>`:""}</div><div class="case-tags">${item.problem_types.map(type=>`<span>${esc(type)}</span>`).join("")}<span class="origin-${esc(item.documented_origin)}">${esc(acceptanceLabels.origin[item.documented_origin])}</span><span>${esc(acceptanceLabels.level[item.test_level]||item.test_level)}</span><span>${esc(acceptanceLabels.result[item.execution_result]||item.execution_result)}</span></div><div class="case-columns"><section><h4>Documentado / evidencia</h4><p>${esc(item.evidence_summary)}</p>${item.evidence.length?`<small>${item.evidence.map(evidence=>`M${evidence.id} · ${evidence.author} · ${evidence.date_utc}`).join(" | ")}</small>`:"<small>Sin IDs de mensaje verificables.</small>"}</section><section class="automatic-proposal"><h4>Propuesta automática · BORRADOR NO VALIDADO</h4><p>${esc(item.proposed_test)}</p><small>Requiere completar pendientes y validación humana antes de usar como aceptación.</small></section></div></article>`).join("")||'<p class="record-empty">No hay casos para estos filtros.</p>';
 }
 
 function visibleEvents(){

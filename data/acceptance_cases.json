@@ -1,0 +1,1452 @@
+{
+  "generated_at_utc": "2026-09-19T11:52:32.559577+00:00",
+  "cutoff_local": "2026-09-19 08:52:32 America/Argentina/Cordoba",
+  "scope": {
+    "model": "helpdesk.ticket",
+    "open_definition": "stage_id.fold = false",
+    "excluded_stage": "Verificación del cliente",
+    "open_before_exclusion": 66,
+    "excluded": 24,
+    "audited": 42
+  },
+  "methodology": {
+    "warning": "Las propuestas automáticas son borradores no validados. Una mención, una etapa o la frase 'probado' no prueban aceptación sin escenario y resultado trazable.",
+    "attachments_opened": false,
+    "automatic_content_is_evidence": false
+  },
+  "summary": {
+    "coverage": {
+      "ausente": 7,
+      "bloqueado_por_informacion": 1,
+      "no_aplicable": 1,
+      "parcial": 33
+    },
+    "levels": {
+      "informal": 11,
+      "informal_ejecutada": 10,
+      "mencion_insuficiente": 12,
+      "no_aplicable": 1,
+      "sin_prueba": 8
+    },
+    "origins": {
+      "automatica": 19,
+      "humana": 16,
+      "mixta": 3,
+      "sin_documentacion": 4
+    }
+  },
+  "cases": [
+    {
+      "id": 776,
+      "title": "Descripción distinta del producto",
+      "stage": "Análisis inicial hecho",
+      "responsible": "Sin asignar",
+      "customer": "ESPEJOS VERSAILLES SA, Walter Triposcoufis",
+      "team": "Meli",
+      "priority": "3",
+      "coverage": "parcial",
+      "test_level": "mencion_insuficiente",
+      "problem_types": [
+        "Flujo funcional"
+      ],
+      "documented_origin": "humana",
+      "evidence_summary": "Caso y captura; pedido de validar persistencia (M93848, M160472). No hay PA reproducible.",
+      "evidence_message_ids": [
+        93848,
+        160472
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 93848,
+          "author": "ESPEJOS VERSAILLES SA, Walter Triposcoufis",
+          "date_utc": "2025-03-12 18:37:29",
+          "origin": "user_documented"
+        },
+        {
+          "type": "mail.message",
+          "id": 160472,
+          "author": "Ignacio Lera",
+          "date_utc": "2025-09-24 13:30:03",
+          "origin": "user_documented"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA: documento usa el campo fuente autorizado sin edición manual. PA: comparar producto→pedido→factura y no regresión. [PENDIENTE: campo fuente, documentos y validador].",
+      "url": "https://www.hitofusion.com/web#id=776&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 1926,
+      "title": "Duplicación de pasos de entrega ML",
+      "stage": "Respuesta cliente",
+      "responsible": "Nelson Tontarelli",
+      "customer": "ESPEJOS VERSAILLES SA, Xavier Medrano",
+      "team": "Meli",
+      "priority": "3",
+      "coverage": "parcial",
+      "test_level": "informal",
+      "problem_types": [
+        "Integración",
+        "Automatización / cron"
+      ],
+      "documented_origin": "humana",
+      "evidence_summary": "Ejemplos y monitoreo informal (M190365, M213184).",
+      "evidence_message_ids": [
+        190365,
+        213184
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 190365,
+          "author": "Matias Marziali",
+          "date_utc": "2025-11-18 22:58:57",
+          "origin": "user_documented"
+        },
+        {
+          "type": "mail.message",
+          "id": 213184,
+          "author": "Nelson Tontarelli",
+          "date_utc": "2026-01-06 14:12:10",
+          "origin": "user_documented"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA: una sola entrega por evento, con ventana/volumen, reintento y control no-ML. [PENDIENTE: umbral y datos].",
+      "url": "https://www.hitofusion.com/web#id=1926&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 2206,
+      "title": "Diferencias pedidos ML vs Odoo",
+      "stage": "Análisis inicial hecho",
+      "responsible": "Sin asignar",
+      "customer": "ESPEJOS VERSAILLES SA, Walter Triposcoufis",
+      "team": "Meli",
+      "priority": "3",
+      "coverage": "parcial",
+      "test_level": "mencion_insuficiente",
+      "problem_types": [
+        "Integración",
+        "Datos / reporte"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Análisis candidato M246970, no aceptación confirmada.",
+      "evidence_message_ids": [
+        246970
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 246970,
+          "author": "Jinzo",
+          "date_utc": "2026-03-12 01:23:57",
+          "origin": "automatic_proposal"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA: mapeo por SKU, totales/stock/factura, error y reintento. [PENDIENTE: contrato de mapeo].",
+      "url": "https://www.hitofusion.com/web#id=2206&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 2210,
+      "title": "Arreglos en cotizador",
+      "stage": "Desarrollo Pendiente",
+      "responsible": "Alejandro Sartorio",
+      "customer": "EQUIPAVIC S.R.L., Ariana Kneeteman",
+      "team": "Desarrollo soporte",
+      "priority": "0",
+      "coverage": "parcial",
+      "test_level": "informal_ejecutada",
+      "problem_types": [
+        "Flujo funcional"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Pruebas informales dispersas (M247027).",
+      "evidence_message_ids": [
+        247027
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 247027,
+          "author": "Jinzo",
+          "date_utc": "2026-03-12 01:39:58",
+          "origin": "automatic_proposal"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "Separar cada arreglo en CA; una PA por recorrido y regresión. [PENDIENTE: puntos vigentes y datos].",
+      "url": "https://www.hitofusion.com/web#id=2210&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 2252,
+      "title": "Lentitud en filtros",
+      "stage": "Análisis inicial hecho",
+      "responsible": "Matias Marziali",
+      "customer": "ESPEJOS VERSAILLES SA",
+      "team": "Meli",
+      "priority": "3",
+      "coverage": "parcial",
+      "test_level": "informal",
+      "problem_types": [
+        "Rendimiento / estabilidad"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Afirmación de lentitud, sin medición (M247010).",
+      "evidence_message_ids": [
+        247010
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 247010,
+          "author": "Jinzo",
+          "date_utc": "2026-03-12 01:37:04",
+          "origin": "automatic_proposal"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA de rendimiento con volumen y percentil/umbral. [PENDIENTE: tiempo objetivo, ambiente y frecuencia].",
+      "url": "https://www.hitofusion.com/web#id=2252&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 2322,
+      "title": "FC moneda extranjera y pagos",
+      "stage": "Interconsulta",
+      "responsible": "Matias Banega",
+      "customer": "BIOTRUST SERVICES TECHNOLOGY S.A., Damian Michalek",
+      "team": "Atención al cliente Odoo",
+      "priority": "3",
+      "coverage": "parcial",
+      "test_level": "informal_ejecutada",
+      "problem_types": [
+        "Contable / fiscal"
+      ],
+      "documented_origin": "mixta",
+      "evidence_summary": "Cálculos/escenarios y pruebas informales (M204615, M204616, M246429).",
+      "evidence_message_ids": [
+        204615,
+        204616,
+        246429
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 204615,
+          "author": "Mateo Scozzina",
+          "date_utc": "2025-12-16 13:31:23",
+          "origin": "user_documented"
+        },
+        {
+          "type": "mail.message",
+          "id": 204616,
+          "author": "Mateo Scozzina",
+          "date_utc": "2025-12-16 13:32:16",
+          "origin": "user_documented"
+        },
+        {
+          "type": "mail.message",
+          "id": 246429,
+          "author": "Jinzo",
+          "date_utc": "2026-03-11 13:14:57",
+          "origin": "automatic_proposal"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA: tasa, residual, redondeo, retenciones e histórico. [PENDIENTE: regla contable autorizada y validador].",
+      "url": "https://www.hitofusion.com/web#id=2322&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 2537,
+      "title": "Comisiones ausentes en JSON ML",
+      "stage": "Análisis inicial hecho",
+      "responsible": "Nelson Tontarelli",
+      "customer": null,
+      "team": "Meli",
+      "priority": "0",
+      "coverage": "parcial",
+      "test_level": "mencion_insuficiente",
+      "problem_types": [
+        "Integración",
+        "Datos / reporte"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Diagnóstico candidato M247020; sin prueba end-to-end.",
+      "evidence_message_ids": [
+        247020
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 247020,
+          "author": "Jinzo",
+          "date_utc": "2026-03-12 01:38:47",
+          "origin": "automatic_proposal"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA: contrato API, campos, fallback, conciliación total y respuesta sin comisión. [PENDIENTE: payload esperado].",
+      "url": "https://www.hitofusion.com/web#id=2537&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 2600,
+      "title": "Facturas no aprobadas en AFIP",
+      "stage": "Análisis inicial hecho",
+      "responsible": "Alejandro Sartorio",
+      "customer": null,
+      "team": "Meli",
+      "priority": "3",
+      "coverage": "bloqueado_por_informacion",
+      "test_level": "sin_prueba",
+      "problem_types": [
+        "Contable / fiscal",
+        "Permisos / seguridad"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "No hay caso vigente reproducible (M247019 es análisis no confirmado).",
+      "evidence_message_ids": [
+        247019
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 247019,
+          "author": "Jinzo",
+          "date_utc": "2026-03-12 01:38:47",
+          "origin": "automatic_proposal"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "Preguntar cliente, comprobante, error, vigencia y responsable. Solo después definir CA/PA AFIP.",
+      "url": "https://www.hitofusion.com/web#id=2600&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 2603,
+      "title": "Exportar asientos de un pedido",
+      "stage": "New",
+      "responsible": "Matias Marziali",
+      "customer": null,
+      "team": "Meli",
+      "priority": "0",
+      "coverage": "parcial",
+      "test_level": "mencion_insuficiente",
+      "problem_types": [
+        "Datos / reporte",
+        "Permisos / seguridad"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Necesidad general; sin prueba (M247018 no basta).",
+      "evidence_message_ids": [
+        247018
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 247018,
+          "author": "Jinzo",
+          "date_utc": "2026-03-12 01:38:47",
+          "origin": "automatic_proposal"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA: archivo descargable con asientos/columnas autorizados y permisos. [PENDIENTE: formato, alcance y volumen].",
+      "url": "https://www.hitofusion.com/web#id=2603&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 2796,
+      "title": "Validación automática por Odoo",
+      "stage": "Análisis inicial hecho",
+      "responsible": "Nelson Tontarelli",
+      "customer": "ESPEJOS VERSAILLES SA, ventas@bernova.com.ar",
+      "team": "Meli",
+      "priority": "3",
+      "coverage": "parcial",
+      "test_level": "informal_ejecutada",
+      "problem_types": [
+        "Integración",
+        "Automatización / cron"
+      ],
+      "documented_origin": "humana",
+      "evidence_summary": "Reglas y pruebas informales (M222020, M226932).",
+      "evidence_message_ids": [
+        222020,
+        226932
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 222020,
+          "author": "Mateo Scozzina",
+          "date_utc": "2026-01-26 21:23:56",
+          "origin": "user_documented"
+        },
+        {
+          "type": "mail.message",
+          "id": 226932,
+          "author": "ESPEJOS VERSAILLES SA, Xavier Medrano",
+          "date_utc": "2026-02-03 12:10:28",
+          "origin": "user_documented"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA: cuándo autoconfirma/no autoconfirma, variantes ML, error y efectos en entrega. [PENDIENTE: matriz de modalidades].",
+      "url": "https://www.hitofusion.com/web#id=2796&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 2988,
+      "title": "Percepción en ventas bloqueadas",
+      "stage": "Análisis inicial hecho",
+      "responsible": "Francisco Germani",
+      "customer": null,
+      "team": "Meli",
+      "priority": "3",
+      "coverage": "parcial",
+      "test_level": "informal_ejecutada",
+      "problem_types": [
+        "Contable / fiscal"
+      ],
+      "documented_origin": "humana",
+      "evidence_summary": "Casos y resultado tentativo (M229482, M230113).",
+      "evidence_message_ids": [
+        229482,
+        230113
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 229482,
+          "author": "Pablo Marchionno",
+          "date_utc": "2026-02-05 15:32:08",
+          "origin": "user_documented"
+        },
+        {
+          "type": "mail.message",
+          "id": 230113,
+          "author": "Alejandro Sartorio",
+          "date_utc": "2026-02-06 14:49:07",
+          "origin": "user_documented"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA fiscal: estado inmutable, regla de percepción, desbloqueo y reparación histórica. [PENDIENTE: decisión fiscal].",
+      "url": "https://www.hitofusion.com/web#id=2988&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 2991,
+      "title": "Cron ventas IPAQUETE apagado",
+      "stage": "In Progress",
+      "responsible": "Francisco Germani",
+      "customer": null,
+      "team": "Meli",
+      "priority": "3",
+      "coverage": "no_aplicable",
+      "test_level": "no_aplicable",
+      "problem_types": [
+        "Automatización / cron"
+      ],
+      "documented_origin": "humana",
+      "evidence_summary": "Chatter lo identifica como duplicado/desestimado.",
+      "evidence_message_ids": [],
+      "evidence": [],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "Vincular TK principal y cerrar con trazabilidad; no crear CA/PA propios.",
+      "url": "https://www.hitofusion.com/web#id=2991&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 3061,
+      "title": "Ventas faltantes ML v19",
+      "stage": "Análisis inicial hecho",
+      "responsible": "Francisco Germani",
+      "customer": null,
+      "team": "Meli",
+      "priority": "3",
+      "coverage": "parcial",
+      "test_level": "mencion_insuficiente",
+      "problem_types": [
+        "Integración",
+        "Datos / reporte"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Diagnóstico candidato M247016; sin ejecución trazable.",
+      "evidence_message_ids": [
+        247016
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 247016,
+          "author": "Jinzo",
+          "date_utc": "2026-03-12 01:38:46",
+          "origin": "automatic_proposal"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA: completitud, paginación, reintentos, reconciliación y alerta. [PENDIENTE: ventana y volumen].",
+      "url": "https://www.hitofusion.com/web#id=3061&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 3847,
+      "title": "Ventas Flex no bajan a entregas",
+      "stage": "New",
+      "responsible": "Alejandro Sartorio",
+      "customer": "Uzumaki SAS, Thiago Luna •",
+      "team": "Meli",
+      "priority": "0",
+      "coverage": "parcial",
+      "test_level": "mencion_insuficiente",
+      "problem_types": [
+        "Integración",
+        "Automatización / cron"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Caso y resultado esperado (M254660, M254661), sin matriz de pruebas.",
+      "evidence_message_ids": [
+        254660,
+        254661
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 254660,
+          "author": "Jinzo",
+          "date_utc": "2026-03-30 15:08:07",
+          "origin": "automatic_proposal"
+        },
+        {
+          "type": "mail.message",
+          "id": 254661,
+          "author": "Jinzo",
+          "date_utc": "2026-03-30 15:08:24",
+          "origin": "automatic_proposal"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "PA Flex feliz, error/reintento y no-Flex; fijar plazo y evidencia. [PENDIENTE: evento disparador].",
+      "url": "https://www.hitofusion.com/web#id=3847&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 4097,
+      "title": "Residual incorrecto en pagos parciales USD",
+      "stage": "In Progress",
+      "responsible": "Nelson Tontarelli",
+      "customer": "ONECLOUD S.R.L., Martina Amiras",
+      "team": "Desarrollo soporte",
+      "priority": "3",
+      "coverage": "parcial",
+      "test_level": "informal_ejecutada",
+      "problem_types": [
+        "Contable / fiscal"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Amplia evidencia y ensayos (M353592, M353699, M361783), pero no cierre integral.",
+      "evidence_message_ids": [
+        353592,
+        353699,
+        361783
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 353592,
+          "author": "ONECLOUD S.R.L., Martina Amiras",
+          "date_utc": "2026-09-03 15:31:52",
+          "origin": "user_documented"
+        },
+        {
+          "type": "mail.message",
+          "id": 353699,
+          "author": "Ignacio Lera",
+          "date_utc": "2026-09-03 18:44:07",
+          "origin": "user_documented"
+        },
+        {
+          "type": "mail.message",
+          "id": 361783,
+          "author": "Valentin Markov",
+          "date_utc": "2026-09-17 18:57:46",
+          "origin": "user_documented"
+        }
+      ],
+      "execution_result": "bloqueada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "Completar PA de saldos iniciales, tasas, residual, retenciones, histórico y aceptación final. [PENDIENTE: regla contable/validador].",
+      "url": "https://www.hitofusion.com/web#id=4097&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 4314,
+      "title": "JDM2 problemas varios mayo",
+      "stage": "New",
+      "responsible": "Alejandro Sartorio",
+      "customer": null,
+      "team": "Meli",
+      "priority": "0",
+      "coverage": "parcial",
+      "test_level": "informal",
+      "problem_types": [
+        "Flujo funcional"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Siete problemas mezclados; prueba informal M291612.",
+      "evidence_message_ids": [
+        291612
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 291612,
+          "author": "Jinzo",
+          "date_utc": "2026-05-28 01:48:01",
+          "origin": "automatic_proposal"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "Dividir por problema; CA/PA, datos y responsable independientes. [PENDIENTE: vigencia de cada punto].",
+      "url": "https://www.hitofusion.com/web#id=4314&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 4389,
+      "title": "Migrar Meli doctor/reglas JDM",
+      "stage": "Pablo-fela-wally",
+      "responsible": "Alejandro Sartorio",
+      "customer": null,
+      "team": "Meli",
+      "priority": "0",
+      "coverage": "ausente",
+      "test_level": "sin_prueba",
+      "problem_types": [
+        "Despliegue / operación",
+        "Integración"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Solo título; M361125 es sugerencia automática.",
+      "evidence_message_ids": [
+        361125
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 361125,
+          "author": "Alejandro Sartorio",
+          "date_utc": "2026-09-17 01:14:58",
+          "origin": "automatic_proposal"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA esqueleto. [PENDIENTE: necesidad, reglas, versión, datos, resultado y validador].",
+      "url": "https://www.hitofusion.com/web#id=4389&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 4390,
+      "title": "Nombres de contacto diferentes",
+      "stage": "Pablo-fela-wally",
+      "responsible": "Alejandro Sartorio",
+      "customer": null,
+      "team": "Meli",
+      "priority": "0",
+      "coverage": "ausente",
+      "test_level": "sin_prueba",
+      "problem_types": [
+        "Integración",
+        "Datos / reporte"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Solo título; M361126 es sugerencia automática.",
+      "evidence_message_ids": [
+        361126
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 361126,
+          "author": "Alejandro Sartorio",
+          "date_utc": "2026-09-17 01:16:22",
+          "origin": "automatic_proposal"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA de mapeo. [PENDIENTE: origen de verdad, ejemplos y campos destino].",
+      "url": "https://www.hitofusion.com/web#id=4390&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 4391,
+      "title": "Pagos cancelados por Meli",
+      "stage": "Pablo-fela-wally",
+      "responsible": "Alejandro Sartorio",
+      "customer": null,
+      "team": "Meli",
+      "priority": "0",
+      "coverage": "ausente",
+      "test_level": "sin_prueba",
+      "problem_types": [
+        "Integración",
+        "Contable / fiscal"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Solo título; M361127 es sugerencia automática.",
+      "evidence_message_ids": [
+        361127
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 361127,
+          "author": "Alejandro Sartorio",
+          "date_utc": "2026-09-17 01:16:23",
+          "origin": "automatic_proposal"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA de cancelación, idempotencia y conciliación. [PENDIENTE: evento, estados y resultado].",
+      "url": "https://www.hitofusion.com/web#id=4391&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 4392,
+      "title": "Pagos desvinculados por contacto",
+      "stage": "Respuesta cliente",
+      "responsible": "Alejandro Sartorio",
+      "customer": null,
+      "team": "Meli",
+      "priority": "0",
+      "coverage": "ausente",
+      "test_level": "sin_prueba",
+      "problem_types": [
+        "Integración",
+        "Datos / reporte"
+      ],
+      "documented_origin": "sin_documentacion",
+      "evidence_summary": "Sin descripción ni chatter.",
+      "evidence_message_ids": [],
+      "evidence": [],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "[PENDIENTE: regla de vinculación, ejemplos, alcance y validador]; luego CA/PA feliz/negativa.",
+      "url": "https://www.hitofusion.com/web#id=4392&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 4393,
+      "title": "Asientos no publicados / cron",
+      "stage": "Respuesta cliente",
+      "responsible": "Alejandro Sartorio",
+      "customer": null,
+      "team": "Meli",
+      "priority": "0",
+      "coverage": "ausente",
+      "test_level": "sin_prueba",
+      "problem_types": [
+        "Automatización / cron",
+        "Contable / fiscal"
+      ],
+      "documented_origin": "sin_documentacion",
+      "evidence_summary": "Sin descripción ni chatter.",
+      "evidence_message_ids": [],
+      "evidence": [],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "[PENDIENTE: evento, estados, plazo, reintento y error]; luego CA/PA del cron.",
+      "url": "https://www.hitofusion.com/web#id=4393&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 4394,
+      "title": "Publicar factura en Meli / cron",
+      "stage": "Respuesta cliente",
+      "responsible": "Alejandro Sartorio",
+      "customer": null,
+      "team": "Meli",
+      "priority": "0",
+      "coverage": "ausente",
+      "test_level": "sin_prueba",
+      "problem_types": [
+        "Integración",
+        "Automatización / cron"
+      ],
+      "documented_origin": "sin_documentacion",
+      "evidence_summary": "Sin descripción ni chatter.",
+      "evidence_message_ids": [],
+      "evidence": [],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "[PENDIENTE: transición, reintentos, error y evidencia]; luego CA/PA end-to-end.",
+      "url": "https://www.hitofusion.com/web#id=4394&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 4455,
+      "title": "Duda reporte conciliación",
+      "stage": "Respuesta cliente",
+      "responsible": "Ignacio Lera",
+      "customer": "EMU ESTABLECIMIENTOS METALURGICOS UNIDOS S.A.I.C., Carolina Vorchheimer",
+      "team": "Atención al cliente Odoo",
+      "priority": "0",
+      "coverage": "parcial",
+      "test_level": "informal_ejecutada",
+      "problem_types": [
+        "Contable / fiscal",
+        "Datos / reporte"
+      ],
+      "documented_origin": "mixta",
+      "evidence_summary": "Conversación extensa y pruebas informales (M311423, M350224).",
+      "evidence_message_ids": [
+        311423,
+        350224
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 311423,
+          "author": "EMU ESTABLECIMIENTOS METALURGICOS UNIDOS S.A.I.C., Carolina Vorchheimer",
+          "date_utc": "2026-06-22 14:30:09",
+          "origin": "user_documented"
+        },
+        {
+          "type": "mail.message",
+          "id": 350224,
+          "author": "Jinzo",
+          "date_utc": "2026-08-31 15:01:51",
+          "origin": "automatic_proposal"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA por diario/cuenta y filtros, con resultado contable esperado. [PENDIENTE: inclusiones/exclusiones].",
+      "url": "https://www.hitofusion.com/web#id=4455&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 4764,
+      "title": "Desactivar cierre automático TK",
+      "stage": "New",
+      "responsible": "Sin asignar",
+      "customer": "EMU ESTABLECIMIENTOS METALURGICOS UNIDOS S.A.I.C., Carolina Vorchheimer",
+      "team": null,
+      "priority": "1",
+      "coverage": "parcial",
+      "test_level": "mencion_insuficiente",
+      "problem_types": [
+        "Automatización / cron",
+        "Flujo funcional"
+      ],
+      "documented_origin": "humana",
+      "evidence_summary": "Resultado principal en el título/descripción; sin prueba.",
+      "evidence_message_ids": [],
+      "evidence": [],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA: no cerrar automáticamente en equipos alcanzados; conservar excepciones/auditoría. [PENDIENTE: equipos, permisos y excepciones].",
+      "url": "https://www.hitofusion.com/web#id=4764&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 4968,
+      "title": "Error de conexión",
+      "stage": "Interconsulta",
+      "responsible": "Valentin Markov",
+      "customer": "JDM Import, Aldana Loyola",
+      "team": "Atención al cliente Odoo",
+      "priority": "0",
+      "coverage": "parcial",
+      "test_level": "informal_ejecutada",
+      "problem_types": [
+        "Rendimiento / estabilidad"
+      ],
+      "documented_origin": "humana",
+      "evidence_summary": "Piloto/worker y ensayos (M351885, M359863, M360858), sin umbral contractual.",
+      "evidence_message_ids": [
+        351885,
+        359863,
+        360858
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 351885,
+          "author": "Alejandro Sartorio",
+          "date_utc": "2026-09-01 22:42:55",
+          "origin": "user_documented"
+        },
+        {
+          "type": "mail.message",
+          "id": 359863,
+          "author": "Valentin Markov",
+          "date_utc": "2026-09-15 19:06:07",
+          "origin": "user_documented"
+        },
+        {
+          "type": "mail.message",
+          "id": 360858,
+          "author": "Valentin Markov",
+          "date_utc": "2026-09-16 18:22:33",
+          "origin": "user_documented"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA de estabilidad bajo carga, recuperación y observabilidad. [PENDIENTE: métricas base/objetivo y ventana].",
+      "url": "https://www.hitofusion.com/web#id=4968&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 4976,
+      "title": "Balance automático al volver OP a borrador",
+      "stage": "Respuesta cliente",
+      "responsible": "Mateo Scozzina",
+      "customer": "WORLDSYS S.A., Carlos de Belva",
+      "team": "Desarrollo soporte",
+      "priority": "1",
+      "coverage": "parcial",
+      "test_level": "informal_ejecutada",
+      "problem_types": [
+        "Contable / fiscal"
+      ],
+      "documented_origin": "mixta",
+      "evidence_summary": "Borrador CA/PA M358686; prueba cliente fallida con caso RE-X M361988.",
+      "evidence_message_ids": [
+        358686,
+        361988
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 358686,
+          "author": "Alejandro Sartorio",
+          "date_utc": "2026-09-11 18:57:40",
+          "origin": "automatic_proposal"
+        },
+        {
+          "type": "mail.message",
+          "id": 361988,
+          "author": "WORLDSYS S.A., Carlos de Belva",
+          "date_utc": "2026-09-18 13:50:48",
+          "origin": "user_documented"
+        }
+      ],
+      "execution_result": "fallida",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "Conservar borrador y actualizar PA con recibo existente: asiento no cambia al borrar; se regenera al confirmar. [PENDIENTE: regla Rate y validador].",
+      "url": "https://www.hitofusion.com/web#id=4976&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 4979,
+      "title": "Mejoras agente de cobranzas",
+      "stage": "In Progress",
+      "responsible": "Francisco Fiorentino",
+      "customer": null,
+      "team": "Soporte IA",
+      "priority": "0",
+      "coverage": "parcial",
+      "test_level": "mencion_insuficiente",
+      "problem_types": [
+        "Automatización / cron",
+        "Flujo funcional"
+      ],
+      "documented_origin": "humana",
+      "evidence_summary": "Descripción con varios pedidos; sin PA.",
+      "evidence_message_ids": [],
+      "evidence": [],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "Separar cuatro comportamientos; PA por canal, exclusión y no reclamo indebido. [PENDIENTE: condiciones/plantillas].",
+      "url": "https://www.hitofusion.com/web#id=4979&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 5044,
+      "title": "Módulos para Odoo Store",
+      "stage": "Desarrollo Pendiente",
+      "responsible": "Nelson Tontarelli",
+      "customer": null,
+      "team": "Desarrollo soporte",
+      "priority": "0",
+      "coverage": "ausente",
+      "test_level": "sin_prueba",
+      "problem_types": [
+        "Despliegue / operación"
+      ],
+      "documented_origin": "sin_documentacion",
+      "evidence_summary": "Sin descripción/chatter utilizable.",
+      "evidence_message_ids": [],
+      "evidence": [],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "[PENDIENTE: inventario, versiones, entregables, checklist y aprobador]; luego CA/PA de instalación/publicación.",
+      "url": "https://www.hitofusion.com/web#id=5044&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 5047,
+      "title": "Operación no válida al emitir NCE",
+      "stage": "Interconsulta",
+      "responsible": "Mateo Scozzina",
+      "customer": "NEW WORLD ARGENTINA SRL, Claudia Mastroianni",
+      "team": "Atención al cliente Odoo",
+      "priority": "1",
+      "coverage": "parcial",
+      "test_level": "informal_ejecutada",
+      "problem_types": [
+        "Contable / fiscal"
+      ],
+      "documented_origin": "humana",
+      "evidence_summary": "Casos/ensayos (M359500, M360762, M361188).",
+      "evidence_message_ids": [
+        359500,
+        360762,
+        361188
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 359500,
+          "author": "Mateo Scozzina",
+          "date_utc": "2026-09-14 20:57:37",
+          "origin": "user_documented"
+        },
+        {
+          "type": "mail.message",
+          "id": 360762,
+          "author": "NEW WORLD ARGENTINA SRL, Claudia Mastroianni",
+          "date_utc": "2026-09-16 15:50:02",
+          "origin": "user_documented"
+        },
+        {
+          "type": "mail.message",
+          "id": 361188,
+          "author": "NEW WORLD ARGENTINA SRL, Claudia Mastroianni",
+          "date_utc": "2026-09-17 12:08:53",
+          "origin": "user_documented"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA por estado ARCA y acción permitida, con no regresión. [PENDIENTE: decisión contable autorizada].",
+      "url": "https://www.hitofusion.com/web#id=5047&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 5052,
+      "title": "Sincronización Odoo–MP",
+      "stage": "Validación funcional",
+      "responsible": "Pablo Marchionno",
+      "customer": "Smarttrack, Lucía Centurión",
+      "team": "Desarrollo soporte",
+      "priority": "0",
+      "coverage": "parcial",
+      "test_level": "mencion_insuficiente",
+      "problem_types": [
+        "Integración",
+        "Contable / fiscal"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Tres problemas y devolución informal M361287; sin prueba end-to-end completa.",
+      "evidence_message_ids": [
+        361287
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 361287,
+          "author": "Jinzo",
+          "date_utc": "2026-09-17 13:38:24",
+          "origin": "automatic_proposal"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "PA de alta/sincronización/cancelación, idempotencia, error/reintento y validación posdespliegue.",
+      "url": "https://www.hitofusion.com/web#id=5052&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 5053,
+      "title": "Duda conciliación de cuentas",
+      "stage": "Interconsulta",
+      "responsible": "Mateo Scozzina",
+      "customer": "EMU ESTABLECIMIENTOS METALURGICOS UNIDOS S.A.I.C., Carolina Vorchheimer",
+      "team": "Atención al cliente Odoo",
+      "priority": "0",
+      "coverage": "parcial",
+      "test_level": "informal",
+      "problem_types": [
+        "Contable / fiscal",
+        "Datos / reporte"
+      ],
+      "documented_origin": "humana",
+      "evidence_summary": "Explicaciones y caso M361004; no contrato verificable.",
+      "evidence_message_ids": [
+        361004
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 361004,
+          "author": "Mateo Scozzina",
+          "date_utc": "2026-09-16 21:12:19",
+          "origin": "user_documented"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA de residual, filtros y cuentas. [PENDIENTE: regla contable y visualización esperada].",
+      "url": "https://www.hitofusion.com/web#id=5053&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 5056,
+      "title": "Estado de cuenta OV vs pagos",
+      "stage": "In Progress",
+      "responsible": "Nelson Tontarelli",
+      "customer": "Andina Pack, Leandro",
+      "team": "Desarrollo soporte",
+      "priority": "0",
+      "coverage": "parcial",
+      "test_level": "mencion_insuficiente",
+      "problem_types": [
+        "Contable / fiscal",
+        "Datos / reporte"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Cliente eligió escenario 2 y adjuntó maqueta (M361257); reunión M362158; sin PA.",
+      "evidence_message_ids": [
+        361257,
+        362158
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 361257,
+          "author": "Andina Pack, Leandro",
+          "date_utc": "2026-09-17 13:16:13",
+          "origin": "user_documented"
+        },
+        {
+          "type": "mail.message",
+          "id": 362158,
+          "author": "Valentin Markov",
+          "date_utc": "2026-09-18 14:17:34",
+          "origin": "user_documented"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA: todas las OV facturadas/no facturadas + pagos y saldo, filtros/permisos/exportación. [PENDIENTE: columnas, imputación y corte].",
+      "url": "https://www.hitofusion.com/web#id=5056&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 5070,
+      "title": "Error líneas de estado de cuenta",
+      "stage": "Respuesta cliente",
+      "responsible": "Nelson Tontarelli",
+      "customer": "ELECTRICIDAD GENERAL PAZ S.A, Gustavo Florez",
+      "team": "Desarrollo soporte",
+      "priority": "1",
+      "coverage": "parcial",
+      "test_level": "mencion_insuficiente",
+      "problem_types": [
+        "Datos / reporte",
+        "Flujo funcional"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Recorrido/error y respuesta técnica; sin PA reproducible formal.",
+      "evidence_message_ids": [],
+      "evidence": [],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA con rol, diario, datos, apertura sin error y regresión. [PENDIENTE: ambiente y validador].",
+      "url": "https://www.hitofusion.com/web#id=5070&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 5071,
+      "title": "Capacitación Kapso–Odoo/mejoras",
+      "stage": "In Progress",
+      "responsible": "Nelson",
+      "customer": "Liz Centurion",
+      "team": "Soporte IA",
+      "priority": "0",
+      "coverage": "parcial",
+      "test_level": "informal",
+      "problem_types": [
+        "Automatización / cron",
+        "Flujo funcional"
+      ],
+      "documented_origin": "humana",
+      "evidence_summary": "Tema y material adjunto, mezcla capacitación/defectos.",
+      "evidence_message_ids": [],
+      "evidence": [],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "Separar capacitación de mejoras; CA/PA para alta automática y ciclo de actividades. [PENDIENTE: casos de uso].",
+      "url": "https://www.hitofusion.com/web#id=5071&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 5072,
+      "title": "Archivado masivo productos Encometal",
+      "stage": "In Progress",
+      "responsible": "Francisco Fiorentino",
+      "customer": "ENCOMETAL S.R.L.",
+      "team": "Soporte IA",
+      "priority": "2",
+      "coverage": "parcial",
+      "test_level": "informal",
+      "problem_types": [
+        "Datos / reporte",
+        "Despliegue / operación"
+      ],
+      "documented_origin": "humana",
+      "evidence_summary": "Descripción fija conjuntos, cantidades, riesgo, rollback y confirmación; no evidencia de prueba/ejecución en el TK.",
+      "evidence_message_ids": [],
+      "evidence": [],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA: archivar solo fuera de ambas plantillas, 0 activos fuera, muestreo de incluidos/excluidos y rollback. [PENDIENTE: snapshot/validador].",
+      "url": "https://www.hitofusion.com/web#id=5072&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 5073,
+      "title": "Incidente rate limit Encometal",
+      "stage": "In Progress",
+      "responsible": "Francisco Fiorentino",
+      "customer": "ENCOMETAL S.R.L.",
+      "team": "Soporte IA",
+      "priority": "1",
+      "coverage": "parcial",
+      "test_level": "informal",
+      "problem_types": [
+        "Rendimiento / estabilidad",
+        "Despliegue / operación"
+      ],
+      "documented_origin": "humana",
+      "evidence_summary": "Descripción afirma recuperación, ejecución y verificación; sin evidencia enlazada ni SLA.",
+      "evidence_message_ids": [],
+      "evidence": [],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA de recuperación: operación confirmada no se pierde/duplica, reanudación auditable y 0 fuera de plantilla. [PENDIENTE: SLA y evidencia].",
+      "url": "https://www.hitofusion.com/web#id=5073&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 5077,
+      "title": "Subtarea ausente al filtrar proveedor",
+      "stage": "Respuesta cliente",
+      "responsible": "Mateo Scozzina",
+      "customer": "MESOPOTAMIA BA, Agus Pertierra",
+      "team": "Atención al cliente Odoo",
+      "priority": "1",
+      "coverage": "parcial",
+      "test_level": "informal_ejecutada",
+      "problem_types": [
+        "Datos / reporte",
+        "Flujo funcional"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Caso 217/63/Pedro y prueba cliente fallida (M361992); devolución previa no resolvió.",
+      "evidence_message_ids": [
+        361992
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 361992,
+          "author": "MESOPOTAMIA BA, Agus Pertierra",
+          "date_utc": "2026-09-18 13:55:46",
+          "origin": "user_documented"
+        }
+      ],
+      "execution_result": "fallida",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA: con “mostrar secundarias”, filtro por proveedor incluye esa subtarea y no mezcla otros proveedores; regresión en casos que sí funcionan.",
+      "url": "https://www.hitofusion.com/web#id=5077&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 5080,
+      "title": "Desplegar uranga_credit_limit",
+      "stage": "Desarrollo Pendiente",
+      "responsible": "Nelson Tontarelli",
+      "customer": "Yügo SAS",
+      "team": "Desarrollo soporte",
+      "priority": "1",
+      "coverage": "parcial",
+      "test_level": "informal",
+      "problem_types": [
+        "Despliegue / operación",
+        "Contable / fiscal"
+      ],
+      "documented_origin": "humana",
+      "evidence_summary": "Staging y resultado esperado documentados; falta evidencia de producción.",
+      "evidence_message_ids": [],
+      "evidence": [],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA: código+instalación+campo/método en prod, cálculo igual a staging, prueba de pedido y rollback. [PENDIENTE: datos, aprobador y ventana].",
+      "url": "https://www.hitofusion.com/web#id=5080&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 5081,
+      "title": "Captura permisos Odoo–ML",
+      "stage": "Respuesta cliente",
+      "responsible": "Valentin Markov",
+      "customer": "JDM Import, Sofia Vargas",
+      "team": "Atención al cliente Odoo",
+      "priority": "1",
+      "coverage": "parcial",
+      "test_level": "informal",
+      "problem_types": [
+        "Permisos / seguridad",
+        "Integración"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Necesidad clara; sin evidencia o prueba.",
+      "evidence_message_ids": [],
+      "evidence": [],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA: entregar captura legible de permisos vigentes, fecha/cuenta visibles y confirmar que no se cambió configuración. [PENDIENTE: cuenta y destinatario autorizado].",
+      "url": "https://www.hitofusion.com/web#id=5081&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 5082,
+      "title": "Envío de WhatsApp en cobranzas escalonadas",
+      "stage": "In Progress",
+      "responsible": "Francisco Fiorentino",
+      "customer": "Smarttrack, Lucía Centurión",
+      "team": "Soporte IA",
+      "priority": "0",
+      "coverage": "parcial",
+      "test_level": "mencion_insuficiente",
+      "problem_types": [
+        "Integración",
+        "Automatización / cron"
+      ],
+      "documented_origin": "humana",
+      "evidence_summary": "Dependencia con TK 5066, documento de plantillas y coordinación humana (M362380, M362402); no hay PA ni resultado.",
+      "evidence_message_ids": [
+        362380,
+        362402
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 362380,
+          "author": "Mateo Scozzina",
+          "date_utc": "2026-09-18 17:28:18",
+          "origin": "user_documented"
+        },
+        {
+          "type": "mail.message",
+          "id": 362402,
+          "author": "Francisco Fiorentino",
+          "date_utc": "2026-09-18 18:38:42",
+          "origin": "user_documented"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA: cada escalón dispara la plantilla WhatsApp autorizada, registra entrega/error y evita duplicados. Probar opt-out, rate limit y reintento. [PENDIENTE: línea Kapso, plantillas aprobadas, horarios y validador].",
+      "url": "https://www.hitofusion.com/web#id=5082&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 5083,
+      "title": "Precio DAD46U incorrecto en Mercado Libre",
+      "stage": "New",
+      "responsible": "Ignacio Lera",
+      "customer": "JDM Import, Sofia Vargas",
+      "team": "Atención al cliente Odoo",
+      "priority": "1",
+      "coverage": "parcial",
+      "test_level": "informal",
+      "problem_types": [
+        "Integración",
+        "Flujo funcional"
+      ],
+      "documented_origin": "automatica",
+      "evidence_summary": "Descripción creada automáticamente con pasos y valores observados ($303.000 vs $70.000/$63.000); no hay evidencia humana ni ejecución trazable.",
+      "evidence_message_ids": [],
+      "evidence": [],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA: al actualizar la lista autorizada, DAD46U publica el precio correcto por medio de pago sin alterar otros productos. Probar sincronización, caché, error/reintento y regresión. [PENDIENTE: lista fuente, ambiente, evidencia y validador].",
+      "url": "https://www.hitofusion.com/web#id=5083&model=helpdesk.ticket&view_type=form"
+    },
+    {
+      "id": 5085,
+      "title": "Ajuste Admin Gastos",
+      "stage": "New",
+      "responsible": "Sin asignar",
+      "customer": "Liz Centurion",
+      "team": "Soporte IA",
+      "priority": "0",
+      "coverage": "parcial",
+      "test_level": "informal",
+      "problem_types": [
+        "Contable / fiscal",
+        "Datos / reporte"
+      ],
+      "documented_origin": "humana",
+      "evidence_summary": "Reporte humano y captura metadata (M362570): el agente coloca VAT en CUIT y omite responsabilidad fiscal; no hay prueba estructurada.",
+      "evidence_message_ids": [
+        362570
+      ],
+      "evidence": [
+        {
+          "type": "mail.message",
+          "id": 362570,
+          "author": "Liz Centurion",
+          "date_utc": "2026-09-18 20:33:28",
+          "origin": "user_documented"
+        }
+      ],
+      "execution_result": "no_ejecutada",
+      "proposal_origin": "generada_automaticamente",
+      "proposal_status": "borrador_no_validado",
+      "proposed_test": "CA/PA: crear proveedor desde documento válido y verificar CUIT en campo correcto, responsabilidad fiscal obligatoria y ausencia de duplicados. Probar dato faltante/inválido. [PENDIENTE: proveedor de prueba, regla fiscal y validador].",
+      "url": "https://www.hitofusion.com/web#id=5085&model=helpdesk.ticket&view_type=form"
+    }
+  ]
+}

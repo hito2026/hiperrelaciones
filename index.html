@@ -7,13 +7,14 @@
   <title>HiperNrelaciones · HitoFusion</title>
   <link rel="stylesheet" href="assets/styles.css">
   <link rel="stylesheet" href="assets/productivity.css">
+  <link rel="stylesheet" href="assets/acceptance.css">
 </head>
 <body>
   <header class="topbar">
     <div><span class="mark">HF</span><span><strong>HiperNrelaciones</strong><small>interacciones verificables</small></span></div>
     <span><button id="purpose" class="purpose-link" type="button">¿Qué muestra este espacio?</button> · <span id="coverage">Cargando cobertura…</span></span>
   </header>
-  <nav class="section-nav" aria-label="Secciones del tablero"><a href="#resumen">Resumen</a><a href="#indicadores">ICV y Pulso</a><a href="#matrizRelaciones">Matriz</a><a href="#registros">Registros</a><button id="methodologyNav" type="button">Metodología</button></nav>
+  <nav class="section-nav" aria-label="Secciones del tablero"><a href="#resumen">Resumen</a><a href="#indicadores">ICV y Pulso</a><a href="#matrizRelaciones">Matriz</a><a href="#registros">Registros</a><a href="#casosAceptacion">Casos de aceptación</a><button id="methodologyNav" type="button">Metodología</button></nav>
   <main>
     <section class="intro" id="resumen">
       <div><p class="eyebrow">actor → contraparte</p><h1>Matriz de relaciones</h1><p>Interacciones humanas comprobadas en Odoo y Daily Meetings.</p></div>
@@ -50,6 +51,23 @@
       <div id="recordTotals" class="record-totals" aria-live="polite"></div>
       <div class="record-actions"><span>Seleccioná un grupo para desplegar sus registros.</span><button id="expandRecords" type="button">Expandir todos</button><button id="collapseRecords" type="button">Contraer todos</button></div>
       <div id="records" class="record-groups"></div>
+    </section>
+    <section class="acceptance-card" id="casosAceptacion" aria-labelledby="acceptanceTitle">
+      <div class="matrix-head"><div><p class="eyebrow">criterios · pruebas · evidencia</p><h2 id="acceptanceTitle">Casos de aceptación</h2></div><span id="acceptanceCutoff">Cargando relevamiento…</span></div>
+      <p class="acceptance-intro">Mapa de cómo se documentan y prueban los problemas de los TK. Separa la evidencia escrita por personas de los borradores generados automáticamente: una propuesta automática nunca equivale a una aceptación validada.</p>
+      <div id="acceptanceStats" class="acceptance-stats" aria-live="polite"></div>
+      <div class="acceptance-controls">
+        <label>Cobertura<select id="acceptanceCoverage"><option value="all">Todas</option></select></label>
+        <label>Nivel de prueba<select id="acceptanceLevel"><option value="all">Todos</option></select></label>
+        <label>Resultado<select id="acceptanceResult"><option value="all">Todos</option></select></label>
+        <label>Origen documentado<select id="acceptanceOrigin"><option value="all">Todos</option></select></label>
+        <label>Tipo de problema<select id="acceptanceType"><option value="all">Todos</option></select></label>
+        <label class="acceptance-search">Buscar<input id="acceptanceSearch" type="search" placeholder="TK, título, cliente o evidencia…"></label>
+        <button id="acceptanceReset" type="button">Reiniciar filtros</button>
+      </div>
+      <div id="acceptanceTypes" class="acceptance-types" aria-label="Distribución por tipo de problema"></div>
+      <div id="acceptanceCases" class="acceptance-cases"></div>
+      <p class="productivity-warning"><strong>Lectura responsable:</strong> esta vista mide documentación y trazabilidad, no desempeño de personas. Los adjuntos referenciados no fueron abiertos y los borradores automáticos requieren validación humana.</p>
     </section>
     <p class="method"><strong>Criterio:</strong> una celda existe solo por mención resoluble, respuesta directa, cambio rastreado de responsable o compromiso individual explícito. Compartir tarea, proyecto, commit o reunión no crea una relación.</p>
   </main>

@@ -13,6 +13,7 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         cls.units = json.loads((ROOT / "data" / "work_units.json").read_text())
         cls.html = (ROOT / "index.html").read_text()
         cls.app = (ROOT / "assets" / "app.js").read_text()
+        cls.acceptance = json.loads((ROOT / "data" / "acceptance_cases.json").read_text())
 
     def test_dataset_has_expected_scope(self):
         self.assertEqual(len(self.data["people"]), 23)
@@ -144,6 +145,45 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         self.assertIn("https://www.hitofusion.com/web#id=", self.app)
         self.assertIn('target="_blank" rel="noopener noreferrer"', self.app)
         self.assertIn("source_event_count", self.app)
+
+    def test_acceptance_section_separates_evidence_from_automatic_drafts(self):
+        self.assertIn('id="casosAceptacion"', self.html)
+        self.assertIn('id="acceptanceOrigin"', self.html)
+        self.assertIn("data/acceptance_cases.json", self.app)
+        self.assertIn("Documentado / evidencia", self.app)
+        self.assertIn("Propuesta automática · BORRADOR NO VALIDADO", self.app)
+        self.assertIn("validación humana", self.app)
+
+    def test_acceptance_dataset_is_unique_traceable_and_scoped(self):
+        cases = self.acceptance["cases"]
+        self.assertEqual(len(cases), 42)
+        self.assertEqual(len({item["id"] for item in cases}), 42)
+        self.assertEqual(self.acceptance["scope"]["excluded_stage"], "Verificación del cliente")
+        self.assertEqual(self.acceptance["scope"]["audited"], 42)
+        self.assertTrue(all(item["proposal_status"] == "borrador_no_validado" for item in cases))
+        self.assertTrue(all(item["proposal_origin"] == "generada_automaticamente" for item in cases))
+        self.assertTrue(all(item["problem_types"] for item in cases))
+        self.assertTrue(all(item["url"].startswith("https://www.hitofusion.com/web#id=") for item in cases))
+        ids = {item["id"] for item in cases}
+        self.assertTrue({5082, 5083, 5085}.issubset(ids))
+        self.assertTrue({5049, 5066, 5074}.isdisjoint(ids))
+        self.assertEqual(self.acceptance["generated_at_utc"], "2026-09-19T11:52:32.559577+00:00")
+        self.assertTrue(all("execution_result" in item and "evidence" in item for item in cases))
+
+    def test_acceptance_summary_matches_cases(self):
+        cases = self.acceptance["cases"]
+        for field, summary_key in (("coverage", "coverage"), ("test_level", "levels"), ("documented_origin", "origins")):
+            observed = {}
+            for item in cases:
+                observed[item[field]] = observed.get(item[field], 0) + 1
+            self.assertEqual(observed, self.acceptance["summary"][summary_key])
+
+    def test_acceptance_filters_are_shareable_and_resettable(self):
+        self.assertIn('id="acceptanceResult"', self.html)
+        self.assertIn('id="acceptanceReset"', self.html)
+        self.assertIn("URLSearchParams(location.search)", self.app)
+        self.assertIn("history.replaceState", self.app)
+        self.assertIn("resetAcceptanceFilters", self.app)
 
 
 if __name__ == "__main__":
