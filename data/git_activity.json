@@ -1,7 +1,7 @@
 {
   "report": {
     "start_utc_inclusive": "2026-09-15T03:00:00Z",
-    "end_utc_exclusive": "2026-09-18T15:58:47Z",
+    "end_utc_exclusive": "2026-09-22T10:56:15Z",
     "timezone": "America/Argentina/Cordoba"
   },
   "coverage": {
@@ -1346,6 +1346,214 @@
     },
     {
       "repo": "hito2026/cerebro-hito",
+      "sha": "7f3f948914565169b96e85293f2e156d6f34ddfb",
+      "date_utc": "2026-09-21 22:02:57",
+      "day": "2026-09-21",
+      "author": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "committer": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "subject": "Update real activity data 2026-09-21",
+      "body": "Co-authored-by: Cerebro Hito <cerebro@hitofusion.com>\nSigned-off-by: Cerebro Hito <cerebro@hitofusion.com>",
+      "parents": [
+        "b76966969d1af1c49c6782f94d431f86ab033883"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/7f3f948914565169b96e85293f2e156d6f34ddfb",
+      "files": [
+        "data/activities.json",
+        "data/recurrences.json"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "b76966969d1af1c49c6782f94d431f86ab033883",
+      "date_utc": "2026-09-21 16:02:47",
+      "day": "2026-09-21",
+      "author": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "committer": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "subject": "Update real activity data 2026-09-21",
+      "body": "Co-authored-by: Cerebro Hito <cerebro@hitofusion.com>\nSigned-off-by: Cerebro Hito <cerebro@hitofusion.com>",
+      "parents": [
+        "7dda138582d345d4e93db29b67d4bae1934c0111"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/b76966969d1af1c49c6782f94d431f86ab033883",
+      "files": [
+        "data/activities.json",
+        "data/recurrences.json"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "7dda138582d345d4e93db29b67d4bae1934c0111",
+      "date_utc": "2026-09-20 22:03:03",
+      "day": "2026-09-20",
+      "author": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "committer": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "subject": "Update real activity data 2026-09-20",
+      "body": "Co-authored-by: Cerebro Hito <cerebro@hitofusion.com>\nSigned-off-by: Cerebro Hito <cerebro@hitofusion.com>",
+      "parents": [
+        "47138036dde9127469a3bc0800b7827808b9165a"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/7dda138582d345d4e93db29b67d4bae1934c0111",
+      "files": [
+        "data/activities.json",
+        "data/recurrences.json"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "47138036dde9127469a3bc0800b7827808b9165a",
+      "date_utc": "2026-09-20 16:03:04",
+      "day": "2026-09-20",
+      "author": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "committer": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "subject": "Update real activity data 2026-09-20",
+      "body": "Co-authored-by: Cerebro Hito <cerebro@hitofusion.com>\nSigned-off-by: Cerebro Hito <cerebro@hitofusion.com>",
+      "parents": [
+        "f60b0c24734e727a43da03c6def27331d5b03482"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/47138036dde9127469a3bc0800b7827808b9165a",
+      "files": [
+        "data/activities.json",
+        "data/recurrences.json"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "f60b0c24734e727a43da03c6def27331d5b03482",
+      "date_utc": "2026-09-19 22:02:46",
+      "day": "2026-09-19",
+      "author": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "committer": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "subject": "Update real activity data 2026-09-19",
+      "body": "Co-authored-by: Cerebro Hito <cerebro@hitofusion.com>\nSigned-off-by: Cerebro Hito <cerebro@hitofusion.com>",
+      "parents": [
+        "f5fca4b130c40f1a1e408ffc190fd8eb2e1ba55c"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/f60b0c24734e727a43da03c6def27331d5b03482",
+      "files": [
+        "data/activities.json",
+        "data/recurrences.json"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "f5fca4b130c40f1a1e408ffc190fd8eb2e1ba55c",
+      "date_utc": "2026-09-19 16:02:42",
+      "day": "2026-09-19",
+      "author": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "committer": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "subject": "Update real activity data 2026-09-19",
+      "body": "Co-authored-by: Cerebro Hito <cerebro@hitofusion.com>\nSigned-off-by: Cerebro Hito <cerebro@hitofusion.com>",
+      "parents": [
+        "197843eec609914dec33041f3f8f5ba7ec5da287"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/f5fca4b130c40f1a1e408ffc190fd8eb2e1ba55c",
+      "files": [
+        "data/activities.json",
+        "data/recurrences.json"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "197843eec609914dec33041f3f8f5ba7ec5da287",
+      "date_utc": "2026-09-18 22:03:09",
+      "day": "2026-09-18",
+      "author": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "committer": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "subject": "Update real activity data 2026-09-18",
+      "body": "Co-authored-by: Cerebro Hito <cerebro@hitofusion.com>\nSigned-off-by: Cerebro Hito <cerebro@hitofusion.com>",
+      "parents": [
+        "3629f8561889160a255ddaeb04fe06179c5a2b85"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/197843eec609914dec33041f3f8f5ba7ec5da287",
+      "files": [
+        "data/activities.json",
+        "data/recurrences.json"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
+      "sha": "3629f8561889160a255ddaeb04fe06179c5a2b85",
+      "date_utc": "2026-09-18 16:03:10",
+      "day": "2026-09-18",
+      "author": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "committer": {
+        "name": "Cerebro Hito",
+        "email": "cerebro@hitofusion.com"
+      },
+      "subject": "Update real activity data 2026-09-18",
+      "body": "Co-authored-by: Cerebro Hito <cerebro@hitofusion.com>\nSigned-off-by: Cerebro Hito <cerebro@hitofusion.com>",
+      "parents": [
+        "33d0ee6e33452d652379a631d6cba2dd3a37d48c"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/cerebro-hito/commit/3629f8561889160a255ddaeb04fe06179c5a2b85",
+      "files": [
+        "data/activities.json",
+        "data/recurrences.json"
+      ],
+      "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/cerebro-hito",
       "sha": "33d0ee6e33452d652379a631d6cba2dd3a37d48c",
       "date_utc": "2026-09-17 22:02:46",
       "day": "2026-09-17",
@@ -1499,6 +1707,231 @@
         "data/recurrences.json"
       ],
       "reason": "identidad no mapeada a la nómina"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "8fe7ba519457e611139a0cc308a92aa7f6526963",
+      "date_utc": "2026-09-21 19:42:50",
+      "day": "2026-09-21",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05164",
+      "body": "",
+      "parents": [
+        "0af7626840e872342f2f0c4b45832b378001944e"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/8fe7ba519457e611139a0cc308a92aa7f6526963",
+      "files": [
+        "tickets-responded/20260921T194249Z_ticket_2026-05164.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "0af7626840e872342f2f0c4b45832b378001944e",
+      "date_utc": "2026-09-21 17:36:05",
+      "day": "2026-09-21",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05049",
+      "body": "",
+      "parents": [
+        "39b9a599d2c23eefac3ea2d9806d0ecbbd2535a7"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/0af7626840e872342f2f0c4b45832b378001944e",
+      "files": [
+        "tickets-responded/20260921T173604Z_ticket_2026-05049.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "39b9a599d2c23eefac3ea2d9806d0ecbbd2535a7",
+      "date_utc": "2026-09-21 16:15:04",
+      "day": "2026-09-21",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05168",
+      "body": "",
+      "parents": [
+        "805daea94ae47b5b54350c37cc3cb2b207a6cd79"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/39b9a599d2c23eefac3ea2d9806d0ecbbd2535a7",
+      "files": [
+        "tickets-responded/20260921T161503Z_ticket_2026-05168.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "805daea94ae47b5b54350c37cc3cb2b207a6cd79",
+      "date_utc": "2026-09-21 15:22:46",
+      "day": "2026-09-21",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05163",
+      "body": "",
+      "parents": [
+        "2e3d37bf7d15f9b97256dd09dac2ef2d4ecc072a"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/805daea94ae47b5b54350c37cc3cb2b207a6cd79",
+      "files": [
+        "tickets-responded/20260921T152245Z_ticket_2026-05163.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "2e3d37bf7d15f9b97256dd09dac2ef2d4ecc072a",
+      "date_utc": "2026-09-21 14:57:00",
+      "day": "2026-09-21",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05151",
+      "body": "",
+      "parents": [
+        "ae9e8e1eba2ed5ef1b107b886dad5504e705fab0"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/2e3d37bf7d15f9b97256dd09dac2ef2d4ecc072a",
+      "files": [
+        "tickets-responded/20260921T145700Z_ticket_2026-05151.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "ae9e8e1eba2ed5ef1b107b886dad5504e705fab0",
+      "date_utc": "2026-09-21 14:23:01",
+      "day": "2026-09-21",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05135",
+      "body": "",
+      "parents": [
+        "89189b8b0439523e5f82fcb1e239be5f6ca466ae"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/ae9e8e1eba2ed5ef1b107b886dad5504e705fab0",
+      "files": [
+        "tickets-responded/20260921T142300Z_ticket_2026-05135.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "89189b8b0439523e5f82fcb1e239be5f6ca466ae",
+      "date_utc": "2026-09-21 14:09:06",
+      "day": "2026-09-21",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05126",
+      "body": "",
+      "parents": [
+        "61f808c8c617aa56b8fb73d6eaf73b05a23961fd"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/89189b8b0439523e5f82fcb1e239be5f6ca466ae",
+      "files": [
+        "tickets-responded/20260921T140905Z_ticket_2026-05126.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "61f808c8c617aa56b8fb73d6eaf73b05a23961fd",
+      "date_utc": "2026-09-21 14:04:52",
+      "day": "2026-09-21",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "🎫 Respuesta enviada: Ticket 2026/05157",
+      "body": "",
+      "parents": [
+        "e3fdfa480b05eaa8b17780096901e408ca4bc5be"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/61f808c8c617aa56b8fb73d6eaf73b05a23961fd",
+      "files": [
+        "tickets-responded/20260921T140451Z_ticket_2026-05157.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/jinzo-work-log",
+      "sha": "e3fdfa480b05eaa8b17780096901e408ca4bc5be",
+      "date_utc": "2026-09-21 13:46:08",
+      "day": "2026-09-21",
+      "author": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "alejandro.sartorio@gmail.com"
+      },
+      "subject": "DM 2026-09-21 — minuta daily meeting equipo desarrollo",
+      "body": "",
+      "parents": [
+        "e29c7e3614cf826432db9ff98d261d0bb5968bbf"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/jinzo-work-log/commit/e3fdfa480b05eaa8b17780096901e408ca4bc5be",
+      "files": [
+        "dm/dm-desa/DM-2026-09-21.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
     },
     {
       "repo": "hito2026/jinzo-work-log",
@@ -2472,6 +2905,94 @@
       "url": "https://github.com/hito2026/jinzo-work-log/commit/9758653115ac2999640c7736338ad96fc67e837c",
       "files": [
         "tickets-responded/20260915T130326Z_ticket_2026-05119.md"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/hiperrelaciones",
+      "sha": "eb3e8c6f500452064612871b6dd048f820c8e694",
+      "date_utc": "2026-09-19 13:05:53",
+      "day": "2026-09-19",
+      "author": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "subject": "Publish acceptance cases executive report",
+      "body": "",
+      "parents": [
+        "c62d0c32a05d68535d7b8a05ed681954fb748beb"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/hiperrelaciones/commit/eb3e8c6f500452064612871b6dd048f820c8e694",
+      "files": [
+        "downloads/INFORME_EJECUTIVO_CASOS_ACEPTACION_HIPERPRODUCTIVIDAD_2026_09_19.pdf"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/hiperrelaciones",
+      "sha": "c62d0c32a05d68535d7b8a05ed681954fb748beb",
+      "date_utc": "2026-09-19 11:59:32",
+      "day": "2026-09-19",
+      "author": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "subject": "Add acceptance cases explorer",
+      "body": "",
+      "parents": [
+        "220e9b89a3ecc23bf8128e2d437e2dd0532043c3"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/hiperrelaciones/commit/c62d0c32a05d68535d7b8a05ed681954fb748beb",
+      "files": [
+        "assets/acceptance.css",
+        "assets/app.js",
+        "data/acceptance_cases.json",
+        "index.html",
+        "tests/test_site.py"
+      ],
+      "reason": "cuenta técnica o gateway sin atribución humana"
+    },
+    {
+      "repo": "hito2026/hiperrelaciones",
+      "sha": "220e9b89a3ecc23bf8128e2d437e2dd0532043c3",
+      "date_utc": "2026-09-18 16:04:28",
+      "day": "2026-09-18",
+      "author": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "committer": {
+        "name": "wsf",
+        "email": "251660+wsf@users.noreply.github.com"
+      },
+      "subject": "Update activity dashboard through September 18",
+      "body": "",
+      "parents": [
+        "2ec664a052a1d457febc8404bcc770c96afd9d1f"
+      ],
+      "classification": "change",
+      "url": "https://github.com/hito2026/hiperrelaciones/commit/220e9b89a3ecc23bf8128e2d437e2dd0532043c3",
+      "files": [
+        "README.md",
+        "data/daily_activity.json",
+        "data/git_activity.json",
+        "data/hyperrelations.json",
+        "data/productivity.json",
+        "data/records.json",
+        "data/work_units.json",
+        "scripts/build_metrics.js",
+        "scripts/extract_git.js",
+        "tests/test_site.py"
       ],
       "reason": "cuenta técnica o gateway sin atribución humana"
     },
