@@ -96,11 +96,19 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         self.assertIn("methodologyNav", self.html)
         self.assertIn("IntersectionObserver", self.app)
         self.assertIn("data-record-sort", self.app)
-        for column in ("Fecha/hora", "Contraparte(s)", "Descripción literal"):
+        for column in ("Fecha/hora", "Contraparte(s)", "Horas registradas", "Descripción literal"):
             self.assertIn(column, self.app)
         for removed in ('["change","Anterior → nuevo"]', '["hours","Horas"]', '["created_by","Autor / clasificación"]', '["quality","Q"]', '["coverage","Cobertura"]'):
             self.assertNotIn(removed, self.app)
         self.assertIn("literalTexts", self.app)
+        self.assertIn('record.hours>0?`${record.hours.toFixed(2)} h`:"—"', self.app)
+
+        units = json.loads((ROOT / "data" / "work_units.json").read_text())["work_units"]
+        with_hours = [unit for unit in units if unit["hours"] > 0]
+        self.assertTrue(with_hours)
+        for unit in with_hours:
+            expected = sum(item.get("hours", 0) for item in unit["subevents"] if item["kind"] == "timesheet")
+            self.assertAlmostEqual(unit["hours"], expected)
 
     def test_refreshed_records_are_individual_and_unique(self):
         records = json.loads((ROOT / "data" / "records.json").read_text())["records"]
