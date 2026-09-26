@@ -6,7 +6,11 @@
       "2026-09-16": "dm/dm-desa/DM-2026-09-16.md",
       "2026-09-17": "dm/dm-desa/DM-2026-09-17.md",
       "2026-09-18": "dm/dm-desa/DM-2026-09-18.md",
-      "2026-09-21": "dm/dm-desa/DM-2026-09-21.md"
+      "2026-09-21": "dm/dm-desa/DM-2026-09-21.md",
+      "2026-09-22": "dm/dm-desa/DM-2026-09-22.md",
+      "2026-09-23": "dm/dm-desa/DM-2026-09-23.md",
+      "2026-09-24": "dm/dm-desa/DM-2026-09-24.md",
+      "2026-09-25": "dm/dm-desa/DM-2026-09-25.md"
     },
     "rule": "Una declaracion o mencion no prueba ejecucion; solo se registran compromisos individuales dirigidos y resolubles."
   },
@@ -154,6 +158,162 @@
       "title": "Coordinación de migraciones y Ginzo 3",
       "evidence": "Convocó reunión de coordinación de migraciones y uso de Ginzo 3 para las 16:00.",
       "source_file": "dm/dm-desa/DM-2026-09-21.md"
+    },
+    {
+      "key": "daily:2026-09-22:alejandro:nelson:migraciones",
+      "day": "2026-09-22",
+      "time": null,
+      "date_utc": null,
+      "actor": "Alejandro Sartorio",
+      "counterpart": "Nelson Tontarelli",
+      "type": "compromiso_dirigido",
+      "title": "Reunión general de migraciones",
+      "evidence": "Alejandro convocó a Nelson y Pablo a una reunión a las 13:10 para tratar migraciones pendientes.",
+      "source_file": "dm/dm-desa/DM-2026-09-22.md"
+    },
+    {
+      "key": "daily:2026-09-22:alejandro:pablo:migraciones",
+      "day": "2026-09-22",
+      "time": null,
+      "date_utc": null,
+      "actor": "Alejandro Sartorio",
+      "counterpart": "Pablo Marchionno",
+      "type": "compromiso_dirigido",
+      "title": "Reunión general de migraciones",
+      "evidence": "Alejandro convocó a Nelson y Pablo a una reunión a las 13:10 para tratar migraciones pendientes.",
+      "source_file": "dm/dm-desa/DM-2026-09-22.md"
+    },
+    {
+      "key": "daily:2026-09-22:matias:nelson:intec-accesos",
+      "day": "2026-09-22",
+      "time": null,
+      "date_utc": null,
+      "actor": "Matias Marziali",
+      "counterpart": "Nelson Tontarelli",
+      "type": "compromiso_dirigido",
+      "title": "INTEC — revisión de accesos",
+      "evidence": "Matias debe coordinar una reunión con Nelson para revisar accesos y detalles técnicos del módulo de catálogo.",
+      "source_file": "dm/dm-desa/DM-2026-09-22.md"
+    },
+    {
+      "key": "daily:2026-09-22:pablo:ignacio:arrachado-validacion",
+      "day": "2026-09-22",
+      "time": null,
+      "date_utc": null,
+      "actor": "Pablo Marchionno",
+      "counterpart": "Ignacio Lera",
+      "type": "compromiso_dirigido",
+      "title": "Arrachado — validación funcional",
+      "evidence": "Pablo debe subir los módulos migrados de restricción de stock a la instancia para pruebas de Ignacio.",
+      "source_file": "dm/dm-desa/DM-2026-09-22.md"
+    },
+    {
+      "key": "daily:2026-09-23:matias:carolina:mesopotamia",
+      "day": "2026-09-23",
+      "time": null,
+      "date_utc": null,
+      "actor": "Matias Marziali",
+      "counterpart": "Carolina Monserrat",
+      "type": "compromiso_dirigido",
+      "title": "Mesopotamia — vista de subtareas",
+      "evidence": "Matias debe consultar a Carolina si corresponde crear una vista nueva para subtareas.",
+      "source_file": "dm/dm-desa/DM-2026-09-23.md"
+    },
+    {
+      "key": "daily:2026-09-23:matias:samuel:intec",
+      "day": "2026-09-23",
+      "time": null,
+      "date_utc": null,
+      "actor": "Matias Marziali",
+      "counterpart": "Samuel Marcano",
+      "type": "compromiso_dirigido",
+      "title": "INTEC — requerimientos de catálogo",
+      "evidence": "Matias debe coordinar con Samuel los requerimientos para el nuevo módulo de INTEC.",
+      "source_file": "dm/dm-desa/DM-2026-09-23.md"
+    },
+    {
+      "key": "daily:2026-09-23:nelson:alejandro:dimario",
+      "day": "2026-09-23",
+      "time": null,
+      "date_utc": null,
+      "actor": "Nelson Tontarelli",
+      "counterpart": "Alejandro Sartorio",
+      "type": "compromiso_dirigido",
+      "title": "Di Mario — evidencia para análisis",
+      "evidence": "Nelson debe compartir con Alejandro el repositorio y la documentación del ticket de Di Mario.",
+      "source_file": "dm/dm-desa/DM-2026-09-23.md"
+    },
+    {
+      "key": "daily:2026-09-23:pablo:matias:dimario",
+      "day": "2026-09-23",
+      "time": null,
+      "date_utc": null,
+      "actor": "Pablo Marchionno",
+      "counterpart": "Matias Marziali",
+      "type": "compromiso_dirigido",
+      "title": "Di Mario — cambio de descuentos",
+      "evidence": "Pablo comunicó a Matias la nueva solicitud sobre descuentos para su ejecución al liberar prioridades.",
+      "source_file": "dm/dm-desa/DM-2026-09-23.md"
+    },
+    {
+      "key": "daily:2026-09-24:matias:pablo:dimario",
+      "day": "2026-09-24",
+      "time": null,
+      "date_utc": null,
+      "actor": "Matias Marziali",
+      "counterpart": "Pablo Marchionno",
+      "type": "compromiso_dirigido",
+      "title": "Di Mario — requisitos actualizados",
+      "evidence": "Matias debe registrar avances y entregar a Pablo los requisitos actualizados.",
+      "source_file": "dm/dm-desa/DM-2026-09-24.md"
+    },
+    {
+      "key": "daily:2026-09-24:pablo:julian:atma",
+      "day": "2026-09-24",
+      "time": null,
+      "date_utc": null,
+      "actor": "Pablo Marchionno",
+      "counterpart": "Julian Morabito",
+      "type": "compromiso_dirigido",
+      "title": "ATMA — detalle del error",
+      "evidence": "Pablo debe contactar a Julian para obtener detalles del error de configuración y coordinar una reunión.",
+      "source_file": "dm/dm-desa/DM-2026-09-24.md"
+    },
+    {
+      "key": "daily:2026-09-25:matias:samuel:intec",
+      "day": "2026-09-25",
+      "time": null,
+      "date_utc": null,
+      "actor": "Matias Marziali",
+      "counterpart": "Samuel Marcano",
+      "type": "compromiso_dirigido",
+      "title": "INTEC — validación de catálogo",
+      "evidence": "Matias debe validar con Samuel la actualización del catálogo de INTEC.",
+      "source_file": "dm/dm-desa/DM-2026-09-25.md"
+    },
+    {
+      "key": "daily:2026-09-25:pablo:julian:adma",
+      "day": "2026-09-25",
+      "time": null,
+      "date_utc": null,
+      "actor": "Pablo Marchionno",
+      "counterpart": "Julian Morabito",
+      "type": "compromiso_dirigido",
+      "title": "ADMA — publicación de productos",
+      "evidence": "Pablo debe asistir a la reunión con Julian y actualizar el ticket de ADMA.",
+      "source_file": "dm/dm-desa/DM-2026-09-25.md"
+    },
+    {
+      "key": "daily:2026-09-25:pablo:valentin:smarttrack",
+      "day": "2026-09-25",
+      "time": null,
+      "date_utc": null,
+      "actor": "Pablo Marchionno",
+      "counterpart": "Valentin Markov",
+      "type": "compromiso_dirigido",
+      "title": "Smart Track — criterios de aceptación",
+      "evidence": "Pablo debe consultar a Valentin los criterios de aceptación para evitar pickings de ventas canceladas.",
+      "source_file": "dm/dm-desa/DM-2026-09-25.md"
     }
   ]
 }
