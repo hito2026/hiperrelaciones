@@ -71,6 +71,20 @@ class HiperrelacionesSiteTests(unittest.TestCase):
         self.assertIn("columnTotals", self.app)
         self.assertIn("grand-total", self.app)
 
+    def test_people_missing_from_historical_days_do_not_abort_render(self):
+        metrics = json.loads((ROOT / "data" / "productivity.json").read_text())
+        missing = {
+            (day, person)
+            for day, rows in metrics["days"].items()
+            for person in self.data["people"]
+            if not any(row["person"] == person for row in rows)
+        }
+        self.assertIn(("2026-09-09", "Marketing"), missing)
+        self.assertIn("||{person,I:0,H:0,R:0,Q:null,E:null,coverage:", self.app)
+        self.assertIn("quality_complete:false", self.app)
+        self.assertIn("hours_attribution_complete:false", self.app)
+        self.assertIn("outcome_complete:false", self.app)
+
     def test_company_network_uses_unique_directed_pairs(self):
         pairs = {(event["actor"], event["counterpart"]) for event in self.data["events"]}
         summed_personal_networks = sum(len({event["counterpart"] for event in self.data["events"] if event["actor"] == person}) for person in self.data["people"])

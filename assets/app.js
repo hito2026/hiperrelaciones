@@ -114,7 +114,7 @@ const normalized=(value,target,log=false)=>log?Math.min(1,Math.log1p(value)/Math
 function metricRows(){
   const days=state.day==="all"?Object.keys(state.metrics.days):[state.day];
   return state.data.people.map(person=>{
-    const rows=days.map(day=>state.metrics.days[day].find(row=>row.person===person));
+    const rows=days.map(day=>state.metrics.days[day].find(row=>row.person===person)||{person,I:0,H:0,R:0,Q:null,E:null,coverage:{comments:0,quality_messages:0,timesheets:0,quality_complete:false,hours_attribution_complete:false,outcome_complete:false,git_complete:false}});
     const messages=rows.reduce((sum,row)=>sum+row.coverage.quality_messages,0);
     const qPoints=rows.reduce((sum,row)=>sum+(row.Q??0)*row.coverage.quality_messages,0);
     const events=state.data.events.filter(event=>days.includes(event.day)&&event.actor===person);
