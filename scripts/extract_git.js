@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 const fs=require("node:fs"),cp=require("node:child_process"),path=require("node:path");
 const root=path.resolve(__dirname,"..");
-const start="2026-09-15T03:00:00Z",end="2026-09-26T13:49:49Z";
+const start=process.env.HIPER_GIT_START||"2026-09-26T13:49:49Z";
+const end=process.env.HIPER_GIT_END||"2026-10-14T14:03:37Z";
 const repos=[
   ["wsf/hito-devman","/Users/asartorio/.buzz/REPOS/hito-devman"],
   ["hito2026/agentes-creados","/Users/asartorio/.buzz/.scratch/git-audit-20260911/agentes-creados"],
